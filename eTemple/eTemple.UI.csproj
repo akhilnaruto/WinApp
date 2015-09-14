@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84E17958-0DDB-43CF-8CC6-CEE22C64EDF8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eTemple.UI</RootNamespace>
+    <AssemblyName>eTemple.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>eTemple.UI.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\MySql.ConnectorNET.Data.6.8.3.2\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BatchDetailsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BatchDetailsReport.designer.cs">
+      <DependentUpon>BatchDetailsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DemoMenus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoMenus.Designer.cs">
+      <DependentUpon>DemoMenus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DCRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DCRForm.Designer.cs">
+      <DependentUpon>DCRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designations.Designer.cs">
+      <DependentUpon>Designations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditReceipt.Designer.cs">
+      <DependentUpon>EditReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateBatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateBatchForm.Designer.cs">
+      <DependentUpon>GenerateBatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HundialsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HundialsForm.Designer.cs">
+      <DependentUpon>HundialsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiscIncomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiscIncomeForm.Designer.cs">
+      <DependentUpon>MiscIncomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperatorReport.Designer.cs">
+      <DependentUpon>OperatorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PattiInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PattiInForm.Designer.cs">
+      <DependentUpon>PattiInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PattiOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PattiOutForm.Designer.cs">
+      <DependentUpon>PattiOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POCMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POCMainForm.Designer.cs">
+      <DependentUpon>POCMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoojaAddressReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoojaAddressReport.Designer.cs">
+      <DependentUpon>PoojaAddressReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoojaReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoojaReport.Designer.cs">
+      <DependentUpon>PoojaReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintersForm.Designer.cs">
+      <DependentUpon>PrintersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintSeriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintSeriesForm.Designer.cs">
+      <DependentUpon>PrintSeriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptsForm.designer.cs">
+      <DependentUpon>ReceiptsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptViewer.Designer.cs">
+      <DependentUpon>ReceiptViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roles.Designer.cs">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceDetailsPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceDetailsPrint.Designer.cs">
+      <DependentUpon>ServiceDetailsPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceForm.Designer.cs">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServicesPrintForm.Designer.cs">
+      <DependentUpon>ServicesPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TokensForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TokensForm.Designer.cs">
+      <DependentUpon>TokensForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Units.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Units.Designer.cs">
+      <DependentUpon>Units.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIPPrasadamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIPPrasadamForm.Designer.cs">
+      <DependentUpon>VIPPrasadamForm.cs</DependentUpon>
+    </Compile>
+    <None Include="Resources\web.jpg" />
+    <None Include="Resources\logo1.png" />
+    <None Include="Resources\logo_signin.png" />
+    <None Include="Resources\swamyoutline.png" />
+    <EmbeddedResource Include="DemoMenus.resx">
+      <DependentUpon>DemoMenus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditReceipt.resx">
+      <DependentUpon>EditReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POCMainForm.resx">
+      <DependentUpon>POCMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PoojaAddressReport.resx">
+      <DependentUpon>PoojaAddressReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptViewer.resx">
+      <DependentUpon>ReceiptViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicesPrintForm.resx">
+      <DependentUpon>ServicesPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIPPrasadamForm.resx">
+      <DependentUpon>VIPPrasadamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\eTemple.Data.Models.Token.datasource" />
+    <None Include="Resources\Wood_small.jpg" />
+    <None Include="Resources\temple_logo_small.png" />
+    <None Include="Resources\temple_logo.png" />
+    <None Include="Resources\wood4.jpg" />
+    <EmbeddedResource Include="BatchDetailsReport.resx">
+      <DependentUpon>BatchDetailsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DCRForm.resx">
+      <DependentUpon>DCRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designations.resx">
+      <DependentUpon>Designations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateBatchForm.resx">
+      <DependentUpon>GenerateBatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HundialsForm.resx">
+      <DependentUpon>HundialsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscIncomeForm.resx">
+      <DependentUpon>MiscIncomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorReport.resx">
+      <DependentUpon>OperatorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PattiInForm.resx">
+      <DependentUpon>PattiInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PattiOutForm.resx">
+      <DependentUpon>PattiOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PoojaReport.resx">
+      <DependentUpon>PoojaReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintersForm.resx">
+      <DependentUpon>PrintersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintSeriesForm.resx">
+      <DependentUpon>PrintSeriesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptsForm.resx">
+      <DependentUpon>ReceiptsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Roles.resx">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceDetailsPrint.resx">
+      <DependentUpon>ServiceDetailsPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceForm.resx">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TokensForm.resx">
+      <DependentUpon>TokensForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Units.resx">
+      <DependentUpon>Units.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\eTemple.Data.Models.Employee.datasource" />
+    <None Include="Properties\DataSources\eTemple.Data.Models.PrintSeries.datasource" />
+    <None Include="Properties\DataSources\eTemple.Data.Models.Service.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eTemple.Components\eTemple.Components.csproj">
+      <Project>{87d24bff-5031-4716-bf01-3ea42c791538}</Project>
+      <Name>eTemple.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eTemple.Data\eTemple.Data.csproj">
+      <Project>{ee52efda-bc23-47b5-8c2a-3d934043edc6}</Project>
+      <Name>eTemple.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
