@@ -1,0 +1,8 @@
+
+CREATE TABLE `SpecialDay` (
+  `Id` int(20) NOT NULL,
+  `Name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `SpecialDay` VALUES (1,'MUKKOTI'),(2,'DHANURMASA'),(3,'BHOGI'),(4,'SANKRANTHI'),(5,'VLVRATAM'),(6,'KANUMA');

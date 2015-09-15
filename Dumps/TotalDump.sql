@@ -74,6 +74,15 @@ CREATE TABLE `ServiceName` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE `SpecialDay` (
+  `Id` int(20) NOT NULL,
+  `Name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `SpecialDay` VALUES (1,'MUKKOTI'),(2,'DHANURMASA'),(3,'BHOGI'),(4,'SANKRANTHI'),(5,'VLVRATAM'),(6,'KANUMA');
+
+
 CREATE TABLE `Donors` (
   `Id` int(20) NOT NULL AUTO_INCREMENT,
   `date` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -93,6 +102,7 @@ CREATE TABLE `Donors` (
   `MR No` int(20) DEFAULT NULL,
   `Remarks` varchar(3000) DEFAULT NULL,
   `PhoneNumber` varchar(20) DEFAULT NULL,
+   `SpecialDayId` int(20) DEFAULT NULL,
   `ServiceTypeId` int(20) DEFAULT NULL,
   `ServiceNameId` int(20) DEFAULT NULL,
   `DateTypeId` int(20) DEFAULT NULL,
@@ -107,5 +117,7 @@ CREATE TABLE `Donors` (
   KEY `DateTypeId` (`DateTypeId`),
   CONSTRAINT `donors_ibfk_1` FOREIGN KEY (`ServiceTypeId`) REFERENCES `ServiceTypes` (`Id`),
   CONSTRAINT `donors_ibfk_2` FOREIGN KEY (`ServiceNameId`) REFERENCES `ServiceName` (`Id`),
-  CONSTRAINT `donors_ibfk_3` FOREIGN KEY (`DateTypeId`) REFERENCES `DateType` (`Id`)
+  CONSTRAINT `donors_ibfk_3` FOREIGN KEY (`DateTypeId`) REFERENCES `DateType` (`Id`),
+  CONSTRAINT `donors_ibfk_4` FOREIGN KEY (`SpecialDayId`) REFERENCES `SpecialDay` (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
