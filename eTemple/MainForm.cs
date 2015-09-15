@@ -229,5 +229,14 @@ namespace eTemple.UI
             ShowChildForm(new POCMainForm(), true);
         }
 
+        /// <summary>
+        /// Open the Data Entry form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new DataEntry(), true);
+        }
     }
 }

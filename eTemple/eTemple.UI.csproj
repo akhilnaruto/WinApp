@@ -73,6 +73,12 @@
     <Compile Include="BatchDetailsReport.designer.cs">
       <DependentUpon>BatchDetailsReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataEntry.Designer.cs">
+      <DependentUpon>DataEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="DemoMenus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     <None Include="Resources\logo1.png" />
     <None Include="Resources\logo_signin.png" />
     <None Include="Resources\swamyoutline.png" />
+    <EmbeddedResource Include="DataEntry.resx">
+      <DependentUpon>DataEntry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DemoMenus.resx">
       <DependentUpon>DemoMenus.cs</DependentUpon>
     </EmbeddedResource>

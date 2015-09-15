@@ -56,6 +56,8 @@
             this.miscIncomesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vIPPrasadamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showMenusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pOCServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.chkPrintPreview = new System.Windows.Forms.CheckBox();
@@ -65,7 +67,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbTokenPrinter = new System.Windows.Forms.ComboBox();
             this.lblLoggedInUser = new System.Windows.Forms.Label();
-            this.pOCServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,7 +86,8 @@
             this.otherIncomesToolStripMenuItem,
             this.vIPPrasadamToolStripMenuItem,
             this.showMenusToolStripMenuItem,
-            this.pOCServiceToolStripMenuItem});
+            this.pOCServiceToolStripMenuItem,
+            this.dataEntryToolStripMenuItem});
             this.menuBar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
@@ -105,7 +107,6 @@
             this.newTokenToolStripMenuItem.Name = "newTokenToolStripMenuItem";
             this.newTokenToolStripMenuItem.Size = new System.Drawing.Size(100, 25);
             this.newTokenToolStripMenuItem.Text = "&New Token";
-            this.newTokenToolStripMenuItem.Visible = true;
             this.newTokenToolStripMenuItem.Click += new System.EventHandler(this.newTokenToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem1
@@ -285,7 +286,7 @@
             // vIPPrasadamToolStripMenuItem
             // 
             this.vIPPrasadamToolStripMenuItem.Name = "vIPPrasadamToolStripMenuItem";
-            this.vIPPrasadamToolStripMenuItem.Size = new System.Drawing.Size(171, 25);
+            this.vIPPrasadamToolStripMenuItem.Size = new System.Drawing.Size(170, 25);
             this.vIPPrasadamToolStripMenuItem.Text = "&VIP (అతిధి సత్కారం)";
             this.vIPPrasadamToolStripMenuItem.Click += new System.EventHandler(this.vIPPrasadamToolStripMenuItem_Click);
             // 
@@ -295,6 +296,20 @@
             this.showMenusToolStripMenuItem.Size = new System.Drawing.Size(112, 25);
             this.showMenusToolStripMenuItem.Text = "Show Menus";
             this.showMenusToolStripMenuItem.Click += new System.EventHandler(this.showMenusToolStripMenuItem_Click);
+            // 
+            // pOCServiceToolStripMenuItem
+            // 
+            this.pOCServiceToolStripMenuItem.Name = "pOCServiceToolStripMenuItem";
+            this.pOCServiceToolStripMenuItem.Size = new System.Drawing.Size(107, 25);
+            this.pOCServiceToolStripMenuItem.Text = "POC Service";
+            this.pOCServiceToolStripMenuItem.Click += new System.EventHandler(this.pOCServiceToolStripMenuItem_Click);
+            // 
+            // dataEntryToolStripMenuItem
+            // 
+            this.dataEntryToolStripMenuItem.Name = "dataEntryToolStripMenuItem";
+            this.dataEntryToolStripMenuItem.Size = new System.Drawing.Size(94, 25);
+            this.dataEntryToolStripMenuItem.Text = "Data Entry";
+            this.dataEntryToolStripMenuItem.Click += new System.EventHandler(this.dataEntryToolStripMenuItem_Click);
             // 
             // statusBar
             // 
@@ -385,19 +400,12 @@
             this.lblLoggedInUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLoggedInUser.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.Maroon;
-            this.lblLoggedInUser.Location = new System.Drawing.Point(959, 8);
+            this.lblLoggedInUser.Location = new System.Drawing.Point(1003, 7);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
             this.lblLoggedInUser.Size = new System.Drawing.Size(306, 21);
             this.lblLoggedInUser.TabIndex = 2;
             this.lblLoggedInUser.Text = "logged in user";
             this.lblLoggedInUser.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // pOCServiceToolStripMenuItem
-            // 
-            this.pOCServiceToolStripMenuItem.Name = "pOCServiceToolStripMenuItem";
-            this.pOCServiceToolStripMenuItem.Size = new System.Drawing.Size(107, 25);
-            this.pOCServiceToolStripMenuItem.Text = "POC Service";
-            this.pOCServiceToolStripMenuItem.Click += new System.EventHandler(this.pOCServiceToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -467,5 +475,6 @@
         private System.Windows.Forms.ToolStripMenuItem serviceReportWithAddressesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showMenusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pOCServiceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataEntryToolStripMenuItem;
     }
 }
