@@ -83,6 +83,15 @@ CREATE TABLE `SpecialDay` (
 INSERT INTO `SpecialDay` VALUES (1,'MUKKOTI'),(2,'DHANURMASA'),(3,'BHOGI'),(4,'SANKRANTHI'),(5,'VLVRATAM'),(6,'KANUMA');
 
 
+CREATE TABLE `DateType` (
+  `Id` int(20) NOT NULL,
+  `Name` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `DateType` VALUES (1,'Telugu'),(2,'English'),(3,'Special');
+
+
 CREATE TABLE `Donors` (
   `Id` int(20) NOT NULL AUTO_INCREMENT,
   `date` datetime DEFAULT CURRENT_TIMESTAMP,
