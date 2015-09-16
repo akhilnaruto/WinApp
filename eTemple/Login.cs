@@ -54,5 +54,10 @@ namespace eTemple.UI
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }
+
+        private void btnDataEntry_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
