@@ -236,7 +236,7 @@ namespace eTemple.UI
         /// <param name="e"></param>
         private void dataEntryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new DataEntry(), true);
+         //   ShowChildForm(new DataEntry(), true);
         }
     }
 }

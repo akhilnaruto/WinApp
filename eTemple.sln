@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows Desktop
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eTemple.UI", "eTemple\eTemple.UI.csproj", "{84E17958-0DDB-43CF-8CC6-CEE22C64EDF8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eTemple.Data", "eTemple.Data\eTemple.Data.csproj", "{EE52EFDA-BC23-47B5-8C2A-3D934043EDC6}"
@@ -13,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C53F66
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eTemple.Components", "eTemple.Components\eTemple.Components.csproj", "{87D24BFF-5031-4716-BF01-3EA42C791538}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eTemple.UI.Donations", "eTemple.UI.Donations\eTemple.UI.Donations.csproj", "{7AB6A05B-A33E-4FB4-AAE3-055964C9A908}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,10 @@ Global
 		{87D24BFF-5031-4716-BF01-3EA42C791538}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87D24BFF-5031-4716-BF01-3EA42C791538}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87D24BFF-5031-4716-BF01-3EA42C791538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB6A05B-A33E-4FB4-AAE3-055964C9A908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB6A05B-A33E-4FB4-AAE3-055964C9A908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB6A05B-A33E-4FB4-AAE3-055964C9A908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB6A05B-A33E-4FB4-AAE3-055964C9A908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
