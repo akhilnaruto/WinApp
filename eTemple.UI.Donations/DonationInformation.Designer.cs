@@ -64,23 +64,23 @@
             this.cmbStar = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbServiceType = new System.Windows.Forms.ComboBox();
-            this.lblServiceType = new System.Windows.Forms.Label();
             this.cmbServiceName = new System.Windows.Forms.ComboBox();
             this.lblServiceName = new System.Windows.Forms.Label();
+            this.cmbServiceType = new System.Windows.Forms.ComboBox();
+            this.lblServiceType = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cmbSpecialDay = new System.Windows.Forms.ComboBox();
-            this.lblSpecialDay = new System.Windows.Forms.Label();
-            this.cmbDateType = new System.Windows.Forms.ComboBox();
-            this.lblDateType = new System.Windows.Forms.Label();
-            this.cmbThithi = new System.Windows.Forms.ComboBox();
-            this.lblThithi = new System.Windows.Forms.Label();
-            this.cmbMonth = new System.Windows.Forms.ComboBox();
-            this.lblMonth = new System.Windows.Forms.Label();
             this.cmbInformationNeeded = new System.Windows.Forms.ComboBox();
             this.lblInformationNeeded = new System.Windows.Forms.Label();
             this.cmbReciptsIssued = new System.Windows.Forms.ComboBox();
             this.lblReciptsIssued = new System.Windows.Forms.Label();
+            this.cmbThithi = new System.Windows.Forms.ComboBox();
+            this.lblThithi = new System.Windows.Forms.Label();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.lblMonth = new System.Windows.Forms.Label();
+            this.cmbSpecialDay = new System.Windows.Forms.ComboBox();
+            this.lblSpecialDay = new System.Windows.Forms.Label();
+            this.cmbDateType = new System.Windows.Forms.ComboBox();
+            this.lblDateType = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -423,25 +423,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Service Information";
             // 
-            // cmbServiceType
-            // 
-            this.cmbServiceType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmbServiceType.FormattingEnabled = true;
-            this.cmbServiceType.Location = new System.Drawing.Point(184, 33);
-            this.cmbServiceType.Name = "cmbServiceType";
-            this.cmbServiceType.Size = new System.Drawing.Size(200, 28);
-            this.cmbServiceType.TabIndex = 39;
-            // 
-            // lblServiceType
-            // 
-            this.lblServiceType.AutoSize = true;
-            this.lblServiceType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblServiceType.Location = new System.Drawing.Point(75, 33);
-            this.lblServiceType.Name = "lblServiceType";
-            this.lblServiceType.Size = new System.Drawing.Size(92, 20);
-            this.lblServiceType.TabIndex = 38;
-            this.lblServiceType.Text = "Service Type";
-            // 
             // cmbServiceName
             // 
             this.cmbServiceName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
@@ -460,6 +441,25 @@
             this.lblServiceName.Size = new System.Drawing.Size(100, 20);
             this.lblServiceName.TabIndex = 40;
             this.lblServiceName.Text = "Service Name";
+            // 
+            // cmbServiceType
+            // 
+            this.cmbServiceType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmbServiceType.FormattingEnabled = true;
+            this.cmbServiceType.Location = new System.Drawing.Point(184, 33);
+            this.cmbServiceType.Name = "cmbServiceType";
+            this.cmbServiceType.Size = new System.Drawing.Size(200, 28);
+            this.cmbServiceType.TabIndex = 39;
+            // 
+            // lblServiceType
+            // 
+            this.lblServiceType.AutoSize = true;
+            this.lblServiceType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblServiceType.Location = new System.Drawing.Point(75, 33);
+            this.lblServiceType.Name = "lblServiceType";
+            this.lblServiceType.Size = new System.Drawing.Size(92, 20);
+            this.lblServiceType.TabIndex = 38;
+            this.lblServiceType.Text = "Service Type";
             // 
             // groupBox3
             // 
@@ -483,43 +483,43 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Other Information";
             // 
-            // cmbSpecialDay
+            // cmbInformationNeeded
             // 
-            this.cmbSpecialDay.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmbSpecialDay.FormattingEnabled = true;
-            this.cmbSpecialDay.Location = new System.Drawing.Point(606, 28);
-            this.cmbSpecialDay.Name = "cmbSpecialDay";
-            this.cmbSpecialDay.Size = new System.Drawing.Size(200, 28);
-            this.cmbSpecialDay.TabIndex = 41;
+            this.cmbInformationNeeded.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmbInformationNeeded.FormattingEnabled = true;
+            this.cmbInformationNeeded.Location = new System.Drawing.Point(606, 112);
+            this.cmbInformationNeeded.Name = "cmbInformationNeeded";
+            this.cmbInformationNeeded.Size = new System.Drawing.Size(200, 28);
+            this.cmbInformationNeeded.TabIndex = 49;
             // 
-            // lblSpecialDay
+            // lblInformationNeeded
             // 
-            this.lblSpecialDay.AutoSize = true;
-            this.lblSpecialDay.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblSpecialDay.Location = new System.Drawing.Point(459, 33);
-            this.lblSpecialDay.Name = "lblSpecialDay";
-            this.lblSpecialDay.Size = new System.Drawing.Size(87, 20);
-            this.lblSpecialDay.TabIndex = 40;
-            this.lblSpecialDay.Text = "Special Day";
+            this.lblInformationNeeded.AutoSize = true;
+            this.lblInformationNeeded.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblInformationNeeded.Location = new System.Drawing.Point(459, 117);
+            this.lblInformationNeeded.Name = "lblInformationNeeded";
+            this.lblInformationNeeded.Size = new System.Drawing.Size(144, 20);
+            this.lblInformationNeeded.TabIndex = 48;
+            this.lblInformationNeeded.Text = "Information Needed";
             // 
-            // cmbDateType
+            // cmbReciptsIssued
             // 
-            this.cmbDateType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmbDateType.FormattingEnabled = true;
-            this.cmbDateType.Location = new System.Drawing.Point(184, 33);
-            this.cmbDateType.Name = "cmbDateType";
-            this.cmbDateType.Size = new System.Drawing.Size(200, 28);
-            this.cmbDateType.TabIndex = 39;
+            this.cmbReciptsIssued.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmbReciptsIssued.FormattingEnabled = true;
+            this.cmbReciptsIssued.Location = new System.Drawing.Point(184, 117);
+            this.cmbReciptsIssued.Name = "cmbReciptsIssued";
+            this.cmbReciptsIssued.Size = new System.Drawing.Size(200, 28);
+            this.cmbReciptsIssued.TabIndex = 47;
             // 
-            // lblDateType
+            // lblReciptsIssued
             // 
-            this.lblDateType.AutoSize = true;
-            this.lblDateType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblDateType.Location = new System.Drawing.Point(75, 33);
-            this.lblDateType.Name = "lblDateType";
-            this.lblDateType.Size = new System.Drawing.Size(77, 20);
-            this.lblDateType.TabIndex = 38;
-            this.lblDateType.Text = "Date Type";
+            this.lblReciptsIssued.AutoSize = true;
+            this.lblReciptsIssued.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblReciptsIssued.Location = new System.Drawing.Point(75, 117);
+            this.lblReciptsIssued.Name = "lblReciptsIssued";
+            this.lblReciptsIssued.Size = new System.Drawing.Size(102, 20);
+            this.lblReciptsIssued.TabIndex = 46;
+            this.lblReciptsIssued.Text = "Recipts Issued";
             // 
             // cmbThithi
             // 
@@ -559,43 +559,43 @@
             this.lblMonth.TabIndex = 42;
             this.lblMonth.Text = "Month";
             // 
-            // cmbInformationNeeded
+            // cmbSpecialDay
             // 
-            this.cmbInformationNeeded.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmbInformationNeeded.FormattingEnabled = true;
-            this.cmbInformationNeeded.Location = new System.Drawing.Point(606, 112);
-            this.cmbInformationNeeded.Name = "cmbInformationNeeded";
-            this.cmbInformationNeeded.Size = new System.Drawing.Size(200, 28);
-            this.cmbInformationNeeded.TabIndex = 49;
+            this.cmbSpecialDay.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmbSpecialDay.FormattingEnabled = true;
+            this.cmbSpecialDay.Location = new System.Drawing.Point(606, 28);
+            this.cmbSpecialDay.Name = "cmbSpecialDay";
+            this.cmbSpecialDay.Size = new System.Drawing.Size(200, 28);
+            this.cmbSpecialDay.TabIndex = 41;
             // 
-            // lblInformationNeeded
+            // lblSpecialDay
             // 
-            this.lblInformationNeeded.AutoSize = true;
-            this.lblInformationNeeded.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblInformationNeeded.Location = new System.Drawing.Point(459, 117);
-            this.lblInformationNeeded.Name = "lblInformationNeeded";
-            this.lblInformationNeeded.Size = new System.Drawing.Size(144, 20);
-            this.lblInformationNeeded.TabIndex = 48;
-            this.lblInformationNeeded.Text = "Information Needed";
+            this.lblSpecialDay.AutoSize = true;
+            this.lblSpecialDay.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblSpecialDay.Location = new System.Drawing.Point(459, 33);
+            this.lblSpecialDay.Name = "lblSpecialDay";
+            this.lblSpecialDay.Size = new System.Drawing.Size(87, 20);
+            this.lblSpecialDay.TabIndex = 40;
+            this.lblSpecialDay.Text = "Special Day";
             // 
-            // cmbReciptsIssued
+            // cmbDateType
             // 
-            this.cmbReciptsIssued.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmbReciptsIssued.FormattingEnabled = true;
-            this.cmbReciptsIssued.Location = new System.Drawing.Point(184, 117);
-            this.cmbReciptsIssued.Name = "cmbReciptsIssued";
-            this.cmbReciptsIssued.Size = new System.Drawing.Size(200, 28);
-            this.cmbReciptsIssued.TabIndex = 47;
+            this.cmbDateType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmbDateType.FormattingEnabled = true;
+            this.cmbDateType.Location = new System.Drawing.Point(184, 33);
+            this.cmbDateType.Name = "cmbDateType";
+            this.cmbDateType.Size = new System.Drawing.Size(200, 28);
+            this.cmbDateType.TabIndex = 39;
             // 
-            // lblReciptsIssued
+            // lblDateType
             // 
-            this.lblReciptsIssued.AutoSize = true;
-            this.lblReciptsIssued.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblReciptsIssued.Location = new System.Drawing.Point(75, 117);
-            this.lblReciptsIssued.Name = "lblReciptsIssued";
-            this.lblReciptsIssued.Size = new System.Drawing.Size(102, 20);
-            this.lblReciptsIssued.TabIndex = 46;
-            this.lblReciptsIssued.Text = "Recipts Issued";
+            this.lblDateType.AutoSize = true;
+            this.lblDateType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblDateType.Location = new System.Drawing.Point(75, 33);
+            this.lblDateType.Name = "lblDateType";
+            this.lblDateType.Size = new System.Drawing.Size(77, 20);
+            this.lblDateType.TabIndex = 38;
+            this.lblDateType.Text = "Date Type";
             // 
             // btnAdd
             // 
@@ -695,7 +695,7 @@
             this.Controls.Add(this.lblDonorId);
             this.Controls.Add(this.groupBox1);
             this.Name = "DataEntry";
-            this.Text = "DataEntry";
+            this.Text = "Donation Information";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
