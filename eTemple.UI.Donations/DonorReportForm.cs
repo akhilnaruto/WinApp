@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace eTemple.UI.Donations
 {
     public partial class DonorReportForm : Form
@@ -19,7 +20,7 @@ namespace eTemple.UI.Donations
 
         private void DonorReportForm_Load(object sender, EventArgs e)
         {
-
+            r
             this.reportViewer1.RefreshReport();
         }
     }
