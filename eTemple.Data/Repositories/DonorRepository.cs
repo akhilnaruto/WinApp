@@ -15,12 +15,11 @@ namespace eTemple.Data.Repositories
             TempleDb = new eTempleDbDB();
         }
 
-        public IEnumerable<Donors> List
+        public IEnumerable<Donors> GetAllAsQuerable()
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+          
+           return TempleDb.Query<Donors>("Select * From donors order by Name asc").ToList();
+          
         }
 
         public void Add(Donors entity)
