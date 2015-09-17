@@ -44,7 +44,15 @@ namespace eTemple.UI.Donations
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButton2.Checked)
+            {
+                lblServiceName.Visible = true;
+                cmbServiceName.Visible = true;
+                
+            }
+            else
+            {
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

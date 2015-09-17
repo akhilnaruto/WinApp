@@ -30,10 +30,10 @@
         {
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lblServiceType = new System.Windows.Forms.Label();
+            this.lblServiceName = new System.Windows.Forms.Label();
+            this.cmbServiceType = new System.Windows.Forms.ComboBox();
+            this.cmbServiceName = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // radioButton1
@@ -63,55 +63,59 @@
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // label1
+            // lblServiceType
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Service Type";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblServiceType.AutoSize = true;
+            this.lblServiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServiceType.Location = new System.Drawing.Point(73, 117);
+            this.lblServiceType.Name = "lblServiceType";
+            this.lblServiceType.Size = new System.Drawing.Size(91, 17);
+            this.lblServiceType.TabIndex = 2;
+            this.lblServiceType.Text = "Service Type";
+            this.lblServiceType.Visible = false;
+            this.lblServiceType.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lblServiceName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 148);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Service Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblServiceName.AutoSize = true;
+            this.lblServiceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServiceName.Location = new System.Drawing.Point(73, 148);
+            this.lblServiceName.Name = "lblServiceName";
+            this.lblServiceName.Size = new System.Drawing.Size(96, 17);
+            this.lblServiceName.TabIndex = 3;
+            this.lblServiceName.Text = "Service Name";
+            this.lblServiceName.Visible = false;
+            this.lblServiceName.Click += new System.EventHandler(this.label2_Click);
             // 
-            // comboBox1
+            // cmbServiceType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(173, 113);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(224, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbServiceType.FormattingEnabled = true;
+            this.cmbServiceType.Location = new System.Drawing.Point(173, 113);
+            this.cmbServiceType.Name = "cmbServiceType";
+            this.cmbServiceType.Size = new System.Drawing.Size(224, 21);
+            this.cmbServiceType.TabIndex = 4;
+            this.cmbServiceType.Visible = false;
+            this.cmbServiceType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // cmbServiceName
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(171, 144);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(224, 21);
-            this.comboBox2.TabIndex = 5;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cmbServiceName.FormattingEnabled = true;
+            this.cmbServiceName.Location = new System.Drawing.Point(175, 144);
+            this.cmbServiceName.Name = "cmbServiceName";
+            this.cmbServiceName.Size = new System.Drawing.Size(224, 21);
+            this.cmbServiceName.TabIndex = 5;
+            this.cmbServiceName.Visible = false;
+            this.cmbServiceName.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // DonorMasterReportUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 231);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbServiceName);
+            this.Controls.Add(this.cmbServiceType);
+            this.Controls.Add(this.lblServiceName);
+            this.Controls.Add(this.lblServiceType);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Name = "DonorMasterReportUI";
@@ -126,9 +130,9 @@
 
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label lblServiceType;
+        private System.Windows.Forms.Label lblServiceName;
+        private System.Windows.Forms.ComboBox cmbServiceType;
+        private System.Windows.Forms.ComboBox cmbServiceName;
     }
 }
