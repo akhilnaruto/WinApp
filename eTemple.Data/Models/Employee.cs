@@ -10,9 +10,36 @@ namespace eTemple.Data.Models
     public partial class Employee
     {
         [ResultColumn]
-        public string RoleName { get; set; }
+        public string Name { get; set; }
 
         [ResultColumn]
-        public string DesignationName { get; set; }
+        public int Designation { get; set; }
+
+        [ResultColumn]
+        public int Role { get; set; }
+
+        [ResultColumn]
+        public int AllowLogin { get; set; }
+
+        [ResultColumn]
+        public string LoginId { get; set; }
+
+        [ResultColumn]
+        public string Password { get; set; }
+
+        [ResultColumn]
+        public int IsDeleted { get; set; }
+
+        [ResultColumn]
+        public int CreatedBy { get; set; }
+
+        [ResultColumn]
+        public DateTime CreatedOn { get; set; }
+
+        [ResultColumn]
+        public DateTime ModifiedOn { get; set; }
+
+        [ResultColumn]
+        public int ModifiedBy { get; set; }
     }
 }

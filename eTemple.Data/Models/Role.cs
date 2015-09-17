@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Models
 {
-    public partial class Stars
+    public partial class Role
     {
-        [ResultColumn]
-        public int Id { get; set; }
-
         [ResultColumn]
         public string Name { get; set; }
     }

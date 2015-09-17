@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Models
 {
-    public partial class Donors : IEntity
+    public partial class Donor : IEntity
     {
         [ResultColumn]
         public int Id { get; set; }

@@ -7,22 +7,12 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Models
 {
-    public partial class ServiceTypes
+    public partial class Prefix
     {
         [ResultColumn]
         public int Id { get; set; }
 
         [ResultColumn]
         public string Name { get; set; }
-
-        [ResultColumn]
-        public int Status { get; set; }
-
-        [ResultColumn]
-        public DateTime CreatedOn { get; set; }
-
-        [ResultColumn]
-        public int CreatedBy { get; set; }
-
     }
 }

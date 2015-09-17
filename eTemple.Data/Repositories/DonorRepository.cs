@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Repositories
 {
-    public class DonorRepository : IRepository<Donors>
+    public class DonorRepository : IRepository<Donor>
     {
         private eTempleDbDB TempleDb;
         public DonorRepository()
@@ -15,29 +15,29 @@ namespace eTemple.Data.Repositories
             TempleDb = new eTempleDbDB();
         }
 
-        public IEnumerable<Donors> GetAllAsQuerable()
+        public IEnumerable<Donor> GetAllAsQuerable()
         {
           
-           return TempleDb.Query<Donors>("Select * From donors order by Name asc").ToList();
+           return TempleDb.Query<Donor>("Select * From donors order by Name asc").ToList();
           
         }
 
-        public void Add(Donors entity)
+        public void Add(Donor entity)
         {
             TempleDb.Save(entity);
         }
 
-        public void Delete(Donors entity)
+        public void Delete(Donor entity)
         {
             throw new NotImplementedException();
         }
 
-        public Donors FindById(int Id)
+        public Donor FindById(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Donors entity)
+        public void Update(Donor entity)
         {
             TempleDb.Update(entity);
         }
