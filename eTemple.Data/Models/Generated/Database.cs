@@ -144,7 +144,7 @@ namespace eTemple.Data.Models
 		[Column] public string Occassion { get; set; }
 		[Column] public string Gothram { get; set; }
 		[Column] public int? Amount { get; set; }
-		[Column("MR No")] public int? MR_No { get; set; }
+		[Column] public int? MR_No { get; set; }
 		[Column] public string Remarks { get; set; }
 		[Column] public string PhoneNumber { get; set; }
 		[Column] public int? SpecialDayId { get; set; }
