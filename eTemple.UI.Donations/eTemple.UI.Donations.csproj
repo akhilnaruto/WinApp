@@ -32,10 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +69,21 @@
     <Compile Include="DonorMasterReportUI.Designer.cs">
       <DependentUpon>DonorMasterReportUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="DonorReportDataSet.cs">
+      <DependentUpon>DonorReportDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DonorReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DonorReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DonorReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DonorReportForm.Designer.cs">
+      <DependentUpon>DonorReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnquiryDetailsUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +101,9 @@
     <EmbeddedResource Include="DonorMasterReportUI.resx">
       <DependentUpon>DonorMasterReportUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DonorReportForm.resx">
+      <DependentUpon>DonorReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EnquiryDetailsUI.resx">
       <DependentUpon>EnquiryDetailsUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +116,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <None Include="DonorReportDataSet.xsc">
+      <DependentUpon>DonorReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DonorReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DonorReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DonorReportDataSet.xss">
+      <DependentUpon>DonorReportDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
