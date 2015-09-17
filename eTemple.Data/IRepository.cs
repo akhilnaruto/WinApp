@@ -8,7 +8,7 @@ namespace eTemple.Data.Repositories
 {
     public interface IRepository<T> where T : IEntity
     {
-        IEnumerable<T> GetAllAsQuerable() { get; }
+        IEnumerable<T> GetAllAsQuerable();
         void Add(T entity);
         void Delete(T entity);
         void Update(T entity);
