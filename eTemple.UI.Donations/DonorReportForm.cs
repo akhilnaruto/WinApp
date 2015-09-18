@@ -20,7 +20,7 @@ namespace eTemple.UI.Donations
 
         private void DonorReportForm_Load(object sender, EventArgs e)
         {
-            r
+            
             this.reportViewer1.RefreshReport();
         }
     }
