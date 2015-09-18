@@ -15,7 +15,7 @@ namespace eTemple.UI.Donations
     {
         public ServiceTypeRepository oServiceTypeRep = null;
         public ServiceNameRepository oServiceNameRep = null;
-        public List<ServiceType> lstServiceType=null;
+        public List<ServiceTypes> lstServiceType=null;
         public DonorMasterReportUI()
         {
             InitializeComponent();
@@ -77,7 +77,7 @@ namespace eTemple.UI.Donations
         {
             lblServiceName.Visible = true;
             cmbServiceName.Visible = true;
-            var serviceType = cmbServiceType.SelectedItem as ServiceType;
+            var serviceType = cmbServiceType.SelectedItem as ServiceTypes;
             if(serviceType != null)
             {
                 cmbServiceName.DataSource = oServiceNameRep.GetAllAsQuerable().Where(sType => sType.ServiceTypeId == serviceType.Id).ToList();
