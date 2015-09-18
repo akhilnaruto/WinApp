@@ -100,6 +100,8 @@
             // cmbServiceName
             // 
             this.cmbServiceName.FormattingEnabled = true;
+            this.cmbServiceName.Items.AddRange(new object[] {
+            "        "});
             this.cmbServiceName.Location = new System.Drawing.Point(175, 144);
             this.cmbServiceName.Name = "cmbServiceName";
             this.cmbServiceName.Size = new System.Drawing.Size(224, 21);

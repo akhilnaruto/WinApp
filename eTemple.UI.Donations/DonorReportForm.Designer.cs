@@ -28,17 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.donorReportDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.donorReportDataSet = new eTemple.UI.Donations.DonorReportDataSet();
+            this.DonorTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.donorReportDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donorReportDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DonorTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "Donors";
+            reportDataSource1.Value = this.DonorTableBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "eTemple.UI.Donations.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(820, 261);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // donorReportDataSetBindingSource
+            // 
+            this.donorReportDataSetBindingSource.DataSource = this.donorReportDataSet;
+            this.donorReportDataSetBindingSource.Position = 0;
+            // 
+            // donorReportDataSet
+            // 
+            this.donorReportDataSet.DataSetName = "DonorReportDataSet";
+            this.donorReportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DonorTableBindingSource
+            // 
+            this.DonorTableBindingSource.DataMember = "DonorTable";
+            this.DonorTableBindingSource.DataSource = this.donorReportDataSet;
             // 
             // DonorReportForm
             // 
@@ -49,6 +75,9 @@
             this.Name = "DonorReportForm";
             this.Text = "DonorReportForm";
             this.Load += new System.EventHandler(this.DonorReportForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.donorReportDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donorReportDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DonorTableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -56,5 +85,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource donorReportDataSetBindingSource;
+        private DonorReportDataSet donorReportDataSet;
+        private System.Windows.Forms.BindingSource DonorTableBindingSource;
     }
 }
