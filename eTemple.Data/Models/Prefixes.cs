@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Models
 {
-    public partial class Prefix
+    public partial class Prefixes
     {
         [ResultColumn]
         public int Id { get; set; }
