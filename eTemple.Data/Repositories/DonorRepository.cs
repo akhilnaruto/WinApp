@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace eTemple.Data.Repositories
 {
@@ -20,6 +21,11 @@ namespace eTemple.Data.Repositories
           
            return TempleDb.Query<Donors>("Select * From donors order by Name asc").ToList();
           
+        }
+
+        public DataTable GetAllasDataTable()
+        {
+            return TempleDb.ExecuteReader("Select * From donors order by Name asc");
         }
 
         public void Add(Donors entity)
