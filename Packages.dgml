@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="@10" Category="CodeSchema_Class" Bounds="140.31,277.88,112.756666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Employee" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Employee" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=323 StartCharacterOffset=1 EndLineNumber=323 EndCharacterOffset=1)" />
+    <Node Id="@11" Category="CodeSchema_Class" Bounds="476.48,387.88,137.173333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="eTempleDbDB" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="eTempleDbDB" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=42 StartCharacterOffset=1 EndLineNumber=42 EndCharacterOffset=1)" />
+    <Node Id="@12" Category="CodeSchema_Class" Bounds="502.018333333333,0,80.9066666666666,25" CodeSchemaProperty_IsPublic="True" CommonLabel="film" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="film" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1249 StartCharacterOffset=1 EndLineNumber=1249 EndCharacterOffset=1)" />
+    <Node Id="@13" Category="CodeSchema_Class" Bounds="283.066666666667,277.88,112.806666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="film_actor" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="film_actor" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1259 StartCharacterOffset=1 EndLineNumber=1259 EndCharacterOffset=1)" />
+    <Node Id="@14" Category="CodeSchema_Class" Bounds="314.523333333333,387.88,131.956666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="film_category" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="film_category" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1269 StartCharacterOffset=1 EndLineNumber=1269 EndCharacterOffset=1)" />
+    <Node Id="@15" Category="CodeSchema_Class" Bounds="120.34,167.88,90.36,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Good" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Good" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=409 StartCharacterOffset=1 EndLineNumber=409 EndCharacterOffset=1)" />
+    <Node Id="@16" Category="CodeSchema_Class" Bounds="621.738333333333,110,90.27,25" CodeSchemaProperty_IsPublic="True" CommonLabel="office" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="office" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1279 StartCharacterOffset=1 EndLineNumber=1279 EndCharacterOffset=1)" />
+    <Node Id="@17" Category="CodeSchema_Class" Bounds="502.018333333333,110,89.72,25" CodeSchemaProperty_IsPublic="True" CommonLabel="order" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="order" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1299 StartCharacterOffset=1 EndLineNumber=1299 EndCharacterOffset=1)" />
+    <Node Id="@18" Category="CodeSchema_Class" Bounds="0,332.88,119.05,25" CodeSchemaProperty_IsPublic="True" CommonLabel="orderdetail" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="orderdetail" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1289 StartCharacterOffset=1 EndLineNumber=1289 EndCharacterOffset=1)" />
+    <Node Id="@19" Category="CodeSchema_Class" Bounds="484.433333333333,167.88,94.85,25" CodeSchemaProperty_IsPublic="True" CommonLabel="PattiIn" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="PattiIn" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=447 StartCharacterOffset=1 EndLineNumber=447 EndCharacterOffset=1)" />
+    <Node Id="@20" Category="CodeSchema_Class" Bounds="261.02,222.88,104.77,25" CodeSchemaProperty_IsPublic="True" CommonLabel="PattiOut" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="PattiOut" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=497 StartCharacterOffset=1 EndLineNumber=497 EndCharacterOffset=1)" />
+    <Node Id="@21" Category="CodeSchema_Class" Bounds="667.946666666666,222.88,107.436666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="payment" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="payment" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1309 StartCharacterOffset=1 EndLineNumber=1309 EndCharacterOffset=1)" />
+    <Node Id="@22" Category="CodeSchema_Class" Bounds="0,167.88,90.34,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Prefix" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Prefix" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=565 StartCharacterOffset=1 EndLineNumber=565 EndCharacterOffset=1)" />
+    <Node Id="@23" Category="CodeSchema_Class" Bounds="568.836666666666,277.88,116.756666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="PrintSeries" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="PrintSeries" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=591 StartCharacterOffset=1 EndLineNumber=591 EndCharacterOffset=1)" />
+    <Node Id="@24" Category="CodeSchema_Class" Bounds="128.296666666667,222.88,102.723333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="product" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="product" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1329 StartCharacterOffset=1 EndLineNumber=1329 EndCharacterOffset=1)" />
+    <Node Id="@25" Category="CodeSchema_Class" Bounds="451.003333333333,332.88,121.603333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="productline" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="productline" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1319 StartCharacterOffset=1 EndLineNumber=1319 EndCharacterOffset=1)" />
+    <Node Id="@26" Category="CodeSchema_Class" Bounds="502.018333333333,55,84.39,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Role" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Role" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=641 StartCharacterOffset=1 EndLineNumber=641 EndCharacterOffset=1)" />
+    <Node Id="@27" Category="CodeSchema_Class" Bounds="7.105427357601E-15,222.88,98.2966666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Service" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Service" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=711 StartCharacterOffset=1 EndLineNumber=711 EndCharacterOffset=1)" />
+    <Node Id="@28" Category="CodeSchema_Class" Bounds="602.606666666667,332.88,123.72,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ServiceType" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="ServiceType" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=667 StartCharacterOffset=1 EndLineNumber=667 EndCharacterOffset=1)" />
+    <Node Id="@29" Category="CodeSchema_Class" Bounds="299.703333333333,332.88,121.3,25" CodeSchemaProperty_IsPublic="True" CommonLabel="StatusCode" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="StatusCode" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=785 StartCharacterOffset=1 EndLineNumber=785 EndCharacterOffset=1)" />
+    <Node Id="@3" Category="CodeSchema_Class" Bounds="616.408333333333,55,87.92,25" CodeSchemaProperty_IsPublic="True" CommonLabel="actor" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="actor" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1133 StartCharacterOffset=1 EndLineNumber=1133 EndCharacterOffset=1)" />
+    <Node Id="@30" Category="CodeSchema_Class" Bounds="149.05,332.88,120.653333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="StockDetail" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="StockDetail" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=811 StartCharacterOffset=1 EndLineNumber=811 EndCharacterOffset=1)" />
+    <Node Id="@31" Category="CodeSchema_Class" Bounds="609.283333333333,167.88,97.2933333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Timing" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Timing" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=835 StartCharacterOffset=1 EndLineNumber=835 EndCharacterOffset=1)" />
+    <Node Id="@32" Category="CodeSchema_Class" Bounds="361.086666666667,167.88,93.3466666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Token" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Token" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=873 StartCharacterOffset=1 EndLineNumber=873 EndCharacterOffset=1)" />
+    <Node Id="@33" Category="CodeSchema_Class" Bounds="0,442.88,147.316666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="TransactionType" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="TransactionType" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1001 StartCharacterOffset=1 EndLineNumber=1001 EndCharacterOffset=1)" />
+    <Node Id="@34" Category="CodeSchema_Class" Bounds="612.925,0,83.0066666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Unit" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Unit" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1027 StartCharacterOffset=1 EndLineNumber=1027 EndCharacterOffset=1)" />
+    <Node Id="@35" Category="CodeSchema_Class" Bounds="154.446666666667,387.88,130.076666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="VIPPrasadam" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="VIPPrasadam" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1071 StartCharacterOffset=1 EndLineNumber=1071 EndCharacterOffset=1)" />
+    <Node Id="@4" Category="CodeSchema_Class" Bounds="240.7,167.88,90.3866666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Batch" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Batch" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=137 StartCharacterOffset=1 EndLineNumber=137 EndCharacterOffset=1)" />
+    <Node Id="@5" Category="CodeSchema_Class" Bounds="530.876666666667,222.88,107.07,25" CodeSchemaProperty_IsPublic="True" CommonLabel="category" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="category" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1143 StartCharacterOffset=1 EndLineNumber=1143 EndCharacterOffset=1)" />
+    <Node Id="@6" Category="CodeSchema_Class" Bounds="0,277.88,110.31,25" CodeSchemaProperty_IsPublic="True" CommonLabel="customer" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="customer" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1153 StartCharacterOffset=1 EndLineNumber=1153 EndCharacterOffset=1)" />
+    <Node Id="@7" Category="CodeSchema_Class" Bounds="-7.105427357601E-15,387.88,124.446666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Designation" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Designation" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=193 StartCharacterOffset=1 EndLineNumber=193 EndCharacterOffset=1)" />
+    <Node Id="@8" Category="CodeSchema_Class" Bounds="395.79,222.88,105.086666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="Devotee" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="Devotee" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=219 StartCharacterOffset=1 EndLineNumber=219 EndCharacterOffset=1)" />
+    <Node Id="@9" Category="CodeSchema_Class" Bounds="425.873333333333,277.88,112.963333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="employee" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="Microsoft.VisualStudio.Class.Public" Label="employee" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///E:/Work_Me/WinApp/eTemple.Data/Models/Generated/Database.cs StartLineNumber=1163 StartCharacterOffset=1 EndLineNumber=1163 EndCharacterOffset=1)" />
+    <Node Id="MySql.ConnectorNET.Data 6.8.3.2" Category="Package" Bounds="127.568333333333,55.96,196.253333333333,25.96" Label="MySql.ConnectorNET.Data 6.8.3.2" />
+    <Node Id="NLog 2.1.0" Category="Package" Bounds="244.385,111.92,76.62,25.96" Label="NLog 2.1.0" />
+    <Node Id="NLog.Config 2.1.0" Category="Package" Bounds="354.595,55.96,114.2,25.96" Label="NLog.Config 2.1.0" />
+    <Node Id="NLog.Schema 2.1.0" Category="Package" Bounds="351.371666666667,111.92,120.646666666667,25.96" Label="NLog.Schema 2.1.0" />
+    <Node Id="PetaPoco 5.0.1" Category="Package" Bounds="0,55.96,97.39,25.96" Label="PetaPoco 5.0.1" />
+    <Node Id="eTemple.Data" Category="Project" Bounds="179.341666666667,0,92.7066666666667,25.96" Label="eTemple.Data" />
+    <Node Id="eTemple.UI" Category="Project" Bounds="302.97,0,79.45,25.96" Label="eTemple.UI" />
+  </Nodes>
+  <Links>
+    <Link Source="@10" Target="@10" Category="References" Bounds="168.499160766602,247.880096435547,56.3773651123047,30" Weight="1" />
+    <Link Source="@10" Target="@11" Category="CodeSchema_Calls" Bounds="228.80126953125,302.880096435547,239.003051757813,87.2685241699219" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@12" Target="@11" Category="CodeSchema_Calls" Bounds="480.244018554688,24.9999256134033,102.496826171875,355.454084396362" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@12" Target="@12" Category="References" Bounds="522.244995117188,-30.0000743865967,40.45263671875,29.9999993865931" Weight="1" />
+    <Link Source="@13" Target="@11" Category="CodeSchema_Calls" Bounds="374.872833251953,302.880096435547,121.358551025391,82.3251953125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@13" Target="@13" Category="References" Bounds="311.268341064453,247.880096435547,56.40234375,30" Weight="1" />
+    <Link Source="@14" Target="@11" Category="CodeSchema_Calls" Bounds="446.48,400.380260015259,21.0000000000001,0" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@14" Target="@14" Category="References" Bounds="347.512512207031,357.880249023438,65.9771728515625,30" Weight="1" />
+    <Link Source="@15" Target="@11" Category="CodeSchema_Calls" Bounds="210.371063232422,189.663452148438,285.863830566406,195.530578613281" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@15" Target="@15" Category="References" Bounds="142.929992675781,137.879898071289,45.1792144775391,30" Weight="1" />
+    <Link Source="@16" Target="@11" Category="CodeSchema_Calls" Bounds="520.742492675781,135.000045776367,122.112182617188,245.453964233398" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@16" Target="@16" Category="References" Bounds="644.305847167969,80.0000534057617,45.1342163085938,30" Weight="1" />
+    <Link Source="@17" Target="@11" Category="CodeSchema_Calls" Bounds="474.299163818359,135.000122070313,108.441680908203,245.453887939453" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@17" Target="@17" Category="References" Bounds="524.448303222656,80.0001220703125,44.8592529296875,30" Weight="1" />
+    <Link Source="@18" Target="@11" Category="CodeSchema_Calls" Bounds="97.9951248168945,357.880187988281,370.056419372559,31.6005859375" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@18" Target="@18" Category="References" Bounds="29.7625007629395,302.880187988281,59.5239601135254,30" Weight="1" />
+    <Link Source="@19" Target="@11" Category="CodeSchema_Calls" Bounds="525.924499511719,192.879867553711,56.8163452148438,187.574142456055" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@19" Target="@19" Category="References" Bounds="508.145843505859,137.879867553711,47.4241638183594,30" Weight="1" />
+    <Link Source="@20" Target="@11" Category="CodeSchema_Calls" Bounds="349.168884277344,247.880004882813,138.333374023438,137.755065917969" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@20" Target="@20" Category="References" Bounds="287.212493896484,192.880004882813,52.3840942382813,30" Weight="1" />
+    <Link Source="@21" Target="@11" Category="CodeSchema_Calls" Bounds="560.240234375,247.880004882813,157.24853515625,132.880554199219" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@21" Target="@21" Category="References" Bounds="694.805847167969,192.880004882813,53.7174072265625,30" Weight="1" />
+    <Link Source="@22" Target="@11" Category="CodeSchema_Calls" Bounds="81.0869064331055,192.879943847656,415.147987365723,192.314086914063" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@22" Target="@22" Category="References" Bounds="22.5849990844727,137.879943847656,45.1692123413086,30" Weight="1" />
+    <Link Source="@23" Target="@11" Category="CodeSchema_Calls" Bounds="559.786908723278,302.88,58.0930754638121,77.7892033448285" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@23" Target="@23" Category="References" Bounds="598.025817871094,247.880004882813,58.3773193359375,30" Weight="1" />
+    <Link Source="@24" Target="@11" Category="CodeSchema_Calls" Bounds="211.923187255859,247.879989624023,284.308197021484,137.325302124023" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@24" Target="@24" Category="References" Bounds="153.977493286133,192.879989624023,51.3607788085938,30" Weight="1" />
+    <Link Source="@25" Target="@11" Category="CodeSchema_Calls" Bounds="519.364455952504,357.880160015259,13.4853868172546,22.2988712778778" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@25" Target="@25" Category="References" Bounds="481.404174804688,302.880157470703,60.8005981445313,30" Weight="1" />
+    <Link Source="@26" Target="@11" Category="CodeSchema_Calls" Bounds="480.244018554688,80.0000228881836,102.496826171875,300.453987121582" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@26" Target="@26" Category="References" Bounds="523.115844726563,25.0000247955322,42.1942749023438,30.0000019073486" Weight="1" />
+    <Link Source="@27" Target="@11" Category="CodeSchema_Calls" Bounds="98.1569519042969,244.053771972656,398.074432373047,141.151519775391" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@27" Target="@27" Category="References" Bounds="24.5741672515869,192.88005065918,49.1474742889404,30" Weight="1" />
+    <Link Source="@28" Target="@11" Category="CodeSchema_Calls" Bounds="580.377332748359,357.88,56.9530985698577,26.234800921414" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@28" Target="@28" Category="References" Bounds="633.536682128906,302.880004882813,61.85888671875,30" Weight="1" />
+    <Link Source="@29" Target="@11" Category="CodeSchema_Calls" Bounds="402.333560035951,357.880160015259,92.1271418860222,27.4317068779301" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@29" Target="@29" Category="References" Bounds="330.0283203125,302.880157470703,60.6489562988281,30" Weight="1" />
+    <Link Source="@3" Target="@11" Category="CodeSchema_Calls" Bounds="520.742492675781,79.9999465942383,120.792663574219,300.454063415527" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@3" Target="@3" Category="References" Bounds="638.388305664063,24.9999504089355,43.9592895507813,30" Weight="1" />
+    <Link Source="@30" Target="@11" Category="CodeSchema_Calls" Bounds="269.14663909932,355.173015052616,199.88376142005,32.7493232232486" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@30" Target="@30" Category="References" Bounds="179.213333129883,302.880187988281,60.3256225585938,30" Weight="1" />
+    <Link Source="@31" Target="@11" Category="CodeSchema_Calls" Bounds="558.702514648438,192.879867553711,97.6416625976563,187.574142456055" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@31" Target="@31" Category="References" Bounds="633.606689453125,137.879867553711,48.6458129882813,30" Weight="1" />
+    <Link Source="@32" Target="@11" Category="CodeSchema_Calls" Bounds="390.637603759766,192.879898071289,105.593780517578,192.325393676758" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@32" Target="@32" Category="References" Bounds="384.42333984375,137.879898071289,46.6725158691406,30" Weight="1" />
+    <Link Source="@33" Target="@11" Category="CodeSchema_Calls" Bounds="147.316665649414,410.419006347656,320.43244934082,37.5140075683594" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@33" Target="@33" Category="References" Bounds="36.8291664123535,412.880401611328,73.657054901123,30" Weight="1" />
+    <Link Source="@34" Target="@11" Category="CodeSchema_Calls" Bounds="520.742492675781,24.9999256134033,115.088256835938,355.454084396362" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@34" Target="@34" Category="References" Bounds="633.676696777344,-30.0000743865967,41.5025634765625,29.9999993865931" Weight="1" />
+    <Link Source="@35" Target="@11" Category="CodeSchema_Calls" Bounds="284.337921142578,409.229278564453,186.982391357422,13.78515625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@35" Target="@35" Category="References" Bounds="186.965835571289,357.880279541016,65.0372009277344,30" Weight="1" />
+    <Link Source="@4" Target="@11" Category="CodeSchema_Calls" Bounds="320.664031982422,192.879898071289,175.570861816406,192.31413269043" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@4" Target="@4" Category="References" Bounds="263.296661376953,137.879898071289,45.1925659179688,30" Weight="1" />
+    <Link Source="@5" Target="@11" Category="CodeSchema_Calls" Bounds="558.702514648438,247.879959106445,24.038330078125,132.57405090332" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@5" Target="@5" Category="References" Bounds="557.644165039063,192.879959106445,53.5340576171875,30" Weight="1" />
+    <Link Source="@6" Target="@11" Category="CodeSchema_Calls" Bounds="110.234245300293,298.747131347656,357.57007598877,91.4014892578125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@6" Target="@6" Category="References" Bounds="27.5774993896484,247.880096435547,55.1540374755859,30" Weight="1" />
+    <Link Source="@7" Target="@11" Category="CodeSchema_Calls" Bounds="102.183647155762,412.880279541016,390.750282287598,10.1341857910156" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@7" Target="@7" Category="References" Bounds="31.111665725708,357.880279541016,62.2222499847412,30" Weight="1" />
+    <Link Source="@8" Target="@11" Category="CodeSchema_Calls" Bounds="420.777435302734,247.880004882813,75.4558715820313,137.319152832031" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@8" Target="@8" Category="References" Bounds="422.061676025391,192.880004882813,52.5424194335938,30" Weight="1" />
+    <Link Source="@9" Target="@11" Category="CodeSchema_Calls" Bounds="521.124877929688,302.880065917969,61.615966796875,77.5739440917969" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+      <Category Ref="InheritsFrom" />
+    </Link>
+    <Link Source="@9" Target="@9" Category="References" Bounds="454.114166259766,247.880065917969,56.4806823730469,30" Weight="1" />
+    <Link Source="NLog.Config 2.1.0" Target="NLog 2.1.0" Category="Package Dependency" Bounds="320.873321533203,81.9199981689453,60.8999633789063,26.4183044433594" />
+    <Link Source="NLog.Config 2.1.0" Target="NLog.Schema 2.1.0" Category="Package Dependency" Bounds="411.695007324219,81.9199981689453,0,21" />
+    <Link Source="eTemple.Data" Target="MySql.ConnectorNET.Data 6.8.3.2" Category="Installed Package" Bounds="225.695007324219,25.9599990844727,0,21" />
+    <Link Source="eTemple.Data" Target="PetaPoco 5.0.1" Category="Installed Package" Bounds="98.3317337036133,25.9599990844727,86.3078689575195,27.2869415283203" />
+    <Link Source="eTemple.UI" Target="MySql.ConnectorNET.Data 6.8.3.2" Category="Installed Package" Bounds="260.952423095703,25.9599990844727,54.6042785644531,26.1167068481445" />
+    <Link Source="eTemple.UI" Target="NLog.Config 2.1.0" Category="Installed Package" Bounds="358.699645996094,25.9599990844727,30.0006103515625,24.330924987793" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
+    <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
+    <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
+    <Category Id="InheritsFrom" Label="Inherits From" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Inherited By" OutgoingActionLabel="Inherits From" />
+    <Category Id="Installed Package" />
+    <Category Id="Package" />
+    <Category Id="Package Dependency" />
+    <Category Id="Project" />
+    <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
+    <Property Id="CommonLabel" DataType="System.String" />
+    <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="DelayedChildNodesState" Label="Delayed Child Nodes State" Description="Unspecified if the delayed child nodes state is not specified. NotFetched if the group contains child nodes that are not fetched into the graph yet. Fetched if the group has all its delayed child nodes already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="DelayedCrossGroupLinksState" Label="Delayed Cross-Group Links State" Description="Unspecified if the delayed cross-group links state is not specified. NotFetched if delayed cross-group links on this node are not fetched into the graph yet. Fetched if all delayed cross-group links have already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsSourceVirtualized" Label="Link Source Virtualized" Description="If true, the link source end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="IsTargetVirtualized" Label="Link Target Virtualized" Description="If true, the link target end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="Language" Label="Language" Description="Language" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="SourceLocation" Label="Start Line Number" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="Weight" Label="Weight" Description="Weight" DataType="System.Double" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
+    <Name Id="Namespace" Label="Namespace" ValueType="System.String" />
+    <Name Id="Type" Label="Type" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(ee52efda-bc23-47b5-8c2a-3d934043edc6.OutputPathUri)" />
+    <Alias n="2" Id="Namespace=eTemple.Data.Models" />
+    <Alias n="3" Id="(@1 @2 Type=actor)" />
+    <Alias n="4" Id="(@1 @2 Type=Batch)" />
+    <Alias n="5" Id="(@1 @2 Type=category)" />
+    <Alias n="6" Id="(@1 @2 Type=customer)" />
+    <Alias n="7" Id="(@1 @2 Type=Designation)" />
+    <Alias n="8" Id="(@1 @2 Type=Devotee)" />
+    <Alias n="9" Id="(@1 @2 Type=employee)" />
+    <Alias n="10" Id="(@1 @2 Type=Employee)" />
+    <Alias n="11" Id="(@1 @2 Type=eTempleDbDB)" />
+    <Alias n="12" Id="(@1 @2 Type=film)" />
+    <Alias n="13" Id="(@1 @2 Type=film_actor)" />
+    <Alias n="14" Id="(@1 @2 Type=film_category)" />
+    <Alias n="15" Id="(@1 @2 Type=Good)" />
+    <Alias n="16" Id="(@1 @2 Type=office)" />
+    <Alias n="17" Id="(@1 @2 Type=order)" />
+    <Alias n="18" Id="(@1 @2 Type=orderdetail)" />
+    <Alias n="19" Id="(@1 @2 Type=PattiIn)" />
+    <Alias n="20" Id="(@1 @2 Type=PattiOut)" />
+    <Alias n="21" Id="(@1 @2 Type=payment)" />
+    <Alias n="22" Id="(@1 @2 Type=Prefix)" />
+    <Alias n="23" Id="(@1 @2 Type=PrintSeries)" />
+    <Alias n="24" Id="(@1 @2 Type=product)" />
+    <Alias n="25" Id="(@1 @2 Type=productline)" />
+    <Alias n="26" Id="(@1 @2 Type=Role)" />
+    <Alias n="27" Id="(@1 @2 Type=Service)" />
+    <Alias n="28" Id="(@1 @2 Type=ServiceType)" />
+    <Alias n="29" Id="(@1 @2 Type=StatusCode)" />
+    <Alias n="30" Id="(@1 @2 Type=StockDetail)" />
+    <Alias n="31" Id="(@1 @2 Type=Timing)" />
+    <Alias n="32" Id="(@1 @2 Type=Token)" />
+    <Alias n="33" Id="(@1 @2 Type=TransactionType)" />
+    <Alias n="34" Id="(@1 @2 Type=Unit)" />
+    <Alias n="35" Id="(@1 @2 Type=VIPPrasadam)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="ee52efda-bc23-47b5-8c2a-3d934043edc6.OutputPathUri" Value="file:///E:/Work_Me/WinApp/eTemple.Data/bin/Debug/eTemple.Data.dll" />
+  </Paths>
+</DirectedGraph>
