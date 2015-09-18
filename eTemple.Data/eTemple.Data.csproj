@@ -79,6 +79,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DonorRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\ServiceNameRepository.cs" />
+    <Compile Include="Repositories\ServiceTypeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
