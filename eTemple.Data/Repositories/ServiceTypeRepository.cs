@@ -7,7 +7,7 @@ using eTemple.Data.Models;
 
 namespace eTemple.Data.Repositories
 {
-    public class ServiceTypeRepository : IRepository<ServiceType>
+    public class ServiceTypeRepository : IRepository<ServiceTypes>
     {
         private eTempleDbDB TempleDb;
         public ServiceTypeRepository()
@@ -15,29 +15,29 @@ namespace eTemple.Data.Repositories
             TempleDb = new eTempleDbDB();
         }
 
-        public IEnumerable<ServiceType> GetAllAsQuerable()
+        public IEnumerable<ServiceTypes> GetAllAsQuerable()
         {
 
-            return TempleDb.Query<ServiceType>("Select * From ServiceTypes order by Name asc").ToList();
+            return TempleDb.Query<ServiceTypes>("Select * From ServiceTypes order by Name asc").ToList();
 
         }
 
-        public void Add(ServiceType entity)
+        public void Add(ServiceTypes entity)
         {
             TempleDb.Save(entity);
         }
 
-        public void Delete(ServiceType entity)
+        public void Delete(ServiceTypes entity)
         {
             throw new NotImplementedException();
         }
 
-        public ServiceType FindById(int Id)
+        public ServiceTypes FindById(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(ServiceType entity)
+        public void Update(ServiceTypes entity)
         {
             TempleDb.Update(entity);
         }
