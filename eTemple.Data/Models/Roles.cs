@@ -1,4 +1,5 @@
-﻿using PetaPoco;
+﻿using eTemple.Data.Repositories;
+using PetaPoco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Models
 {
-    public partial class Role
+    public partial class Roles : IEntity
     {
         [ResultColumn]
         public string Name { get; set; }
