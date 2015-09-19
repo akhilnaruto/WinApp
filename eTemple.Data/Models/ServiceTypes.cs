@@ -10,19 +10,19 @@ namespace eTemple.Data.Models
 {
     public partial class ServiceTypes : IEntity
     {
-        [ResultColumn]
+        
         public int Id { get; set; }
 
-        [ResultColumn]
+        
         public string Name { get; set; }
 
-        [ResultColumn]
+        
         public int Status { get; set; }
 
-        [ResultColumn]
+        
         public DateTime CreatedOn { get; set; }
 
-        [ResultColumn]
+        
         public int CreatedBy { get; set; }
 
     }

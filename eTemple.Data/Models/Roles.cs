@@ -10,7 +10,8 @@ namespace eTemple.Data.Models
 {
     public partial class Roles : IEntity
     {
-        [ResultColumn]
+        public int Id { get; set; }
+
         public string Name { get; set; }
     }
 }

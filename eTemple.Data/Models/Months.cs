@@ -1,5 +1,4 @@
 ﻿using eTemple.Data.Repositories;
-using PetaPoco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Models
 {
-    public partial class Stars :IEntity
+    public class Months : IEntity
     {
-       
         public int Id { get; set; }
 
-        
-        public string Name { get; set; }
-    }
+        public string English { get; set; }
+
+        public string Telugu { get; set; }
+    }    
 }

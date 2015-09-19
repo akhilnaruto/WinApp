@@ -18,8 +18,8 @@ namespace eTemple.Data.Repositories
 
         public IEnumerable<Donors> GetAllAsQuerable()
         {
-          
-           return TempleDb.Query<Donors>("Select * From donors order by Name asc").ToList();
+
+            return TempleDb.Query<Donors>("Select * From donors").ToList();
           
         }
 
@@ -30,7 +30,8 @@ namespace eTemple.Data.Repositories
 
         public void Add(Donors entity)
         {
-            TempleDb.Save(entity);
+            //TempleDb.Save(entity);
+            TempleDb.Insert("Donors", "Id", true, entity);
         }
 
         public void Delete(Donors entity)

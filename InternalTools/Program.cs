@@ -17,12 +17,12 @@ namespace InternalTools
         public static void InsertInToDonars()
         {
             var donarRepository = new DonorRepository();
-            for (int i = 0; i < 100000; i++)
-            {
-                var donar = CreateDonorFactory.CreateDonor(i + 100, i + 100, 2, 5, 1, DateTime.Now, "january", "konaha village"
-                    , "Naruto" + i.ToString(), "Hyderabad");
-                donarRepository.Add(donar);
-            }
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    var donar = CreateDonorFactory.CreateDonor(i + 100, i + 100, 2, 5, 1, DateTime.Now, "january", "konaha village"
+            //        , "Naruto" + i.ToString(), "Hyderabad");
+            //    donarRepository.Add(donar);
+            //}
         }
 
     }

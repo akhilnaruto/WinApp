@@ -71,7 +71,6 @@
     </Compile>
     <Compile Include="DonorReportDataSet.cs">
       <DependentUpon>DonorReportDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DonorReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -90,6 +89,12 @@
     <Compile Include="EnquiryDetailsUI.Designer.cs">
       <DependentUpon>EnquiryDetailsUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyPopup.Designer.cs">
+      <DependentUpon>ModifyPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DonationInformation.resx">
@@ -106,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EnquiryDetailsUI.resx">
       <DependentUpon>EnquiryDetailsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyPopup.resx">
+      <DependentUpon>ModifyPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

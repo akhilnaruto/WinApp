@@ -1,4 +1,5 @@
-﻿using PetaPoco;
+﻿using eTemple.Data.Repositories;
+using PetaPoco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,10 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Models
 {
-    public partial class DateType
-    {
-        [ResultColumn]
+    public partial class DateType : IEntity
+    {        
         public int Id { get; set; }
-
-        [ResultColumn]
+     
         public string Name { get; set; }
     }
 }

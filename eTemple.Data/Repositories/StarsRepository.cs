@@ -1,40 +1,41 @@
-﻿using System;
+﻿using eTemple.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using eTemple.Data.Models;
+
 namespace eTemple.Data.Repositories
 {
-    public class RoleRepository : IRepository<Roles>
+    public class StarsRepository : IRepository<Stars>
     {
         private eTempleDbDB TempleDb;
 
-        public RoleRepository()
+        public StarsRepository()
         {
             TempleDb = new eTempleDbDB();
         }
-        public void Add(Roles entity)
+        public void Add(Stars entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Roles entity)
+        public void Delete(Stars entity)
         {
             throw new NotImplementedException();
         }
 
-        public Roles FindById(int Id)
+        public Stars FindById(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Roles> GetAllAsQuerable()
+        public IEnumerable<Stars> GetAllAsQuerable()
         {
-            return TempleDb.Query<Roles>("Select * From roles order by Name asc").ToList();
+            return TempleDb.Query<Stars>("Select * From stars").ToList();
         }
 
-        public void Update(Roles entity)
+        public void Update(Stars entity)
         {
             throw new NotImplementedException();
         }
