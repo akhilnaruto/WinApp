@@ -241,7 +241,7 @@ namespace eTemple.UI
         /// <summary>
         /// 
         /// </summary>
-        public void getDataFromChildWindow(List<Donors> donorInfo, SelectedDonorOptions selectedInfo)
+        public void getDataFromChildWindow(Donors donor)
         {
 
         }
