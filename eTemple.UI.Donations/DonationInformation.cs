@@ -461,13 +461,13 @@ namespace eTemple.UI
         /// <param name="e"></param>
         private void txtPin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(Char.IsDigit(e.KeyChar) && (e.KeyChar == (char)Keys.Back)))
-            {
-                e.Handled = true;
-                errorProvider1.SetError(txtPin, "Only Numbers allowed e.g.,560050");
-            }
-            else
-                errorProvider1.Clear();
+            //if (!(Char.IsDigit(e.KeyChar) && (e.KeyChar == (char)Keys.Back)))
+            //{
+            //    e.Handled = true;
+            //    errorProvider1.SetError(txtPin, "Only Numbers allowed e.g.,560050");
+            //}
+            //else
+            //    errorProvider1.Clear();
         }
     }
 }
