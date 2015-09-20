@@ -22,6 +22,7 @@ namespace eTemple.UI.Donations
             donorRepositoy = new DonorRepository();
             donors = donorRepositoy.GetAllAsQuerable().ToList();;
             dataGridView1.AutoGenerateColumns = false;
+
         }
 
         private void EnquiryDetailsUI_Load(object sender, EventArgs e)
