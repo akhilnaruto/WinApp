@@ -7,45 +7,96 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using eTemple.Data.Repositories;
+using eTemple.Data.Models;
 namespace eTemple.UI.Donations
 {
     public partial class EnquiryDetailsUI : Form
     {
+        DonorRepository donorRepositoy;
+        List<Donors> donors = new List<Donors>();
+   
         public EnquiryDetailsUI()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            donorRepositoy = new DonorRepository();
+            donors = donorRepositoy.GetAllAsQuerable().ToList();;
+            dataGridView1.AutoGenerateColumns = false;
         }
 
         private void EnquiryDetailsUI_Load(object sender, EventArgs e)
         {
-
+            LoadDataAndRenderInUI();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void LoadDataAndRenderInUI()
         {
+         
+            var distinctDonors = donors.GroupBy(donor => donor.Name).ToList().Select(
+                                                 x => new SelectedDonor
+                                                 {
+                                                     Name = x.Key,
+                                                     Id = x.Select(y => y.Id).FirstOrDefault(),
+                                                     PhoneNumber = x.Select(y => y.PhoneNumber).FirstOrDefault(),
+                                                 }).ToList();
+                         
+ 
+            donorIdComboBox.DataSource = distinctDonors;
+            donorNameComboBox.DataSource = distinctDonors;
+            phoneNumberComboBox.DataSource = distinctDonors;
+            donorIdComboBox.DisplayMember = "Id";
+            donorNameComboBox.DisplayMember = "Name";
+            phoneNumberComboBox.DisplayMember = "PhoneNumber";
+
+            RenderDataGrid();
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void RenderDataGrid()
         {
+            var selectedDonor = donorNameComboBox.SelectedItem as SelectedDonor;
+            if(selectedDonor != null)
+            {
+                var matchedDonors = donors.Where(donor => donor.Name == selectedDonor.Name);
+                AddMatchedDonorsToGrid(matchedDonors.ToList());
+            }
+
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void AddMatchedDonorsToGrid(List<Donors> matchedDonors)
         {
-
+            dataGridView1.Rows.Clear();
+            foreach (var donor in matchedDonors)
+            {
+                dataGridView1.Rows.Add(donor.Id, donor.Surname, donor.Name, donor.Address);
+            }
         }
+     
 
-        private void label2_Click(object sender, EventArgs e)
+        private void donorIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            RenderDataGrid();
 
         }
+
+        private void donorNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RenderDataGrid();
+        }
+
+        private void phoneNumberComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RenderDataGrid();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+        }
+
+      
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -54,17 +105,18 @@ namespace eTemple.UI.Donations
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
+       
 
-        }
+       
+    }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-                
-        }
+    internal class SelectedDonor
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

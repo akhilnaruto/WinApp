@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.donorIdComboBox = new System.Windows.Forms.ComboBox();
+            this.donorNameComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.donorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +39,7 @@
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.phoneNumberComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,6 @@
             this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Donor ID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -64,28 +63,30 @@
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // comboBox1
+            // donorIdComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(82, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.donorIdComboBox.FormattingEnabled = true;
+            this.donorIdComboBox.Location = new System.Drawing.Point(82, 34);
+            this.donorIdComboBox.Name = "donorIdComboBox";
+            this.donorIdComboBox.Size = new System.Drawing.Size(156, 21);
+            this.donorIdComboBox.TabIndex = 2;
+            this.donorIdComboBox.SelectedIndexChanged += new System.EventHandler(this.donorIdComboBox_SelectedIndexChanged);
             // 
-            // comboBox2
+            // donorNameComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(315, 35);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(187, 21);
-            this.comboBox2.TabIndex = 3;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.donorNameComboBox.FormattingEnabled = true;
+            this.donorNameComboBox.Location = new System.Drawing.Point(315, 35);
+            this.donorNameComboBox.Name = "donorNameComboBox";
+            this.donorNameComboBox.Size = new System.Drawing.Size(187, 21);
+            this.donorNameComboBox.TabIndex = 3;
+            this.donorNameComboBox.SelectedIndexChanged += new System.EventHandler(this.donorNameComboBox_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.donorId,
@@ -93,31 +94,38 @@
             this.Column1,
             this.address});
             this.dataGridView1.Location = new System.Drawing.Point(12, 139);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(651, 150);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // donorId
             // 
+            this.donorId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.donorId.HeaderText = "DONOR ID";
             this.donorId.Name = "donorId";
             this.donorId.ReadOnly = true;
             // 
             // surname
             // 
+            this.surname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.surname.HeaderText = "SURNAME";
             this.surname.Name = "surname";
             this.surname.ReadOnly = true;
             // 
             // Column1
             // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column1.HeaderText = "NAME";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // address
             // 
+            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.address.HeaderText = "ADDRESS";
             this.address.Name = "address";
             this.address.ReadOnly = true;
@@ -142,14 +150,14 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox3
+            // phoneNumberComboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(631, 35);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(184, 21);
-            this.comboBox3.TabIndex = 8;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.phoneNumberComboBox.FormattingEnabled = true;
+            this.phoneNumberComboBox.Location = new System.Drawing.Point(631, 35);
+            this.phoneNumberComboBox.Name = "phoneNumberComboBox";
+            this.phoneNumberComboBox.Size = new System.Drawing.Size(184, 21);
+            this.phoneNumberComboBox.TabIndex = 8;
+            this.phoneNumberComboBox.SelectedIndexChanged += new System.EventHandler(this.phoneNumberComboBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -160,20 +168,19 @@
             this.label3.Size = new System.Drawing.Size(103, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Phone Number";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // EnquiryDetailsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 340);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.phoneNumberComboBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.donorNameComboBox);
+            this.Controls.Add(this.donorIdComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "EnquiryDetailsUI";
@@ -189,16 +196,16 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox donorIdComboBox;
+        private System.Windows.Forms.ComboBox donorNameComboBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox phoneNumberComboBox;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn donorId;
         private System.Windows.Forms.DataGridViewTextBoxColumn surname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label3;
     }
 }
