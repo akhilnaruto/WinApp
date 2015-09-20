@@ -461,6 +461,8 @@ namespace eTemple.UI
         /// <param name="e"></param>
         private void txtPin_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(Char.IsDigit(e.KeyChar)))
+                e.Handled = true;
             //if (!(Char.IsDigit(e.KeyChar) && (e.KeyChar == (char)Keys.Back)))
             //{
             //    e.Handled = true;
