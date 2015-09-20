@@ -66,6 +66,8 @@
             // 
             // donorIdComboBox
             // 
+            this.donorIdComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.donorIdComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.donorIdComboBox.FormattingEnabled = true;
             this.donorIdComboBox.Location = new System.Drawing.Point(82, 34);
             this.donorIdComboBox.Name = "donorIdComboBox";
@@ -75,6 +77,8 @@
             // 
             // donorNameComboBox
             // 
+            this.donorNameComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.donorNameComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.donorNameComboBox.FormattingEnabled = true;
             this.donorNameComboBox.Location = new System.Drawing.Point(315, 35);
             this.donorNameComboBox.Name = "donorNameComboBox";
