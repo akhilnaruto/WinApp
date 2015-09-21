@@ -241,8 +241,32 @@ namespace eTemple.UI
         /// <summary>
         /// 
         /// </summary>
-        public void getDataFromChildWindow(List<Donors> donorInfo, SelectedDonorOptions selectedInfo)
+        public void getDataFromChildWindow(Donors donor)
         {
+            DateTime dt;
+            txtDonorId.Text = donor.Id.ToString();
+            if (!DateTime.TryParse(donor.date.ToString(), out dt))
+            {
+                dtpDate.Value = dt;
+            }
+           
+            txtAddress.Text = donor.Address;
+            txtSurname.Text = donor.Surname;
+            txtName.Text = donor.Name;
+            txtDistrict.Text = donor.DistrictName;
+            txtCity.Text = donor.City;
+            txtPin.Text = donor.Pin.ToString();
+            txtState.Text = donor.State;
+            txtCountry.Text = donor.Country;
+            txtNameOn.Text = donor.NameOn;
+            txtOccassion.Text = donor.Occassion;
+            txtGothram.Text = donor.Gothram;
+            txtAmount.Text = donor.Amount.ToString();
+            txtMRNo.Text = donor.MR_No.ToString();
+            txtRemarks.Text = donor.Remarks;
+            txtMobile.Text = donor.PhoneNumber;
+            txtEmailId.Text = donor.EmailId;
+
 
         }
 
@@ -470,6 +494,11 @@ namespace eTemple.UI
             //}
             //else
             //    errorProvider1.Clear();
+        }
+
+        private void DonationInformation_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
