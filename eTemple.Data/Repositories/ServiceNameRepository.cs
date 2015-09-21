@@ -41,5 +41,12 @@ namespace eTemple.Data.Repositories
         {
             TempleDb.Update(entity);
         }
+
+        public IEnumerable<ServiceName> GetAllAsQuerable(int serviceID)
+        {
+
+            return TempleDb.Query<ServiceName>("Select * From ServiceName where Id = " + serviceID + " order by Name asc").ToList();
+
+        }
     }
 }

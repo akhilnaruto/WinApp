@@ -187,6 +187,24 @@ namespace eTemple.Data.Models
 		[Column] public string Telugu { get; set; }
 	}
     
+	[TableName("monthlyannadanamtbl")]
+	[PrimaryKey("Id", autoIncrement=false)]
+	[ExplicitColumns]
+    public partial class monthlyannadanamtbl : eTempleDbDB.Record<monthlyannadanamtbl>  
+    {
+		[Column] public int Id { get; set; }
+		[Column] public int? Day { get; set; }
+	}
+    
+	[TableName("paksha")]
+	[PrimaryKey("Id", autoIncrement=false)]
+	[ExplicitColumns]
+    public partial class paksha : eTempleDbDB.Record<paksha>  
+    {
+		[Column] public int Id { get; set; }
+		[Column] public string Name { get; set; }
+	}
+    
 	[TableName("prefixes")]
 	[PrimaryKey("Id")]
 	[ExplicitColumns]

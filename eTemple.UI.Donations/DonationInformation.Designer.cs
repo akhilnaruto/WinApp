@@ -89,6 +89,12 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblEnglishDatetype = new System.Windows.Forms.Label();
+            this.dtpEnglishDateType = new System.Windows.Forms.DateTimePicker();
+            this.cmbPaksha = new System.Windows.Forms.ComboBox();
+            this.lblPaksha = new System.Windows.Forms.Label();
+            this.cmbMonthlyAnna = new System.Windows.Forms.ComboBox();
+            this.lblMonthlyAnna = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -519,6 +525,7 @@
             this.cmbServiceType.Name = "cmbServiceType";
             this.cmbServiceType.Size = new System.Drawing.Size(200, 28);
             this.cmbServiceType.TabIndex = 21;
+            this.cmbServiceType.SelectedIndexChanged += new System.EventHandler(this.cmbServiceType_SelectedIndexChanged);
             // 
             // lblServiceType
             // 
@@ -532,6 +539,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cmbMonthlyAnna);
+            this.groupBox3.Controls.Add(this.lblMonthlyAnna);
+            this.groupBox3.Controls.Add(this.cmbPaksha);
+            this.groupBox3.Controls.Add(this.dtpEnglishDateType);
+            this.groupBox3.Controls.Add(this.lblPaksha);
+            this.groupBox3.Controls.Add(this.lblEnglishDatetype);
             this.groupBox3.Controls.Add(this.cmbThithi);
             this.groupBox3.Controls.Add(this.lblThithi);
             this.groupBox3.Controls.Add(this.cmbMonth);
@@ -673,6 +686,62 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblEnglishDatetype
+            // 
+            this.lblEnglishDatetype.AutoSize = true;
+            this.lblEnglishDatetype.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblEnglishDatetype.Location = new System.Drawing.Point(461, 33);
+            this.lblEnglishDatetype.Name = "lblEnglishDatetype";
+            this.lblEnglishDatetype.Size = new System.Drawing.Size(85, 20);
+            this.lblEnglishDatetype.TabIndex = 46;
+            this.lblEnglishDatetype.Text = "Select Date";
+            // 
+            // dtpEnglishDateType
+            // 
+            this.dtpEnglishDateType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.dtpEnglishDateType.Location = new System.Drawing.Point(606, 33);
+            this.dtpEnglishDateType.Name = "dtpEnglishDateType";
+            this.dtpEnglishDateType.Size = new System.Drawing.Size(200, 27);
+            this.dtpEnglishDateType.TabIndex = 201;
+            // 
+            // cmbPaksha
+            // 
+            this.cmbPaksha.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmbPaksha.FormattingEnabled = true;
+            this.cmbPaksha.Location = new System.Drawing.Point(606, 32);
+            this.cmbPaksha.Name = "cmbPaksha";
+            this.cmbPaksha.Size = new System.Drawing.Size(200, 28);
+            this.cmbPaksha.TabIndex = 41;
+            // 
+            // lblPaksha
+            // 
+            this.lblPaksha.AutoSize = true;
+            this.lblPaksha.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblPaksha.Location = new System.Drawing.Point(461, 33);
+            this.lblPaksha.Name = "lblPaksha";
+            this.lblPaksha.Size = new System.Drawing.Size(54, 20);
+            this.lblPaksha.TabIndex = 42;
+            this.lblPaksha.Text = "Paksha";
+            // 
+            // cmbMonthlyAnna
+            // 
+            this.cmbMonthlyAnna.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmbMonthlyAnna.FormattingEnabled = true;
+            this.cmbMonthlyAnna.Location = new System.Drawing.Point(427, 33);
+            this.cmbMonthlyAnna.Name = "cmbMonthlyAnna";
+            this.cmbMonthlyAnna.Size = new System.Drawing.Size(200, 28);
+            this.cmbMonthlyAnna.TabIndex = 202;
+            // 
+            // lblMonthlyAnna
+            // 
+            this.lblMonthlyAnna.AutoSize = true;
+            this.lblMonthlyAnna.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblMonthlyAnna.Location = new System.Drawing.Point(318, 33);
+            this.lblMonthlyAnna.Name = "lblMonthlyAnna";
+            this.lblMonthlyAnna.Size = new System.Drawing.Size(85, 20);
+            this.lblMonthlyAnna.TabIndex = 203;
+            this.lblMonthlyAnna.Text = "Select Date";
+            // 
             // DonationInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -797,5 +866,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEmailId;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblEnglishDatetype;
+        private System.Windows.Forms.DateTimePicker dtpEnglishDateType;
+        private System.Windows.Forms.ComboBox cmbPaksha;
+        private System.Windows.Forms.Label lblPaksha;
+        private System.Windows.Forms.ComboBox cmbMonthlyAnna;
+        private System.Windows.Forms.Label lblMonthlyAnna;
     }
 }
