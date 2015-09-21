@@ -745,11 +745,11 @@ namespace eTemple.Data.Models
     {
 	}
     
-	[TableName("users")]
-	[ExplicitColumns]
-    public partial class user : eTempleDbDB.Record<user>  
-    {
-	}
+	//[TableName("users")]
+	//[ExplicitColumns]
+ //   public partial class user : eTempleDbDB.Record<user>  
+ //   {
+	//}
     
 	[TableName("actor")]
 	[ExplicitColumns]
@@ -847,17 +847,17 @@ namespace eTemple.Data.Models
     {
 	}
     
-	[TableName("city")]
-	[ExplicitColumns]
-    public partial class city : eTempleDbDB.Record<city>  
-    {
-	}
+	//[TableName("city")]
+	//[ExplicitColumns]
+ //   public partial class city : eTempleDbDB.Record<city>  
+ //   {
+	//}
     
-	[TableName("country")]
-	[ExplicitColumns]
-    public partial class country : eTempleDbDB.Record<country>  
-    {
-	}
+	//[TableName("country")]
+	//[ExplicitColumns]
+ //   public partial class country : eTempleDbDB.Record<country>  
+ //   {
+	//}
     
 	[TableName("countrylanguage")]
 	[ExplicitColumns]

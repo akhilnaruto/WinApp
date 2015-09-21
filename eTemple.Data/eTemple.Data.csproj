@@ -69,9 +69,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MonthlyAnnaDanam.cs" />
-    <Compile Include="Models\Paksha.cs" />
-    <Compile Include="Models\SelectedDonorOptions.cs" />
     <Compile Include="Models\Thidhi.cs" />
     <Compile Include="Models\Months.cs" />
     <Compile Include="Models\PetaPoco.cs" />
