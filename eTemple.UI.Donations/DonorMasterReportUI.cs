@@ -21,11 +21,14 @@ namespace eTemple.UI.Donations
         public List<SpecialDay> lstSpecialDay = null;
         public List<Months> lstMonths = null;
         public List<Thidhi> lstThidhi = null;
+        public List<Paksha> lstPaksha = null;
         public DonorRepository oDonorRepository = null;
         public DateTypeRepository oDateTypeRepository = null;
         public SpecialDayRepository oSpecialDayRepository = null;
         public MonthsRepository oMonthsRepository = null;
         public ThidhiRepository oThidhiRepository = null;
+        public PakshaRepository oPakshaRepository = null;
+        public string performDate = string.Empty;
         public DonorMasterReportUI()
         {
             InitializeComponent();
@@ -36,11 +39,14 @@ namespace eTemple.UI.Donations
             oSpecialDayRepository = new SpecialDayRepository();
             oMonthsRepository = new MonthsRepository();
             oThidhiRepository = new ThidhiRepository();
+            oPakshaRepository = new PakshaRepository();
             lstServiceType = oServiceTypeRep.GetAllAsQuerable().ToList();
             lstMonths = oMonthsRepository.GetAllAsQuerable().ToList();
             lstThidhi = oThidhiRepository.GetAllAsQuerable().ToList();
             lstDateType = oDateTypeRepository.GetAllAsQuerable().ToList();
+            lstDateType.RemoveAt(1);
             lstSpecialDay = oSpecialDayRepository.GetAllAsQuerable().ToList();
+            lstPaksha = oPakshaRepository.GetAllAsQuerable().ToList();
         }
 
         private void DonorMasterReportUI_Load(object sender, EventArgs e)
@@ -53,6 +59,8 @@ namespace eTemple.UI.Donations
             cmbMonth.DisplayMember = "Telugu";
             cmbThidhi.DataSource = lstThidhi;
             cmbThidhi.DisplayMember = "Name";
+            cmbPaksha.DataSource = lstPaksha;
+            cmbPaksha.DisplayMember = "Name";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -83,7 +91,7 @@ namespace eTemple.UI.Donations
                 cmbServiceType.Visible = true;
                 cmbServiceType.DataSource = lstServiceType;
                 cmbServiceType.DisplayMember = "Name";
-               // cmbServiceType.SelectedIndex = -1;
+                // cmbServiceType.SelectedIndex = -1;
                 lblServicePerfmdt.Visible = true;
                 dtPicker.Visible = true;
             }
@@ -98,6 +106,8 @@ namespace eTemple.UI.Donations
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+           // cmbServiceName.Items.Clear();
+            cmbServiceName.DataSource = null;
             lblServiceName.Visible = true;
             cmbServiceName.Visible = true;
             var serviceType = cmbServiceType.SelectedItem as ServiceTypes;
@@ -106,7 +116,7 @@ namespace eTemple.UI.Donations
                 cmbServiceName.DataSource = oServiceNameRep.GetAllAsQuerable().Where(sType => sType.ServiceTypeId == serviceType.Id).ToList();
                 cmbServiceName.DisplayMember = "Name";
             }
-          //  cmbServiceName.SelectedIndex = -1;
+            //  cmbServiceName.SelectedIndex = -1;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -117,70 +127,89 @@ namespace eTemple.UI.Donations
         private void button1_Click(object sender, EventArgs e)
         {
             //if (cmbServiceName.SelectedIndex >= 0)
-          //  {
-                DataTable dt = new DataTable();
-                var ServiceName = cmbServiceName.SelectedItem as ServiceName;
-                var ServiceTypes = cmbServiceType.SelectedItem as ServiceTypes;
-                string performDate = dtPicker.Value.ToString("yyyy-MM-dd");
-                // performDate = string.Format(performDate, "yyyy-mm-dd");
-                var DonorList = oDonorRepository.GetAllasDataTable().Select(GetFilterstring());
-                if (DonorList.Count() != 0)
+            //  {
+            DataTable dt = new DataTable();
+            var ServiceName = cmbServiceName.SelectedItem as ServiceName;
+            var ServiceTypes = cmbServiceType.SelectedItem as ServiceTypes;
+            // performDate = string.Format(performDate, "yyyy-mm-dd");
+            var DonorList = oDonorRepository.GetAllasDataTable().Select(GetFilterstring());
+            if (DonorList.Count() != 0)
+            {
+                //string performDate = DonorList[0]["PerformDate"].ToString();
+                DataView view = new DataView(DonorList.CopyToDataTable());
+                dt = view.ToTable(false, "Id", "NameOn", "Gothram", "MR_No");
+                DonorReportDataSet drs = new DonorReportDataSet();
+                drs.Tables.Add(dt);
+                DataTable DonorVals = new DataTable();
+                DonorVals.Columns.Add("ServiceType");
+                DonorVals.Columns.Add("ServiceName");
+                DonorVals.Columns.Add("PerformDate");
+                DataRow dr = DonorVals.NewRow();
+                if (rdbAlldonors.Checked)
                 {
-                    //string performDate = DonorList[0]["PerformDate"].ToString();
-                    DataView view = new DataView(DonorList.CopyToDataTable());
-                    dt = view.ToTable(false, "Id", "NameOn", "Gothram", "MR_No");
-                    DonorReportDataSet drs = new DonorReportDataSet();
-                    drs.Tables.Add(dt);
-                    DataTable DonorVals = new DataTable();
-                    DonorVals.Columns.Add("ServiceType");
-                    DonorVals.Columns.Add("ServiceName");
-                    DonorVals.Columns.Add("PerformDate");
-                    DataRow dr = DonorVals.NewRow();
-                    if (rdbAlldonors.Checked)
-                    {
-                        dr["ServiceType"] = "All Donors";
-                        dr["ServiceName"] = "All Donors";
-                    }
-                    else
-                    {
-                        dr["ServiceType"] = ServiceTypes.Name;
-                        dr["ServiceName"] = ServiceName.Name;
-                    }
-                    dr["PerformDate"] = performDate;
-                    DonorVals.Rows.Add(dr);
-                    DonorReportForm donorreportForm = new DonorReportForm(dt, DonorVals);
-                    donorreportForm.Show();
+                    dr["ServiceType"] = "All Donors";
+                    dr["ServiceName"] = "All Donors";
                 }
-                //report
-         //   }
+                else
+                {
+                    dr["ServiceType"] = ServiceTypes.Name;
+                    dr["ServiceName"] = ServiceName.Name;
+                }
+                if (!chkNonPerformSvc.Checked)
+                    dr["PerformDate"] = performDate;
+                DonorVals.Rows.Add(dr);
+                DonorReportForm donorreportForm = new DonorReportForm(dt, DonorVals);
+                donorreportForm.Show();
+            }
+            else
+                MessageBox.Show("Donors were not found for the selected filters");
+            //report
+            //   }
         }
 
 
         public string GetFilterstring()
         {
-        //    var ServiceName = cmbServiceName.SelectedItem as ServiceName;
-        //    var ServiceTypes = cmbServiceType.SelectedItem as ServiceTypes;
-        //    string performDate = dtPicker.Value.ToString("yyyy-MM-dd");
-        ////    if(rd)
+            //    var ServiceName = cmbServiceName.SelectedItem as ServiceName;
+            //    var ServiceTypes = cmbServiceType.SelectedItem as ServiceTypes;
+            //    string performDate = dtPicker.Value.ToString("yyyy-MM-dd");
+            ////    if(rd)
             string FilterString = string.Empty;
             var dtType = cmbDateType.SelectedItem as DateType;
             var month = cmbMonth.SelectedItem as Months;
-           // var paksha=cmbPaksha.SelectedItem as;
-            var thidhi=cmbThidhi.SelectedItem as Thidhi;
+            // var paksha=cmbPaksha.SelectedItem as;
+            var thidhi = cmbThidhi.SelectedItem as Thidhi;
+            var paksha = cmbPaksha.SelectedItem as Paksha;
             var specialDayId = cmbSpecialDay.SelectedItem as SpecialDay;
+            var serviceTypeId = cmbServiceType.SelectedItem as ServiceTypes;
+             var serviceNameId = cmbServiceName.SelectedItem as ServiceName;
             switch (dtType.Id)
             {
                 case 1:
-                    FilterString = "Month=" + month.Id + "AND Thidhi=" + thidhi.Id;
+                    FilterString = "Month=" + month.Id + " AND Thidhi=" + thidhi.Id + " AND Paksha=" + paksha.Id;
+                    performDate = paksha.Name + "      " + month.Telugu + "        " + thidhi.Name;
                     break;
                 case 2:
-                    string performDate = dtPicker.Value.ToString("yyyy-MM-dd");
+                    performDate = dtPicker.Value.ToString("yyyy-MM-dd");
                     FilterString = "PerformDate='#" + performDate + "#'";
                     break;
                 case 3:
                     FilterString = "SpecialDayId=" + specialDayId.Id;
+                    performDate = specialDayId.Name;
                     break;
             }
+            if (rdbServiceWseDonors.Checked)
+            {
+                FilterString = FilterString + " AND ServiceTypeId=" + serviceTypeId.Id;
+                if (serviceNameId != null)
+                    FilterString = FilterString + " AND ServiceNameId=" + serviceNameId.Id;
+            }
+            else
+            {
+                FilterString = FilterString + " AND ServiceNameId=1";
+            }
+            if (chkNonPerformSvc.Checked)
+                FilterString = "DateTypeId=4";
             return FilterString;
         }
         private void cmbDateType_SelectedIndexChanged(object sender, EventArgs e)

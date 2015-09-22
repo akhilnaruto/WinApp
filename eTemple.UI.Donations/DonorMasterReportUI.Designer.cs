@@ -40,7 +40,7 @@
             this.lblServicePerfmdt = new System.Windows.Forms.Label();
             this.cmbDateType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkNonPerformSvc = new System.Windows.Forms.CheckBox();
             this.cmbPaksha = new System.Windows.Forms.ComboBox();
             this.lblPaksha = new System.Windows.Forms.Label();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
@@ -184,15 +184,15 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Date Type";
             // 
-            // checkBox1
+            // chkNonPerformSvc
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(168, 236);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(213, 17);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Include Non performance Service types";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkNonPerformSvc.AutoSize = true;
+            this.chkNonPerformSvc.Location = new System.Drawing.Point(168, 236);
+            this.chkNonPerformSvc.Name = "chkNonPerformSvc";
+            this.chkNonPerformSvc.Size = new System.Drawing.Size(175, 17);
+            this.chkNonPerformSvc.TabIndex = 12;
+            this.chkNonPerformSvc.Text = "Non performance Service types";
+            this.chkNonPerformSvc.UseVisualStyleBackColor = true;
             // 
             // cmbPaksha
             // 
@@ -293,7 +293,7 @@
             this.Controls.Add(this.lblThidhi);
             this.Controls.Add(this.cmbPaksha);
             this.Controls.Add(this.lblPaksha);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkNonPerformSvc);
             this.Controls.Add(this.cmbDateType);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblServicePerfmdt);
@@ -330,7 +330,7 @@
         private System.Windows.Forms.Label lblServicePerfmdt;
         private System.Windows.Forms.ComboBox cmbDateType;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkNonPerformSvc;
         private System.Windows.Forms.ComboBox cmbPaksha;
         private System.Windows.Forms.Label lblPaksha;
         private System.Windows.Forms.ComboBox cmbMonth;
