@@ -91,9 +91,8 @@ namespace eTemple.UI.Donations
                 cmbServiceType.Visible = true;
                 cmbServiceType.DataSource = lstServiceType;
                 cmbServiceType.DisplayMember = "Name";
-                // cmbServiceType.SelectedIndex = -1;
-                lblServicePerfmdt.Visible = true;
-                dtPicker.Visible = true;
+                cmbDateType.DataSource = lstDateType;
+                cmbDateType.DisplayMember = "Name";
             }
             else
             {
@@ -106,7 +105,7 @@ namespace eTemple.UI.Donations
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           // cmbServiceName.Items.Clear();
+            // cmbServiceName.Items.Clear();
             cmbServiceName.DataSource = null;
             lblServiceName.Visible = true;
             cmbServiceName.Visible = true;
@@ -182,7 +181,8 @@ namespace eTemple.UI.Donations
             var paksha = cmbPaksha.SelectedItem as Paksha;
             var specialDayId = cmbSpecialDay.SelectedItem as SpecialDay;
             var serviceTypeId = cmbServiceType.SelectedItem as ServiceTypes;
-             var serviceNameId = cmbServiceName.SelectedItem as ServiceName;
+            var serviceNameId = cmbServiceName.SelectedItem as ServiceName;
+
             switch (dtType.Id)
             {
                 case 1:
@@ -200,14 +200,20 @@ namespace eTemple.UI.Donations
             }
             if (rdbServiceWseDonors.Checked)
             {
+                if (serviceTypeId.Id == 5 && serviceNameId.Id == 1)
+                {
+                    return "ServiceNameId=1 AND ServiceTypeId=5";
+                }
                 FilterString = FilterString + " AND ServiceTypeId=" + serviceTypeId.Id;
                 if (serviceNameId != null)
                     FilterString = FilterString + " AND ServiceNameId=" + serviceNameId.Id;
             }
             else
             {
-                FilterString = FilterString + " AND ServiceNameId=1";
+                if (dtType.Id == 2)
+                    FilterString = FilterString + " OR (ServiceNameId=1 AND ServiceTypeId=5)";
             }
+
             if (chkNonPerformSvc.Checked)
                 FilterString = "DateTypeId=4";
             return FilterString;

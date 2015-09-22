@@ -148,7 +148,7 @@
             // 
             this.dtPicker.Location = new System.Drawing.Point(231, 206);
             this.dtPicker.Name = "dtPicker";
-            this.dtPicker.Size = new System.Drawing.Size(224, 20);
+            this.dtPicker.Size = new System.Drawing.Size(182, 20);
             this.dtPicker.TabIndex = 8;
             this.dtPicker.Visible = false;
             // 
