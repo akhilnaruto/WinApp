@@ -35,6 +35,11 @@ namespace eTemple.Data.Repositories
             return TempleDb.Query<Stars>("Select * From stars").ToList();
         }
 
+        public IEnumerable<Stars> GetAllAsQuerable(int starId)
+        {
+            return TempleDb.Query<Stars>("Select * From stars where Id = " + starId + " order by Name asc").ToList();
+        }
+
         public void Update(Stars entity)
         {
             throw new NotImplementedException();

@@ -28,6 +28,9 @@ namespace eTemple.UI
         private SpecialDayRepository specialDayRepo;
         private StarsRepository starRepo;
         private MonthsRepository monthsRepo;
+        private PakshaRepository pakshaRepo;
+        private ThidhiRepository thithiRepo;
+        private MonthlyAnnaRepository monthlyAnnaRepo;
 
         public DonationInformation()
         {
@@ -45,9 +48,24 @@ namespace eTemple.UI
             specialDayRepo = new SpecialDayRepository();
             starRepo = new StarsRepository();
             monthsRepo = new MonthsRepository();
+            pakshaRepo = new PakshaRepository();
+            thithiRepo = new ThidhiRepository();
+            monthlyAnnaRepo = new MonthlyAnnaRepository();
+
             bindData();
             btnUpdate.Visible = false;
             btnCancel.Visible = false;
+
+            lblPaksha.Visible = false;
+            cmbPaksha.Visible = false;
+            lblSpecialDay.Visible = false;
+            cmbSpecialDay.Visible = false;
+            lblMonth.Visible = false;
+            cmbMonth.Visible = false;
+            lblThithi.Visible = false;
+            cmbThithi.Visible = false;
+            lblMonthlyAnna.Visible = false;
+            cmbMonthlyAnna.Visible = false;
         }
 
         /// <summary>
@@ -156,28 +174,73 @@ namespace eTemple.UI
 
             if (selectedDateType.Name == "Telugu")
             {
+                lblPaksha.Visible = true;
+                cmbPaksha.Visible = true;
+                lblSpecialDay.Visible = false;
+                cmbSpecialDay.Visible = false;
+                lblEnglishDatetype.Visible = false;
+                dtpEnglishDateType.Visible = false;
+                lblMonth.Visible = true;
+                cmbMonth.Visible = true;
+                lblThithi.Visible = true;
+                cmbThithi.Visible = true;
+                lblMonthlyAnna.Visible = false;
+                cmbMonthlyAnna.Visible = false;
+
+                #region Bind Paksha values
+                var bindPaksha = pakshaRepo.GetAllAsQuerable();
+                cmbPaksha.DataSource = bindPaksha;
+                cmbPaksha.DisplayMember = "Name";
+                #endregion
+
                 #region Bind Month values
                 var bindMonth = monthsRepo.GetAllAsQuerable();
                 cmbMonth.DataSource = bindMonth;
                 cmbMonth.DisplayMember = "Telugu";
                 #endregion
+
+                #region Thithi
+                var bindThithi = thithiRepo.GetAllAsQuerable();
+                cmbThithi.DataSource = bindThithi;
+                cmbThithi.DisplayMember = "Name";
+                #endregion
             }
 
             else if (selectedDateType.Name == "English")
             {
-                #region Bind Month values
-                var bindMonth = monthsRepo.GetAllAsQuerable();
-                cmbMonth.DataSource = bindMonth;
-                cmbMonth.DisplayMember = "English";
-                #endregion
+                lblPaksha.Visible = false;
+                cmbPaksha.Visible = false;
+                lblSpecialDay.Visible = false;
+                cmbSpecialDay.Visible = false;
+                lblEnglishDatetype.Visible = true;
+                dtpEnglishDateType.Visible = true;
+                lblMonth.Visible = false;
+                cmbMonth.Visible = false;
+                lblThithi.Visible = false;
+                cmbThithi.Visible = false;
+                lblMonthlyAnna.Visible = false;
+                cmbMonthlyAnna.Visible = false;
             }
 
-            else if (selectedDateType.Name == "SpecialDay")
+            else if (selectedDateType.Name == "Special")
             {
+                lblPaksha.Visible = false;
+                cmbPaksha.Visible = false;
+                lblSpecialDay.Visible = true;
+                cmbSpecialDay.Visible = true;
+                lblEnglishDatetype.Visible = false;
+                dtpEnglishDateType.Visible = false;
+                lblMonth.Visible = false;
+                cmbMonth.Visible = false;
+                lblThithi.Visible = false;
+                cmbThithi.Visible = false;
+                lblMonthlyAnna.Visible = false;
+                cmbMonthlyAnna.Visible = false;
+
                 #region Bind SpecialDay values
-                var bindSpecialDay = monthsRepo.GetAllAsQuerable();
+                var bindSpecialDay = specialDayRepo.GetAllAsQuerable();
                 cmbSpecialDay.DataSource = bindSpecialDay;
-                cmbSpecialDay.DisplayMember = "SpecialDay";
+                cmbSpecialDay.DisplayMember = "Name";
                 #endregion
             }
         }
@@ -249,7 +312,7 @@ namespace eTemple.UI
             {
                 dtpDate.Value = dt;
             }
-           
+
             txtAddress.Text = donor.Address;
             txtSurname.Text = donor.Surname;
             txtName.Text = donor.Name;
@@ -259,6 +322,11 @@ namespace eTemple.UI
             txtState.Text = donor.State;
             txtCountry.Text = donor.Country;
             txtNameOn.Text = donor.NameOn;
+            //Get Star Info
+            var bindStarName = starRepo.GetAllAsQuerable(donor.ServiceNameId);
+            string[] starNameValue = bindStarName.Select(p => p.Name).ToArray();
+            cmbStar.SelectedIndex = cmbStar.FindString(starNameValue[0]);
+
             txtOccassion.Text = donor.Occassion;
             txtGothram.Text = donor.Gothram;
             txtAmount.Text = donor.Amount.ToString();
@@ -267,7 +335,15 @@ namespace eTemple.UI
             txtMobile.Text = donor.PhoneNumber;
             txtEmailId.Text = donor.EmailId;
 
+            //Get ServiceType
+            var bindServiceType = serviceTypeRepo.GetAllAsQuerable(donor.ServiceNameId);
+            string[] starTypeValue = bindServiceType.Select(p => p.Name).ToArray();
+            cmbServiceType.SelectedIndex = cmbServiceType.FindString(starTypeValue[0]);
 
+            //Get ServiceName
+            var bindServiceName = serviceNameRepo.GetAllAsQuerable(donor.ServiceNameId);
+            string[] serviceNameValue = bindServiceName.Select(p => p.Name).ToArray();
+            cmbServiceName.SelectedIndex = cmbServiceName.FindString(serviceNameValue[0]);
         }
 
         public bool validation()
@@ -496,9 +572,35 @@ namespace eTemple.UI
             //    errorProvider1.Clear();
         }
 
-        private void DonationInformation_Load(object sender, EventArgs e)
+        private void cmbServiceType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var selectedServiceType = cmbServiceType.SelectedItem as ServiceTypes;
 
+            if (selectedServiceType.Name == "Monthly Annadanam")
+            {
+                lblDateType.Visible = false;
+                cmbDateType.Visible = false;
+                lblPaksha.Visible = false;
+                cmbPaksha.Visible = false;
+                lblSpecialDay.Visible = false;
+                cmbSpecialDay.Visible = false;
+                lblEnglishDatetype.Visible = false;
+                dtpEnglishDateType.Visible = false;
+                lblMonth.Visible = false;
+                cmbMonth.Visible = false;
+                lblThithi.Visible = false;
+                cmbThithi.Visible = false;
+                lblServiceName.Enabled = false;
+                cmbServiceName.Enabled = false;
+                lblMonthlyAnna.Visible = true;
+                cmbMonthlyAnna.Visible = true;
+
+                #region Bind MonthlyAnna values
+                var bindMonthlyAnna = monthlyAnnaRepo.GetAllAsQuerable();
+                cmbMonthlyAnna.DataSource = bindMonthlyAnna;
+                cmbMonthlyAnna.DisplayMember = "Day";
+                #endregion
+            }
         }
     }
 }

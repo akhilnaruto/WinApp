@@ -69,7 +69,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SelectedDonorOptions.cs" />
     <Compile Include="Models\Thidhi.cs" />
     <Compile Include="Models\Months.cs" />
     <Compile Include="Models\PetaPoco.cs" />
@@ -84,7 +83,9 @@
     <Compile Include="Repositories\DesignationRepository.cs" />
     <Compile Include="Repositories\DonorRepository.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
+    <Compile Include="Repositories\MonthlyAnnaRepository.cs" />
     <Compile Include="Repositories\MonthsRepository.cs" />
+    <Compile Include="Repositories\PakshaRepository.cs" />
     <Compile Include="Repositories\PrefixesRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\ServiceNameRepository.cs" />

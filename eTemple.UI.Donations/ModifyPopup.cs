@@ -76,8 +76,8 @@ namespace eTemple.UI.Donations
         private void btnGo_Click(object sender, EventArgs e)
         {
             DonationInformation parent = (DonationInformation)this.Owner;
-            var selectedDonorInformation = cmbDonorID.SelectedItem as SelectedDonorOptions;
-            var selectedDonor = donors.Where(donor => donor.Id == selectedDonorInformation.Id).FirstOrDefault();
+            var donorId = cmbDonorID.SelectedItem as SelectedDonorOptions;
+            var selectedDonor = donors.Where(donor => donor.Id == donorId.Id).FirstOrDefault();
             parent.getDataFromChildWindow(selectedDonor);
             this.Close();
         }

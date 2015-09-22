@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Models
 {
-    public partial class Months : IEntity
+    public partial class MonthlyAnnaDanam : IEntity
     {
         public int Id { get; set; }
 
-        public string English { get; set; }
-
-        public string Telugu { get; set; }
-    }    
+        public string Day { get; set; }
+    }
 }

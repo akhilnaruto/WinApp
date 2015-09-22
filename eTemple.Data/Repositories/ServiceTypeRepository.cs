@@ -22,6 +22,14 @@ namespace eTemple.Data.Repositories
 
         }
 
+
+        public IEnumerable<ServiceTypes> GetAllAsQuerable(int serviceTypeId)
+        {
+
+            return TempleDb.Query<ServiceTypes>("Select * From ServiceTypes where Id = " + serviceTypeId + " order by Name asc").ToList();
+
+        }
+
         public void Add(ServiceTypes entity)
         {
             TempleDb.Save(entity);
