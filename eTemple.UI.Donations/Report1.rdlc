@@ -35,7 +35,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Id</rd:DefaultName>
@@ -64,7 +66,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>NameOn</rd:DefaultName>
@@ -93,7 +97,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Gothram</rd:DefaultName>
@@ -122,7 +128,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>MR_No</rd:DefaultName>
@@ -190,7 +198,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>SRI VENKATESWARA SWAMY VARI DEVASTHANAM</Value>
+                  <Value>         SRI VENKATESWARA SWAMY VARI DEVASTHANAM</Value>
                   <Style>
                     <FontFamily>Times New Roman</FontFamily>
                     <FontSize>22pt</FontSize>
@@ -203,9 +211,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.59295cm</Top>
-          <Left>2.00388cm</Left>
+          <Left>0.49576cm</Left>
           <Height>1.11081cm</Height>
-          <Width>19.13581cm</Width>
+          <Width>22.24332cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -519,7 +527,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
           <Top>7.90555cm</Top>
-          <Left>13.75404cm</Left>
+          <Left>13.19842cm</Left>
           <Height>0.86998cm</Height>
           <Width>2.66095cm</Width>
           <ZIndex>10</ZIndex>
