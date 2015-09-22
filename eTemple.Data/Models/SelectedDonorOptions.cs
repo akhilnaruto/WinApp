@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Models
 {
-    public partial class SelectedDonorOptions
+    public class SelectedDonorOptions
     {
         public int Id { get; set; }
 
