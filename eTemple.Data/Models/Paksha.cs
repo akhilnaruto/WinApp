@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Models
 {
-    public partial class Paksha : IEntity
+    public class Paksha : IEntity
     {
         public int Id { get; set; }
 
