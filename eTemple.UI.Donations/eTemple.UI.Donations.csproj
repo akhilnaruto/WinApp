@@ -51,6 +51,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddressForm.Designer.cs">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DonationInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,7 @@
     </Compile>
     <Compile Include="DonorReportDataSet.cs">
       <DependentUpon>DonorReportDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DonorReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -97,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddressForm.resx">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DonationInformation.resx">
       <DependentUpon>DonationInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +135,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
