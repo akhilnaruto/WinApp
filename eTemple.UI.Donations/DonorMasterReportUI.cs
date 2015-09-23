@@ -87,6 +87,7 @@ namespace eTemple.UI.Donations
         {
             if (rdbServiceWseDonors.Checked)
             {
+                btnGenerateAdress.Visible = false;
                 lblServiceType.Visible = true;
                 cmbServiceType.Visible = true;
                 cmbServiceType.DataSource = lstServiceType;
@@ -100,6 +101,7 @@ namespace eTemple.UI.Donations
                 cmbServiceType.Visible = false;
                 lblServiceName.Visible = false;
                 cmbServiceName.Visible = false;
+                btnGenerateAdress.Visible = true;
             }
         }
 
@@ -264,6 +266,24 @@ namespace eTemple.UI.Donations
 
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+             DataTable dt = new DataTable();
+             string filterString = GetFilterstring().Replace(" OR (ServiceNameId=1 AND ServiceTypeId=5)", "") + "AND PhoneNumber is null";
+             var DonorList = oDonorRepository.GetAllasDataTable().Select(filterString);
+            if (DonorList.Count() != 0)
+            {
+                DataView view = new DataView(DonorList.CopyToDataTable());
+                dt = view.ToTable(false, "Address", "Surname", "NameOn", "DistrictName", "City", "Pin", "State", "Country");
+                DonorReportDataSet drs = new DonorReportDataSet();
+                drs.Tables.Add(dt);
+                AddressForm oAddressForm = new AddressForm(dt);
+                oAddressForm.Show();
+            }
+            else
+                MessageBox.Show("Donors were not found for the selected filters");
         }
     }
 }

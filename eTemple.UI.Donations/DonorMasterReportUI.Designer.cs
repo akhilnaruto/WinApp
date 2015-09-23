@@ -49,6 +49,7 @@
             this.lblThidhi = new System.Windows.Forms.Label();
             this.cmbSpecialDay = new System.Windows.Forms.ComboBox();
             this.lblSpecialDay = new System.Windows.Forms.Label();
+            this.btnGenerateAdress = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rdbAlldonors
@@ -126,7 +127,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(168, 275);
+            this.button1.Location = new System.Drawing.Point(252, 275);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 32);
             this.button1.TabIndex = 6;
@@ -136,7 +137,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(303, 275);
+            this.button2.Location = new System.Drawing.Point(394, 275);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 32);
             this.button2.TabIndex = 7;
@@ -282,11 +283,22 @@
             this.lblSpecialDay.Text = "Special Day";
             this.lblSpecialDay.Visible = false;
             // 
+            // btnGenerateAdress
+            // 
+            this.btnGenerateAdress.Location = new System.Drawing.Point(95, 275);
+            this.btnGenerateAdress.Name = "btnGenerateAdress";
+            this.btnGenerateAdress.Size = new System.Drawing.Size(122, 32);
+            this.btnGenerateAdress.TabIndex = 21;
+            this.btnGenerateAdress.Text = "Generate Addresses";
+            this.btnGenerateAdress.UseVisualStyleBackColor = true;
+            this.btnGenerateAdress.Click += new System.EventHandler(this.button3_Click);
+            // 
             // DonorMasterReportUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 335);
+            this.Controls.Add(this.btnGenerateAdress);
             this.Controls.Add(this.cmbSpecialDay);
             this.Controls.Add(this.lblSpecialDay);
             this.Controls.Add(this.cmbThidhi);
@@ -339,5 +351,6 @@
         private System.Windows.Forms.Label lblThidhi;
         private System.Windows.Forms.ComboBox cmbSpecialDay;
         private System.Windows.Forms.Label lblSpecialDay;
+        private System.Windows.Forms.Button btnGenerateAdress;
     }
 }
