@@ -6,13 +6,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.09238cm</Width>
+              <Width>3.29863cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.51449cm</Width>
+              <Width>5.79045cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.74784cm</Width>
+              <Width>3.97513cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.33953cm</Width>
@@ -20,7 +20,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.61733cm</Height>
+              <Height>0.69129cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -167,9 +167,9 @@
         </TablixRowHierarchy>
         <DataSetName>Donors</DataSetName>
         <Top>0.10583cm</Top>
-        <Left>1.04483cm</Left>
-        <Height>1.61733cm</Height>
-        <Width>21.69424cm</Width>
+        <Left>0.09233cm</Left>
+        <Height>0.69129cm</Height>
+        <Width>16.40374cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -187,7 +187,7 @@
   <Width>9.39583in</Width>
   <Page>
     <PageHeader>
-      <Height>9.12758cm</Height>
+      <Height>6.37591cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -198,10 +198,10 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>         SRI VENKATESWARA SWAMY VARI DEVASTHANAM</Value>
+                  <Value>SRI VENKATESWARA SWAMY VARI DEVASTHANAM</Value>
                   <Style>
                     <FontFamily>Times New Roman</FontFamily>
-                    <FontSize>22pt</FontSize>
+                    <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -211,9 +211,8 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.59295cm</Top>
-          <Left>0.49576cm</Left>
-          <Height>1.11081cm</Height>
-          <Width>22.24332cm</Width>
+          <Height>0.84623cm</Height>
+          <Width>18.90378cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -248,7 +247,7 @@
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value xml:space="preserve">    </Value>
+                  <Value xml:space="preserve">  </Value>
                   <Style>
                     <FontFamily>Times New Roman</FontFamily>
                     <FontSize>18pt</FontSize>
@@ -260,10 +259,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>3.55918cm</Top>
-          <Left>4.62859cm</Left>
+          <Top>2.12809cm</Top>
+          <Left>2.6972cm</Left>
           <Height>0.76199cm</Height>
-          <Width>15.70217cm</Width>
+          <Width>11.65405cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -285,7 +284,7 @@
                   <Value>List Of Donors</Value>
                   <Style>
                     <FontFamily>Times New Roman</FontFamily>
-                    <FontSize>22pt</FontSize>
+                    <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -294,10 +293,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>2.02216cm</Top>
-          <Left>9.52286cm</Left>
-          <Height>1.03197cm</Height>
-          <Width>5.09184cm</Width>
+          <Top>1.35188cm</Top>
+          <Left>6.34786cm</Left>
+          <Height>0.74093cm</Height>
+          <Width>4.41988cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -316,7 +315,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Service Type            </Value>
+                  <Value>Service Type       :   </Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
                     <FontSize>18pt</FontSize>
@@ -333,7 +332,7 @@
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value xml:space="preserve">                        </Value>
+                  <Value xml:space="preserve"> </Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
                     <FontSize>18pt</FontSize>
@@ -345,10 +344,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>4.85646cm</Top>
-          <Left>0.96332cm</Left>
-          <Height>0.86998cm</Height>
-          <Width>21.77575cm</Width>
+          <Top>3.03119cm</Top>
+          <Left>4.1275cm</Left>
+          <Height>0.74929cm</Height>
+          <Width>10.26638cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -360,30 +359,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Line Name="Line1">
-          <Top>5.86187cm</Top>
-          <Left>0.96332cm</Left>
-          <Height>0cm</Height>
-          <Width>21.77575cm</Width>
-          <ZIndex>4</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
-        <Line Name="Line2">
-          <Top>7.26416cm</Top>
-          <Left>0.96332cm</Left>
-          <Height>0cm</Height>
-          <Width>21.77575cm</Width>
-          <ZIndex>5</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
         <Textbox Name="Textbox5">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -391,7 +366,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Service Name           </Value>
+                  <Value>Service Name       :   </Value>
                   <Style>
                     <FontFamily>times New Roman</FontFamily>
                     <FontSize>18pt</FontSize>
@@ -412,11 +387,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>6.39418cm</Top>
-          <Left>0.96332cm</Left>
+          <Top>3.85418cm</Top>
+          <Left>3.82082cm</Left>
           <Height>0.86998cm</Height>
-          <Width>21.77575cm</Width>
-          <ZIndex>6</ZIndex>
+          <Width>10.45158cm</Width>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -428,11 +403,10 @@
           </Style>
         </Textbox>
         <Line Name="Line3">
-          <Top>8.77553cm</Top>
-          <Left>1.04483cm</Left>
+          <Top>6.23553cm</Top>
           <Height>0cm</Height>
           <Width>21.77575cm</Width>
-          <ZIndex>7</ZIndex>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -458,11 +432,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>7.90555cm</Top>
-          <Left>1.04483cm</Left>
+          <Top>5.04805cm</Top>
           <Height>0.86998cm</Height>
           <Width>2.76998cm</Width>
-          <ZIndex>8</ZIndex>
+          <ZIndex>6</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -492,11 +465,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>7.90555cm</Top>
-          <Left>6.47098cm</Left>
+          <Top>5.04805cm</Top>
+          <Left>4.24848cm</Left>
           <Height>0.86998cm</Height>
           <Width>2.93197cm</Width>
-          <ZIndex>9</ZIndex>
+          <ZIndex>7</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -526,11 +499,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>7.90555cm</Top>
-          <Left>13.19842cm</Left>
+          <Top>5.04805cm</Top>
+          <Left>9.07092cm</Left>
           <Height>0.86998cm</Height>
           <Width>2.66095cm</Width>
-          <ZIndex>10</ZIndex>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -560,11 +533,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>7.90555cm</Top>
-          <Left>18.56518cm</Left>
+          <Top>5.04805cm</Top>
+          <Left>13.16768cm</Left>
           <Height>0.86998cm</Height>
           <Width>4.17389cm</Width>
-          <ZIndex>11</ZIndex>
+          <ZIndex>9</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
