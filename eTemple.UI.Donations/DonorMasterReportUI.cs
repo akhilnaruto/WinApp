@@ -129,11 +129,22 @@ namespace eTemple.UI.Donations
         {
             //if (cmbServiceName.SelectedIndex >= 0)
             //  {
+             var dtType = cmbDateType.SelectedItem as DateType;
             DataTable dt = new DataTable();
             var ServiceName = cmbServiceName.SelectedItem as ServiceName;
             var ServiceTypes = cmbServiceType.SelectedItem as ServiceTypes;
+            if (rdbServiceWseDonors.Checked && dtType.Id != 2 && ServiceTypes.Id == 8)
+            { 
+                MessageBox.Show("Please pick English date for Monthly Annadanam...");
+                return;
+            }
             // performDate = string.Format(performDate, "yyyy-mm-dd");
-            var DonorList = oDonorRepository.GetAllasDataTable().Select(GetFilterstring());
+            string filterstring =string.Empty;
+            if (rdbServiceWseDonors.Checked && ServiceTypes.Id == 8)
+                filterstring = GetFilterForMonthlyAnnadanam();
+            else
+                filterstring = GetFilterstring()+" OR ("+GetFilterForMonthlyAnnadanam()+")";
+            var DonorList = oDonorRepository.GetAllasDataTable().Select(filterstring);
             if (DonorList.Count() != 0)
             {
                 //string performDate = DonorList[0]["PerformDate"].ToString();
@@ -154,7 +165,7 @@ namespace eTemple.UI.Donations
                 else
                 {
                     dr["ServiceType"] = ServiceTypes.Name;
-                    dr["ServiceName"] = ServiceName.Name;
+                    dr["ServiceName"] = (ServiceName == null) ? "" : ServiceName.Name;
                 }
                 if (!chkNonPerformSvc.Checked)
                     dr["PerformDate"] = performDate;
@@ -171,10 +182,6 @@ namespace eTemple.UI.Donations
 
         public string GetFilterstring()
         {
-            //    var ServiceName = cmbServiceName.SelectedItem as ServiceName;
-            //    var ServiceTypes = cmbServiceType.SelectedItem as ServiceTypes;
-            //    string performDate = dtPicker.Value.ToString("yyyy-MM-dd");
-            ////    if(rd)
             string FilterString = string.Empty;
             var dtType = cmbDateType.SelectedItem as DateType;
             var month = cmbMonth.SelectedItem as Months;
@@ -271,8 +278,8 @@ namespace eTemple.UI.Donations
         private void button3_Click(object sender, EventArgs e)
         {
              DataTable dt = new DataTable();
-             string filterString = GetFilterstring().Replace(" OR (ServiceNameId=1 AND ServiceTypeId=5)", "") + "AND PhoneNumber is null";
-             var DonorList = oDonorRepository.GetAllasDataTable().Select(filterString);
+             string filterString = GetFilterstring().Replace(" OR (ServiceNameId=1 AND ServiceTypeId=5)", "") + " AND PhoneNumber is null";
+             var DonorList = oDonorRepository.GetAllasDataTable().Select(filterString+" OR ("+GetFilterForMonthlyAnnadanam()+" AND PhoneNumber is null)");
             if (DonorList.Count() != 0)
             {
                 DataView view = new DataView(DonorList.CopyToDataTable());
@@ -284,6 +291,14 @@ namespace eTemple.UI.Donations
             }
             else
                 MessageBox.Show("Donors were not found for the selected filters");
+        }
+
+        public string GetFilterForMonthlyAnnadanam()
+        {
+            string selDate = dtPicker.Value.ToString("yyyy-MM-dd");
+            int day = dtPicker.Value.Day;
+            string prvsYeardate = dtPicker.Value.AddYears(-1).ToString("yyyy-MM-dd");
+            return "Day=" + day + " AND date >= '#" + prvsYeardate + "#'";
         }
     }
 }
