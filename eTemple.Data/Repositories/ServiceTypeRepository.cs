@@ -18,7 +18,7 @@ namespace eTemple.Data.Repositories
         public IEnumerable<ServiceTypes> GetAllAsQuerable()
         {
 
-            return TempleDb.Query<ServiceTypes>("Select * From ServiceTypes order by Name asc").ToList();
+            return TempleDb.Query<ServiceTypes>("Select * From ServiceTypes").ToList();
 
         }
 

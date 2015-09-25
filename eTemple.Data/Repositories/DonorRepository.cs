@@ -25,7 +25,7 @@ namespace eTemple.Data.Repositories
 
         public DataTable GetAllasDataTable()
         {
-            return TempleDb.ExecuteReader("Select * From donors order by Name asc");
+            return TempleDb.ExecuteReader("Select * From donors order by DonorName asc");
         }
 
         public void Add(Donors entity)
