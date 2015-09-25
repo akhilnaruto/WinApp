@@ -24,50 +24,50 @@ namespace eTemple.Data
                 ServiceNameId = serviceNameId,
                 DateTypeId = dateTypeId,
                 PerformDate = performDate,
-                Month = month,
+                DonorMonth = month,
                 Address = address,
-                Name = name,
+                DonorName = name,
                 City = city
             };
 
         }
 
 
-        public static Donors CreateDonor1(DateTime date, string address,string surname,string name,
-                string districtName,string city,int pin, string state,string country,string nameon,
-                int star, string occasion,string gothram,int amount,int mr_no,string remarks,
-                string phonenumber, int specialdayId,int serviceTypeId,int serviceNameId,int dateTypeId,DateTime performdate,
-                string emailId,string paksha,int month,int thithi)
-        {
-            return new Donors
-            {
-                Address = address,
-                Surname=surname,
-                Name = name,
-                DistrictName=districtName,
-                City=city,
-                Pin=pin,
-                State=state,
-                Country=country,
-                NameOn=nameon,
-                Star=star,
-                Occassion=occasion,
-                Gothram=gothram,
-                Amount=amount,
-                MR_No=mr_no,
-                Remarks=remarks,
-                PhoneNumber=phonenumber,
-                SpecialDayId=specialdayId,
-                ServiceTypeId=serviceTypeId,
-                ServiceNameId=serviceNameId,
-                DateTypeId=dateTypeId,
-                PerformDate=performdate,
-                EmailId=emailId,
-                Paksha=paksha,
-                Month=month,
-                Thidhi=thithi
-            };
-
-        }
+        //public static Donors CreateDonor1(int id,int amount, int mr_no,DateTime date, DateTime performdate, string address=null,string surname=null,string name=null,
+        //        string districtName=null,string city=null,int pin=0, string state=null,string country=null,string nameon=null,
+        //        int star=0, string occasion=null,string gothram=null,string remarks=null,
+        //        string phonenumber=null, int specialdayId=0,int serviceTypeId=0,int serviceNameId=0,int dateTypeId=0,
+        //        string emailId=null,string paksha=null,int month=0,int thithi=0)
+        //{
+        //    return new Donors
+        //    {
+        //        Id = id,
+        //        Address = address,
+        //        Surname = surname,
+        //        Name = name,
+        //        DistrictName = districtName,
+        //        City = city,
+        //        Pin = pin,
+        //        State = state,
+        //        Country = country,
+        //        NameOn = nameon,
+        //        Star = star,
+        //        Occassion = occasion,
+        //        Gothram = gothram,
+        //        Amount = amount,
+        //        MR_No = mr_no,
+        //        Remarks = remarks,
+        //        PhoneNumber = phonenumber,
+        //        SpecialDayId = specialdayId,
+        //        ServiceTypeId = serviceTypeId,
+        //        ServiceNameId = serviceNameId,
+        //        DateTypeId = dateTypeId,
+        //        PerformDate = performdate,
+        //        EmailId = emailId,
+        //        Paksha = paksha,
+        //        Month = month,
+        //        Thidhi = thithi
+        //    };
+        //}
     }
 }

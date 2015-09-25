@@ -36,6 +36,13 @@ namespace eTemple.Data.Repositories
             return TempleDb.Query<Months>("Select * From month order by Id").ToList();
         }
 
+        public IEnumerable<Months> GetAllAsQuerable(int donorMonthId)
+        {
+
+            return TempleDb.Query<Months>("Select * From month where Id = " + donorMonthId + " order by Name asc").ToList();
+
+        }
+
         public void Update(Months entity)
         {
             throw new NotImplementedException();

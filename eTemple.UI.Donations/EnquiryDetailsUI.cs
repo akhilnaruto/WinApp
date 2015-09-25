@@ -33,12 +33,12 @@ namespace eTemple.UI.Donations
         private void LoadDataAndRenderInUI()
         {
          
-            var distinctDonors = donors.GroupBy(donor => donor.Name).ToList().Select(
+            var distinctDonors = donors.GroupBy(donor => donor.DonorName).ToList().Select(
                                                  x => new SelectedDonor
                                                  {
                                                      Name = x.Key,
                                                      Id = x.Select(y => y.Id).FirstOrDefault(),
-                                                     PhoneNumber = x.Select(y => y.PhoneNumber).FirstOrDefault(),
+                                                     PhoneNumber = x.Select(y => y.Landline).FirstOrDefault(),
                                                  }).ToList();
                          
  
@@ -58,7 +58,7 @@ namespace eTemple.UI.Donations
             var selectedDonor = donorNameComboBox.SelectedItem as SelectedDonor;
             if(selectedDonor != null)
             {
-                var matchedDonors = donors.Where(donor => donor.Name == selectedDonor.Name);
+                var matchedDonors = donors.Where(donor => donor.DonorName == selectedDonor.Name);
                 AddMatchedDonorsToGrid(matchedDonors.ToList());
             }
 
@@ -70,7 +70,7 @@ namespace eTemple.UI.Donations
             dataGridView1.Rows.Clear();
             foreach (var donor in matchedDonors)
             {
-                dataGridView1.Rows.Add(donor.Id, donor.Surname, donor.Name, donor.Address);
+                dataGridView1.Rows.Add(donor.Id, donor.Surname, donor.DonorName, donor.Address);
             }
         }
      
@@ -116,7 +116,7 @@ namespace eTemple.UI.Donations
 
     internal class SelectedDonor
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
     }

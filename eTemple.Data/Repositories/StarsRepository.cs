@@ -32,7 +32,7 @@ namespace eTemple.Data.Repositories
 
         public IEnumerable<Stars> GetAllAsQuerable()
         {
-            return TempleDb.Query<Stars>("Select * From stars").ToList();
+            return TempleDb.Query<Stars>("Select * From stars order by Id asc").ToList();
         }
 
         public IEnumerable<Stars> GetAllAsQuerable(int starId)

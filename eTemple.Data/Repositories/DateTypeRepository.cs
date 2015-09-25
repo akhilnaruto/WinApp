@@ -33,7 +33,14 @@ namespace eTemple.Data.Repositories
 
         public IEnumerable<DateType> GetAllAsQuerable()
         {
-            return TempleDb.Query<DateType>("Select * From datetype order by Name asc").ToList();
+            return TempleDb.Query<DateType>("Select * From datetype order by Id asc").ToList();
+        }
+
+        public IEnumerable<DateType> GetAllAsQuerable(int dateTypeId)
+        {
+
+            return TempleDb.Query<DateType>("Select * From datetype where Id = " + dateTypeId + " order by Name asc").ToList();
+
         }
 
         public void Update(DateType entity)

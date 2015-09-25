@@ -63,19 +63,23 @@
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.cmbStar = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpBoxGeneralInfo = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmailId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMobile = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLandline = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpServiceInfo = new System.Windows.Forms.GroupBox();
             this.cmbServiceName = new System.Windows.Forms.ComboBox();
             this.lblServiceName = new System.Windows.Forms.Label();
             this.cmbServiceType = new System.Windows.Forms.ComboBox();
             this.lblServiceType = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grpOtherInfo = new System.Windows.Forms.GroupBox();
+            this.cmbMonthlyAnna = new System.Windows.Forms.ComboBox();
+            this.lblMonthlyAnna = new System.Windows.Forms.Label();
+            this.dtpEnglishDateType = new System.Windows.Forms.DateTimePicker();
+            this.lblEnglishDatetype = new System.Windows.Forms.Label();
             this.cmbThithi = new System.Windows.Forms.ComboBox();
             this.lblThithi = new System.Windows.Forms.Label();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
@@ -89,15 +93,9 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblEnglishDatetype = new System.Windows.Forms.Label();
-            this.dtpEnglishDateType = new System.Windows.Forms.DateTimePicker();
-            this.cmbPaksha = new System.Windows.Forms.ComboBox();
-            this.lblPaksha = new System.Windows.Forms.Label();
-            this.cmbMonthlyAnna = new System.Windows.Forms.ComboBox();
-            this.lblMonthlyAnna = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.grpBoxGeneralInfo.SuspendLayout();
+            this.grpServiceInfo.SuspendLayout();
+            this.grpOtherInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -414,21 +412,21 @@
             this.cmbStar.Size = new System.Drawing.Size(200, 28);
             this.cmbStar.TabIndex = 12;
             // 
-            // groupBox1
+            // grpBoxGeneralInfo
             // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtEmailId);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtMobile);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtLandline);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(930, 335);
-            this.groupBox1.TabIndex = 36;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "General Information";
+            this.grpBoxGeneralInfo.Controls.Add(this.label3);
+            this.grpBoxGeneralInfo.Controls.Add(this.txtEmailId);
+            this.grpBoxGeneralInfo.Controls.Add(this.label1);
+            this.grpBoxGeneralInfo.Controls.Add(this.txtMobile);
+            this.grpBoxGeneralInfo.Controls.Add(this.label2);
+            this.grpBoxGeneralInfo.Controls.Add(this.txtLandline);
+            this.grpBoxGeneralInfo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.grpBoxGeneralInfo.Location = new System.Drawing.Point(3, 3);
+            this.grpBoxGeneralInfo.Name = "grpBoxGeneralInfo";
+            this.grpBoxGeneralInfo.Size = new System.Drawing.Size(930, 335);
+            this.grpBoxGeneralInfo.TabIndex = 36;
+            this.grpBoxGeneralInfo.TabStop = false;
+            this.grpBoxGeneralInfo.Text = "General Information";
             // 
             // label3
             // 
@@ -484,19 +482,19 @@
             this.txtLandline.Size = new System.Drawing.Size(200, 27);
             this.txtLandline.TabIndex = 18;
             // 
-            // groupBox2
+            // grpServiceInfo
             // 
-            this.groupBox2.Controls.Add(this.cmbServiceName);
-            this.groupBox2.Controls.Add(this.lblServiceName);
-            this.groupBox2.Controls.Add(this.cmbServiceType);
-            this.groupBox2.Controls.Add(this.lblServiceType);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.groupBox2.Location = new System.Drawing.Point(3, 336);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(930, 71);
-            this.groupBox2.TabIndex = 37;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Service Information";
+            this.grpServiceInfo.Controls.Add(this.cmbServiceName);
+            this.grpServiceInfo.Controls.Add(this.lblServiceName);
+            this.grpServiceInfo.Controls.Add(this.cmbServiceType);
+            this.grpServiceInfo.Controls.Add(this.lblServiceType);
+            this.grpServiceInfo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.grpServiceInfo.Location = new System.Drawing.Point(3, 336);
+            this.grpServiceInfo.Name = "grpServiceInfo";
+            this.grpServiceInfo.Size = new System.Drawing.Size(930, 71);
+            this.grpServiceInfo.TabIndex = 37;
+            this.grpServiceInfo.TabStop = false;
+            this.grpServiceInfo.Text = "Service Information";
             // 
             // cmbServiceName
             // 
@@ -537,29 +535,64 @@
             this.lblServiceType.TabIndex = 38;
             this.lblServiceType.Text = "Service Type";
             // 
-            // groupBox3
+            // grpOtherInfo
             // 
-            this.groupBox3.Controls.Add(this.cmbMonthlyAnna);
-            this.groupBox3.Controls.Add(this.lblMonthlyAnna);
-            this.groupBox3.Controls.Add(this.cmbPaksha);
-            this.groupBox3.Controls.Add(this.dtpEnglishDateType);
-            this.groupBox3.Controls.Add(this.lblPaksha);
-            this.groupBox3.Controls.Add(this.lblEnglishDatetype);
-            this.groupBox3.Controls.Add(this.cmbThithi);
-            this.groupBox3.Controls.Add(this.lblThithi);
-            this.groupBox3.Controls.Add(this.cmbMonth);
-            this.groupBox3.Controls.Add(this.lblMonth);
-            this.groupBox3.Controls.Add(this.cmbSpecialDay);
-            this.groupBox3.Controls.Add(this.lblSpecialDay);
-            this.groupBox3.Controls.Add(this.cmbDateType);
-            this.groupBox3.Controls.Add(this.lblDateType);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.groupBox3.Location = new System.Drawing.Point(3, 418);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(930, 118);
-            this.groupBox3.TabIndex = 42;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Other Information";
+            this.grpOtherInfo.Controls.Add(this.cmbMonthlyAnna);
+            this.grpOtherInfo.Controls.Add(this.lblMonthlyAnna);
+            this.grpOtherInfo.Controls.Add(this.dtpEnglishDateType);
+            this.grpOtherInfo.Controls.Add(this.lblEnglishDatetype);
+            this.grpOtherInfo.Controls.Add(this.cmbThithi);
+            this.grpOtherInfo.Controls.Add(this.lblThithi);
+            this.grpOtherInfo.Controls.Add(this.cmbMonth);
+            this.grpOtherInfo.Controls.Add(this.lblMonth);
+            this.grpOtherInfo.Controls.Add(this.cmbSpecialDay);
+            this.grpOtherInfo.Controls.Add(this.lblSpecialDay);
+            this.grpOtherInfo.Controls.Add(this.cmbDateType);
+            this.grpOtherInfo.Controls.Add(this.lblDateType);
+            this.grpOtherInfo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.grpOtherInfo.Location = new System.Drawing.Point(3, 418);
+            this.grpOtherInfo.Name = "grpOtherInfo";
+            this.grpOtherInfo.Size = new System.Drawing.Size(930, 118);
+            this.grpOtherInfo.TabIndex = 42;
+            this.grpOtherInfo.TabStop = false;
+            this.grpOtherInfo.Text = "Other Information";
+            // 
+            // cmbMonthlyAnna
+            // 
+            this.cmbMonthlyAnna.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmbMonthlyAnna.FormattingEnabled = true;
+            this.cmbMonthlyAnna.Location = new System.Drawing.Point(412, 64);
+            this.cmbMonthlyAnna.Name = "cmbMonthlyAnna";
+            this.cmbMonthlyAnna.Size = new System.Drawing.Size(200, 28);
+            this.cmbMonthlyAnna.TabIndex = 202;
+            // 
+            // lblMonthlyAnna
+            // 
+            this.lblMonthlyAnna.AutoSize = true;
+            this.lblMonthlyAnna.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblMonthlyAnna.Location = new System.Drawing.Point(303, 64);
+            this.lblMonthlyAnna.Name = "lblMonthlyAnna";
+            this.lblMonthlyAnna.Size = new System.Drawing.Size(92, 20);
+            this.lblMonthlyAnna.TabIndex = 203;
+            this.lblMonthlyAnna.Text = "Perform Day";
+            // 
+            // dtpEnglishDateType
+            // 
+            this.dtpEnglishDateType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.dtpEnglishDateType.Location = new System.Drawing.Point(606, 33);
+            this.dtpEnglishDateType.Name = "dtpEnglishDateType";
+            this.dtpEnglishDateType.Size = new System.Drawing.Size(200, 27);
+            this.dtpEnglishDateType.TabIndex = 201;
+            // 
+            // lblEnglishDatetype
+            // 
+            this.lblEnglishDatetype.AutoSize = true;
+            this.lblEnglishDatetype.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblEnglishDatetype.Location = new System.Drawing.Point(461, 33);
+            this.lblEnglishDatetype.Name = "lblEnglishDatetype";
+            this.lblEnglishDatetype.Size = new System.Drawing.Size(98, 20);
+            this.lblEnglishDatetype.TabIndex = 46;
+            this.lblEnglishDatetype.Text = "Perform Date";
             // 
             // cmbThithi
             // 
@@ -686,62 +719,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // lblEnglishDatetype
-            // 
-            this.lblEnglishDatetype.AutoSize = true;
-            this.lblEnglishDatetype.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblEnglishDatetype.Location = new System.Drawing.Point(461, 33);
-            this.lblEnglishDatetype.Name = "lblEnglishDatetype";
-            this.lblEnglishDatetype.Size = new System.Drawing.Size(85, 20);
-            this.lblEnglishDatetype.TabIndex = 46;
-            this.lblEnglishDatetype.Text = "Select Date";
-            // 
-            // dtpEnglishDateType
-            // 
-            this.dtpEnglishDateType.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.dtpEnglishDateType.Location = new System.Drawing.Point(606, 33);
-            this.dtpEnglishDateType.Name = "dtpEnglishDateType";
-            this.dtpEnglishDateType.Size = new System.Drawing.Size(200, 27);
-            this.dtpEnglishDateType.TabIndex = 201;
-            // 
-            // cmbPaksha
-            // 
-            this.cmbPaksha.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmbPaksha.FormattingEnabled = true;
-            this.cmbPaksha.Location = new System.Drawing.Point(606, 32);
-            this.cmbPaksha.Name = "cmbPaksha";
-            this.cmbPaksha.Size = new System.Drawing.Size(200, 28);
-            this.cmbPaksha.TabIndex = 41;
-            // 
-            // lblPaksha
-            // 
-            this.lblPaksha.AutoSize = true;
-            this.lblPaksha.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblPaksha.Location = new System.Drawing.Point(461, 33);
-            this.lblPaksha.Name = "lblPaksha";
-            this.lblPaksha.Size = new System.Drawing.Size(54, 20);
-            this.lblPaksha.TabIndex = 42;
-            this.lblPaksha.Text = "Paksha";
-            // 
-            // cmbMonthlyAnna
-            // 
-            this.cmbMonthlyAnna.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmbMonthlyAnna.FormattingEnabled = true;
-            this.cmbMonthlyAnna.Location = new System.Drawing.Point(427, 33);
-            this.cmbMonthlyAnna.Name = "cmbMonthlyAnna";
-            this.cmbMonthlyAnna.Size = new System.Drawing.Size(200, 28);
-            this.cmbMonthlyAnna.TabIndex = 202;
-            // 
-            // lblMonthlyAnna
-            // 
-            this.lblMonthlyAnna.AutoSize = true;
-            this.lblMonthlyAnna.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblMonthlyAnna.Location = new System.Drawing.Point(318, 33);
-            this.lblMonthlyAnna.Name = "lblMonthlyAnna";
-            this.lblMonthlyAnna.Size = new System.Drawing.Size(85, 20);
-            this.lblMonthlyAnna.TabIndex = 203;
-            this.lblMonthlyAnna.Text = "Select Date";
-            // 
             // DonationInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -751,8 +728,8 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grpOtherInfo);
+            this.Controls.Add(this.grpServiceInfo);
             this.Controls.Add(this.cmbStar);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
@@ -787,17 +764,17 @@
             this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.txtDonorId);
             this.Controls.Add(this.lblDonorId);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpBoxGeneralInfo);
             this.MinimizeBox = false;
             this.Name = "DonationInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Donation Information";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.grpBoxGeneralInfo.ResumeLayout(false);
+            this.grpBoxGeneralInfo.PerformLayout();
+            this.grpServiceInfo.ResumeLayout(false);
+            this.grpServiceInfo.PerformLayout();
+            this.grpOtherInfo.ResumeLayout(false);
+            this.grpOtherInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -840,13 +817,13 @@
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.ComboBox cmbStar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpBoxGeneralInfo;
+        private System.Windows.Forms.GroupBox grpServiceInfo;
         private System.Windows.Forms.ComboBox cmbServiceName;
         private System.Windows.Forms.Label lblServiceName;
         private System.Windows.Forms.ComboBox cmbServiceType;
         private System.Windows.Forms.Label lblServiceType;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grpOtherInfo;
         private System.Windows.Forms.ComboBox cmbSpecialDay;
         private System.Windows.Forms.Label lblSpecialDay;
         private System.Windows.Forms.ComboBox cmbDateType;
@@ -868,8 +845,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblEnglishDatetype;
         private System.Windows.Forms.DateTimePicker dtpEnglishDateType;
-        private System.Windows.Forms.ComboBox cmbPaksha;
-        private System.Windows.Forms.Label lblPaksha;
         private System.Windows.Forms.ComboBox cmbMonthlyAnna;
         private System.Windows.Forms.Label lblMonthlyAnna;
     }

@@ -32,12 +32,12 @@ namespace eTemple.Data.Repositories
 
         public IEnumerable<MonthlyAnnaDanam> GetAllAsQuerable()
         {
-            return TempleDb.Query<MonthlyAnnaDanam>("Select * From MonthlyAnnadanamtbl order by Day asc").ToList();
+            return TempleDb.Query<MonthlyAnnaDanam>("Select * From MonthlyAnnadanamtbl order by Id asc").ToList();
         }
 
         public IEnumerable<MonthlyAnnaDanam> GetAllAsQuerable(int DayId)
         {
-            return TempleDb.Query<MonthlyAnnaDanam>("Select * From MonthlyAnnadanamtbl where Id = " +DayId+ " order by Day asc").ToList();
+            return TempleDb.Query<MonthlyAnnaDanam>("Select * From MonthlyAnnadanamtbl where Id = " + DayId + " order by Day asc").ToList();
         }
 
         public void Update(MonthlyAnnaDanam entity)

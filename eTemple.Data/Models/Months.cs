@@ -11,8 +11,6 @@ namespace eTemple.Data.Models
     {
         public int Id { get; set; }
 
-        public string English { get; set; }
-
-        public string Telugu { get; set; }
+        public string Name { get; set; }
     }    
 }

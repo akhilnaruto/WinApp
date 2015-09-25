@@ -33,7 +33,14 @@ namespace eTemple.Data.Repositories
 
         public IEnumerable<Thidhi> GetAllAsQuerable()
         {
-            return TempleDb.Query<Thidhi>("Select * From Thidhi").ToList();
+            return TempleDb.Query<Thidhi>("Select * From Thidhi order by Id asc").ToList();
+        }
+
+        public IEnumerable<Thidhi> GetAllAsQuerable(int thithiId)
+        {
+
+            return TempleDb.Query<Thidhi>("Select * From thidhi where Id = " + thithiId + " order by Name asc").ToList();
+
         }
 
         public void Update(Thidhi entity)

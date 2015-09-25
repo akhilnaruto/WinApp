@@ -15,7 +15,7 @@ namespace eTemple.UI.Donations
 {
     public partial class ModifyPopup : Form
     {
-        DonorRepository donorRepositoy;
+        private DonorRepository donorRepositoy;
         List<Donors> donors = new List<Donors>();
        
 
@@ -27,6 +27,8 @@ namespace eTemple.UI.Donations
             lblDonorID.Visible = true;
             lblDonorName.Visible = false;
             lblMRNO.Visible = false;
+            rbdDonorId_CheckedChanged(null,null);
+
         }
 
         private void rbdDonorId_CheckedChanged(object sender, EventArgs e)
@@ -34,6 +36,9 @@ namespace eTemple.UI.Donations
             lblDonorID.Visible = true;
             lblDonorName.Visible = false;
             lblMRNO.Visible = false;
+            txtDonorID.Visible = true;
+            txtDonorName.Visible = false;
+            txtMRNO.Visible = false;
         }
 
         private void rbdDonorName_CheckedChanged(object sender, EventArgs e)
@@ -41,6 +46,9 @@ namespace eTemple.UI.Donations
             lblDonorID.Visible = false;
             lblDonorName.Visible = true;
             lblMRNO.Visible = false;
+            txtDonorID.Visible = false;
+            txtDonorName.Visible = true;
+            txtMRNO.Visible = false;
         }
 
         private void rbdMRNO_CheckedChanged(object sender, EventArgs e)
@@ -48,6 +56,9 @@ namespace eTemple.UI.Donations
             lblDonorID.Visible = false;
             lblDonorName.Visible = false;
             lblMRNO.Visible = true;
+            txtDonorID.Visible = false;
+            txtDonorName.Visible = false;
+            txtMRNO.Visible = true;
         }
 
         /// <summary>
@@ -63,28 +74,72 @@ namespace eTemple.UI.Donations
         private void LoadDataAndRenderInUI()
         {
 
-            var distinctDonors = donors.GroupBy(donor => donor.Name).ToList().Select(
-                                                 x => new SelectedDonorOptions
-                                                 {
-                                                     Name = x.Key,
-                                                     Id = x.Select(y => y.Id).FirstOrDefault()
-                                                 }).ToList();
-            cmbDonorID.DataSource = distinctDonors;
-            cmbDonorID.DisplayMember = "Id";
+            //var distinctDonors = donors.GroupBy(donor => donor.DonorName).ToList().Select(
+            //                                     x => new SelectedDonorOptions
+            //                                     {
+            //                                         Name = x.Key,
+            //                                         Id = x.Select(y => y.Id).FirstOrDefault()
+            //                                     }).ToList();
+            //cmbDonorID.DataSource = distinctDonors;
+            //cmbDonorID.DisplayMember = "Id";
         }
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            DonationInformation parent = (DonationInformation)this.Owner;
-            var donorId = cmbDonorID.SelectedItem as SelectedDonorOptions;
-            var selectedDonor = donors.Where(donor => donor.Id == donorId.Id).FirstOrDefault();
-            parent.getDataFromChildWindow(selectedDonor);
-            this.Close();
+            if (txtDonorID.Text != string.Empty || txtDonorID.Text != "")
+            {
+                DonationInformation parent = (DonationInformation)this.Owner;
+                var donorId = txtDonorID.Text;
+                var donorExists = donorRepositoy.checkModifyDonorIDExists(donorId);
+                if (donorExists == null)
+                {
+                    MessageBox.Show("Entered Donor Id dosen't exist, kindly enter again to modify the record");
+                    return;
+                }
+                //var selectedDonor = donors.Where(donor => donor.Id == donorId.Id).FirstOrDefault();
+                parent.getDataFromChildWindow(donorExists);
+                this.Close();
+            }
+
+            else if (txtDonorName.Text != string.Empty || txtDonorName.Text != "")
+            {
+                DonationInformation parent = (DonationInformation)this.Owner;
+                var donorName = txtDonorName.Text;
+                var donorExists = donorRepositoy.checkModifyDonorNameExists(donorName);
+                if (donorExists == null)
+                {
+                    MessageBox.Show("Entered Donor Name dosen't exist, kindly enter again to modify the record");
+                    return;
+                }
+                //var selectedDonor = donors.Where(donor => donor.Id == donorId.Id).FirstOrDefault();
+                parent.getDataFromChildWindow(donorExists);
+                this.Close();
+            }
+
+            else if (txtMRNO.Text != string.Empty || txtMRNO.Text != "")
+            {
+                DonationInformation parent = (DonationInformation)this.Owner;
+                var donorName = txtMRNO.Text;
+                var donorExists = donorRepositoy.checkModifyMRNoExists(donorName);
+                if (donorExists == null)
+                {
+                    MessageBox.Show("Entered Donor Name dosen't exist, kindly enter again to modify the record");
+                    return;
+                }
+                //var selectedDonor = donors.Where(donor => donor.Id == donorId.Id).FirstOrDefault();
+                parent.getDataFromChildWindow(donorExists);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Kindly enter data to modify the data");
+                return;
+            }
         }
 
         private void cmbDonorID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var donorId = cmbDonorID.SelectedItem as SelectedDonorOptions;
+            //var donorId = cmbDonorID.SelectedItem as SelectedDonorOptions;
         }
     }
 }

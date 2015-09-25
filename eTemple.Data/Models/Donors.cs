@@ -11,10 +11,10 @@ namespace eTemple.Data.Models
     public partial class Donors : IEntity
     {
         
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         
-        public DateTime date { get; set; }
+        public DateTime Donordate { get; set; }
 
         
         public string Address { get; set; }
@@ -23,7 +23,7 @@ namespace eTemple.Data.Models
         public string Surname { get; set; }
 
         
-        public string Name { get; set; }
+        public string DonorName { get; set; }
 
         
         public string DistrictName { get; set; }
@@ -62,7 +62,7 @@ namespace eTemple.Data.Models
         public string Remarks { get; set; }
 
         
-        public string PhoneNumber { get; set; }
+        public string Landline { get; set; }
 
         
         public int SpecialDayId { get; set; }
@@ -81,16 +81,16 @@ namespace eTemple.Data.Models
 
         
         public string EmailId { get; set; }
-
         
-        public string Paksha { get; set; }
-
-        
-        public int Month { get; set; }
+        public int DonorMonth { get; set; }
 
         
         public int Thidhi { get; set; }
+
+
+        public int DonorDay { get; set; }
+
+        public string Mobile { get; set; }
     }
 }
-
 
