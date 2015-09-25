@@ -57,6 +57,12 @@
     <Compile Include="AddressForm.Designer.cs">
       <DependentUpon>AddressForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DailyAnnadanam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailyAnnadanam.Designer.cs">
+      <DependentUpon>DailyAnnadanam.cs</DependentUpon>
+    </Compile>
     <Compile Include="DonationInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddressForm.resx">
       <DependentUpon>AddressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyAnnadanam.resx">
+      <DependentUpon>DailyAnnadanam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DonationInformation.resx">
       <DependentUpon>DonationInformation.cs</DependentUpon>

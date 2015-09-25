@@ -195,8 +195,8 @@ namespace eTemple.UI.Donations
             switch (dtType.Id)
             {
                 case 1:
-                    FilterString = "Month=" + month.Id + " AND Thidhi=" + thidhi.Id ;
-                    performDate =  month.Telugu + "   " + thidhi.Name;
+                    FilterString = "DonorMonth=" + month.Id + " AND Thidhi=" + thidhi.Id ;
+                    performDate =  month.Name + "   " + thidhi.Name;
                     break;
                 case 2:
                     performDate = dtPicker.Value.ToString("dd-MM-yyyy");
@@ -298,7 +298,7 @@ namespace eTemple.UI.Donations
             string selDate = dtPicker.Value.ToString("yyyy-MM-dd");
             int day = dtPicker.Value.Day;
             string prvsYeardate = dtPicker.Value.AddYears(-1).ToString("yyyy-MM-dd");
-            return "Day=" + day + " AND date >= '#" + prvsYeardate + "#'";
+            return "DonorDay=" + day + " AND date >= '#" + prvsYeardate + "#'";
         }
     }
 }
