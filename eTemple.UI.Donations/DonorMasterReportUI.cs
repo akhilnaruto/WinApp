@@ -59,8 +59,8 @@ namespace eTemple.UI.Donations
             cmbMonth.DisplayMember = "Telugu";
             cmbThidhi.DataSource = lstThidhi;
             cmbThidhi.DisplayMember = "Name";
-            cmbPaksha.DataSource = lstPaksha;
-            cmbPaksha.DisplayMember = "Name";
+           // cmbPaksha.DataSource = lstPaksha;
+          //  cmbPaksha.DisplayMember = "Name";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -187,7 +187,7 @@ namespace eTemple.UI.Donations
             var month = cmbMonth.SelectedItem as Months;
             // var paksha=cmbPaksha.SelectedItem as;
             var thidhi = cmbThidhi.SelectedItem as Thidhi;
-            var paksha = cmbPaksha.SelectedItem as Paksha;
+           // var paksha = cmbPaksha.SelectedItem as Paksha;
             var specialDayId = cmbSpecialDay.SelectedItem as SpecialDay;
             var serviceTypeId = cmbServiceType.SelectedItem as ServiceTypes;
             var serviceNameId = cmbServiceName.SelectedItem as ServiceName;
@@ -195,11 +195,11 @@ namespace eTemple.UI.Donations
             switch (dtType.Id)
             {
                 case 1:
-                    FilterString = "Month=" + month.Id + " AND Thidhi=" + thidhi.Id + " AND Paksha=" + paksha.Id;
-                    performDate = paksha.Name + "      " + month.Telugu + "        " + thidhi.Name;
+                    FilterString = "Month=" + month.Id + " AND Thidhi=" + thidhi.Id ;
+                    performDate =  month.Telugu + "   " + thidhi.Name;
                     break;
                 case 2:
-                    performDate = dtPicker.Value.ToString("yyyy-MM-dd");
+                    performDate = dtPicker.Value.ToString("dd-MM-yyyy");
                     FilterString = "PerformDate='#" + performDate + "#'";
                     break;
                 case 3:
@@ -235,8 +235,8 @@ namespace eTemple.UI.Donations
                 switch (dtType.Id)
                 {
                     case 1:
-                        lblPaksha.Visible = true;
-                        cmbPaksha.Visible = true;
+                      //  lblPaksha.Visible = true;
+                      //  cmbPaksha.Visible = true;
                         lblMonth.Visible = true;
                         cmbMonth.Visible = true;
                         lblThidhi.Visible = true;
@@ -249,8 +249,8 @@ namespace eTemple.UI.Donations
                     case 2:
                         lblServicePerfmdt.Visible = true;
                         dtPicker.Visible = true;
-                        lblPaksha.Visible = false;
-                        cmbPaksha.Visible = false;
+                        //lblPaksha.Visible = false;
+                       // cmbPaksha.Visible = false;
                         lblMonth.Visible = false;
                         cmbMonth.Visible = false;
                         lblThidhi.Visible = false;
@@ -261,8 +261,8 @@ namespace eTemple.UI.Donations
                     case 3:
                         lblSpecialDay.Visible = true;
                         cmbSpecialDay.Visible = true;
-                        lblPaksha.Visible = false;
-                        cmbPaksha.Visible = false;
+                       // lblPaksha.Visible = false;
+                       // cmbPaksha.Visible = false;
                         lblMonth.Visible = false;
                         cmbMonth.Visible = false;
                         lblThidhi.Visible = false;
@@ -283,7 +283,7 @@ namespace eTemple.UI.Donations
             if (DonorList.Count() != 0)
             {
                 DataView view = new DataView(DonorList.CopyToDataTable());
-                dt = view.ToTable(false, "Address", "Surname", "NameOn", "DistrictName", "City", "Pin", "State", "Country");
+                dt = view.ToTable(false, "Address", "Surname", "NameOn", "DistrictName", "City", "Pin", "State", "Country","ServiceTypeId","MR_NO");
                 DonorReportDataSet drs = new DonorReportDataSet();
                 drs.Tables.Add(dt);
                 AddressForm oAddressForm = new AddressForm(dt);

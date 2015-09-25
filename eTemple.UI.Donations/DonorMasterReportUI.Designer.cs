@@ -41,8 +41,6 @@
             this.cmbDateType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chkNonPerformSvc = new System.Windows.Forms.CheckBox();
-            this.cmbPaksha = new System.Windows.Forms.ComboBox();
-            this.lblPaksha = new System.Windows.Forms.Label();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.lblMonth = new System.Windows.Forms.Label();
             this.cmbThidhi = new System.Windows.Forms.ComboBox();
@@ -195,34 +193,12 @@
             this.chkNonPerformSvc.Text = "Non performance Service types";
             this.chkNonPerformSvc.UseVisualStyleBackColor = true;
             // 
-            // cmbPaksha
-            // 
-            this.cmbPaksha.FormattingEnabled = true;
-            this.cmbPaksha.Items.AddRange(new object[] {
-            "        "});
-            this.cmbPaksha.Location = new System.Drawing.Point(72, 166);
-            this.cmbPaksha.Name = "cmbPaksha";
-            this.cmbPaksha.Size = new System.Drawing.Size(126, 21);
-            this.cmbPaksha.TabIndex = 14;
-            this.cmbPaksha.Visible = false;
-            // 
-            // lblPaksha
-            // 
-            this.lblPaksha.AutoSize = true;
-            this.lblPaksha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaksha.Location = new System.Drawing.Point(11, 170);
-            this.lblPaksha.Name = "lblPaksha";
-            this.lblPaksha.Size = new System.Drawing.Size(55, 17);
-            this.lblPaksha.TabIndex = 13;
-            this.lblPaksha.Text = "Paksha";
-            this.lblPaksha.Visible = false;
-            // 
             // cmbMonth
             // 
             this.cmbMonth.FormattingEnabled = true;
             this.cmbMonth.Items.AddRange(new object[] {
             "        "});
-            this.cmbMonth.Location = new System.Drawing.Point(261, 166);
+            this.cmbMonth.Location = new System.Drawing.Point(158, 166);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(126, 21);
             this.cmbMonth.TabIndex = 16;
@@ -232,7 +208,7 @@
             // 
             this.lblMonth.AutoSize = true;
             this.lblMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonth.Location = new System.Drawing.Point(207, 168);
+            this.lblMonth.Location = new System.Drawing.Point(95, 168);
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(47, 17);
             this.lblMonth.TabIndex = 15;
@@ -244,7 +220,7 @@
             this.cmbThidhi.FormattingEnabled = true;
             this.cmbThidhi.Items.AddRange(new object[] {
             "        "});
-            this.cmbThidhi.Location = new System.Drawing.Point(453, 166);
+            this.cmbThidhi.Location = new System.Drawing.Point(367, 166);
             this.cmbThidhi.Name = "cmbThidhi";
             this.cmbThidhi.Size = new System.Drawing.Size(126, 21);
             this.cmbThidhi.TabIndex = 18;
@@ -254,7 +230,7 @@
             // 
             this.lblThidhi.AutoSize = true;
             this.lblThidhi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThidhi.Location = new System.Drawing.Point(399, 168);
+            this.lblThidhi.Location = new System.Drawing.Point(299, 168);
             this.lblThidhi.Name = "lblThidhi";
             this.lblThidhi.Size = new System.Drawing.Size(47, 17);
             this.lblThidhi.TabIndex = 17;
@@ -299,12 +275,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 335);
             this.Controls.Add(this.btnGenerateAdress);
-            this.Controls.Add(this.cmbSpecialDay);
-            this.Controls.Add(this.lblSpecialDay);
             this.Controls.Add(this.cmbThidhi);
             this.Controls.Add(this.lblThidhi);
-            this.Controls.Add(this.cmbPaksha);
-            this.Controls.Add(this.lblPaksha);
             this.Controls.Add(this.chkNonPerformSvc);
             this.Controls.Add(this.cmbDateType);
             this.Controls.Add(this.label1);
@@ -320,6 +292,8 @@
             this.Controls.Add(this.rdbAlldonors);
             this.Controls.Add(this.cmbMonth);
             this.Controls.Add(this.lblMonth);
+            this.Controls.Add(this.cmbSpecialDay);
+            this.Controls.Add(this.lblSpecialDay);
             this.Name = "DonorMasterReportUI";
             this.Text = "Donor Master Report";
             this.Load += new System.EventHandler(this.DonorMasterReportUI_Load);
@@ -343,8 +317,6 @@
         private System.Windows.Forms.ComboBox cmbDateType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkNonPerformSvc;
-        private System.Windows.Forms.ComboBox cmbPaksha;
-        private System.Windows.Forms.Label lblPaksha;
         private System.Windows.Forms.ComboBox cmbMonth;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.ComboBox cmbThidhi;
