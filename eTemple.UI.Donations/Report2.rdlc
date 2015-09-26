@@ -6,12 +6,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>17.67385cm</Width>
+              <Width>14.78989cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>4.17187cm</Height>
+              <Height>5.75937cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -19,6 +19,75 @@
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value xml:space="preserve">      </Value>
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>SERVICE TYPE   </Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>:    </Value>
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Label>lblPerformType</Label>
+                              <Value>=Fields!ServiceType.Value</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>CERTIFICATE  NO    :    </Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Label>lblRecieptNo</Label>
+                              <Value>=Fields!MR_NO.Value</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
@@ -167,32 +236,9 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value xml:space="preserve">                        </Value>
+                              <Value xml:space="preserve">  </Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value>SERVICE TYPE   </Value>
-                              <Style>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value>:    </Value>
-                              <Style>
-                                <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Label>lblPerformType</Label>
-                              <Value>=Fields!ServiceTypeId.Value</Value>
-                              <Style>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -211,22 +257,7 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>                                                       CERTIFICATE  NO    :    </Value>
-                              <Style>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Label>lblRecieptNo</Label>
-                              <Value>=Fields!MR_NO.Value</Value>
-                              <Style>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value xml:space="preserve">    </Value>
+                              <Value xml:space="preserve">                                         </Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -268,9 +299,9 @@
         </TablixRowHierarchy>
         <DataSetName>DonorAddresses</DataSetName>
         <Top>0.76412cm</Top>
-        <Left>0.92286cm</Left>
-        <Height>4.17187cm</Height>
-        <Width>17.67385cm</Width>
+        <Left>1.50812cm</Left>
+        <Height>5.75937cm</Height>
+        <Width>14.78989cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -390,8 +421,8 @@
           <DataField>Country</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ServiceTypeId">
-          <DataField>ServiceTypeId</DataField>
+        <Field Name="ServiceType">
+          <DataField>ServiceType</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="MR_NO">

@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using eTemple.Data.Repositories;
 using eTemple.Data.Models;
-//using System.Data.DataSetExtensions;
+using InternalTools;
+
 namespace eTemple.UI.Donations
 {
     public partial class DonorMasterReportUI : Form
@@ -44,7 +45,7 @@ namespace eTemple.UI.Donations
             lstMonths = oMonthsRepository.GetAllAsQuerable().ToList();
             lstThidhi = oThidhiRepository.GetAllAsQuerable().ToList();
             lstDateType = oDateTypeRepository.GetAllAsQuerable().ToList();
-            lstDateType.RemoveAt(1);
+            lstDateType.RemoveAt(0);
             lstSpecialDay = oSpecialDayRepository.GetAllAsQuerable().ToList();
             //  lstPaksha = oPakshaRepository.GetAllAsQuerable().ToList();
         }
@@ -87,7 +88,7 @@ namespace eTemple.UI.Donations
         {
             if (rdbServiceWseDonors.Checked)
             {
-                btnGenerateAdress.Visible = false;
+                //btnGenerateAdress.Visible = false;
                 lblServiceType.Visible = true;
                 cmbServiceType.Visible = true;
                 cmbServiceType.DataSource = lstServiceType;
@@ -195,7 +196,7 @@ namespace eTemple.UI.Donations
             switch (dtType.Id)
             {
                 case 1:
-                    FilterString = "Month=" + month.Id + " AND Thidhi=" + thidhi.Id;
+                    FilterString = "DonorMonth=" + month.Id + " AND Thidhi=" + thidhi.Id;
                     performDate = month.Name + "   " + thidhi.Name;
                     break;
                 case 2:
@@ -284,11 +285,23 @@ namespace eTemple.UI.Donations
             {
                 DataView view = new DataView(DonorList.CopyToDataTable());
                 dt = view.ToTable(false, "Address", "Surname", "NameOn", "DistrictName", "City", "Pin", "State", "Country", "ServiceTypeId", "MR_NO");
-                IEnumerable<DataRow> matchingRows = lstServiceType.Join(dt.AsEnumerable(),
-                                                     listItem => listItem.Id,
-                                                      row => row.Field<int>("ServiceTypeId"),
-                                                     (r, li) => new { DifferentId = li., Row = r })
-                                                      .Select(ji => ji.Row);
+                dt.Columns.Add("ServiceType");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    dr["ServiceType"] = lstServiceType[Convert.ToInt32(dr["ServiceTypeId"])].Name;
+                }
+                //var servceTypes = lstServiceType.CopyobjToDataTable();
+                //var result = from x in dt.AsEnumerable()
+                //             join y in servceTypes.AsEnumerable()
+                //             on x.Field<int>("ServiceTypeId") equals y.Field<int>("Id")
+                //             select new
+                //             {
+                //                 Address = x.Field<string>("Address"),
+                //                 Surname = x.Field<string>("Surname"),
+                //                 NameOn = x.Field<string>("NameOn"),
+                //                 DistrictName = x.Field<int>("DistrictName")
+                //             };
+                //DataTable dt1 = result.CopyobjToDataTable();
                 DonorReportDataSet drs = new DonorReportDataSet();
                 drs.Tables.Add(dt);
                 AddressForm oAddressForm = new AddressForm(dt);

@@ -189,7 +189,6 @@
     <PageHeader>
       <Height>6.85216cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Textbox Name="Textbox1">
           <CanGrow>true</CanGrow>
@@ -334,7 +333,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>DonorId          Name On          Gothram        CertificateNo</Value>
+                  <Value>DonorId          Name On          Gothram      CertificateNo</Value>
                   <Style>
                     <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -347,7 +346,7 @@
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.59295cm</Top>
           <Height>6.21727cm</Height>
-          <Width>18.9567cm</Width>
+          <Width>16.99878cm</Width>
           <Style>
             <Border>
               <Style>None</Style>

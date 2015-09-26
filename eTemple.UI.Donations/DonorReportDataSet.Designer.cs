@@ -964,7 +964,7 @@ namespace eTemple.UI.Donations {
             
             private global::System.Data.DataColumn columnCountry;
             
-            private global::System.Data.DataColumn columnServiceTypeId;
+            private global::System.Data.DataColumn columnServiceType;
             
             private global::System.Data.DataColumn columnMR_NO;
             
@@ -1067,9 +1067,9 @@ namespace eTemple.UI.Donations {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ServiceTypeIdColumn {
+            public global::System.Data.DataColumn ServiceTypeColumn {
                 get {
-                    return this.columnServiceTypeId;
+                    return this.columnServiceType;
                 }
             }
             
@@ -1118,7 +1118,7 @@ namespace eTemple.UI.Donations {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DonorAddressesRow AddDonorAddressesRow(string Surname, string NameOn, string Address, string DistrictName, string City, string Pin, string State, string Country, string ServiceTypeId, string MR_NO) {
+            public DonorAddressesRow AddDonorAddressesRow(string Surname, string NameOn, string Address, string DistrictName, string City, string Pin, string State, string Country, string ServiceType, string MR_NO) {
                 DonorAddressesRow rowDonorAddressesRow = ((DonorAddressesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Surname,
@@ -1129,7 +1129,7 @@ namespace eTemple.UI.Donations {
                         Pin,
                         State,
                         Country,
-                        ServiceTypeId,
+                        ServiceType,
                         MR_NO};
                 rowDonorAddressesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDonorAddressesRow);
@@ -1161,7 +1161,7 @@ namespace eTemple.UI.Donations {
                 this.columnPin = base.Columns["Pin"];
                 this.columnState = base.Columns["State"];
                 this.columnCountry = base.Columns["Country"];
-                this.columnServiceTypeId = base.Columns["ServiceTypeId"];
+                this.columnServiceType = base.Columns["ServiceType"];
                 this.columnMR_NO = base.Columns["MR_NO"];
             }
             
@@ -1184,8 +1184,8 @@ namespace eTemple.UI.Donations {
                 base.Columns.Add(this.columnState);
                 this.columnCountry = new global::System.Data.DataColumn("Country", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCountry);
-                this.columnServiceTypeId = new global::System.Data.DataColumn("ServiceTypeId", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnServiceTypeId);
+                this.columnServiceType = new global::System.Data.DataColumn("ServiceType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnServiceType);
                 this.columnMR_NO = new global::System.Data.DataColumn("MR_NO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMR_NO);
             }
@@ -1931,17 +1931,17 @@ namespace eTemple.UI.Donations {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ServiceTypeId {
+            public string ServiceType {
                 get {
                     try {
-                        return ((string)(this[this.tableDonorAddresses.ServiceTypeIdColumn]));
+                        return ((string)(this[this.tableDonorAddresses.ServiceTypeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ServiceTypeId\' in table \'DonorAddresses\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ServiceType\' in table \'DonorAddresses\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDonorAddresses.ServiceTypeIdColumn] = value;
+                    this[this.tableDonorAddresses.ServiceTypeColumn] = value;
                 }
             }
             
@@ -2059,14 +2059,14 @@ namespace eTemple.UI.Donations {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsServiceTypeIdNull() {
-                return this.IsNull(this.tableDonorAddresses.ServiceTypeIdColumn);
+            public bool IsServiceTypeNull() {
+                return this.IsNull(this.tableDonorAddresses.ServiceTypeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetServiceTypeIdNull() {
-                this[this.tableDonorAddresses.ServiceTypeIdColumn] = global::System.Convert.DBNull;
+            public void SetServiceTypeNull() {
+                this[this.tableDonorAddresses.ServiceTypeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
