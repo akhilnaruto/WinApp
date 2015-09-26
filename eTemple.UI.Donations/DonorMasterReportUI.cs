@@ -284,11 +284,11 @@ namespace eTemple.UI.Donations
             {
                 DataView view = new DataView(DonorList.CopyToDataTable());
                 dt = view.ToTable(false, "Address", "Surname", "NameOn", "DistrictName", "City", "Pin", "State", "Country", "ServiceTypeId", "MR_NO");
-                //IEnumerable<DataRow> matchingRows = lstServiceType.Join(dt.AsEnumerable(),
-                //                                     listItem => listItem.Id,
-                //                                      row => row.Field<int>("ServiceTypeId"),
-                //                                     (r, li) => new { DifferentId = li., Row = r })
-                                                      //.Select(ji => ji.Row);
+                IEnumerable<DataRow> matchingRows = lstServiceType.Join(dt.AsEnumerable(),
+                                                     listItem => listItem.Id,
+                                                      row => row.Field<int>("ServiceTypeId"),
+                                                     (r, li) => new { DifferentId = li., Row = r })
+                                                      .Select(ji => ji.Row);
                 DonorReportDataSet drs = new DonorReportDataSet();
                 drs.Tables.Add(dt);
                 AddressForm oAddressForm = new AddressForm(dt);
