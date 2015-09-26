@@ -33,7 +33,7 @@ namespace eTemple.Data.Repositories
 
         public IEnumerable<Paksha> GetAllAsQuerable()
         {
-            return TempleDb.Query<Paksha>("Select * From paksha order by Name asc").ToList();
+            return TempleDb.Query<Paksha>("Select * From paksha order by Id asc").ToList();
         }
 
         public void Update(Paksha entity)

@@ -32,7 +32,14 @@ namespace eTemple.Data.Repositories
 
         public IEnumerable<SpecialDay> GetAllAsQuerable()
         {
-            return TempleDb.Query<SpecialDay>("Select * From specialday").ToList();
+            return TempleDb.Query<SpecialDay>("Select * From specialday order by Id asc").ToList();
+        }
+
+        public IEnumerable<SpecialDay> GetAllAsQuerable(int specialDayId)
+        {
+
+            return TempleDb.Query<SpecialDay>("Select * From specialday where Id = " + specialDayId + " order by Name asc").ToList();
+
         }
 
         public void Update(SpecialDay entity)

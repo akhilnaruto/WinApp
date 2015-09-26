@@ -125,15 +125,15 @@ namespace eTemple.Data.Models
 	}
     
 	[TableName("donors")]
-	[PrimaryKey("Id")]
+	[PrimaryKey("Id", autoIncrement=false)]
 	[ExplicitColumns]
     public partial class donor : eTempleDbDB.Record<donor>  
     {
-		[Column] public int Id { get; set; }
-		[Column] public DateTime? date { get; set; }
+		[Column] public string Id { get; set; }
+		[Column] public DateTime Donordate { get; set; }
 		[Column] public string Address { get; set; }
 		[Column] public string Surname { get; set; }
-		[Column] public string Name { get; set; }
+		[Column] public string DonorName { get; set; }
 		[Column] public string DistrictName { get; set; }
 		[Column] public string City { get; set; }
 		[Column] public int? Pin { get; set; }
@@ -143,19 +143,20 @@ namespace eTemple.Data.Models
 		[Column] public int? Star { get; set; }
 		[Column] public string Occassion { get; set; }
 		[Column] public string Gothram { get; set; }
-		[Column] public int? Amount { get; set; }
-		[Column] public int? MR_No { get; set; }
+		[Column] public int Amount { get; set; }
+		[Column] public int MR_No { get; set; }
 		[Column] public string Remarks { get; set; }
-		[Column] public string PhoneNumber { get; set; }
+		[Column] public string Landline { get; set; }
 		[Column] public int? SpecialDayId { get; set; }
 		[Column] public int? ServiceTypeId { get; set; }
 		[Column] public int? ServiceNameId { get; set; }
 		[Column] public int? DateTypeId { get; set; }
 		[Column] public DateTime? PerformDate { get; set; }
 		[Column] public string EmailId { get; set; }
-		[Column] public string Paksha { get; set; }
-		[Column] public int? Month { get; set; }
+		[Column] public int? DonorMonth { get; set; }
 		[Column] public int? Thidhi { get; set; }
+		[Column] public int? DonorDay { get; set; }
+		[Column] public string Mobile { get; set; }
 	}
     
 	[TableName("employees")]
@@ -178,13 +179,12 @@ namespace eTemple.Data.Models
 	}
     
 	[TableName("month")]
-	[PrimaryKey("Id")]
+	[PrimaryKey("Id", autoIncrement=false)]
 	[ExplicitColumns]
     public partial class month : eTempleDbDB.Record<month>  
     {
 		[Column] public int Id { get; set; }
-		[Column] public string English { get; set; }
-		[Column] public string Telugu { get; set; }
+		[Column] public string Name { get; set; }
 	}
     
 	[TableName("monthlyannadanamtbl")]
@@ -193,7 +193,7 @@ namespace eTemple.Data.Models
     public partial class monthlyannadanamtbl : eTempleDbDB.Record<monthlyannadanamtbl>  
     {
 		[Column] public int Id { get; set; }
-		[Column] public int? Day { get; set; }
+		[Column] public string Day { get; set; }
 	}
     
 	[TableName("paksha")]
@@ -231,18 +231,17 @@ namespace eTemple.Data.Models
 		[Column] public int Id { get; set; }
 		[Column] public string Name { get; set; }
 		[Column] public int ServiceTypeId { get; set; }
+		[Column] public int IsDateRelated { get; set; }
 	}
     
 	[TableName("servicetypes")]
-	[PrimaryKey("Id")]
+	[PrimaryKey("Id", autoIncrement=false)]
 	[ExplicitColumns]
     public partial class servicetype : eTempleDbDB.Record<servicetype>  
     {
 		[Column] public int Id { get; set; }
 		[Column] public string Name { get; set; }
-		[Column] public int Status { get; set; }
-		[Column] public DateTime CreatedOn { get; set; }
-		[Column] public int? CreatedBy { get; set; }
+		[Column] public int IsDateRelated { get; set; }
 	}
     
 	[TableName("specialday")]
@@ -255,11 +254,22 @@ namespace eTemple.Data.Models
 	}
     
 	[TableName("stars")]
+	[PrimaryKey("Id", autoIncrement=false)]
 	[ExplicitColumns]
     public partial class star : eTempleDbDB.Record<star>  
     {
 		[Column] public int Id { get; set; }
 		[Column] public string Name { get; set; }
+	}
+    
+	[TableName("telugucalendar")]
+	[PrimaryKey("EnglishDate", autoIncrement=false)]
+	[ExplicitColumns]
+    public partial class telugucalendar : eTempleDbDB.Record<telugucalendar>  
+    {
+		[Column] public DateTime EnglishDate { get; set; }
+		[Column] public int Masam { get; set; }
+		[Column] public int Thidhi { get; set; }
 	}
     
 	[TableName("thidhi")]
@@ -270,6 +280,34 @@ namespace eTemple.Data.Models
 		[Column] public int Id { get; set; }
 		[Column] public string Name { get; set; }
 	}
+    
+	//[TableName("month")]
+	//[PrimaryKey("Id", autoIncrement=false)]
+	//[ExplicitColumns]
+ //   public partial class month : eTempleDbDB.Record<month>  
+ //   {
+	//	[Column] public int Id { get; set; }
+	//	[Column] public string Name { get; set; }
+	//}
+    
+	//[TableName("telugucalendar")]
+	//[PrimaryKey("EnglishDate", autoIncrement=false)]
+	//[ExplicitColumns]
+ //   public partial class telugucalendar : eTempleDbDB.Record<telugucalendar>  
+ //   {
+	//	[Column] public DateTime EnglishDate { get; set; }
+	//	[Column] public int Masam { get; set; }
+	//	[Column] public int Thidhi { get; set; }
+	//}
+    
+	//[TableName("thidhi")]
+	//[PrimaryKey("Id", autoIncrement=false)]
+	//[ExplicitColumns]
+ //   public partial class thidhi : eTempleDbDB.Record<thidhi>  
+ //   {
+	//	[Column] public int Id { get; set; }
+	//	[Column] public string Name { get; set; }
+	//}
     
 	[TableName("columns_priv")]
 	[ExplicitColumns]
