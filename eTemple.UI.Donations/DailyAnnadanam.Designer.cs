@@ -159,6 +159,7 @@
             this.Name = "DailyAnnadanam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Daily Annadanam";
+            this.Load += new System.EventHandler(this.DailyAnnadanam_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

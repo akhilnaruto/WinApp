@@ -15,10 +15,13 @@ namespace eTemple.UI.Donations
     public partial class DailyAnnadanam : Form
     {
         private DailyAnnaDanamRepository dailyAnnaRepo;
+        public GothramsRepository gothramRepo;
+        public List<Gothrams> lstGothrams=null;
         public DailyAnnadanam()
         {
             this.MaximizeBox = false;
             dailyAnnaRepo = new DailyAnnaDanamRepository();
+            gothramRepo = new GothramsRepository();
             InitializeComponent();
         }
 
@@ -76,6 +79,19 @@ namespace eTemple.UI.Donations
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DailyAnnadanam_Load(object sender, EventArgs e)
+        {
+            lstGothrams = gothramRepo.GetAllAsQuerable().ToList();
+            AutoCompleteStringCollection strcoll = new AutoCompleteStringCollection();
+            foreach (Gothrams gothram in lstGothrams)
+            {
+                strcoll.Add(gothram.Name);
+            }
+            txtGothram.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtGothram.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtGothram.AutoCompleteCustomSource = strcoll;
         }
     }
 }
