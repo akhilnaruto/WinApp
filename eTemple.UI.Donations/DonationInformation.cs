@@ -40,6 +40,13 @@ namespace eTemple.UI
             //dtpDate.MinDate = DateTime.Now;
             this.MaximizeBox = false;
             InitializeComponent();
+
+            dtpEnglishDateType.Format = DateTimePickerFormat.Custom;
+            dtpEnglishDateType.CustomFormat = "dd/MM";
+
+
+
+
             donorRepo = new DonorRepository();
             datetypeRepo = new DateTypeRepository();
             desigRepo = new DesignationRepository();
@@ -83,88 +90,109 @@ namespace eTemple.UI
             if (checkvalidate == false)
                 return;
 
-            DateTime donorDate = Convert.ToDateTime(dtpDate.Text);
-            //DateTime performDate = Convert.ToDateTime(dtpEnglishDateType.Text);
+            DateTime performDate;
+            DateTime donorDate;
 
-            //if (dtpDate.Text != "" || dtpDate.Text != null)
-            //    donorDate = Convert.ToDateTime(dtpDate.Text);
-            //else
-            //    donorDate = DateTime.Today;
-
-            DateTime performDate = DateTime.Today;
-
-            int selectedServiceTypeId;
-            int selectedServiceNameId;
-            int selectedMonthId;
-            int selectedStarId;
-            int selectedSpecialDayId;
-            int selectedThithiId;
-            int selectedDayId;
-            var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId);
-
-            #region AutoGenerate Id
-            var maxDonorId = donorRepo.getMaxIdFromDonor();
-            int maxId = 0;
-            //date = date.ToString("yyyy/mm/dd");
-            if (maxDonorId.Tables[0].Rows.Count > 0)
+            try
             {
-                string Id = maxDonorId.Tables[0].Rows[0]["donroId"].ToString();
+                donorDate = Convert.ToDateTime(dtpDate.Text);
 
-                string[] s = Id.Split(' ');
-                if (s[0] != "0")
-                    maxId = Convert.ToInt32(s[1]);
+                //if (true)
+                //    performDate = Convert.ToDateTime(dtpEnglishDateType.Text);
+                //else
+                performDate = DateTime.Now;
 
-                maxId = maxId + 1;
+
+
+                //DateTime performDate = Convert.ToDateTime(dtpEnglishDateType.Text);
+
+                //if (dtpDate.Text != "" || dtpDate.Text != null)
+                //    donorDate = Convert.ToDateTime(dtpDate.Text);
+                //else
+                //    donorDate = DateTime.Today;
+
+                if (dtpEnglishDateType.Text == null)
+                    performDate = DateTime.Today;
+
+                int selectedServiceTypeId;
+                int selectedServiceNameId;
+                int selectedMonthId;
+                int selectedStarId;
+                int selectedSpecialDayId;
+                int selectedThithiId;
+                int selectedDayId;
+                var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId);
+
+                string maxIDFormat = DateForId(donorDate);
+
+                #region AutoGenerate Id
+                var maxDonorId = donorRepo.getMaxIdFromDonor(maxIDFormat);
+                int maxId = 0;
+                //date = date.ToString("yyyy/mm/dd");
+                if (maxDonorId.Tables[0].Rows.Count > 0)
+                {
+                    string Id = maxDonorId.Tables[0].Rows[0]["donroId"].ToString();
+
+                    string[] s = Id.Split(' ');
+                    if (s[0] != "0")
+                        maxId = Convert.ToInt32(s[1]);
+
+                    maxId = maxId + 1;
+                }
+                else
+                    maxId = 1;
+
+                string uniqueDonorId = DateForId(donorDate) + " " + maxId;
+
+                #endregion
+
+                Donors donorInfo = new Donors
+                {
+                    Id = uniqueDonorId,
+                    Donordate = donorDate,
+                    Address = txtAddress.Text,
+                    Surname = txtSurname.Text,
+                    DonorName = txtName.Text,
+                    DistrictName = txtDistrict.Text,
+                    City = txtCity.Text,
+                    Pin = Convert.ToInt32(txtPin.Text),
+                    State = txtState.Text,
+                    Country = txtCountry.Text,
+                    NameOn = txtNameOn.Text,
+                    Star = selectedStarId,
+                    Occassion = txtOccassion.Text,
+                    Gothram = txtGothram.Text,
+                    Amount = Convert.ToInt32(txtAmount.Text),
+                    MR_No = Convert.ToInt32(txtMRNo.Text),
+                    Remarks = txtRemarks.Text,
+                    Landline = txtLandline.Text,
+                    SpecialDayId = selectedSpecialDayId,
+                    ServiceTypeId = selectedServiceTypeId,
+                    ServiceNameId = selectedServiceNameId,
+                    DateTypeId = selectedDateTypeId,
+                    PerformDate = performDate.ToString("dd-MM"),
+                    EmailId = txtEmailId.Text,
+                    DonorMonth = selectedMonthId,
+                    Thidhi = selectedThithiId,
+                    DonorDay = selectedDayId,
+                    Mobile = txtMobile.Text
+                };
+
+                string strInsertStatus = donorRepo.insertDonorInformation(donorInfo);
+
+                if (strInsertStatus == "Success")
+                {
+                    MessageBox.Show("Data inserted successfully.");
+                    CleareAllcontrolsRecursive();
+                    sendSMS("91" + donorInfo.Mobile);
+                }
+                else
+                    MessageBox.Show("There was a problem inserting data, kindly try again to save the record");
             }
-            else
-                maxId = 1;
-
-            string uniqueDonorId = DateForId(donorDate) + " " + maxId;
-
-            #endregion
-
-            Donors donorInfo = new Donors
+            catch (Exception)
             {
-                Id = uniqueDonorId,
-                Donordate = donorDate,
-                Address = txtAddress.Text,
-                Surname = txtSurname.Text,
-                DonorName = txtName.Text,
-                DistrictName = txtDistrict.Text,
-                City = txtCity.Text,
-                Pin = Convert.ToInt32(txtPin.Text),
-                State = txtState.Text,
-                Country = txtCountry.Text,
-                NameOn = txtNameOn.Text,
-                Star = selectedStarId,
-                Occassion = txtOccassion.Text,
-                Gothram = txtGothram.Text,
-                Amount = Convert.ToInt32(txtAmount.Text),
-                MR_No = Convert.ToInt32(txtMRNo.Text),
-                Remarks = txtRemarks.Text,
-                Landline = txtLandline.Text,
-                SpecialDayId = selectedSpecialDayId,
-                ServiceTypeId = selectedServiceTypeId,
-                ServiceNameId = selectedServiceNameId,
-                DateTypeId = selectedDateTypeId,
-                PerformDate = performDate.ToString("dd-MM"),
-                EmailId = txtEmailId.Text,
-                DonorMonth = selectedMonthId,
-                Thidhi = selectedThithiId,
-                DonorDay = selectedDayId,
-                Mobile = txtMobile.Text
-            };
-
-            string strInsertStatus = donorRepo.insertDonorInformation(donorInfo);
-
-            if (strInsertStatus == "Success")
-            {
-                MessageBox.Show("Data inserted successfully.");
-                sendSMS("91" + donorInfo.Mobile);
-                CleareAllcontrolsRecursive();                
-            }    
-            else
                 MessageBox.Show("There was a problem inserting data, kindly try again to save the record");
+            }
         }
 
 
@@ -320,7 +348,7 @@ namespace eTemple.UI
             var selectedDateType = cmbDateType.SelectedItem as DateType;
 
             if (selectedDateType.Name == "Telugu")
-            {                
+            {
                 lblSpecialDay.Visible = false;
                 cmbSpecialDay.Visible = false;
                 lblEnglishDatetype.Visible = false;
@@ -331,7 +359,7 @@ namespace eTemple.UI
                 cmbThithi.Visible = true;
                 lblMonthlyAnna.Visible = false;
                 cmbMonthlyAnna.Visible = false;
-                
+
                 #region Bind Month values
                 var bindMonth = monthsRepo.GetAllAsQuerable();
                 cmbMonth.DataSource = bindMonth;
@@ -362,7 +390,7 @@ namespace eTemple.UI
             }
 
             else if (selectedDateType.Name == "Special")
-            {                
+            {
                 lblSpecialDay.Visible = true;
                 cmbSpecialDay.Visible = true;
                 lblEnglishDatetype.Visible = false;
@@ -399,7 +427,7 @@ namespace eTemple.UI
                 // property of the child form
                 formOptions.ShowDialog(this);
                 formOptions.Dispose();
-            }            
+            }
         }
 
         /// <summary>
@@ -421,8 +449,8 @@ namespace eTemple.UI
                 donorDate = Convert.ToDateTime(dtpDate.Text);
             else
                 donorDate = DateTime.Today;
-            
-                performDate = DateTime.Today;
+
+            performDate = DateTime.Today;
 
             int selectedServiceTypeId;
             int selectedServiceNameId;
@@ -464,6 +492,7 @@ namespace eTemple.UI
                 DonorDay = selectedDayId,
                 Mobile = txtMobile.Text
             };
+
 
             string updateStatus = donorRepo.updateDonorInformation(donorUpdateInfo);
 
@@ -579,9 +608,21 @@ namespace eTemple.UI
             cmbThithi.SelectedIndex = cmbThithi.FindString(monthValue[0]);
 
             //Perform Date
-            DateTime dt1;            
-            if (!DateTime.TryParse(donor.PerformDate.ToString(), out dt1))
-                dtpEnglishDateType.Value = dt1;
+            var performDate = donor.PerformDate.ToString();
+            var perforDateArr = performDate.Split('-');
+            DateTime dt1 = new DateTime();
+            int date;
+            int month;
+            int year;
+            if (perforDateArr.Length > 0)
+            {
+                var performDateWithoutMonthAndYear = int.TryParse(perforDateArr[0], out date);
+                var performDayWithoutYearAbdDate = int.TryParse(perforDateArr[1], out month);
+                year = DateTime.Now.Year;
+                dt1 = new DateTime(year, month, date);
+            }
+
+            dtpEnglishDateType.Value = dt1;
 
             //Monthly AnnaDanam
             var bindDonorDay = monthlyAnnaRepo.GetAllAsQuerable(donor.DonorDay);
@@ -595,10 +636,10 @@ namespace eTemple.UI
             bool needValidate = true;
 
             if (dtpDate.Text == "" || dtpDate.Text == string.Empty)
-                { 
+            {
                 errorProvider1.SetError(dtpDate, "Need to select Date to continue");
                 needValidate = false;
-                return needValidate;                
+                return needValidate;
             }
             else
                 errorProvider1.Clear();
@@ -807,24 +848,26 @@ namespace eTemple.UI
         {
             //if (!(Char.IsDigit(e.KeyChar)))
             //    e.Handled = true;
-            //if (!(Char.IsDigit(e.KeyChar) && (e.KeyChar == (char)Keys.Back)))
-            //{
-            //    e.Handled = true;
-            //    errorProvider1.SetError(txtPin, "Only Numbers allowed e.g.,560050");
-            //}
-            //else
-            //    errorProvider1.Clear();
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+            {
+                e.Handled = true;
+                //    errorProvider1.SetError(txtPin, "Only Numbers allowed e.g.,560050");
+                //}
+                //else
+                //    errorProvider1.Clear();
+            }
         }
 
         private void cmbServiceType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbServiceName.DataSource = null;
             lblServiceName.Enabled = false;
             cmbServiceName.Enabled = false;
 
             var serviceType = cmbServiceType.SelectedItem as ServiceTypes;
             if (serviceType != null)
             {
+                cmbServiceName.DataSource = null;
+                
                 var ServiceTypeData = serviceNameRepo.GetAllAsQuerable().Where(sType => sType.ServiceTypeId == serviceType.Id).ToList();
                 cmbServiceName.DataSource = ServiceTypeData;
                 cmbServiceName.DisplayMember = "Name";
@@ -833,8 +876,41 @@ namespace eTemple.UI
                     lblServiceName.Enabled = true;
                     cmbServiceName.Enabled = true;
 
+                    var serviceName = cmbServiceName.SelectedItem as ServiceName;
+
+                    if (serviceName.IsDateRelated == 1)
+                    {
+                        lblDateType.Visible = true;
+                        cmbDateType.Visible = true;
+                        lblSpecialDay.Visible = false;
+                        cmbSpecialDay.Visible = false;
+                        lblEnglishDatetype.Visible = false;
+                        dtpEnglishDateType.Visible = false;
+                        lblMonth.Visible = false;
+                        cmbMonth.Visible = false;
+                        lblThithi.Visible = false;
+                        cmbThithi.Visible = false;
+                        lblMonthlyAnna.Visible = false;
+                        cmbMonthlyAnna.Visible = false;
+                    }
+                    else
+                    {
+                        lblDateType.Visible = false;
+                        cmbDateType.Visible = false;
+                        lblSpecialDay.Visible = false;
+                        cmbSpecialDay.Visible = false;
+                        lblEnglishDatetype.Visible = false;
+                        dtpEnglishDateType.Visible = false;
+                        lblMonth.Visible = false;
+                        cmbMonth.Visible = false;
+                        lblThithi.Visible = false;
+                        cmbThithi.Visible = false;
+                        lblMonthlyAnna.Visible = false;
+                        cmbMonthlyAnna.Visible = false;
+                    }
+
                 }
-                if (serviceType.IsDateRelated == 1)
+                else if (serviceType.IsDateRelated == 1)
                 {
                     lblDateType.Visible = true;
                     cmbDateType.Visible = true;
@@ -845,7 +921,7 @@ namespace eTemple.UI
                     lblMonth.Visible = false;
                     cmbMonth.Visible = false;
                     lblThithi.Visible = false;
-                    cmbThithi.Visible = false;                    
+                    cmbThithi.Visible = false;
                     lblMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Visible = false;
                 }
@@ -860,7 +936,7 @@ namespace eTemple.UI
                     lblMonth.Visible = false;
                     cmbMonth.Visible = false;
                     lblThithi.Visible = false;
-                    cmbThithi.Visible = false;                    
+                    cmbThithi.Visible = false;
                     lblMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Visible = false;
                 }
@@ -919,19 +995,19 @@ namespace eTemple.UI
             txtState.Text = string.Empty;
             txtCountry.Text = string.Empty;
 
-            txtNameOn.Text = string.Empty;            
-                        
+            txtNameOn.Text = string.Empty;
+
             txtOccassion.Text = string.Empty;
             txtGothram.Text = string.Empty;
 
             txtAmount.Text = string.Empty;
-            
+
             txtMRNo.Text = string.Empty;
             txtRemarks.Text = string.Empty;
             txtLandline.Text = string.Empty;
             txtMobile.Text = string.Empty;
             txtEmailId.Text = string.Empty;
-            
+
             txtDonorId.Enabled = false;
             bindData();
             btnUpdate.Visible = false;
@@ -974,8 +1050,46 @@ namespace eTemple.UI
             txtGothram.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtGothram.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtGothram.AutoCompleteCustomSource = strcoll;
-            dtpEnglishDateType.MinDate = DateTime.Now.AddYears(1);
+            //dtpEnglishDateType.MinDate = DateTime.Now.AddYears(1);
+        }
+
+        private void cmbServiceName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var serviceName = cmbServiceName.SelectedItem as ServiceName;
+
+            if (serviceName != null)
+            {
+                if (serviceName.IsDateRelated == 1)
+                {
+                    lblDateType.Visible = true;
+                    cmbDateType.Visible = true;
+                    lblSpecialDay.Visible = false;
+                    cmbSpecialDay.Visible = false;
+                    lblEnglishDatetype.Visible = false;
+                    dtpEnglishDateType.Visible = false;
+                    lblMonth.Visible = false;
+                    cmbMonth.Visible = false;
+                    lblThithi.Visible = false;
+                    cmbThithi.Visible = false;
+                    lblMonthlyAnna.Visible = false;
+                    cmbMonthlyAnna.Visible = false;
+                }
+                else
+                {
+                    lblDateType.Visible = false;
+                    cmbDateType.Visible = false;
+                    lblSpecialDay.Visible = false;
+                    cmbSpecialDay.Visible = false;
+                    lblEnglishDatetype.Visible = false;
+                    dtpEnglishDateType.Visible = false;
+                    lblMonth.Visible = false;
+                    cmbMonth.Visible = false;
+                    lblThithi.Visible = false;
+                    cmbThithi.Visible = false;
+                    lblMonthlyAnna.Visible = false;
+                    cmbMonthlyAnna.Visible = false;
+                } 
+            }
         }
     }
 }
-

@@ -268,6 +268,7 @@
             // 
             this.txtPin.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtPin.Location = new System.Drawing.Point(411, 120);
+            this.txtPin.MaxLength = 20;
             this.txtPin.Name = "txtPin";
             this.txtPin.Size = new System.Drawing.Size(200, 27);
             this.txtPin.TabIndex = 8;
@@ -314,6 +315,7 @@
             // dtpDate
             // 
             this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDate.Location = new System.Drawing.Point(410, 38);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 27);
@@ -505,6 +507,7 @@
             this.cmbServiceName.Name = "cmbServiceName";
             this.cmbServiceName.Size = new System.Drawing.Size(200, 28);
             this.cmbServiceName.TabIndex = 22;
+            this.cmbServiceName.SelectedIndexChanged += new System.EventHandler(this.cmbServiceName_SelectedIndexChanged);
             // 
             // lblServiceName
             // 
