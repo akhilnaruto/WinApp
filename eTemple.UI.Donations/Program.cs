@@ -16,7 +16,7 @@ namespace eTemple.UI.Donations
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);            
-            Application.Run(new DonationInformation());
+            Application.Run(new DonorMasterReportUI());
         }
     }
 }

@@ -41,6 +41,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.phoneNumberComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.citiComboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.mrNumberComboBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,11 +177,55 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Phone Number";
             // 
+            // citiComboBox
+            // 
+            this.citiComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.citiComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.citiComboBox.FormattingEnabled = true;
+            this.citiComboBox.Location = new System.Drawing.Point(82, 83);
+            this.citiComboBox.Name = "citiComboBox";
+            this.citiComboBox.Size = new System.Drawing.Size(156, 21);
+            this.citiComboBox.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 84);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "City";
+            // 
+            // mrNumberComboBox
+            // 
+            this.mrNumberComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.mrNumberComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.mrNumberComboBox.FormattingEnabled = true;
+            this.mrNumberComboBox.Location = new System.Drawing.Point(314, 80);
+            this.mrNumberComboBox.Name = "mrNumberComboBox";
+            this.mrNumberComboBox.Size = new System.Drawing.Size(188, 21);
+            this.mrNumberComboBox.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(258, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 17);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Mr_No";
+            // 
             // EnquiryDetailsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 340);
+            this.Controls.Add(this.mrNumberComboBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.citiComboBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.phoneNumberComboBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
@@ -211,5 +259,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn surname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.ComboBox citiComboBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox mrNumberComboBox;
+        private System.Windows.Forms.Label label5;
     }
 }

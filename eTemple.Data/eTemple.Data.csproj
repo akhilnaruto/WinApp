@@ -98,6 +98,9 @@
     <Compile Include="Repositories\SpecialDayRepository.cs" />
     <Compile Include="Repositories\StarsRepository.cs" />
     <Compile Include="Repositories\ThidhiRepository.cs" />
+    <Compile Include="Utilities\BindValues.cs" />
+    <Compile Include="Utilities\CustomLINQtoDataSetMethods.cs" />
+    <Compile Include="Utilities\ObjectShredder.cs" />
     <Compile Include="Utilities\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

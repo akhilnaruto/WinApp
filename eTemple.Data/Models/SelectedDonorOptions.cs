@@ -8,7 +8,7 @@ namespace eTemple.Data.Models
 {
     public class SelectedDonorOptions
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
 
         public DateTime date { get; set; }
@@ -78,7 +78,11 @@ namespace eTemple.Data.Models
 
 
         public string EmailId { get; set; }
-                
+
+
+        public string Paksha { get; set; }
+
+
         public int Month { get; set; }
 
 

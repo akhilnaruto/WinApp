@@ -39,16 +39,21 @@ namespace eTemple.UI.Donations
                                                      Name = x.Key,
                                                      Id = x.Select(y => y.Id).FirstOrDefault(),
                                                      PhoneNumber = x.Select(y => y.Landline).FirstOrDefault(),
+                                                     Mr_Number = x.Select(y => y.MR_No).FirstOrDefault().ToString(),
+                                                     City = x.Select(y => y.City).FirstOrDefault(),
                                                  }).ToList();
                          
  
             donorIdComboBox.DataSource = distinctDonors;
             donorNameComboBox.DataSource = distinctDonors;
             phoneNumberComboBox.DataSource = distinctDonors;
+            citiComboBox.DataSource = distinctDonors;
+            mrNumberComboBox.DataSource = distinctDonors;
             donorIdComboBox.DisplayMember = "Id";
             donorNameComboBox.DisplayMember = "Name";
             phoneNumberComboBox.DisplayMember = "PhoneNumber";
-
+            citiComboBox.DisplayMember = "City";
+            mrNumberComboBox.DisplayMember = "Mr_Number";
             RenderDataGrid();
 
         }
@@ -117,7 +122,9 @@ namespace eTemple.UI.Donations
     internal class SelectedDonor
     {
         public string Id { get; set; }
+        public string Mr_Number { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
+        public string City { get; set; }
     }
 }
