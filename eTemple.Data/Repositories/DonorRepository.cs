@@ -26,11 +26,11 @@ namespace eTemple.Data.Repositories
             return TempleDb.Query<Donors>("Select * From donors").ToList();
         }
 
-        public DataSet getMaxIdFromDonor()
+        public DataSet getMaxIdFromDonor(string id)
         {
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT coalesce(MAX(Id), 0) AS donroId FROM donors", conn))
+                using (MySqlCommand cmd = new MySqlCommand("select coalesce(MAX(replace(id,'" + id + "' ,'')), 0) as donroId from donors where id like '" + id + "%'", conn))
                 {
                     using (MySqlDataAdapter da = new MySqlDataAdapter())
                     {

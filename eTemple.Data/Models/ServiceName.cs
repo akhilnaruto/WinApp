@@ -17,6 +17,8 @@ namespace eTemple.Data.Models
         public string Name { get; set; }
 
         
-        public int ServiceTypeId { get; set; }
+        public int ServiceTypeId { get; set; } 
+
+        public int IsDateRelated { get; set; }
     }
 }
