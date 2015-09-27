@@ -76,8 +76,8 @@ namespace eTemple.Data.Models
         
         public int DateTypeId { get; set; }
 
-        
-        public DateTime PerformDate { get; set; }
+
+        public string PerformDate { get; set; }
 
         
         public string EmailId { get; set; }

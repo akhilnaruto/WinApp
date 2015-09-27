@@ -15,4 +15,4 @@ namespace eTemple.Data.Models
 
        //s public string Telugu { get; set; }
     }    
-}
+} 

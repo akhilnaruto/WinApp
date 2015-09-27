@@ -147,7 +147,7 @@ namespace eTemple.UI
                 ServiceTypeId = selectedServiceTypeId,
                 ServiceNameId = selectedServiceNameId,
                 DateTypeId = selectedDateTypeId,
-                PerformDate = performDate,
+                PerformDate = performDate.ToString("dd-MM"),
                 EmailId = txtEmailId.Text,
                 DonorMonth = selectedMonthId,
                 Thidhi = selectedThithiId,
@@ -457,7 +457,7 @@ namespace eTemple.UI
                 ServiceTypeId = selectedServiceTypeId,
                 ServiceNameId = selectedServiceNameId,
                 DateTypeId = selectedDateTypeId,
-                PerformDate = performDate,
+                PerformDate = performDate.ToString("dd-MM"),
                 EmailId = txtEmailId.Text,
                 DonorMonth = selectedMonthId,
                 Thidhi = selectedThithiId,
@@ -747,14 +747,14 @@ namespace eTemple.UI
             //}
             //else
             //    errorProvider1.Clear();
-            //if (cmbServiceType.Text == "" || cmbServiceType.Text == string.Empty)
-            //{
-            //    errorProvider1.SetError(cmbServiceType, "Need to select Service Type");
-            //    needValidate = false;
-            //    return needValidate;
-            //}
-            //else
-            //    errorProvider1.Clear();
+            if (cmbServiceType.Text == "Select" || cmbServiceType.Text == string.Empty)
+            {
+                errorProvider1.SetError(cmbServiceType, "Need to select Service Type");
+                needValidate = false;
+                return needValidate;
+            }
+            else
+                errorProvider1.Clear();
             //if (cmbServiceName.Text == "" || cmbServiceName.Text == string.Empty)
             //{
             //    errorProvider1.SetError(cmbServiceName, "Need to select Service Name");
@@ -974,6 +974,7 @@ namespace eTemple.UI
             txtGothram.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtGothram.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtGothram.AutoCompleteCustomSource = strcoll;
+            dtpEnglishDateType.MinDate = DateTime.Now.AddYears(1);
         }
     }
 }

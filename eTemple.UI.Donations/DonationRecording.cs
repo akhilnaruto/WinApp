@@ -31,5 +31,28 @@ namespace eTemple.UI.Donations
         {
 
         }
+
+        private void sessionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DonationInformation oDonationInfo = new DonationInformation();
+            oDonationInfo.Show();
+        }
+
+        private void eitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void masterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DonorMasterReportUI oDonorReprt = new DonorMasterReportUI();
+            oDonorReprt.Show();
+        }
+
+        private void enquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EnquiryDetailsUI oEnquiryDet = new EnquiryDetailsUI();
+            oEnquiryDet.Show();
+        }
     }
 }

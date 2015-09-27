@@ -151,7 +151,7 @@ namespace eTemple.Data.Models
 		[Column] public int? ServiceTypeId { get; set; }
 		[Column] public int? ServiceNameId { get; set; }
 		[Column] public int? DateTypeId { get; set; }
-		[Column] public DateTime? PerformDate { get; set; }
+		[Column] public string PerformDate { get; set; }
 		[Column] public string EmailId { get; set; }
 		[Column] public int? DonorMonth { get; set; }
 		[Column] public int? Thidhi { get; set; }
@@ -280,7 +280,18 @@ namespace eTemple.Data.Models
 		[Column] public int Id { get; set; }
 		[Column] public string Name { get; set; }
 	}
-    
+
+
+    [TableName("Gothrams")]
+    [PrimaryKey("Id", autoIncrement = false)]
+    [ExplicitColumns]
+    public partial class gothrams : eTempleDbDB.Record<gothrams>
+    {
+        [Column]
+        public int Id { get; set; }
+        [Column]
+        public string Name { get; set; }
+    }
 	//[TableName("month")]
 	//[PrimaryKey("Id", autoIncrement=false)]
 	//[ExplicitColumns]

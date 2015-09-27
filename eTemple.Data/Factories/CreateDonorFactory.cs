@@ -23,7 +23,7 @@ namespace eTemple.Data
                 ServiceTypeId = serviceTypeId,
                 ServiceNameId = serviceNameId,
                 DateTypeId = dateTypeId,
-                PerformDate = performDate,
+                PerformDate = performDate.ToString("dd-MM"),
                 DonorMonth = month,
                 Address = address,
                 DonorName = name,

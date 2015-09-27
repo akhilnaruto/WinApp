@@ -70,6 +70,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Gothrams.cs" />
     <Compile Include="Models\MonthlyAnnaDanam.cs" />
     <Compile Include="Models\Paksha.cs" />
     <Compile Include="Models\SelectedDonorOptions.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Repositories\DesignationRepository.cs" />
     <Compile Include="Repositories\DonorRepository.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
+    <Compile Include="Repositories\GothramsRepository.cs" />
     <Compile Include="Repositories\MonthlyAnnaRepository.cs" />
     <Compile Include="Repositories\MonthsRepository.cs" />
     <Compile Include="Repositories\PakshaRepository.cs" />

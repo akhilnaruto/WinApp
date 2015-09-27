@@ -27,7 +27,7 @@ namespace eTemple.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Thidhi FindById(int Id)
+        public Gothrams FindById(int Id)
         {
             throw new NotImplementedException();
         }

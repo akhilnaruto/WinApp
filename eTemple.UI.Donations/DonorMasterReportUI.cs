@@ -134,14 +134,14 @@ namespace eTemple.UI.Donations
             DataTable dt = new DataTable();
             var ServiceName = cmbServiceName.SelectedItem as ServiceName;
             var ServiceTypes = cmbServiceType.SelectedItem as ServiceTypes;
-            if (rdbServiceWseDonors.Checked && dtType.Id != 2 && ServiceTypes.Id == 8)
+            if (rdbServiceWseDonors.Checked && dtType.Id != 2 && ServiceTypes.Id == 2)
             {
                 MessageBox.Show("Please pick English date for Monthly Annadanam...");
                 return;
             }
             // performDate = string.Format(performDate, "yyyy-mm-dd");
             string filterstring = string.Empty;
-            if (rdbServiceWseDonors.Checked && ServiceTypes.Id == 8)
+            if (rdbServiceWseDonors.Checked && ServiceTypes.Id == 2)
                 filterstring = GetFilterForMonthlyAnnadanam();
             else
                 filterstring = GetFilterstring() + " OR (" + GetFilterForMonthlyAnnadanam() + ")";
@@ -212,7 +212,7 @@ namespace eTemple.UI.Donations
             {
                 if (serviceTypeId.Id == 5 && serviceNameId.Id == 1)
                 {
-                    return "ServiceNameId=1 AND ServiceTypeId=5";
+                    return "ServiceNameId=1 AND ServiceTypeId=1";
                 }
                 FilterString = FilterString + " AND ServiceTypeId=" + serviceTypeId.Id;
                 if (serviceNameId != null)
@@ -221,7 +221,7 @@ namespace eTemple.UI.Donations
             else
             {
                 if (dtType.Id == 2)
-                    FilterString = FilterString + " OR (ServiceNameId=1 AND ServiceTypeId=5)";
+                    FilterString = FilterString + " OR (ServiceNameId=1 AND ServiceTypeId=1)";
             }
 
             if (chkNonPerformSvc.Checked)
@@ -279,7 +279,7 @@ namespace eTemple.UI.Donations
         private void button3_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            string filterString = GetFilterstring().Replace(" OR (ServiceNameId=1 AND ServiceTypeId=5)", "") + " AND Mobile is null";
+            string filterString = GetFilterstring().Replace(" OR (ServiceNameId=1 AND ServiceTypeId=1)", "") + " AND Mobile is null";
             var DonorList = oDonorRepository.GetAllasDataTable().Select(filterString + " OR (" + GetFilterForMonthlyAnnadanam() + " AND Mobile is null)");
             if (DonorList.Count() != 0)
             {
@@ -290,18 +290,6 @@ namespace eTemple.UI.Donations
                 {
                     dr["ServiceType"] = lstServiceType[Convert.ToInt32(dr["ServiceTypeId"])].Name;
                 }
-                //var servceTypes = lstServiceType.CopyobjToDataTable();
-                //var result = from x in dt.AsEnumerable()
-                //             join y in servceTypes.AsEnumerable()
-                //             on x.Field<int>("ServiceTypeId") equals y.Field<int>("Id")
-                //             select new
-                //             {
-                //                 Address = x.Field<string>("Address"),
-                //                 Surname = x.Field<string>("Surname"),
-                //                 NameOn = x.Field<string>("NameOn"),
-                //                 DistrictName = x.Field<int>("DistrictName")
-                //             };
-                //DataTable dt1 = result.CopyobjToDataTable();
                 DonorReportDataSet drs = new DonorReportDataSet();
                 drs.Tables.Add(dt);
                 AddressForm oAddressForm = new AddressForm(dt);

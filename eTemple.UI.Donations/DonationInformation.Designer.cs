@@ -738,7 +738,6 @@
             this.ClientSize = new System.Drawing.Size(945, 585);
             this.Controls.Add(this.btnQuickDailyAnna);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.grpOtherInfo);
@@ -778,6 +777,7 @@
             this.Controls.Add(this.txtDonorId);
             this.Controls.Add(this.lblDonorId);
             this.Controls.Add(this.grpBoxGeneralInfo);
+            this.Controls.Add(this.btnUpdate);
             this.MinimizeBox = false;
             this.Name = "DonationInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
