@@ -212,8 +212,9 @@ namespace eTemple.UI.Donations
             }
             if (rdbServiceWseDonors.Checked)
             {
-                if (serviceTypeId.Id == 5 && serviceNameId.Id == 1)
+                if (serviceTypeId.Id == 1 && serviceNameId.Id == 1)
                 {
+                    performDate = "";
                     return "ServiceNameId=1 AND ServiceTypeId=1";
                 }
                 FilterString = FilterString + " AND ServiceTypeId=" + serviceTypeId.Id;
@@ -223,11 +224,11 @@ namespace eTemple.UI.Donations
             else
             {
                 if (dtType.Id == 2)
-                    FilterString = FilterString + " OR (ServiceNameId=1 AND ServiceTypeId=1)";
+                    FilterString = FilterString + " and DateTypeId>0 OR (ServiceNameId=1 AND ServiceTypeId=1)";
             }
 
             if (chkNonPerformSvc.Checked)
-                FilterString = "DateTypeId=4";
+                FilterString = "DateTypeId=0";
             return FilterString;
         }
         private void cmbDateType_SelectedIndexChanged(object sender, EventArgs e)
