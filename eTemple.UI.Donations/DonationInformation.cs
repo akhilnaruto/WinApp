@@ -33,7 +33,8 @@ namespace eTemple.UI
         private PakshaRepository pakshaRepo;
         private ThidhiRepository thithiRepo;
         private MonthlyAnnaRepository monthlyAnnaRepo;
-
+        public GothramsRepository gothramRepo;
+        public List<Gothrams> lstGothrams = null;
         public DonationInformation()
         {
             //dtpDate.MinDate = DateTime.Now;
@@ -53,6 +54,7 @@ namespace eTemple.UI
             pakshaRepo = new PakshaRepository();
             thithiRepo = new ThidhiRepository();
             monthlyAnnaRepo = new MonthlyAnnaRepository();
+            gothramRepo = new GothramsRepository();
 
             bindData();
             btnUpdate.Visible = false;
@@ -959,6 +961,19 @@ namespace eTemple.UI
                 formOptions.ShowDialog(this);
                 formOptions.Dispose();
             }
+        }
+
+        private void DonationInformation_Load(object sender, EventArgs e)
+        {
+            lstGothrams = gothramRepo.GetAllAsQuerable().ToList();
+            AutoCompleteStringCollection strcoll = new AutoCompleteStringCollection();
+            foreach (Gothrams gothram in lstGothrams)
+            {
+                strcoll.Add(gothram.Name);
+            }
+            txtGothram.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtGothram.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtGothram.AutoCompleteCustomSource = strcoll;
         }
     }
 }

@@ -782,6 +782,7 @@
             this.Name = "DonationInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Donation Information";
+            this.Load += new System.EventHandler(this.DonationInformation_Load);
             this.grpBoxGeneralInfo.ResumeLayout(false);
             this.grpBoxGeneralInfo.PerformLayout();
             this.grpServiceInfo.ResumeLayout(false);
