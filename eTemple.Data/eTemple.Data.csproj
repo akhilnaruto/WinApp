@@ -60,6 +60,7 @@
     <Compile Include="Factories\CreateDonorFactory.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Models\DailyAnnaDanamModel.cs" />
     <Compile Include="Models\DateType.cs" />
     <Compile Include="Models\Designations.cs" />
     <Compile Include="Models\Donors.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Models\SpecialDay.cs" />
     <Compile Include="Models\Stars.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DailyAnnaDanamRepository.cs" />
     <Compile Include="Repositories\DateTypeRepository.cs" />
     <Compile Include="Repositories\DesignationRepository.cs" />
     <Compile Include="Repositories\DonorRepository.cs" />
