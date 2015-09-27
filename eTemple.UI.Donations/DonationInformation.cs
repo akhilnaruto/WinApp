@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using eTemple.UI.Donations;
 using eTemple.Data.Models;
+using System.Net.Http;
+using System.Configuration;
 
 namespace eTemple.UI
 {
@@ -80,7 +82,14 @@ namespace eTemple.UI
                 return;
 
             DateTime donorDate = Convert.ToDateTime(dtpDate.Text);
-            DateTime performDate = Convert.ToDateTime(dtpEnglishDateType.Text);
+            //DateTime performDate = Convert.ToDateTime(dtpEnglishDateType.Text);
+
+            //if (dtpDate.Text != "" || dtpDate.Text != null)
+            //    donorDate = Convert.ToDateTime(dtpDate.Text);
+            //else
+            //    donorDate = DateTime.Today;
+
+            DateTime performDate = DateTime.Today;
 
             int selectedServiceTypeId;
             int selectedServiceNameId;
@@ -149,8 +158,23 @@ namespace eTemple.UI
             if (strInsertStatus == "Success")
             {
                 MessageBox.Show("Data inserted successfully.");
-                CleareAllcontrolsRecursive(grpBoxGeneralInfo);
-            }            
+                sendSMS("91" + donorInfo.Mobile);
+                CleareAllcontrolsRecursive();                
+            }    
+            else
+                MessageBox.Show("There was a problem inserting data, kindly try again to save the record");
+        }
+
+
+        public void sendSMS(string phone)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(ConfigurationManager.AppSettings["SvcpvdrAPI"]);
+            // Usage
+            HttpResponseMessage response = client.GetAsync("?User=" + ConfigurationManager.AppSettings["User"] +
+                "&passwd=" + ConfigurationManager.AppSettings["passwd"] + "&mobilenumber=" + phone + "&message=" +
+                ConfigurationManager.AppSettings["message"] + "&sid=" + ConfigurationManager.AppSettings["sid"] +
+                "&mtype=" + ConfigurationManager.AppSettings["mtype"] + "&DR=" + ConfigurationManager.AppSettings["DR"] + "").Result;
         }
 
         private int SelectedDateTypeId(out int selectedServiceTypeId, out int selectedServiceNameId,
@@ -444,7 +468,9 @@ namespace eTemple.UI
             if (updateStatus == "Success")
             {
                 MessageBox.Show("Data updated successfully.");
-                CleareAllcontrolsRecursive(grpBoxGeneralInfo);
+                CleareAllcontrolsRecursive();
+                btnAdd.Visible = true;
+                btnModify.Visible = true;
             }
             else
                 MessageBox.Show("There was a problem in updating your data, kindly try again.");
@@ -463,9 +489,9 @@ namespace eTemple.UI
             btnAdd.Visible = true;
             btnModify.Visible = true;
 
-            CleareAllcontrolsRecursive(grpBoxGeneralInfo);
-            CleareAllcontrolsRecursive(grpServiceInfo);
-            CleareAllcontrolsRecursive(grpOtherInfo);
+            CleareAllcontrolsRecursive();
+            CleareAllcontrolsRecursive();
+            CleareAllcontrolsRecursive();
         }
 
         /// <summary>
@@ -777,8 +803,8 @@ namespace eTemple.UI
         /// <param name="e"></param>
         private void txtPin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(Char.IsDigit(e.KeyChar)))
-                e.Handled = true;
+            //if (!(Char.IsDigit(e.KeyChar)))
+            //    e.Handled = true;
             //if (!(Char.IsDigit(e.KeyChar) && (e.KeyChar == (char)Keys.Back)))
             //{
             //    e.Handled = true;
@@ -790,15 +816,53 @@ namespace eTemple.UI
 
         private void cmbServiceType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbServiceName.DataSource = null;                     
+            cmbServiceName.DataSource = null;
+            lblServiceName.Enabled = false;
+            cmbServiceName.Enabled = false;
 
             var serviceType = cmbServiceType.SelectedItem as ServiceTypes;
             if (serviceType != null)
             {
-                cmbServiceName.DataSource = serviceNameRepo.GetAllAsQuerable().Where(sType => sType.ServiceTypeId == serviceType.Id).ToList();
+                var ServiceTypeData = serviceNameRepo.GetAllAsQuerable().Where(sType => sType.ServiceTypeId == serviceType.Id).ToList();
+                cmbServiceName.DataSource = ServiceTypeData;
                 cmbServiceName.DisplayMember = "Name";
-            }
+                if (ServiceTypeData.Count > 0)
+                {
+                    lblServiceName.Enabled = true;
+                    cmbServiceName.Enabled = true;
 
+                }
+                if (serviceType.IsDateRelated == 1)
+                {
+                    lblDateType.Visible = true;
+                    cmbDateType.Visible = true;
+                    lblSpecialDay.Visible = false;
+                    cmbSpecialDay.Visible = false;
+                    lblEnglishDatetype.Visible = false;
+                    dtpEnglishDateType.Visible = false;
+                    lblMonth.Visible = false;
+                    cmbMonth.Visible = false;
+                    lblThithi.Visible = false;
+                    cmbThithi.Visible = false;                    
+                    lblMonthlyAnna.Visible = false;
+                    cmbMonthlyAnna.Visible = false;
+                }
+                else
+                {
+                    lblDateType.Visible = false;
+                    cmbDateType.Visible = false;
+                    lblSpecialDay.Visible = false;
+                    cmbSpecialDay.Visible = false;
+                    lblEnglishDatetype.Visible = false;
+                    dtpEnglishDateType.Visible = false;
+                    lblMonth.Visible = false;
+                    cmbMonth.Visible = false;
+                    lblThithi.Visible = false;
+                    cmbThithi.Visible = false;                    
+                    lblMonthlyAnna.Visible = false;
+                    cmbMonthlyAnna.Visible = false;
+                }
+            }
             if (serviceType.Name == "Monthly Annadanam")
             {
                 #region Show Hide Controls
@@ -824,19 +888,19 @@ namespace eTemple.UI
                 cmbMonthlyAnna.DisplayMember = "Day";
                 #endregion
             }
-            else
-            {
-                lblDateType.Visible = true;
-                cmbDateType.Visible = true;
-                lblMonthlyAnna.Visible = false;
-                cmbMonthlyAnna.Visible = false;
-                lblServiceName.Enabled = true;
-                cmbServiceName.Enabled = true;
-            }
+            //else
+            //{
+            //    lblDateType.Visible = true;
+            //    cmbDateType.Visible = true;
+            //    lblMonthlyAnna.Visible = false;
+            //    cmbMonthlyAnna.Visible = false;
+            //    lblServiceName.Enabled = true;
+            //    cmbServiceName.Enabled = true;
+            //}
         }
 
 
-        public void CleareAllcontrolsRecursive(Control container)
+        public void CleareAllcontrolsRecursive()
         {
             txtDonorId.Enabled = true;
             txtNameOn.Enabled = true;
@@ -879,6 +943,22 @@ namespace eTemple.UI
             cmbThithi.Visible = false;
             lblMonthlyAnna.Visible = false;
             cmbMonthlyAnna.Visible = false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnQuickDailyAnna_Click(object sender, EventArgs e)
+        {
+            using (DailyAnnadanam formOptions = new DailyAnnadanam())
+            {
+                // passing this in ShowDialog will set the .Owner 
+                // property of the child form
+                formOptions.ShowDialog(this);
+                formOptions.Dispose();
+            }
         }
     }
 }

@@ -93,6 +93,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnQuickDailyAnna = new System.Windows.Forms.Button();
             this.grpBoxGeneralInfo.SuspendLayout();
             this.grpServiceInfo.SuspendLayout();
             this.grpOtherInfo.SuspendLayout();
@@ -674,9 +675,9 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnAdd.Location = new System.Drawing.Point(345, 551);
+            this.btnAdd.Location = new System.Drawing.Point(345, 545);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(78, 27);
+            this.btnAdd.Size = new System.Drawing.Size(136, 30);
             this.btnAdd.TabIndex = 50;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -685,9 +686,9 @@
             // btnModify
             // 
             this.btnModify.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnModify.Location = new System.Drawing.Point(462, 551);
+            this.btnModify.Location = new System.Drawing.Point(500, 545);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(78, 27);
+            this.btnModify.Size = new System.Drawing.Size(136, 30);
             this.btnModify.TabIndex = 44;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -696,9 +697,9 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnUpdate.Location = new System.Drawing.Point(390, 551);
+            this.btnUpdate.Location = new System.Drawing.Point(345, 546);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(78, 27);
+            this.btnUpdate.Size = new System.Drawing.Size(136, 30);
             this.btnUpdate.TabIndex = 45;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -707,9 +708,9 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnCancel.Location = new System.Drawing.Point(498, 551);
+            this.btnCancel.Location = new System.Drawing.Point(500, 546);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(78, 27);
+            this.btnCancel.Size = new System.Drawing.Size(136, 30);
             this.btnCancel.TabIndex = 46;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -719,11 +720,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnQuickDailyAnna
+            // 
+            this.btnQuickDailyAnna.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnQuickDailyAnna.Location = new System.Drawing.Point(3, 546);
+            this.btnQuickDailyAnna.Name = "btnQuickDailyAnna";
+            this.btnQuickDailyAnna.Size = new System.Drawing.Size(136, 30);
+            this.btnQuickDailyAnna.TabIndex = 201;
+            this.btnQuickDailyAnna.Text = "Daily Annadanam";
+            this.btnQuickDailyAnna.UseVisualStyleBackColor = true;
+            this.btnQuickDailyAnna.Click += new System.EventHandler(this.btnQuickDailyAnna_Click);
+            // 
             // DonationInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 585);
+            this.Controls.Add(this.btnQuickDailyAnna);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnModify);
@@ -847,5 +860,6 @@
         private System.Windows.Forms.DateTimePicker dtpEnglishDateType;
         private System.Windows.Forms.ComboBox cmbMonthlyAnna;
         private System.Windows.Forms.Label lblMonthlyAnna;
+        private System.Windows.Forms.Button btnQuickDailyAnna;
     }
 }

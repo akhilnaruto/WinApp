@@ -17,13 +17,7 @@ namespace eTemple.Data.Models
         public string Name { get; set; }
 
         
-        public int Status { get; set; }
-
-        
-        public DateTime CreatedOn { get; set; }
-
-        
-        public int CreatedBy { get; set; }
+        public int IsDateRelated { get; set; }
 
     }
 }

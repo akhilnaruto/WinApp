@@ -123,7 +123,7 @@ namespace eTemple.UI.Donations
                 var donorExists = donorRepositoy.checkModifyMRNoExists(donorName);
                 if (donorExists == null)
                 {
-                    MessageBox.Show("Entered Donor Name dosen't exist, kindly enter again to modify the record");
+                    MessageBox.Show("Entered MR Nnumber dosen't exist, kindly enter again to modify the record");
                     return;
                 }
                 //var selectedDonor = donors.Where(donor => donor.Id == donorId.Id).FirstOrDefault();
