@@ -200,8 +200,10 @@ namespace eTemple.UI.Donations
                     performDate = month.Name + "   " + thidhi.Name;
                     break;
                 case 2:
+                    performDate = dtPicker.Value.ToString("dd-MM");
+                    string prvsYeardate = dtPicker.Value.AddYears(-1).ToString("yyyy-MM-dd");
+                    FilterString = "PerformDate='" + performDate + "' AND Donordate <= '#" + prvsYeardate + "#'";
                     performDate = dtPicker.Value.ToString("dd-MM-yyyy");
-                    FilterString = "PerformDate='#" + performDate + "#'";
                     break;
                 case 3:
                     FilterString = "SpecialDayId=" + specialDayId.Id;
