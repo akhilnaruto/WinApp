@@ -37,6 +37,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -83,7 +84,6 @@
     </Compile>
     <Compile Include="DonorReportDataSet.cs">
       <DependentUpon>DonorReportDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DonorReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
