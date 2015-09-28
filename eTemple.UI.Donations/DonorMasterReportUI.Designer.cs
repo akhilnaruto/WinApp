@@ -39,7 +39,7 @@
             this.dtPicker = new System.Windows.Forms.DateTimePicker();
             this.lblServicePerfmdt = new System.Windows.Forms.Label();
             this.cmbDateType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDateType = new System.Windows.Forms.Label();
             this.chkNonPerformSvc = new System.Windows.Forms.CheckBox();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.lblMonth = new System.Windows.Forms.Label();
@@ -173,15 +173,15 @@
             this.cmbDateType.TabIndex = 11;
             this.cmbDateType.SelectedIndexChanged += new System.EventHandler(this.cmbDateType_SelectedIndexChanged);
             // 
-            // label1
+            // lblDateType
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 137);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 17);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Date Type";
+            this.lblDateType.AutoSize = true;
+            this.lblDateType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateType.Location = new System.Drawing.Point(92, 137);
+            this.lblDateType.Name = "lblDateType";
+            this.lblDateType.Size = new System.Drawing.Size(74, 17);
+            this.lblDateType.TabIndex = 10;
+            this.lblDateType.Text = "Date Type";
             // 
             // chkNonPerformSvc
             // 
@@ -279,7 +279,7 @@
             this.Controls.Add(this.lblThidhi);
             this.Controls.Add(this.chkNonPerformSvc);
             this.Controls.Add(this.cmbDateType);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDateType);
             this.Controls.Add(this.lblServicePerfmdt);
             this.Controls.Add(this.dtPicker);
             this.Controls.Add(this.button2);
@@ -315,7 +315,7 @@
         private System.Windows.Forms.DateTimePicker dtPicker;
         private System.Windows.Forms.Label lblServicePerfmdt;
         private System.Windows.Forms.ComboBox cmbDateType;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDateType;
         private System.Windows.Forms.CheckBox chkNonPerformSvc;
         private System.Windows.Forms.ComboBox cmbMonth;
         private System.Windows.Forms.Label lblMonth;

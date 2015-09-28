@@ -76,12 +76,49 @@ namespace eTemple.UI.Donations
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            var serviceName = cmbServiceName.SelectedItem as ServiceName;
+            if (serviceName != null)
+            {
+                if (serviceName.IsDateRelated == 0)
+                {
+                    showorHideDateType(false);
+                }
+                else
+                {
+                    showorHideDateType(true);
+                }
+            }
         }
-
+        public void showorHideDateType(bool show)
+        {
+            if (!show)
+            {
+                cmbDateType.Visible = false;
+                lblMonth.Visible = false;
+                cmbMonth.Visible = false;
+                lblThidhi.Visible = false;
+                cmbThidhi.Visible = false;
+                lblSpecialDay.Visible = false;
+                cmbSpecialDay.Visible = false;
+                dtPicker.Visible = false;
+                lblDateType.Visible = false;
+            }
+            else
+            {
+                cmbDateType.Visible = true;
+                lblDateType.Visible = true;
+                cmbDateType.DataSource = null;
+                cmbDateType.DataSource = lstDateType;
+                cmbDateType.DisplayMember = "Name";
+                //cmbDateType.SelectedIndex = 0;
+            }
+        }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (rdbAlldonors.Checked)
+            {
+                showorHideDateType(true);
+            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -116,7 +153,21 @@ namespace eTemple.UI.Donations
             if (serviceType != null)
             {
                 cmbServiceName.DataSource = oServiceNameRep.GetAllAsQuerable().Where(sType => sType.ServiceTypeId == serviceType.Id).ToList();
-                cmbServiceName.DisplayMember = "Name";
+                if (cmbServiceName.Items.Count == 0)
+                {
+                    lblServiceName.Visible = false;
+                    cmbServiceName.Visible = false;
+                    if (serviceType.IsDateRelated == 0)
+                    {
+                        showorHideDateType(false);
+                    }
+                    else
+                    {
+                        showorHideDateType(true);
+                    }
+                }
+                else
+                    cmbServiceName.DisplayMember = "Name";
             }
             //  cmbServiceName.SelectedIndex = -1;
         }
@@ -141,8 +192,8 @@ namespace eTemple.UI.Donations
             }
             // performDate = string.Format(performDate, "yyyy-mm-dd");
             string filterstring = string.Empty;
-            if (rdbServiceWseDonors.Checked && ServiceTypes.Id == 2)
-                filterstring = GetFilterForMonthlyAnnadanam();
+            if (rdbServiceWseDonors.Checked)
+                filterstring = GetFilterstring();
             else
                 filterstring = GetFilterstring() + " OR (" + GetFilterForMonthlyAnnadanam() + ")";
             var DonorList = oDonorRepository.GetAllasDataTable().Select(filterstring);
@@ -170,6 +221,11 @@ namespace eTemple.UI.Donations
                 }
                 if (!chkNonPerformSvc.Checked)
                     dr["PerformDate"] = performDate;
+                else
+                {
+                    dr["ServiceType"] = "";
+                    dr["ServiceName"] = "";
+                }
                 DonorVals.Rows.Add(dr);
                 DonorReportForm donorreportForm = new DonorReportForm(dt, DonorVals);
                 donorreportForm.Show();
@@ -183,6 +239,7 @@ namespace eTemple.UI.Donations
 
         public string GetFilterstring()
         {
+        
             string FilterString = string.Empty;
             var dtType = cmbDateType.SelectedItem as DateType;
             var month = cmbMonth.SelectedItem as Months;
@@ -193,33 +250,50 @@ namespace eTemple.UI.Donations
             var serviceTypeId = cmbServiceType.SelectedItem as ServiceTypes;
             var serviceNameId = cmbServiceName.SelectedItem as ServiceName;
 
+           
             switch (dtType.Id)
             {
                 case 1:
-                    FilterString = "DonorMonth=" + month.Id + " AND Thidhi=" + thidhi.Id;
+                    FilterString = "DateTypeId=1 and DonorMonth=" + month.Id + " AND Thidhi=" + thidhi.Id;
                     performDate = month.Name + "   " + thidhi.Name;
                     break;
                 case 2:
                     performDate = dtPicker.Value.ToString("dd-MM");
                     string prvsYeardate = dtPicker.Value.AddYears(-1).ToString("yyyy-MM-dd");
-                    FilterString = "PerformDate='" + performDate + "' AND Donordate <= '#" + prvsYeardate + "#'";
+                    FilterString = "DateTypeId=2 and PerformDate='" + performDate + "' AND Donordate <= '#" + prvsYeardate + "#'";
                     performDate = dtPicker.Value.ToString("dd-MM-yyyy");
                     break;
                 case 3:
-                    FilterString = "SpecialDayId=" + specialDayId.Id;
+                    FilterString = "DateTypeId=3 and  SpecialDayId=" + specialDayId.Id;
                     performDate = specialDayId.Name;
                     break;
             }
+            if (chkNonPerformSvc.Checked)
+            {
+                FilterString = "DateTypeId=0 and ServiceTypeId>2";
+                return FilterString;
+            }
+
             if (rdbServiceWseDonors.Checked)
             {
-                if (serviceTypeId.Id == 1 && serviceNameId.Id == 1)
+                if (serviceTypeId.Id == 2)
+                {
+                    FilterString = GetFilterForMonthlyAnnadanam();
+                    return FilterString;
+                }
+                if (!cmbDateType.Visible)
                 {
                     performDate = "";
-                    return "ServiceNameId=1 AND ServiceTypeId=1";
+                    FilterString =  " ServiceTypeId=" + serviceTypeId.Id;
+                    if (serviceNameId != null)
+                        FilterString = " ServiceNameId=" + serviceNameId.Id;
                 }
-                FilterString = FilterString + " AND ServiceTypeId=" + serviceTypeId.Id;
-                if (serviceNameId != null)
-                    FilterString = FilterString + " AND ServiceNameId=" + serviceNameId.Id;
+                else
+                {
+                    FilterString = FilterString + " AND ServiceTypeId=" + serviceTypeId.Id;
+                    if (serviceNameId != null)
+                        FilterString = FilterString + " AND ServiceNameId=" + serviceNameId.Id;
+                }
             }
             else
             {
@@ -227,8 +301,6 @@ namespace eTemple.UI.Donations
                     FilterString = FilterString + " and DateTypeId>0 OR (ServiceNameId=1 AND ServiceTypeId=1)";
             }
 
-            if (chkNonPerformSvc.Checked)
-                FilterString = "DateTypeId=0";
             return FilterString;
         }
         private void cmbDateType_SelectedIndexChanged(object sender, EventArgs e)
