@@ -163,6 +163,7 @@
             this.Name = "ModifyPopup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modify Parameters";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifyPopup_FormClosing);
             this.Load += new System.EventHandler(this.ModifyPopup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -22,6 +22,7 @@ namespace eTemple.UI.Donations
         public ModifyPopup()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             donorRepositoy = new DonorRepository();
             donors = donorRepositoy.GetAllAsQuerable().ToList();
             lblDonorID.Visible = true;
@@ -140,6 +141,18 @@ namespace eTemple.UI.Donations
         private void cmbDonorID_SelectedIndexChanged(object sender, EventArgs e)
         {
             //var donorId = cmbDonorID.SelectedItem as SelectedDonorOptions;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ModifyPopup_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DonationInformation parent = (DonationInformation)this.Owner;
+            Donors donor = new Donors();
+            parent.getDataFromChildWindow(null);
         }
     }
 }
