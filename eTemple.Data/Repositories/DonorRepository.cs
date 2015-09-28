@@ -30,7 +30,7 @@ namespace eTemple.Data.Repositories
         {
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
-                using (MySqlCommand cmd = new MySqlCommand("select coalesce(MAX(replace(id,'" + id + "' ,'')), 0) as donroId from donors where id like '" + id + "%'", conn))
+                using (MySqlCommand cmd = new MySqlCommand("select coalesce(MAX(CAST(replace(id,'" + id + "' ,'')AS SIGNED)), 0) as donroId from donors where id like '" + id + "%'", conn))
                 {
                     using (MySqlDataAdapter da = new MySqlDataAdapter())
                     {
