@@ -1,4 +1,5 @@
 ﻿using eTemple.Data.Models;
+using eTemple.Data.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,7 +73,7 @@ namespace eTemple.Data.Repositories
         public Donors checkModifyMRNoExists(string chkMRNo)
         {
             var donors = TempleDb.SingleOrDefault<Donors>("Select * from Donors where MR_No=@0", chkMRNo);
-            if (donors != null && donors.MR_No != 0)
+            if (donors != null && donors.MR_No != string.Empty)
             {
                 return donors;
             }
@@ -100,32 +101,32 @@ namespace eTemple.Data.Repositories
                             cmd.CommandType = CommandType.Text;
                             cmd.Parameters.AddWithValue("@Id", donor.Id);
                             cmd.Parameters.AddWithValue("@Donordate", donor.Donordate);
-                            cmd.Parameters.AddWithValue("@Address", donor.Address);
-                            cmd.Parameters.AddWithValue("@Surname", donor.Surname);
-                            cmd.Parameters.AddWithValue("@DonorName", donor.DonorName);
-                            cmd.Parameters.AddWithValue("@DistrictName", donor.DistrictName);
-                            cmd.Parameters.AddWithValue("@City", donor.City);
-                            cmd.Parameters.AddWithValue("@Pin", donor.Pin);
-                            cmd.Parameters.AddWithValue("@State", donor.State);
-                            cmd.Parameters.AddWithValue("@Country", donor.Country);
+                            cmd.Parameters.AddWithValue("@Address", donor.Address.NullString());
+                            cmd.Parameters.AddWithValue("@Surname", donor.Surname.NullString());
+                            cmd.Parameters.AddWithValue("@DonorName", donor.DonorName.NullString());
+                            cmd.Parameters.AddWithValue("@DistrictName", donor.DistrictName.NullString());
+                            cmd.Parameters.AddWithValue("@City", donor.City.NullString());
+                            cmd.Parameters.AddWithValue("@Pin", donor.Pin.NullString());
+                            cmd.Parameters.AddWithValue("@State", donor.State.NullString());
+                            cmd.Parameters.AddWithValue("@Country", donor.Country.NullString());
                             cmd.Parameters.AddWithValue("@NameOn", donor.NameOn);
                             cmd.Parameters.AddWithValue("@Star", donor.Star);
-                            cmd.Parameters.AddWithValue("@Occassion", donor.Occassion);
-                            cmd.Parameters.AddWithValue("@Gothram", donor.Gothram);
+                            cmd.Parameters.AddWithValue("@Occassion", donor.Occassion.NullString());
+                            cmd.Parameters.AddWithValue("@Gothram", donor.Gothram.NullString());
                             cmd.Parameters.AddWithValue("@Amount", donor.Amount);
-                            cmd.Parameters.AddWithValue("@MR_No", donor.MR_No);
-                            cmd.Parameters.AddWithValue("@Remarks", donor.Remarks);
+                            cmd.Parameters.AddWithValue("@MR_No", donor.MR_No.NullString());
+                            cmd.Parameters.AddWithValue("@Remarks", donor.Remarks.NullString());
                             cmd.Parameters.AddWithValue("@Landline", donor.Landline);
                             cmd.Parameters.AddWithValue("@SpecialDayId", donor.SpecialDayId);
                             cmd.Parameters.AddWithValue("@ServiceTypeId", donor.ServiceTypeId);
                             cmd.Parameters.AddWithValue("@ServiceNameId", donor.ServiceNameId);
                             cmd.Parameters.AddWithValue("@DateTypeId", donor.DateTypeId);
                             cmd.Parameters.AddWithValue("@PerformDate", donor.PerformDate);
-                            cmd.Parameters.AddWithValue("@EmailId", donor.EmailId);
+                            cmd.Parameters.AddWithValue("@EmailId", donor.EmailId.NullString());
                             cmd.Parameters.AddWithValue("@DonorMonth", donor.DonorMonth);
                             cmd.Parameters.AddWithValue("@Thidhi", donor.Thidhi);
-                            cmd.Parameters.AddWithValue("@DonorDay", donor.DonorDay);
-                            cmd.Parameters.AddWithValue("@Mobile", donor.Mobile);
+                            cmd.Parameters.AddWithValue("@DonorDay", donor.DonorDay);                            
+                            cmd.Parameters.AddWithValue("@Mobile", donor.Mobile.NullString());
 
                             cmd.ExecuteNonQuery();
                             insertStatus = "Success";
@@ -173,32 +174,32 @@ namespace eTemple.Data.Repositories
                             cmd.CommandType = CommandType.Text;
                             cmd.Parameters.AddWithValue("@Id", donor.Id);
                             cmd.Parameters.AddWithValue("@Donordate", donor.Donordate);
-                            cmd.Parameters.AddWithValue("@Address", donor.Address);
-                            cmd.Parameters.AddWithValue("@Surname", donor.Surname);
-                            cmd.Parameters.AddWithValue("@DonorName", donor.DonorName);
-                            cmd.Parameters.AddWithValue("@DistrictName", donor.DistrictName);
-                            cmd.Parameters.AddWithValue("@City", donor.City);
-                            cmd.Parameters.AddWithValue("@Pin", donor.Pin);
-                            cmd.Parameters.AddWithValue("@State", donor.State);
-                            cmd.Parameters.AddWithValue("@Country", donor.Country);
+                            cmd.Parameters.AddWithValue("@Address", donor.Address.NullString());
+                            cmd.Parameters.AddWithValue("@Surname", donor.Surname.NullString());
+                            cmd.Parameters.AddWithValue("@DonorName", donor.DonorName.NullString());
+                            cmd.Parameters.AddWithValue("@DistrictName", donor.DistrictName.NullString());
+                            cmd.Parameters.AddWithValue("@City", donor.City.NullString());
+                            cmd.Parameters.AddWithValue("@Pin", donor.Pin.NullString());
+                            cmd.Parameters.AddWithValue("@State", donor.State.NullString());
+                            cmd.Parameters.AddWithValue("@Country", donor.Country.NullString());
                             cmd.Parameters.AddWithValue("@NameOn", donor.NameOn);
                             cmd.Parameters.AddWithValue("@Star", donor.Star);
-                            cmd.Parameters.AddWithValue("@Occassion", donor.Occassion);
-                            cmd.Parameters.AddWithValue("@Gothram", donor.Gothram);
+                            cmd.Parameters.AddWithValue("@Occassion", donor.Occassion.NullString());
+                            cmd.Parameters.AddWithValue("@Gothram", donor.Gothram.NullString());
                             cmd.Parameters.AddWithValue("@Amount", donor.Amount);
-                            cmd.Parameters.AddWithValue("@MR_No", donor.MR_No);
-                            cmd.Parameters.AddWithValue("@Remarks", donor.Remarks);
-                            cmd.Parameters.AddWithValue("@Landline", donor.Landline);
+                            cmd.Parameters.AddWithValue("@MR_No", donor.MR_No.NullString());
+                            cmd.Parameters.AddWithValue("@Remarks", donor.Remarks.NullString());
+                            cmd.Parameters.AddWithValue("@Landline", donor.Landline.NullString());
                             cmd.Parameters.AddWithValue("@SpecialDayId", donor.SpecialDayId);
                             cmd.Parameters.AddWithValue("@ServiceTypeId", donor.ServiceTypeId);
                             cmd.Parameters.AddWithValue("@ServiceNameId", donor.ServiceNameId);
                             cmd.Parameters.AddWithValue("@DateTypeId", donor.DateTypeId);
                             cmd.Parameters.AddWithValue("@PerformDate", donor.PerformDate);
-                            cmd.Parameters.AddWithValue("@EmailId", donor.EmailId);
+                            cmd.Parameters.AddWithValue("@EmailId", donor.EmailId.NullString());
                             cmd.Parameters.AddWithValue("@DonorMonth", donor.DonorMonth);
                             cmd.Parameters.AddWithValue("@Thidhi", donor.Thidhi);
                             cmd.Parameters.AddWithValue("@DonorDay", donor.DonorDay);
-                            cmd.Parameters.AddWithValue("@Mobile", donor.Mobile);
+                            cmd.Parameters.AddWithValue("@Mobile", donor.Mobile.NullString());
 
                             cmd.ExecuteNonQuery();
                             updateStatus = "Success";

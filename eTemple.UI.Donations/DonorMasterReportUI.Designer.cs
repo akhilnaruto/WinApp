@@ -53,10 +53,10 @@
             // rdbAlldonors
             // 
             this.rdbAlldonors.AutoSize = true;
-            this.rdbAlldonors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAlldonors.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbAlldonors.Location = new System.Drawing.Point(82, 29);
             this.rdbAlldonors.Name = "rdbAlldonors";
-            this.rdbAlldonors.Size = new System.Drawing.Size(101, 21);
+            this.rdbAlldonors.Size = new System.Drawing.Size(99, 22);
             this.rdbAlldonors.TabIndex = 0;
             this.rdbAlldonors.TabStop = true;
             this.rdbAlldonors.Text = "All Donors";
@@ -66,10 +66,10 @@
             // rdbServiceWseDonors
             // 
             this.rdbServiceWseDonors.AutoSize = true;
-            this.rdbServiceWseDonors.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbServiceWseDonors.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbServiceWseDonors.Location = new System.Drawing.Point(333, 29);
             this.rdbServiceWseDonors.Name = "rdbServiceWseDonors";
-            this.rdbServiceWseDonors.Size = new System.Drawing.Size(168, 21);
+            this.rdbServiceWseDonors.Size = new System.Drawing.Size(169, 22);
             this.rdbServiceWseDonors.TabIndex = 1;
             this.rdbServiceWseDonors.TabStop = true;
             this.rdbServiceWseDonors.Text = "Servicewise Donors";
@@ -80,10 +80,10 @@
             // lblServiceType
             // 
             this.lblServiceType.AutoSize = true;
-            this.lblServiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServiceType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServiceType.Location = new System.Drawing.Point(89, 71);
             this.lblServiceType.Name = "lblServiceType";
-            this.lblServiceType.Size = new System.Drawing.Size(91, 17);
+            this.lblServiceType.Size = new System.Drawing.Size(92, 17);
             this.lblServiceType.TabIndex = 2;
             this.lblServiceType.Text = "Service Type";
             this.lblServiceType.Visible = false;
@@ -92,10 +92,10 @@
             // lblServiceName
             // 
             this.lblServiceName.AutoSize = true;
-            this.lblServiceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServiceName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServiceName.Location = new System.Drawing.Point(89, 102);
             this.lblServiceName.Name = "lblServiceName";
-            this.lblServiceName.Size = new System.Drawing.Size(96, 17);
+            this.lblServiceName.Size = new System.Drawing.Size(100, 17);
             this.lblServiceName.TabIndex = 3;
             this.lblServiceName.Text = "Service Name";
             this.lblServiceName.Visible = false;
@@ -103,28 +103,31 @@
             // 
             // cmbServiceType
             // 
+            this.cmbServiceType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbServiceType.FormattingEnabled = true;
             this.cmbServiceType.Location = new System.Drawing.Point(189, 67);
             this.cmbServiceType.Name = "cmbServiceType";
-            this.cmbServiceType.Size = new System.Drawing.Size(224, 21);
+            this.cmbServiceType.Size = new System.Drawing.Size(224, 25);
             this.cmbServiceType.TabIndex = 4;
             this.cmbServiceType.Visible = false;
             this.cmbServiceType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // cmbServiceName
             // 
+            this.cmbServiceName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbServiceName.FormattingEnabled = true;
             this.cmbServiceName.Items.AddRange(new object[] {
             "        "});
             this.cmbServiceName.Location = new System.Drawing.Point(190, 98);
             this.cmbServiceName.Name = "cmbServiceName";
-            this.cmbServiceName.Size = new System.Drawing.Size(224, 21);
+            this.cmbServiceName.Size = new System.Drawing.Size(224, 25);
             this.cmbServiceName.TabIndex = 5;
             this.cmbServiceName.Visible = false;
             this.cmbServiceName.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(252, 275);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 32);
@@ -135,6 +138,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(394, 275);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 32);
@@ -145,38 +149,40 @@
             // 
             // dtPicker
             // 
+            this.dtPicker.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtPicker.Location = new System.Drawing.Point(231, 206);
             this.dtPicker.Name = "dtPicker";
-            this.dtPicker.Size = new System.Drawing.Size(182, 20);
+            this.dtPicker.Size = new System.Drawing.Size(182, 25);
             this.dtPicker.TabIndex = 8;
             this.dtPicker.Visible = false;
             // 
             // lblServicePerfmdt
             // 
             this.lblServicePerfmdt.AutoSize = true;
-            this.lblServicePerfmdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServicePerfmdt.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServicePerfmdt.Location = new System.Drawing.Point(89, 207);
             this.lblServicePerfmdt.Name = "lblServicePerfmdt";
-            this.lblServicePerfmdt.Size = new System.Drawing.Size(135, 17);
+            this.lblServicePerfmdt.Size = new System.Drawing.Size(141, 17);
             this.lblServicePerfmdt.TabIndex = 9;
             this.lblServicePerfmdt.Text = "Select Perform Date";
             this.lblServicePerfmdt.Visible = false;
             // 
             // cmbDateType
             // 
+            this.cmbDateType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDateType.FormattingEnabled = true;
             this.cmbDateType.Items.AddRange(new object[] {
             "        "});
             this.cmbDateType.Location = new System.Drawing.Point(189, 133);
             this.cmbDateType.Name = "cmbDateType";
-            this.cmbDateType.Size = new System.Drawing.Size(226, 21);
+            this.cmbDateType.Size = new System.Drawing.Size(226, 25);
             this.cmbDateType.TabIndex = 11;
             this.cmbDateType.SelectedIndexChanged += new System.EventHandler(this.cmbDateType_SelectedIndexChanged);
             // 
             // lblDateType
             // 
             this.lblDateType.AutoSize = true;
-            this.lblDateType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateType.Location = new System.Drawing.Point(92, 137);
             this.lblDateType.Name = "lblDateType";
             this.lblDateType.Size = new System.Drawing.Size(74, 17);
@@ -186,28 +192,30 @@
             // chkNonPerformSvc
             // 
             this.chkNonPerformSvc.AutoSize = true;
+            this.chkNonPerformSvc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkNonPerformSvc.Location = new System.Drawing.Point(168, 236);
             this.chkNonPerformSvc.Name = "chkNonPerformSvc";
-            this.chkNonPerformSvc.Size = new System.Drawing.Size(175, 17);
+            this.chkNonPerformSvc.Size = new System.Drawing.Size(232, 21);
             this.chkNonPerformSvc.TabIndex = 12;
             this.chkNonPerformSvc.Text = "Non performance Service types";
             this.chkNonPerformSvc.UseVisualStyleBackColor = true;
             // 
             // cmbMonth
             // 
+            this.cmbMonth.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMonth.FormattingEnabled = true;
             this.cmbMonth.Items.AddRange(new object[] {
             "        "});
             this.cmbMonth.Location = new System.Drawing.Point(158, 166);
             this.cmbMonth.Name = "cmbMonth";
-            this.cmbMonth.Size = new System.Drawing.Size(126, 21);
+            this.cmbMonth.Size = new System.Drawing.Size(126, 25);
             this.cmbMonth.TabIndex = 16;
             this.cmbMonth.Visible = false;
             // 
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
-            this.lblMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonth.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonth.Location = new System.Drawing.Point(95, 168);
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(47, 17);
@@ -217,19 +225,20 @@
             // 
             // cmbThidhi
             // 
+            this.cmbThidhi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbThidhi.FormattingEnabled = true;
             this.cmbThidhi.Items.AddRange(new object[] {
             "        "});
             this.cmbThidhi.Location = new System.Drawing.Point(367, 166);
             this.cmbThidhi.Name = "cmbThidhi";
-            this.cmbThidhi.Size = new System.Drawing.Size(126, 21);
+            this.cmbThidhi.Size = new System.Drawing.Size(126, 25);
             this.cmbThidhi.TabIndex = 18;
             this.cmbThidhi.Visible = false;
             // 
             // lblThidhi
             // 
             this.lblThidhi.AutoSize = true;
-            this.lblThidhi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThidhi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThidhi.Location = new System.Drawing.Point(299, 168);
             this.lblThidhi.Name = "lblThidhi";
             this.lblThidhi.Size = new System.Drawing.Size(47, 17);
@@ -239,12 +248,13 @@
             // 
             // cmbSpecialDay
             // 
+            this.cmbSpecialDay.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSpecialDay.FormattingEnabled = true;
             this.cmbSpecialDay.Items.AddRange(new object[] {
             "        "});
             this.cmbSpecialDay.Location = new System.Drawing.Point(189, 169);
             this.cmbSpecialDay.Name = "cmbSpecialDay";
-            this.cmbSpecialDay.Size = new System.Drawing.Size(224, 21);
+            this.cmbSpecialDay.Size = new System.Drawing.Size(224, 25);
             this.cmbSpecialDay.TabIndex = 20;
             this.cmbSpecialDay.Visible = false;
             // 
@@ -261,6 +271,7 @@
             // 
             // btnGenerateAdress
             // 
+            this.btnGenerateAdress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerateAdress.Location = new System.Drawing.Point(95, 275);
             this.btnGenerateAdress.Name = "btnGenerateAdress";
             this.btnGenerateAdress.Size = new System.Drawing.Size(122, 32);

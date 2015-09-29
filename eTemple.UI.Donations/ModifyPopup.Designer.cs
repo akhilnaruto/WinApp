@@ -44,10 +44,11 @@
             // 
             this.rbdDonorId.AutoSize = true;
             this.rbdDonorId.Checked = true;
+            this.rbdDonorId.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbdDonorId.Location = new System.Drawing.Point(93, 98);
             this.rbdDonorId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbdDonorId.Name = "rbdDonorId";
-            this.rbdDonorId.Size = new System.Drawing.Size(84, 24);
+            this.rbdDonorId.Size = new System.Drawing.Size(80, 21);
             this.rbdDonorId.TabIndex = 0;
             this.rbdDonorId.TabStop = true;
             this.rbdDonorId.Text = "DonorID";
@@ -57,10 +58,11 @@
             // rbdDonorName
             // 
             this.rbdDonorName.AutoSize = true;
+            this.rbdDonorName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbdDonorName.Location = new System.Drawing.Point(245, 98);
             this.rbdDonorName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbdDonorName.Name = "rbdDonorName";
-            this.rbdDonorName.Size = new System.Drawing.Size(113, 24);
+            this.rbdDonorName.Size = new System.Drawing.Size(109, 21);
             this.rbdDonorName.TabIndex = 1;
             this.rbdDonorName.Text = "Donor Name";
             this.rbdDonorName.UseVisualStyleBackColor = true;
@@ -69,10 +71,11 @@
             // rbdMRNO
             // 
             this.rbdMRNO.AutoSize = true;
+            this.rbdMRNO.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbdMRNO.Location = new System.Drawing.Point(407, 98);
             this.rbdMRNO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbdMRNO.Name = "rbdMRNO";
-            this.rbdMRNO.Size = new System.Drawing.Size(75, 24);
+            this.rbdMRNO.Size = new System.Drawing.Size(74, 21);
             this.rbdMRNO.TabIndex = 2;
             this.rbdMRNO.Text = "MR NO";
             this.rbdMRNO.UseVisualStyleBackColor = true;
@@ -81,43 +84,48 @@
             // lblDonorID
             // 
             this.lblDonorID.AutoSize = true;
+            this.lblDonorID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDonorID.Location = new System.Drawing.Point(89, 211);
             this.lblDonorID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDonorID.Name = "lblDonorID";
-            this.lblDonorID.Size = new System.Drawing.Size(70, 20);
+            this.lblDonorID.Size = new System.Drawing.Size(66, 17);
             this.lblDonorID.TabIndex = 3;
             this.lblDonorID.Text = "Donor ID";
             // 
             // lblDonorName
             // 
             this.lblDonorName.AutoSize = true;
+            this.lblDonorName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDonorName.Location = new System.Drawing.Point(89, 211);
             this.lblDonorName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDonorName.Name = "lblDonorName";
-            this.lblDonorName.Size = new System.Drawing.Size(95, 20);
+            this.lblDonorName.Size = new System.Drawing.Size(91, 17);
             this.lblDonorName.TabIndex = 4;
             this.lblDonorName.Text = "Donor Name";
             // 
             // lblMRNO
             // 
             this.lblMRNO.AutoSize = true;
+            this.lblMRNO.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMRNO.Location = new System.Drawing.Point(89, 211);
             this.lblMRNO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMRNO.Name = "lblMRNO";
-            this.lblMRNO.Size = new System.Drawing.Size(57, 20);
+            this.lblMRNO.Size = new System.Drawing.Size(56, 17);
             this.lblMRNO.TabIndex = 5;
             this.lblMRNO.Text = "MR NO";
             // 
             // txtDonorID
             // 
+            this.txtDonorID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDonorID.Location = new System.Drawing.Point(214, 211);
             this.txtDonorID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDonorID.Name = "txtDonorID";
-            this.txtDonorID.Size = new System.Drawing.Size(215, 27);
+            this.txtDonorID.Size = new System.Drawing.Size(215, 25);
             this.txtDonorID.TabIndex = 6;
             // 
             // btnGo
             // 
+            this.btnGo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGo.Location = new System.Drawing.Point(437, 211);
             this.btnGo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGo.Name = "btnGo";
@@ -129,18 +137,20 @@
             // 
             // txtDonorName
             // 
+            this.txtDonorName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDonorName.Location = new System.Drawing.Point(214, 211);
             this.txtDonorName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDonorName.Name = "txtDonorName";
-            this.txtDonorName.Size = new System.Drawing.Size(215, 27);
+            this.txtDonorName.Size = new System.Drawing.Size(215, 25);
             this.txtDonorName.TabIndex = 9;
             // 
             // txtMRNO
             // 
+            this.txtMRNO.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMRNO.Location = new System.Drawing.Point(214, 211);
             this.txtMRNO.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMRNO.Name = "txtMRNO";
-            this.txtMRNO.Size = new System.Drawing.Size(215, 27);
+            this.txtMRNO.Size = new System.Drawing.Size(215, 25);
             this.txtMRNO.TabIndex = 10;
             // 
             // ModifyPopup
