@@ -393,6 +393,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(200, 27);
             this.txtAmount.TabIndex = 15;
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // lblAmount
             // 
@@ -463,9 +464,11 @@
             // 
             this.txtMobile.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtMobile.Location = new System.Drawing.Point(407, 287);
+            this.txtMobile.MaxLength = 10;
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(200, 27);
             this.txtMobile.TabIndex = 19;
+            this.txtMobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMobile_KeyPress);
             // 
             // label2
             // 

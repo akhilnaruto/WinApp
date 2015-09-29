@@ -102,6 +102,19 @@ namespace eTemple.UI
                 else
                     performDate = "";
 
+                if ((txtPin.Text == "" ) || (txtPin.Text == string.Empty))
+                            txtPin.Text = null;
+
+                if ((txtLandline.Text == "") || (txtLandline.Text == string.Empty))
+                    txtLandline.Text = null;
+
+                if ((txtMobile.Text == "") || (txtMobile.Text == string.Empty))
+                    txtMobile.Text = null;
+
+                
+                
+
+
                 int selectedServiceTypeId;
                 int selectedServiceNameId;
                 int selectedMonthId;
@@ -183,6 +196,12 @@ namespace eTemple.UI
             }
         }
 
+        public static int customConvertToInt32(object value, int defaultValue)
+        {
+            if (value == null)
+                return defaultValue;
+            return Convert.ToInt32(value);
+        }
 
         public void sendSMS(string phone)
         {
@@ -870,16 +889,10 @@ namespace eTemple.UI
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void txtPin_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if (!(Char.IsDigit(e.KeyChar)))
-            //    e.Handled = true;
+        {            
             if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
             {
-                e.Handled = true;
-                //    errorProvider1.SetError(txtPin, "Only Numbers allowed e.g.,560050");
-                //}
-                //else
-                //    errorProvider1.Clear();
+                e.Handled = true;         
             }
         }
 
@@ -1158,6 +1171,22 @@ namespace eTemple.UI
                     cmbMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Enabled = false;
                 } 
+            }
+        }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMobile_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+            {
+                e.Handled = true;
             }
         }
     }
