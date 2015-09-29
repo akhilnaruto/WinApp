@@ -98,7 +98,7 @@ namespace eTemple.UI
                 donorDate = Convert.ToDateTime(dtpDate.Text);
                 
                 if (dtpEnglishDateType.Text != null)
-                    performDate = dtpEnglishDateType.Text;
+                    performDate = dtpEnglishDateType.Value.ToString("dd-MM");
                 else
                     performDate = "";
 
@@ -110,8 +110,7 @@ namespace eTemple.UI
 
                 if ((txtMobile.Text == "") || (txtMobile.Text == string.Empty))
                     txtMobile.Text = null;
-
-                
+                            
                 
 
 
@@ -156,7 +155,7 @@ namespace eTemple.UI
                     DonorName = txtName.Text,
                     DistrictName = txtDistrict.Text,
                     City = txtCity.Text,
-                    Pin = Convert.ToInt32(txtPin.Text),
+                    Pin = txtPin.Text,
                     State = txtState.Text,
                     Country = txtCountry.Text,
                     NameOn = txtNameOn.Text,
@@ -164,7 +163,7 @@ namespace eTemple.UI
                     Occassion = txtOccassion.Text,
                     Gothram = txtGothram.Text,
                     Amount = Convert.ToInt32(txtAmount.Text),
-                    MR_No = Convert.ToInt32(txtMRNo.Text),
+                    MR_No = txtMRNo.Text,
                     Remarks = txtRemarks.Text,
                     Landline = txtLandline.Text,
                     SpecialDayId = selectedSpecialDayId,
@@ -488,7 +487,7 @@ namespace eTemple.UI
                 DonorName = txtName.Text,
                 DistrictName = txtDistrict.Text,
                 City = txtCity.Text,
-                Pin = Convert.ToInt32(txtPin.Text),
+                Pin = txtPin.Text,
                 State = txtState.Text,
                 Country = txtCountry.Text,
                 NameOn = txtNameOn.Text,
@@ -496,7 +495,7 @@ namespace eTemple.UI
                 Occassion = txtOccassion.Text,
                 Gothram = txtGothram.Text,
                 Amount = Convert.ToInt32(txtAmount.Text),
-                MR_No = Convert.ToInt32(txtMRNo.Text),
+                MR_No = txtMRNo.Text,
                 Remarks = txtRemarks.Text,
                 Landline = txtLandline.Text,
                 SpecialDayId = selectedSpecialDayId,
@@ -650,12 +649,23 @@ namespace eTemple.UI
                 cmbMonthlyAnna.SelectedIndex = cmbMonthlyAnna.FindString(donorDayValue[0]); 
             }
 
-            else
+            //else
+            //{
+            //    btnUpdate.Visible = false;
+            //    btnCancel.Visible = false;
+            //    btnAdd.Visible = true;
+            //    btnCancel.Visible=true;
+            //}
+        }
+
+        public void getDataFromChildWindow(int value)
+        {
+            if (value == 0)
             {
                 btnUpdate.Visible = false;
                 btnCancel.Visible = false;
                 btnAdd.Visible = true;
-                btnCancel.Visible=true;
+                btnModify.Visible = true;
             }
         }
 

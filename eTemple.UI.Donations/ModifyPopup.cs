@@ -17,7 +17,7 @@ namespace eTemple.UI.Donations
     {
         private DonorRepository donorRepositoy;
         List<Donors> donors = new List<Donors>();
-       
+        public int parentWinValue = 0;      
 
         public ModifyPopup()
         {
@@ -136,6 +136,8 @@ namespace eTemple.UI.Donations
                 MessageBox.Show("Kindly enter data to modify the data");
                 return;
             }
+
+            parentWinValue = parentWinValue + 1;
         }
 
         private void cmbDonorID_SelectedIndexChanged(object sender, EventArgs e)
@@ -152,7 +154,7 @@ namespace eTemple.UI.Donations
         {
             DonationInformation parent = (DonationInformation)this.Owner;
             Donors donor = new Donors();
-            parent.getDataFromChildWindow(null);
+            parent.getDataFromChildWindow(parentWinValue);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace eTemple.Data
 {
     public static class CreateDonorFactory
     {
-        public static Donors CreateDonor(int amount, int mrNo,int serviceTypeId,int serviceNameId,
+        public static Donors CreateDonor(int amount, string mrNo,int serviceTypeId,int serviceNameId,
            int dateTypeId,DateTime performDate,int month, string address,string name,
            string city,string state = null,string country =null,string surName = null, int pinCode =0,
            string districtName=null,string nameOn = null,int star =0,string occassion = null,

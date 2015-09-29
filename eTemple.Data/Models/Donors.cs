@@ -32,7 +32,7 @@ namespace eTemple.Data.Models
         public string City { get; set; }
 
         
-        public int Pin { get; set; }
+        public string Pin { get; set; }
 
         
         public string State { get; set; }
@@ -56,7 +56,7 @@ namespace eTemple.Data.Models
         public int Amount { get; set; }
 
         
-        public int MR_No { get; set; }
+        public string MR_No { get; set; }
 
         
         public string Remarks { get; set; }
