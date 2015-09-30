@@ -40,7 +40,8 @@ namespace eTemple.UI.Donations
 
         private void eitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DCRReportForm oDCRReportForm = new DCRReportForm();
+            oDCRReportForm.Show();
         }
 
         private void masterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,6 +54,11 @@ namespace eTemple.UI.Donations
         {
             EnquiryDetailsUI oEnquiryDet = new EnquiryDetailsUI();
             oEnquiryDet.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

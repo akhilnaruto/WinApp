@@ -44,6 +44,23 @@ namespace eTemple.Data.Repositories
             return dsreturnObj;
         }
 
+
+        public DataSet getTotalAmountperSVC(string CollectionDate)
+        {
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("select st.Name as ServiceType,sum(d.amount) as Amount,count(1) as cnt from donors d  inner join servicetypes st on d.ServiceTypeId=st.id where d.DonorDate='" + CollectionDate + "' group by d.ServiceTypeId", conn))
+                {
+                    using (MySqlDataAdapter da = new MySqlDataAdapter())
+                    {
+                        da.SelectCommand = cmd;
+                        dsreturnObj = new DataSet();
+                        da.Fill(dsreturnObj);
+                    }
+                }
+            }
+            return dsreturnObj;
+        }
         public Donors checkModifyDonorIDExists(string chkId)
         {
             var donors = TempleDb.SingleOrDefault<Donors>("Select * from Donors where Id=@0", chkId);
@@ -125,7 +142,7 @@ namespace eTemple.Data.Repositories
                             cmd.Parameters.AddWithValue("@EmailId", donor.EmailId.NullString());
                             cmd.Parameters.AddWithValue("@DonorMonth", donor.DonorMonth);
                             cmd.Parameters.AddWithValue("@Thidhi", donor.Thidhi);
-                            cmd.Parameters.AddWithValue("@DonorDay", donor.DonorDay);                            
+                            cmd.Parameters.AddWithValue("@DonorDay", donor.DonorDay);
                             cmd.Parameters.AddWithValue("@Mobile", donor.Mobile.NullString());
 
                             cmd.ExecuteNonQuery();
@@ -243,12 +260,12 @@ namespace eTemple.Data.Repositories
         {
             throw new NotImplementedException();
         }
-        
+
         public Donors FindById(int Id)
         {
             throw new NotImplementedException();
         }
-        
+
         public void Update(Donors entity)
         {
             TempleDb.Update(entity);

@@ -33,6 +33,7 @@
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,8 @@
             this.sessionToolStripMenuItem,
             this.masterToolStripMenuItem,
             this.enquiryToolStripMenuItem,
-            this.eitToolStripMenuItem});
+            this.eitToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(629, 24);
@@ -73,9 +75,16 @@
             // eitToolStripMenuItem
             // 
             this.eitToolStripMenuItem.Name = "eitToolStripMenuItem";
-            this.eitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.eitToolStripMenuItem.Text = "Exit";
+            this.eitToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.eitToolStripMenuItem.Text = "DCR";
             this.eitToolStripMenuItem.Click += new System.EventHandler(this.eitToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // DonationRecording
             // 
@@ -101,5 +110,6 @@
         private System.Windows.Forms.ToolStripMenuItem masterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enquiryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
