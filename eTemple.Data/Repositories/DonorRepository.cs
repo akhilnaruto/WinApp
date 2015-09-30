@@ -133,7 +133,7 @@ namespace eTemple.Data.Repositories
                             cmd.Parameters.AddWithValue("@Amount", donor.Amount);
                             cmd.Parameters.AddWithValue("@MR_No", donor.MR_No.NullString());
                             cmd.Parameters.AddWithValue("@Remarks", donor.Remarks.NullString());
-                            cmd.Parameters.AddWithValue("@Landline", donor.Landline);
+                            cmd.Parameters.AddWithValue("@Landline", donor.Landline.NullString());
                             cmd.Parameters.AddWithValue("@SpecialDayId", donor.SpecialDayId);
                             cmd.Parameters.AddWithValue("@ServiceTypeId", donor.ServiceTypeId);
                             cmd.Parameters.AddWithValue("@ServiceNameId", donor.ServiceNameId);

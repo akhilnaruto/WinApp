@@ -42,12 +42,21 @@ namespace eTemple.UI.Donations
                 DonatedDate = performDate
             };
 
+            var checkIfExists = gothramRepo.checkIfGothramExists(txtGothram.Text);
+
+            //If Gothra doesn't exist and if user has entered a Gothram
+            if (checkIfExists == null && txtGothram.Text != string.Empty)
+            {
+                string insrtGothra = gothramRepo.insertNewGothraName(txtGothram.Text);
+            }
+
             string strInsertStatus = dailyAnnaRepo.insertDonorInformation(dailyAnna);
 
             if (strInsertStatus == "Success")
             {
                 MessageBox.Show("Data inserted successfully.");
                 CleareAllcontrolsRecursive();
+                loadGothramAutoComplete();
                 //this.Close();
             }
         }
@@ -85,6 +94,12 @@ namespace eTemple.UI.Donations
         }
 
         private void DailyAnnadanam_Load(object sender, EventArgs e)
+        {
+            loadGothramAutoComplete();
+        }
+
+
+        private void loadGothramAutoComplete()
         {
             lstGothrams = gothramRepo.GetAllAsQuerable().ToList();
             AutoCompleteStringCollection strcoll = new AutoCompleteStringCollection();
