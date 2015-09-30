@@ -173,12 +173,21 @@ namespace eTemple.UI
                     Mobile = txtMobile.Text
                 };
 
+                //check if gothra exists
+                var checkIfExists = gothramRepo.checkIfGothramExists(txtGothram.Text);
+
+                //If Gothra doesn't exist and if user has entered a Gothram
+                if (checkIfExists == null && txtGothram.Text != string.Empty)
+                {
+                    string insrtGothra = gothramRepo.insertNewGothraName(txtGothram.Text);
+                }
                 string strInsertStatus = donorRepo.insertDonorInformation(donorInfo);
 
                 if (strInsertStatus == "Success")
                 {
                     MessageBox.Show("Data inserted successfully.");
                     CleareAllcontrolsRecursive();
+                    loadGothramAutoComplete();
                     //sendSMS("91" + donorInfo.Mobile);
                 }
                 else
@@ -502,7 +511,6 @@ namespace eTemple.UI
                 DonorDay = selectedDayId,
                 Mobile = txtMobile.Text
             };
-
 
             string updateStatus = donorRepo.updateDonorInformation(donorUpdateInfo);
 
@@ -1101,10 +1109,17 @@ namespace eTemple.UI
                 // property of the child form
                 formOptions.ShowDialog(this);
                 formOptions.Dispose();
+                //Added the below to load any gothrams added in Daily Annadanam.
+                loadGothramAutoComplete();
             }
         }
 
         private void DonationInformation_Load(object sender, EventArgs e)
+        {
+            loadGothramAutoComplete();
+        }
+
+        private void loadGothramAutoComplete()
         {
             lstGothrams = gothramRepo.GetAllAsQuerable().ToList();
             AutoCompleteStringCollection strcoll = new AutoCompleteStringCollection();
@@ -1115,8 +1130,8 @@ namespace eTemple.UI
             txtGothram.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtGothram.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtGothram.AutoCompleteCustomSource = strcoll;
-            //dtpEnglishDateType.MinDate = DateTime.Now.AddYears(1);
         }
+
 
         private void cmbServiceName_SelectedIndexChanged(object sender, EventArgs e)
         {
