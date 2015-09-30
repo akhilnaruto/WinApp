@@ -28,6 +28,8 @@ namespace eTemple.UI.Donations
         private void btnAddData_Click(object sender, EventArgs e)
         {
             bool checkvalidate = validation();
+            string performDate = DateTime.Now.ToString("yyyy-MM-dd");
+
             if (checkvalidate == false)
                 return;
 
@@ -36,7 +38,8 @@ namespace eTemple.UI.Donations
                 Name = txtName.Text,
                 PhoneNumber = txtPhoneNumber.Text,
                 Gothram = txtGothram.Text,
-                VillageName = txtVillageName.Text
+                VillageName = txtVillageName.Text,
+                DonatedDate = performDate
             };
 
             string strInsertStatus = dailyAnnaRepo.insertDonorInformation(dailyAnna);
@@ -45,7 +48,7 @@ namespace eTemple.UI.Donations
             {
                 MessageBox.Show("Data inserted successfully.");
                 CleareAllcontrolsRecursive();
-                //this.Close();
+                this.Close();
             }
         }
 
@@ -63,7 +66,7 @@ namespace eTemple.UI.Donations
 
             if (txtName.Text == "" || txtName.Text == string.Empty)
             {
-                errorProvider1.SetError(txtName, "Need to Name to continue");
+                errorProvider1.SetError(txtName, "Need to enter Name to continue");
                 needValidate = false;
                 return needValidate;
             }
@@ -92,6 +95,14 @@ namespace eTemple.UI.Donations
             txtGothram.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtGothram.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtGothram.AutoCompleteCustomSource = strcoll;
+        }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

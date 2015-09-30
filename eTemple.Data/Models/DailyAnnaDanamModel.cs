@@ -18,5 +18,7 @@ namespace eTemple.Data.Models
         public string Gothram { get; set; }
         
         public string VillageName { get; set; }
+
+        public string DonatedDate { get; set; }
     }
 }

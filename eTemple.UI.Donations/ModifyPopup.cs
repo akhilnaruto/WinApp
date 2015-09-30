@@ -99,6 +99,7 @@ namespace eTemple.UI.Donations
                 }
                 //var selectedDonor = donors.Where(donor => donor.Id == donorId.Id).FirstOrDefault();
                 parent.getDataFromChildWindow(donorExists);
+                parentWinValue = parentWinValue + 1;
                 this.Close();
             }
 
@@ -114,6 +115,7 @@ namespace eTemple.UI.Donations
                 }
                 //var selectedDonor = donors.Where(donor => donor.Id == donorId.Id).FirstOrDefault();
                 parent.getDataFromChildWindow(donorExists);
+                parentWinValue = parentWinValue + 1;
                 this.Close();
             }
 
@@ -129,15 +131,14 @@ namespace eTemple.UI.Donations
                 }
                 //var selectedDonor = donors.Where(donor => donor.Id == donorId.Id).FirstOrDefault();
                 parent.getDataFromChildWindow(donorExists);
-                this.Close();
+                parentWinValue = parentWinValue + 1;
+                this.Close();                
             }
             else
             {
                 MessageBox.Show("Kindly enter data to modify the data");
                 return;
             }
-
-            parentWinValue = parentWinValue + 1;
         }
 
         private void cmbDonorID_SelectedIndexChanged(object sender, EventArgs e)

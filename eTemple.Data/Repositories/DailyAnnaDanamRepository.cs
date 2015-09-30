@@ -42,7 +42,7 @@ namespace eTemple.Data.Repositories
         public string insertDonorInformation(DailyAnnaDanamModel dailyAnna)
         {
             string insertStatus = string.Empty;
-            string commandText = "INSERT INTO dailyannadanam(Name,PhoneNumber,Gothram,VillageName)VALUES(@Name,@PhoneNumber,@Gothram,@VillageName)";
+            string commandText = "INSERT INTO dailyannadanam(Name,PhoneNumber,Gothram,VillageName,DonatedDate)VALUES(@Name,@PhoneNumber,@Gothram,@VillageName,@DonatedDate)";
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
@@ -58,6 +58,7 @@ namespace eTemple.Data.Repositories
                             cmd.Parameters.AddWithValue("@PhoneNumber", dailyAnna.PhoneNumber);
                             cmd.Parameters.AddWithValue("@Gothram", dailyAnna.Gothram);
                             cmd.Parameters.AddWithValue("@VillageName", dailyAnna.VillageName);
+                            cmd.Parameters.AddWithValue("@DonatedDate",dailyAnna.DonatedDate);
                             
                             cmd.ExecuteNonQuery();
                             insertStatus = "Success";
