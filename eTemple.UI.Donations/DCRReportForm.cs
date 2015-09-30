@@ -20,18 +20,20 @@ namespace eTemple.UI.Donations
         //public DataTable DonorRecs = null;
         public DataTable DCRVals = null;
         public DonorRepository oDonorRepository = null;
+        public DailyAnnaDanamRepository oDailyAnnaDanamRepository = null;
         public DCRReportForm()
         {
             InitializeComponent();
             oDonorRepository = new DonorRepository();
+            oDailyAnnaDanamRepository = new DailyAnnaDanamRepository();
             DCRVals = new DataTable();
         }
 
         private void DonorReportForm_Load(object sender, EventArgs e)
         {
             DataSet DonorRecs = oDonorRepository.getTotalAmountperSVC(DateTime.Now.ToString("yyyy-MM-dd"));
-            int count = 1;
-            int totalAmount = 0;
+            int count = 0;
+            double totalAmount = 0;
             string perfrmDate = DateTime.Now.ToString("dd-MM-yyyy");
             DCRVals.Columns.Add("PerformDate");
             DCRVals.Columns.Add("Sno");
@@ -42,11 +44,12 @@ namespace eTemple.UI.Donations
             DCRVals.Columns.Add("Quantity");
             DCRVals.Columns.Add("TotalCost");
 
+
             foreach (DataRow dr in DonorRecs.Tables[0].Rows)
             {
                 DataRow drNew = DCRVals.NewRow();
                 drNew["PerformDate"] = perfrmDate;
-                drNew["Sno"] = count;
+                drNew["Sno"] = count+1;
                 drNew["ServiceType"] = dr["ServiceType"];
                 drNew["CostPerUnit"] = "0.00";
                 drNew["Start"] = "0";
@@ -54,8 +57,23 @@ namespace eTemple.UI.Donations
                 drNew["Quantity"] = dr["cnt"];
                 drNew["TotalCost"] = dr["Amount"];
                 count++;
-                totalAmount = totalAmount +Convert.ToInt32(dr["Amount"]);
+                totalAmount = totalAmount + Convert.ToDouble(dr["Amount"]);
                 DCRVals.Rows.Add(drNew);
+            }
+            int qty = Convert.ToInt32(oDailyAnnaDanamRepository.getTotalAmtperDate(DateTime.Now.ToString("yyyy-MM-dd")).Tables[0].Rows[0][0]);
+            if (qty > 0)
+            {
+                DataRow drDailyAnndnmRow = DCRVals.NewRow();
+                drDailyAnndnmRow["PerformDate"] = perfrmDate;
+                drDailyAnndnmRow["Sno"] = count+1;
+                drDailyAnndnmRow["ServiceType"] = "Daily Annadanam";
+                drDailyAnndnmRow["CostPerUnit"] = "116";
+                drDailyAnndnmRow["Start"] = "0";
+                drDailyAnndnmRow["End"] = "0";
+                drDailyAnndnmRow["Quantity"] = qty;
+                totalAmount = totalAmount + (qty * Convert.ToDouble(drDailyAnndnmRow["CostPerUnit"]));
+                drDailyAnndnmRow["TotalCost"] = totalAmount;
+                DCRVals.Rows.Add(drDailyAnndnmRow);
             }
             DataRow drTotalRow = DCRVals.NewRow();
             drTotalRow["PerformDate"] = perfrmDate;
@@ -65,7 +83,7 @@ namespace eTemple.UI.Donations
             drTotalRow["Start"] = "0";
             drTotalRow["End"] = "0";
             drTotalRow["Quantity"] = "0";
-            drTotalRow["TotalCost"] = totalAmount;
+            drTotalRow["TotalCost"] = string.Format("{0:0.00}", totalAmount);
             DCRVals.Rows.Add(drTotalRow);
             ReportDataSource rds = new ReportDataSource("DCRDataSet", DCRVals);
             this.reportViewer1.LocalReport.DataSources.Clear();

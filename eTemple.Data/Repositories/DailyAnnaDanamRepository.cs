@@ -10,9 +10,11 @@ using System.Threading.Tasks;
 
 namespace eTemple.Data.Repositories
 {
+
     public class DailyAnnaDanamRepository : IRepository<DailyAnnaDanamModel>
     {
         private eTempleDbDB TempleDb;
+        private DataSet dsreturnObj;
         string strConn = ConfigurationManager.ConnectionStrings["eTempleDb"].ConnectionString;
         public DailyAnnaDanamRepository()
         {
@@ -32,6 +34,23 @@ namespace eTemple.Data.Repositories
         public DailyAnnaDanamModel FindById(int Id)
         {
             throw new NotImplementedException();
+        }
+
+        public DataSet getTotalAmtperDate(string CollectionDate)
+        {
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT count(1) as cnt  FROM dailyannadanam where donatedDAte='" + CollectionDate + "'", conn))
+                {
+                    using (MySqlDataAdapter da = new MySqlDataAdapter())
+                    {
+                        da.SelectCommand = cmd;
+                        dsreturnObj = new DataSet();
+                        da.Fill(dsreturnObj);
+                    }
+                }
+            }
+            return dsreturnObj;
         }
 
         public IEnumerable<DailyAnnaDanamModel> GetAllAsQuerable()
@@ -58,8 +77,8 @@ namespace eTemple.Data.Repositories
                             cmd.Parameters.AddWithValue("@PhoneNumber", dailyAnna.PhoneNumber);
                             cmd.Parameters.AddWithValue("@Gothram", dailyAnna.Gothram);
                             cmd.Parameters.AddWithValue("@VillageName", dailyAnna.VillageName);
-                            cmd.Parameters.AddWithValue("@DonatedDate",dailyAnna.DonatedDate);
-                            
+                            cmd.Parameters.AddWithValue("@DonatedDate", dailyAnna.DonatedDate);
+
                             cmd.ExecuteNonQuery();
                             insertStatus = "Success";
                         }
