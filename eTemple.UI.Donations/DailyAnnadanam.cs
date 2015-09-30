@@ -48,7 +48,7 @@ namespace eTemple.UI.Donations
             {
                 MessageBox.Show("Data inserted successfully.");
                 CleareAllcontrolsRecursive();
-                this.Close();
+                //this.Close();
             }
         }
 
