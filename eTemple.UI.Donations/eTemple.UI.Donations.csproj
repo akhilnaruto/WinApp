@@ -84,11 +84,18 @@
     </Compile>
     <Compile Include="DonorReportDataSet.cs">
       <DependentUpon>DonorReportDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DonorReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DonorReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DCRReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DCRReportForm.Designer.cs">
+      <DependentUpon>DCRReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DonorReportForm.cs">
       <SubType>Form</SubType>
@@ -125,6 +132,9 @@
     <EmbeddedResource Include="DonorMasterReportUI.resx">
       <DependentUpon>DonorMasterReportUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DCRReportForm.resx">
+      <DependentUpon>DCRReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DonorReportForm.resx">
       <DependentUpon>DonorReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +155,7 @@
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
