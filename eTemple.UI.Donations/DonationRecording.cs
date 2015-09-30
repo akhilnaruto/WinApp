@@ -12,9 +12,15 @@ namespace eTemple.UI.Donations
 {
     public partial class DonationRecording : Form
     {
+        private DonationInformation oDonationInfo;
+        private EnquiryDetailsUI oEnquiryDet;
+        private DonorMasterReportUI oDonorReprt;
+        private DCRReportForm oDCRReportForm;
+        private DonationRecording oDonationRecording;
         public DonationRecording()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private void DonationRecording_Load(object sender, EventArgs e)
@@ -34,31 +40,67 @@ namespace eTemple.UI.Donations
 
         private void sessionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DonationInformation oDonationInfo = new DonationInformation();
+            formDispose();
+            oDonationInfo = new DonationInformation();
+            oDonationInfo.TopLevel = false;
+            pnlBody.Controls.Add(oDonationInfo);
+            oDonationInfo.Location = new Point(0, 0);
             oDonationInfo.Show();
         }
 
         private void eitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DCRReportForm oDCRReportForm = new DCRReportForm();
+            formDispose();
+            oDCRReportForm = new DCRReportForm();
+            oDCRReportForm.TopLevel = false;
+            pnlBody.Controls.Add(oDCRReportForm);
+            oDCRReportForm.Location = new Point(0, 0);
             oDCRReportForm.Show();
         }
 
         private void masterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DonorMasterReportUI oDonorReprt = new DonorMasterReportUI();
+            formDispose();
+            oDonorReprt = new DonorMasterReportUI();
+            oDonorReprt.TopLevel = false;
+            pnlBody.Controls.Add(oDonorReprt);
+            oDonorReprt.Location = new Point(150, 100);
+            oDonationRecording = new DonationRecording();
+            oDonationRecording.Size = new Size(557, 422);
             oDonorReprt.Show();
         }
 
         private void enquiryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EnquiryDetailsUI oEnquiryDet = new EnquiryDetailsUI();
-            oEnquiryDet.Show();
+            formDispose();
+            oEnquiryDet = new EnquiryDetailsUI();
+            oEnquiryDet.TopLevel = false;
+            pnlBody.Controls.Add(oEnquiryDet);
+            oEnquiryDet.Location = new Point(0, 0);
+            oEnquiryDet.Show();            
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void formDispose()
+        {
+            if (oDonationInfo != null)
+                oDonationInfo.Dispose();
+            if (oEnquiryDet != null)
+                oEnquiryDet.Dispose();
+            if (oDonorReprt != null)
+                oDonorReprt.Dispose();
+            if (oDCRReportForm != null)
+                oDCRReportForm.Dispose();
+        }
+
+
+        public void getDataFromChildWindow(int value)
+        {            
+            oDonationInfo.getDataFromChildWindow(value);
         }
     }
 }

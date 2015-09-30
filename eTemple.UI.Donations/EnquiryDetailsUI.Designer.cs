@@ -45,12 +45,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.mrNumberComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.gpbEnquiry = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gpbEnquiry.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 35);
             this.label1.Name = "label1";
@@ -61,6 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(258, 34);
             this.label2.Name = "label2";
@@ -106,7 +110,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(651, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(814, 150);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -140,9 +144,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(244, 305);
+            this.button1.Location = new System.Drawing.Point(228, 300);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(136, 30);
             this.button1.TabIndex = 5;
             this.button1.Text = "Show";
             this.button1.UseVisualStyleBackColor = true;
@@ -150,9 +154,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(342, 305);
+            this.button2.Location = new System.Drawing.Point(391, 300);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(136, 30);
             this.button2.TabIndex = 6;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
@@ -170,6 +174,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(522, 38);
             this.label3.Name = "label3";
@@ -190,6 +195,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 84);
             this.label4.Name = "label4";
@@ -210,12 +216,26 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(258, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 17);
             this.label5.TabIndex = 11;
             this.label5.Text = "Mr_No";
+            // 
+            // gpbEnquiry
+            // 
+            this.gpbEnquiry.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
+            this.gpbEnquiry.Controls.Add(this.button2);
+            this.gpbEnquiry.Controls.Add(this.button1);
+            this.gpbEnquiry.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbEnquiry.Location = new System.Drawing.Point(12, -2);
+            this.gpbEnquiry.Name = "gpbEnquiry";
+            this.gpbEnquiry.Size = new System.Drawing.Size(814, 339);
+            this.gpbEnquiry.TabIndex = 13;
+            this.gpbEnquiry.TabStop = false;
+            this.gpbEnquiry.Text = "Enquiry";
             // 
             // EnquiryDetailsUI
             // 
@@ -228,17 +248,18 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.phoneNumberComboBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.donorNameComboBox);
             this.Controls.Add(this.donorIdComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.gpbEnquiry);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EnquiryDetailsUI";
             this.Text = "Enquiry Details";
             this.Load += new System.EventHandler(this.EnquiryDetailsUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.gpbEnquiry.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +284,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox mrNumberComboBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox gpbEnquiry;
     }
 }

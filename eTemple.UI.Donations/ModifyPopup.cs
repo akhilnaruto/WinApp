@@ -153,9 +153,14 @@ namespace eTemple.UI.Donations
         /// <param name="e"></param>
         private void ModifyPopup_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DonationInformation parent = (DonationInformation)this.Owner;
-            Donors donor = new Donors();
+            DonationRecording parent = (DonationRecording)this.Owner;
+            //DonationInformation parent = (DonationInformation)this.Owner;            
             parent.getDataFromChildWindow(parentWinValue);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

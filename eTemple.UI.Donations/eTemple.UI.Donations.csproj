@@ -84,7 +84,6 @@
     </Compile>
     <Compile Include="DonorReportDataSet.cs">
       <DependentUpon>DonorReportDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DonorReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -152,6 +151,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
@@ -185,6 +185,25 @@
       <Project>{ee52efda-bc23-47b5-8c2a-3d934043edc6}</Project>
       <Name>eTemple.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Body.jpg" />
+    <Content Include="Resources\logo_signin.png" />
+    <Content Include="Resources\swamyoutline.png" />
+    <Content Include="Resources\Theme1.jpg" />
+    <Content Include="Resources\Theme10.jpg" />
+    <Content Include="Resources\Theme11.jpg" />
+    <Content Include="Resources\Theme2.jpg" />
+    <Content Include="Resources\Theme3.jpg" />
+    <Content Include="Resources\Theme4.jpg" />
+    <Content Include="Resources\Theme5.jpg" />
+    <Content Include="Resources\Theme6.jpg" />
+    <Content Include="Resources\Theme7.jpg" />
+    <Content Include="Resources\Theme8.jpg" />
+    <Content Include="Resources\Theme9.jpg" />
+    <Content Include="Resources\ToolStrip.jpg" />
+    <Content Include="Resources\web.jpg" />
+    <None Include="Resources\wood4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

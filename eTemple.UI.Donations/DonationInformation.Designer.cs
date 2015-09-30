@@ -103,6 +103,7 @@
             // lblDonorId
             // 
             this.lblDonorId.AutoSize = true;
+            this.lblDonorId.BackColor = System.Drawing.Color.Transparent;
             this.lblDonorId.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDonorId.Location = new System.Drawing.Point(18, 38);
             this.lblDonorId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -134,6 +135,7 @@
             // lblSurname
             // 
             this.lblSurname.AutoSize = true;
+            this.lblSurname.BackColor = System.Drawing.Color.Transparent;
             this.lblSurname.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSurname.Location = new System.Drawing.Point(18, 78);
             this.lblSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -155,6 +157,7 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
+            this.lblCity.BackColor = System.Drawing.Color.Transparent;
             this.lblCity.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCity.Location = new System.Drawing.Point(18, 120);
             this.lblCity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -176,6 +179,7 @@
             // lblMRNo
             // 
             this.lblMRNo.AutoSize = true;
+            this.lblMRNo.BackColor = System.Drawing.Color.Transparent;
             this.lblMRNo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMRNo.Location = new System.Drawing.Point(17, 245);
             this.lblMRNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -197,6 +201,7 @@
             // lblOccassion
             // 
             this.lblOccassion.AutoSize = true;
+            this.lblOccassion.BackColor = System.Drawing.Color.Transparent;
             this.lblOccassion.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOccassion.Location = new System.Drawing.Point(17, 203);
             this.lblOccassion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -218,6 +223,7 @@
             // lblCountry
             // 
             this.lblCountry.AutoSize = true;
+            this.lblCountry.BackColor = System.Drawing.Color.Transparent;
             this.lblCountry.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountry.Location = new System.Drawing.Point(17, 163);
             this.lblCountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -240,6 +246,7 @@
             // lblRemarks
             // 
             this.lblRemarks.AutoSize = true;
+            this.lblRemarks.BackColor = System.Drawing.Color.Transparent;
             this.lblRemarks.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRemarks.Location = new System.Drawing.Point(332, 245);
             this.lblRemarks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -261,6 +268,7 @@
             // lblGothram
             // 
             this.lblGothram.AutoSize = true;
+            this.lblGothram.BackColor = System.Drawing.Color.Transparent;
             this.lblGothram.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGothram.Location = new System.Drawing.Point(332, 203);
             this.lblGothram.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -282,6 +290,7 @@
             // lblNameOn
             // 
             this.lblNameOn.AutoSize = true;
+            this.lblNameOn.BackColor = System.Drawing.Color.Transparent;
             this.lblNameOn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameOn.Location = new System.Drawing.Point(332, 163);
             this.lblNameOn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -304,6 +313,7 @@
             // lblPin
             // 
             this.lblPin.AutoSize = true;
+            this.lblPin.BackColor = System.Drawing.Color.Transparent;
             this.lblPin.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPin.Location = new System.Drawing.Point(332, 120);
             this.lblPin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -325,6 +335,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(332, 78);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -336,6 +347,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDate.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(332, 38);
             this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -357,6 +369,7 @@
             // lblStar
             // 
             this.lblStar.AutoSize = true;
+            this.lblStar.BackColor = System.Drawing.Color.Transparent;
             this.lblStar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStar.Location = new System.Drawing.Point(631, 163);
             this.lblStar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -378,6 +391,7 @@
             // lblState
             // 
             this.lblState.AutoSize = true;
+            this.lblState.BackColor = System.Drawing.Color.Transparent;
             this.lblState.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblState.Location = new System.Drawing.Point(631, 123);
             this.lblState.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -399,6 +413,7 @@
             // lblDistrict
             // 
             this.lblDistrict.AutoSize = true;
+            this.lblDistrict.BackColor = System.Drawing.Color.Transparent;
             this.lblDistrict.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDistrict.Location = new System.Drawing.Point(631, 85);
             this.lblDistrict.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -421,6 +436,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
+            this.lblAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Location = new System.Drawing.Point(631, 38);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -443,6 +459,7 @@
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
+            this.lblAmount.BackColor = System.Drawing.Color.Transparent;
             this.lblAmount.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmount.Location = new System.Drawing.Point(631, 203);
             this.lblAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -465,6 +482,7 @@
             // 
             // grpBoxGeneralInfo
             // 
+            this.grpBoxGeneralInfo.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
             this.grpBoxGeneralInfo.Controls.Add(this.label3);
             this.grpBoxGeneralInfo.Controls.Add(this.txtEmailId);
             this.grpBoxGeneralInfo.Controls.Add(this.label1);
@@ -476,7 +494,7 @@
             this.grpBoxGeneralInfo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.grpBoxGeneralInfo.Name = "grpBoxGeneralInfo";
             this.grpBoxGeneralInfo.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.grpBoxGeneralInfo.Size = new System.Drawing.Size(930, 335);
+            this.grpBoxGeneralInfo.Size = new System.Drawing.Size(930, 327);
             this.grpBoxGeneralInfo.TabIndex = 36;
             this.grpBoxGeneralInfo.TabStop = false;
             this.grpBoxGeneralInfo.Text = "General Information";
@@ -484,6 +502,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(626, 290);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -505,6 +524,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(330, 290);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -527,6 +547,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(14, 290);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -547,16 +568,17 @@
             // 
             // grpServiceInfo
             // 
+            this.grpServiceInfo.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
             this.grpServiceInfo.Controls.Add(this.cmbServiceName);
             this.grpServiceInfo.Controls.Add(this.lblServiceName);
             this.grpServiceInfo.Controls.Add(this.cmbServiceType);
             this.grpServiceInfo.Controls.Add(this.lblServiceType);
             this.grpServiceInfo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpServiceInfo.Location = new System.Drawing.Point(2, 336);
+            this.grpServiceInfo.Location = new System.Drawing.Point(2, 332);
             this.grpServiceInfo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.grpServiceInfo.Name = "grpServiceInfo";
             this.grpServiceInfo.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.grpServiceInfo.Size = new System.Drawing.Size(930, 71);
+            this.grpServiceInfo.Size = new System.Drawing.Size(930, 65);
             this.grpServiceInfo.TabIndex = 37;
             this.grpServiceInfo.TabStop = false;
             this.grpServiceInfo.Text = "Service Information";
@@ -575,6 +597,7 @@
             // lblServiceName
             // 
             this.lblServiceName.AutoSize = true;
+            this.lblServiceName.BackColor = System.Drawing.Color.Transparent;
             this.lblServiceName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServiceName.Location = new System.Drawing.Point(458, 30);
             this.lblServiceName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -597,6 +620,7 @@
             // lblServiceType
             // 
             this.lblServiceType.AutoSize = true;
+            this.lblServiceType.BackColor = System.Drawing.Color.Transparent;
             this.lblServiceType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServiceType.Location = new System.Drawing.Point(74, 30);
             this.lblServiceType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -607,6 +631,7 @@
             // 
             // grpOtherInfo
             // 
+            this.grpOtherInfo.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
             this.grpOtherInfo.Controls.Add(this.cmbMonthlyAnna);
             this.grpOtherInfo.Controls.Add(this.lblMonthlyAnna);
             this.grpOtherInfo.Controls.Add(this.dtpEnglishDateType);
@@ -620,11 +645,11 @@
             this.grpOtherInfo.Controls.Add(this.cmbDateType);
             this.grpOtherInfo.Controls.Add(this.lblDateType);
             this.grpOtherInfo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpOtherInfo.Location = new System.Drawing.Point(2, 418);
+            this.grpOtherInfo.Location = new System.Drawing.Point(2, 400);
             this.grpOtherInfo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.grpOtherInfo.Name = "grpOtherInfo";
             this.grpOtherInfo.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.grpOtherInfo.Size = new System.Drawing.Size(930, 118);
+            this.grpOtherInfo.Size = new System.Drawing.Size(930, 110);
             this.grpOtherInfo.TabIndex = 42;
             this.grpOtherInfo.TabStop = false;
             this.grpOtherInfo.Text = "Other Information";
@@ -642,6 +667,7 @@
             // lblMonthlyAnna
             // 
             this.lblMonthlyAnna.AutoSize = true;
+            this.lblMonthlyAnna.BackColor = System.Drawing.Color.Transparent;
             this.lblMonthlyAnna.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonthlyAnna.Location = new System.Drawing.Point(302, 64);
             this.lblMonthlyAnna.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -662,6 +688,7 @@
             // lblEnglishDatetype
             // 
             this.lblEnglishDatetype.AutoSize = true;
+            this.lblEnglishDatetype.BackColor = System.Drawing.Color.Transparent;
             this.lblEnglishDatetype.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnglishDatetype.Location = new System.Drawing.Point(461, 33);
             this.lblEnglishDatetype.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -683,6 +710,7 @@
             // lblThithi
             // 
             this.lblThithi.AutoSize = true;
+            this.lblThithi.BackColor = System.Drawing.Color.Transparent;
             this.lblThithi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThithi.Location = new System.Drawing.Point(458, 75);
             this.lblThithi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -704,6 +732,7 @@
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
+            this.lblMonth.BackColor = System.Drawing.Color.Transparent;
             this.lblMonth.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonth.Location = new System.Drawing.Point(74, 75);
             this.lblMonth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -725,6 +754,7 @@
             // lblSpecialDay
             // 
             this.lblSpecialDay.AutoSize = true;
+            this.lblSpecialDay.BackColor = System.Drawing.Color.Transparent;
             this.lblSpecialDay.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.lblSpecialDay.Location = new System.Drawing.Point(458, 33);
             this.lblSpecialDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -747,6 +777,7 @@
             // lblDateType
             // 
             this.lblDateType.AutoSize = true;
+            this.lblDateType.BackColor = System.Drawing.Color.Transparent;
             this.lblDateType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateType.Location = new System.Drawing.Point(74, 33);
             this.lblDateType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -758,7 +789,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(344, 546);
+            this.btnAdd.Location = new System.Drawing.Point(344, 522);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(136, 30);
@@ -770,7 +801,7 @@
             // btnModify
             // 
             this.btnModify.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModify.Location = new System.Drawing.Point(500, 545);
+            this.btnModify.Location = new System.Drawing.Point(500, 519);
             this.btnModify.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(136, 30);
@@ -782,7 +813,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(344, 546);
+            this.btnUpdate.Location = new System.Drawing.Point(344, 523);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(136, 30);
@@ -794,7 +825,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(500, 546);
+            this.btnCancel.Location = new System.Drawing.Point(500, 520);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(136, 30);
@@ -810,7 +841,7 @@
             // btnQuickDailyAnna
             // 
             this.btnQuickDailyAnna.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuickDailyAnna.Location = new System.Drawing.Point(2, 546);
+            this.btnQuickDailyAnna.Location = new System.Drawing.Point(2, 521);
             this.btnQuickDailyAnna.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnQuickDailyAnna.Name = "btnQuickDailyAnna";
             this.btnQuickDailyAnna.Size = new System.Drawing.Size(136, 30);
@@ -823,7 +854,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 585);
+            this.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
+            this.ClientSize = new System.Drawing.Size(935, 558);
             this.Controls.Add(this.btnQuickDailyAnna);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnModify);
@@ -866,6 +898,7 @@
             this.Controls.Add(this.lblDonorId);
             this.Controls.Add(this.grpBoxGeneralInfo);
             this.Controls.Add(this.btnUpdate);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MinimizeBox = false;
             this.Name = "DonationInformation";

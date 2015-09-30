@@ -427,6 +427,24 @@ namespace eTemple.UI
                 cmbSpecialDay.DisplayMember = "Name";
                 #endregion
             }
+            else if (selectedDateType.Name == "Select")
+            {
+                lblSpecialDay.Visible = false;
+                cmbSpecialDay.Visible = false;
+                cmbSpecialDay.Enabled = false;
+                lblEnglishDatetype.Visible = false;
+                dtpEnglishDateType.Visible = false;
+                dtpEnglishDateType.Enabled = false;
+                lblMonth.Visible = false;
+                cmbMonth.Visible = false;
+                cmbMonth.Enabled = false;
+                lblThithi.Visible = false;
+                cmbThithi.Visible = false;
+                cmbThithi.Enabled = false;
+                lblMonthlyAnna.Visible = false;
+                cmbMonthlyAnna.Visible = false;
+                cmbMonthlyAnna.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -850,7 +868,7 @@ namespace eTemple.UI
 
             if (cmbSpecialDay.Enabled == true)
             {
-                if (cmbSpecialDay.Text == "" || cmbSpecialDay.Text == string.Empty)
+                if (cmbSpecialDay.Text == "Select" || cmbSpecialDay.Text == string.Empty)
                 {
                     errorProvider1.SetError(cmbSpecialDay, "Need to select Special Day");
                     needValidate = false;

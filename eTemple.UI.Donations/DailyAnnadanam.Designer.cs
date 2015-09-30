@@ -46,7 +46,7 @@
             // txtVillageName
             // 
             this.txtVillageName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.txtVillageName.Location = new System.Drawing.Point(443, 126);
+            this.txtVillageName.Location = new System.Drawing.Point(441, 88);
             this.txtVillageName.MaxLength = 45;
             this.txtVillageName.Name = "txtVillageName";
             this.txtVillageName.Size = new System.Drawing.Size(200, 27);
@@ -55,8 +55,9 @@
             // lblGothram
             // 
             this.lblGothram.AutoSize = true;
+            this.lblGothram.BackColor = System.Drawing.Color.Transparent;
             this.lblGothram.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblGothram.Location = new System.Drawing.Point(12, 126);
+            this.lblGothram.Location = new System.Drawing.Point(10, 88);
             this.lblGothram.Name = "lblGothram";
             this.lblGothram.Size = new System.Drawing.Size(67, 20);
             this.lblGothram.TabIndex = 28;
@@ -65,7 +66,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.txtPhoneNumber.Location = new System.Drawing.Point(443, 86);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(441, 48);
             this.txtPhoneNumber.MaxLength = 10;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(200, 27);
@@ -75,8 +76,9 @@
             // lblNameOn
             // 
             this.lblNameOn.AutoSize = true;
+            this.lblNameOn.BackColor = System.Drawing.Color.Transparent;
             this.lblNameOn.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblNameOn.Location = new System.Drawing.Point(335, 86);
+            this.lblNameOn.Location = new System.Drawing.Point(333, 48);
             this.lblNameOn.Name = "lblNameOn";
             this.lblNameOn.Size = new System.Drawing.Size(74, 20);
             this.lblNameOn.TabIndex = 27;
@@ -85,7 +87,7 @@
             // txtGothram
             // 
             this.txtGothram.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.txtGothram.Location = new System.Drawing.Point(99, 126);
+            this.txtGothram.Location = new System.Drawing.Point(97, 88);
             this.txtGothram.MaxLength = 45;
             this.txtGothram.Name = "txtGothram";
             this.txtGothram.Size = new System.Drawing.Size(200, 27);
@@ -94,7 +96,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.txtName.Location = new System.Drawing.Point(99, 86);
+            this.txtName.Location = new System.Drawing.Point(97, 48);
             this.txtName.MaxLength = 45;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(200, 27);
@@ -103,8 +105,9 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblName.Location = new System.Drawing.Point(12, 86);
+            this.lblName.Location = new System.Drawing.Point(10, 48);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(49, 20);
             this.lblName.TabIndex = 21;
@@ -113,8 +116,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.label1.Location = new System.Drawing.Point(335, 126);
+            this.label1.Location = new System.Drawing.Point(333, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.TabIndex = 29;
@@ -123,7 +127,7 @@
             // btnAddData
             // 
             this.btnAddData.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnAddData.Location = new System.Drawing.Point(228, 204);
+            this.btnAddData.Location = new System.Drawing.Point(226, 166);
             this.btnAddData.Name = "btnAddData";
             this.btnAddData.Size = new System.Drawing.Size(96, 27);
             this.btnAddData.TabIndex = 51;
@@ -138,7 +142,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnClose.Location = new System.Drawing.Point(348, 204);
+            this.btnClose.Location = new System.Drawing.Point(346, 166);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(96, 27);
             this.btnClose.TabIndex = 52;
@@ -150,7 +154,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 261);
+            this.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
+            this.ClientSize = new System.Drawing.Size(684, 220);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddData);
             this.Controls.Add(this.label1);
@@ -161,6 +166,7 @@
             this.Controls.Add(this.txtGothram);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DailyAnnadanam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Daily Annadanam";

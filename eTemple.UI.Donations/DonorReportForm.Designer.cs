@@ -52,6 +52,7 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
+            this.reportViewer1.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "Donors";
             reportDataSource1.Value = this.DonorTableBindingSource;
@@ -59,7 +60,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "eTemple.UI.Donations.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(820, 261);
+            this.reportViewer1.Size = new System.Drawing.Size(963, 261);
             this.reportViewer1.TabIndex = 0;
             // 
             // donorReportDataSetBindingSource
@@ -72,8 +73,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(820, 261);
+            this.ClientSize = new System.Drawing.Size(963, 261);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DonorReportForm";
             this.Text = "DonorReportForm";
             this.Load += new System.EventHandler(this.DonorReportForm_Load);
