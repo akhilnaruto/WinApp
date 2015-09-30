@@ -132,11 +132,6 @@ namespace eTemple.UI
                 if (maxDonorId.Tables[0].Rows.Count > 0)
                 {
                     string Id = maxDonorId.Tables[0].Rows[0]["donroId"].ToString();
-
-                    //string[] s = Id.Split(' ');
-                    //if (s[0] != "0")
-                    //    maxId = Convert.ToInt32(s[1]);
-
                     maxId = Convert.ToInt32(Id) + 1;
                 }
                 else
@@ -162,7 +157,7 @@ namespace eTemple.UI
                     Star = selectedStarId,
                     Occassion = txtOccassion.Text,
                     Gothram = txtGothram.Text,
-                    Amount = Convert.ToInt32(txtAmount.Text),
+                    Amount = Convert.ToDecimal(txtAmount.Text),
                     MR_No = txtMRNo.Text,
                     Remarks = txtRemarks.Text,
                     Landline = txtLandline.Text,
@@ -274,10 +269,8 @@ namespace eTemple.UI
             if (selectedDay == null)
                 selectedDayId = 0;
             else
-                selectedDayId = selectedDay.Id;
+                selectedDayId = selectedDay.Id;                       
 
-            if (txtPin.Text == "")
-                txtPin.Text = "0";
             return selectedDateTypeId;
         }
 
@@ -571,7 +564,7 @@ namespace eTemple.UI
                 txtName.Text = donor.DonorName;
                 txtDistrict.Text = donor.DistrictName;
                 txtCity.Text = donor.City;
-                txtPin.Text = donor.Pin.ToString();
+                txtPin.Text = donor.Pin;
                 txtState.Text = donor.State;
                 txtCountry.Text = donor.Country;
 
@@ -648,14 +641,6 @@ namespace eTemple.UI
                 string[] donorDayValue = bindDonorDay.Select(p => p.Day).ToArray();
                 cmbMonthlyAnna.SelectedIndex = cmbMonthlyAnna.FindString(donorDayValue[0]); 
             }
-
-            //else
-            //{
-            //    btnUpdate.Visible = false;
-            //    btnCancel.Visible = false;
-            //    btnAdd.Visible = true;
-            //    btnCancel.Visible=true;
-            //}
         }
 
         public void getDataFromChildWindow(int value)

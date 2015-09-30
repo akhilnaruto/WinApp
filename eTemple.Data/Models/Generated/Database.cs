@@ -156,7 +156,7 @@ namespace eTemple.Data.Models
 		[Column] public int? Star { get; set; }
 		[Column] public string Occassion { get; set; }
 		[Column] public string Gothram { get; set; }
-		[Column] public int Amount { get; set; }
+		[Column] public decimal Amount { get; set; }
 		[Column] public string MR_No { get; set; }
 		[Column] public string Remarks { get; set; }
 		[Column] public string Landline { get; set; }
