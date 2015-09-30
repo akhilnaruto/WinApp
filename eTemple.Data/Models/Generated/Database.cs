@@ -106,6 +106,19 @@ namespace eTemple.Data.Models
 	
 
     
+	[TableName("dailyannadanam")]
+	[PrimaryKey("Id")]
+	[ExplicitColumns]
+    public partial class dailyannadanam : eTempleDbDB.Record<dailyannadanam>  
+    {
+		[Column] public int Id { get; set; }
+		[Column] public string Name { get; set; }
+		[Column] public string PhoneNumber { get; set; }
+		[Column] public string Gothram { get; set; }
+		[Column] public string VillageName { get; set; }
+		[Column] public string DonatedDate { get; set; }
+	}
+    
 	[TableName("datetype")]
 	[PrimaryKey("Id", autoIncrement=false)]
 	[ExplicitColumns]
@@ -136,7 +149,7 @@ namespace eTemple.Data.Models
 		[Column] public string DonorName { get; set; }
 		[Column] public string DistrictName { get; set; }
 		[Column] public string City { get; set; }
-		[Column] public int? Pin { get; set; }
+		[Column] public string Pin { get; set; }
 		[Column] public string State { get; set; }
 		[Column] public string Country { get; set; }
 		[Column] public string NameOn { get; set; }
@@ -144,7 +157,7 @@ namespace eTemple.Data.Models
 		[Column] public string Occassion { get; set; }
 		[Column] public string Gothram { get; set; }
 		[Column] public int Amount { get; set; }
-		[Column] public int MR_No { get; set; }
+		[Column] public string MR_No { get; set; }
 		[Column] public string Remarks { get; set; }
 		[Column] public string Landline { get; set; }
 		[Column] public int? SpecialDayId { get; set; }
@@ -157,6 +170,41 @@ namespace eTemple.Data.Models
 		[Column] public int? Thidhi { get; set; }
 		[Column] public int? DonorDay { get; set; }
 		[Column] public string Mobile { get; set; }
+	}
+    
+	[TableName("donors_backup")]
+	[PrimaryKey("Id", autoIncrement=false)]
+	[ExplicitColumns]
+    public partial class donors_backup : eTempleDbDB.Record<donors_backup>  
+    {
+		[Column] public int Id { get; set; }
+		[Column] public DateTime date { get; set; }
+		[Column] public string Address { get; set; }
+		[Column] public string Surname { get; set; }
+		[Column] public string Name { get; set; }
+		[Column] public string DistrictName { get; set; }
+		[Column] public string City { get; set; }
+		[Column] public int? Pin { get; set; }
+		[Column] public string State { get; set; }
+		[Column] public string Country { get; set; }
+		[Column] public string NameOn { get; set; }
+		[Column] public int? Star { get; set; }
+		[Column] public string Occassion { get; set; }
+		[Column] public string Gothram { get; set; }
+		[Column] public int Amount { get; set; }
+		[Column] public int MR_No { get; set; }
+		[Column] public string Remarks { get; set; }
+		[Column] public string PhoneNumber { get; set; }
+		[Column] public int? SpecialDayId { get; set; }
+		[Column] public int? ServiceTypeId { get; set; }
+		[Column] public int? ServiceNameId { get; set; }
+		[Column] public int? DateTypeId { get; set; }
+		[Column] public DateTime? PerformDate { get; set; }
+		[Column] public string EmailId { get; set; }
+		[Column] public string Paksha { get; set; }
+		[Column] public int? Month { get; set; }
+		[Column] public int? Thidhi { get; set; }
+		[Column] public int? Day { get; set; }
 	}
     
 	[TableName("employees")]
@@ -176,6 +224,15 @@ namespace eTemple.Data.Models
 		[Column] public DateTime? CreatedOn { get; set; }
 		[Column] public DateTime? ModifiedOn { get; set; }
 		[Column] public int? ModifiedBy { get; set; }
+	}
+    
+	[TableName("gothrams")]
+	[PrimaryKey("Id", autoIncrement=false)]
+	[ExplicitColumns]
+    public partial class gothram : eTempleDbDB.Record<gothram>  
+    {
+		[Column] public int Id { get; set; }
+		[Column] public string Name { get; set; }
 	}
     
 	[TableName("month")]
@@ -280,18 +337,7 @@ namespace eTemple.Data.Models
 		[Column] public int Id { get; set; }
 		[Column] public string Name { get; set; }
 	}
-
-
-    [TableName("Gothrams")]
-    [PrimaryKey("Id", autoIncrement = false)]
-    [ExplicitColumns]
-    public partial class gothrams : eTempleDbDB.Record<gothrams>
-    {
-        [Column]
-        public int Id { get; set; }
-        [Column]
-        public string Name { get; set; }
-    }
+    
 	//[TableName("month")]
 	//[PrimaryKey("Id", autoIncrement=false)]
 	//[ExplicitColumns]

@@ -47,6 +47,7 @@
             // 
             this.txtVillageName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtVillageName.Location = new System.Drawing.Point(443, 126);
+            this.txtVillageName.MaxLength = 45;
             this.txtVillageName.Name = "txtVillageName";
             this.txtVillageName.Size = new System.Drawing.Size(200, 27);
             this.txtVillageName.TabIndex = 26;
@@ -65,9 +66,11 @@
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtPhoneNumber.Location = new System.Drawing.Point(443, 86);
+            this.txtPhoneNumber.MaxLength = 10;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(200, 27);
             this.txtPhoneNumber.TabIndex = 24;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // lblNameOn
             // 
@@ -83,6 +86,7 @@
             // 
             this.txtGothram.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtGothram.Location = new System.Drawing.Point(99, 126);
+            this.txtGothram.MaxLength = 45;
             this.txtGothram.Name = "txtGothram";
             this.txtGothram.Size = new System.Drawing.Size(200, 27);
             this.txtGothram.TabIndex = 25;
@@ -91,6 +95,7 @@
             // 
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtName.Location = new System.Drawing.Point(99, 86);
+            this.txtName.MaxLength = 45;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(200, 27);
             this.txtName.TabIndex = 23;
