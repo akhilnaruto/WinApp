@@ -104,7 +104,7 @@ namespace eTemple.Data.Repositories
         public string insertDonorInformation(Donors donor)
         {
             string insertStatus = string.Empty;
-            string commandText = "INSERT INTO donors(Id,Donordate,Address,Surname,DonorName,DistrictName,City,Pin,State,Country,NameOn,Star,Occassion,Gothram,Amount,MR_No,Remarks,Landline,SpecialDayId,ServiceTypeId,ServiceNameId,DateTypeId,PerformDate,EmailId,DonorMonth,Thidhi,DonorDay,Mobile)VALUES(@Id, @Donordate,@Address,@Surname,@DonorName,@DistrictName,@City,@Pin,@State,@Country,@NameOn,@Star,@Occassion,@Gothram,@Amount,@MR_No,@Remarks,@Landline,@SpecialDayId,@ServiceTypeId,@ServiceNameId,@DateTypeId,@PerformDate,@EmailId,@DonorMonth,@Thidhi,@DonorDay,@Mobile)";
+            string commandText = "INSERT INTO donors(Id,Donordate,Address,Surname,DonorName,DistrictName,City,Pin,State,Country,NameOn,Star,Occassion,Gothram,Amount,MR_No,Remarks,Landline,SpecialDayId,ServiceTypeId,ServiceNameId,DateTypeId,PerformDate,EmailId,DonorMonth,Thidhi,DonorDay,Mobile,DonorThithi)VALUES(@Id, @Donordate,@Address,@Surname,@DonorName,@DistrictName,@City,@Pin,@State,@Country,@NameOn,@Star,@Occassion,@Gothram,@Amount,@MR_No,@Remarks,@Landline,@SpecialDayId,@ServiceTypeId,@ServiceNameId,@DateTypeId,@PerformDate,@EmailId,@DonorMonth,@Thidhi,@DonorDay,@Mobile,@DonorThithi)";
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
@@ -144,6 +144,7 @@ namespace eTemple.Data.Repositories
                             cmd.Parameters.AddWithValue("@Thidhi", donor.Thidhi);
                             cmd.Parameters.AddWithValue("@DonorDay", donor.DonorDay);
                             cmd.Parameters.AddWithValue("@Mobile", donor.Mobile.NullString());
+                            cmd.Parameters.AddWithValue("@DonorThithi", donor.DonorThithi);
 
                             cmd.ExecuteNonQuery();
                             insertStatus = "Success";
@@ -176,7 +177,7 @@ namespace eTemple.Data.Repositories
         public string updateDonorInformation(Donors donor)
         {
             string updateStatus = string.Empty;
-            string commandText = "update donors set Donordate=@Donordate,Address=@Address,Surname=@Surname,DonorName=@DonorName,DistrictName=@DistrictName,City=@City,Pin=@Pin,State=@State,Country=@Country,NameOn=@NameOn,Star=@Star,Occassion=@Occassion,Gothram=@Gothram,Amount=@Amount,MR_No=@MR_No,Remarks=@Remarks,Landline=@Landline,SpecialDayId=@SpecialDayId,ServiceTypeId=@ServiceTypeId,ServiceNameId=@ServiceNameId,DateTypeId=@DateTypeId,PerformDate=@PerformDate,EmailId=@EmailId,DonorMonth=@DonorMonth,Thidhi=@Thidhi,DonorDay=@DonorDay,Mobile=@Mobile WHERE Id = @Id";
+            string commandText = "update donors set Donordate=@Donordate,Address=@Address,Surname=@Surname,DonorName=@DonorName,DistrictName=@DistrictName,City=@City,Pin=@Pin,State=@State,Country=@Country,NameOn=@NameOn,Star=@Star,Occassion=@Occassion,Gothram=@Gothram,Amount=@Amount,MR_No=@MR_No,Remarks=@Remarks,Landline=@Landline,SpecialDayId=@SpecialDayId,ServiceTypeId=@ServiceTypeId,ServiceNameId=@ServiceNameId,DateTypeId=@DateTypeId,PerformDate=@PerformDate,EmailId=@EmailId,DonorMonth=@DonorMonth,Thidhi=@Thidhi,DonorDay=@DonorDay,Mobile=@Mobile,DonorThithi=@DonorThithi WHERE Id = @Id";
 
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
@@ -217,6 +218,7 @@ namespace eTemple.Data.Repositories
                             cmd.Parameters.AddWithValue("@Thidhi", donor.Thidhi);
                             cmd.Parameters.AddWithValue("@DonorDay", donor.DonorDay);
                             cmd.Parameters.AddWithValue("@Mobile", donor.Mobile.NullString());
+                            cmd.Parameters.AddWithValue("@DonorThithi", donor.DonorThithi);
 
                             cmd.ExecuteNonQuery();
                             updateStatus = "Success";

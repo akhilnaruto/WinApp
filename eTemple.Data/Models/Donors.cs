@@ -97,7 +97,7 @@ namespace eTemple.Data.Models
 
         public string Mobile { get; set; }
 
-
+        public int DonorThithi { get; set; }
     }
 }
 

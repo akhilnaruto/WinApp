@@ -77,6 +77,10 @@ namespace eTemple.UI
             cmbMonthlyAnna.Visible = false;
             lblEnglishDatetype.Visible = false;
             dtpEnglishDateType.Visible = false;
+            rbdEnglish.Checked = false;
+            rbdTelugu.Checked = false;
+            lblMonthyAnnaThithi.Visible = false;
+            cmbMonthyAnnaThithi.Visible = false;
         }
 
         /// <summary>
@@ -121,7 +125,8 @@ namespace eTemple.UI
                 int selectedSpecialDayId;
                 int selectedThithiId;
                 int selectedDayId;
-                var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId);
+                int selectedDonorThithi;
+                var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId,out selectedDonorThithi);
 
                 string maxIDFormat = DateForId(donorDate);
 
@@ -170,7 +175,8 @@ namespace eTemple.UI
                     DonorMonth = selectedMonthId,
                     Thidhi = selectedThithiId,
                     DonorDay = selectedDayId,
-                    Mobile = txtMobile.Text
+                    Mobile = txtMobile.Text,
+                    DonorThithi = selectedDonorThithi
                 };
 
                 //check if gothra exists
@@ -181,6 +187,8 @@ namespace eTemple.UI
                 {
                     string insrtGothra = gothramRepo.insertNewGothraName(txtGothram.Text);
                 }
+
+                //Insert the Donor Information
                 string strInsertStatus = donorRepo.insertDonorInformation(donorInfo);
 
                 if (strInsertStatus == "Success")
@@ -219,7 +227,7 @@ namespace eTemple.UI
 
         private int SelectedDateTypeId(out int selectedServiceTypeId, out int selectedServiceNameId,
             out int selectedMonthId, out int selectedStarId, out int selectedSpecialDayId, out int selectedThithiId,
-            out int selectedDayId)
+            out int selectedDayId, out int selectedDonorThithiId)
         {
             int selectedDateTypeId = 0;
             selectedServiceTypeId = 0;
@@ -230,6 +238,7 @@ namespace eTemple.UI
             selectedThithiId = 0;
             string selectedPakshaName = "";
             selectedDayId = 0;
+            selectedDonorThithiId = 0;
 
             var selectedDateType = cmbDateType.SelectedItem as DateType;
             if (selectedDateType == null)
@@ -278,7 +287,15 @@ namespace eTemple.UI
             if (selectedDay == null)
                 selectedDayId = 0;
             else
-                selectedDayId = selectedDay.Id;                       
+                selectedDayId = selectedDay.Id;
+
+            var selectedDonorThithi = cmbMonthyAnnaThithi.SelectedItem as Thidhi;
+            if (selectedDonorThithi == null)
+                selectedDonorThithiId = 0;
+            else
+                selectedDonorThithiId = selectedDonorThithi.Id;
+
+
 
             return selectedDateTypeId;
         }
@@ -370,6 +387,8 @@ namespace eTemple.UI
                 lblMonthlyAnna.Visible = false;
                 cmbMonthlyAnna.Enabled = false;
                 cmbMonthlyAnna.Enabled = false;
+                rbdEnglish.Checked = false;
+                rbdTelugu.Checked = false;
 
                 #region Bind Month values
                 var bindMonth = monthsRepo.GetAllAsQuerable();
@@ -401,6 +420,8 @@ namespace eTemple.UI
                 lblMonthlyAnna.Visible = false;
                 cmbMonthlyAnna.Visible = false;
                 cmbMonthlyAnna.Enabled = false;
+                rbdEnglish.Checked = false;
+                rbdTelugu.Checked = false;
             }
 
             else if (selectedDateType.Name == "Special")
@@ -420,6 +441,8 @@ namespace eTemple.UI
                 lblMonthlyAnna.Visible = false;
                 cmbMonthlyAnna.Visible = false;
                 cmbMonthlyAnna.Enabled = false;
+                rbdEnglish.Checked = false;
+                rbdTelugu.Checked = false;
 
                 #region Bind SpecialDay values
                 var bindSpecialDay = specialDayRepo.GetAllAsQuerable();
@@ -444,6 +467,8 @@ namespace eTemple.UI
                 lblMonthlyAnna.Visible = false;
                 cmbMonthlyAnna.Visible = false;
                 cmbMonthlyAnna.Enabled = false;
+                rbdEnglish.Checked = false;
+                rbdTelugu.Checked = false;
             }
         }
 
@@ -496,7 +521,8 @@ namespace eTemple.UI
             int selectedSpecialDayId;
             int selectedThithiId;
             int selectedDayId;
-            var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId);
+            int selectedDonorThithi;
+            var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId,out selectedDonorThithi);
 
             Donors donorUpdateInfo = new Donors
             {
@@ -514,7 +540,7 @@ namespace eTemple.UI
                 Star = selectedStarId,
                 Occassion = txtOccassion.Text,
                 Gothram = txtGothram.Text,
-                Amount = Convert.ToInt32(txtAmount.Text),
+                Amount = Convert.ToDecimal(txtAmount.Text),
                 MR_No = txtMRNo.Text,
                 Remarks = txtRemarks.Text,
                 Landline = txtLandline.Text,
@@ -527,7 +553,8 @@ namespace eTemple.UI
                 DonorMonth = selectedMonthId,
                 Thidhi = selectedThithiId,
                 DonorDay = selectedDayId,
-                Mobile = txtMobile.Text
+                Mobile = txtMobile.Text,
+                DonorThithi=selectedDonorThithi
             };
 
             string updateStatus = donorRepo.updateDonorInformation(donorUpdateInfo);
@@ -643,7 +670,7 @@ namespace eTemple.UI
                 //Get Thithi
                 var bindThithi = thithiRepo.GetAllAsQuerable(donor.Thidhi);
                 string[] thithiValue = bindThithi.Select(p => p.Name).ToArray();
-                cmbThithi.SelectedIndex = cmbThithi.FindString(monthValue[0]);
+                cmbThithi.SelectedIndex = cmbThithi.FindString(thithiValue[0]);
 
                 //Perform Date
                 var performDate = donor.PerformDate.ToString();
@@ -663,9 +690,26 @@ namespace eTemple.UI
                 dtpEnglishDateType.Value = dt1;
 
                 //Monthly AnnaDanam
-                var bindDonorDay = monthlyAnnaRepo.GetAllAsQuerable(donor.DonorDay);
-                string[] donorDayValue = bindDonorDay.Select(p => p.Day).ToArray();
-                cmbMonthlyAnna.SelectedIndex = cmbMonthlyAnna.FindString(donorDayValue[0]); 
+
+                if (donor.DonorDay != 0)
+                {
+                    rbdEnglish.Visible = true;
+                    rbdTelugu.Visible = true;
+                    rbdEnglish.Checked = true;
+                    var bindDonorDay = monthlyAnnaRepo.GetAllAsQuerable(donor.DonorDay);
+                    string[] donorDayValue = bindDonorDay.Select(p => p.Day).ToArray();
+                    cmbMonthlyAnna.SelectedIndex = cmbMonthlyAnna.FindString(donorDayValue[0]);
+                }
+
+                else if (donor.DonorThithi != 0)
+                {
+                    rbdEnglish.Visible = true;
+                    rbdTelugu.Visible = true;
+                    rbdTelugu.Checked = true;
+                    var bindDonorThithi = thithiRepo.GetAllAsQuerable(donor.DonorThithi);
+                    string[] donorthithiValue = bindDonorThithi.Select(p => p.Name).ToArray();
+                    cmbMonthyAnnaThithi.SelectedIndex = cmbMonthyAnnaThithi.FindString(donorthithiValue[0]);
+                }
             }
         }
 
@@ -922,7 +966,6 @@ namespace eTemple.UI
             lblServiceName.Enabled = false;
             cmbServiceName.Enabled = false;
             
-
             var serviceType = cmbServiceType.SelectedItem as ServiceTypes;
             if (serviceType != null)
             {
@@ -958,6 +1001,14 @@ namespace eTemple.UI
                         lblMonthlyAnna.Visible = false;
                         cmbMonthlyAnna.Visible = false;
                         cmbMonthlyAnna.Enabled = false;
+
+                        lblMonthlyAnna.Visible = false;
+                        cmbMonthlyAnna.Visible = false;
+                        lblMonthyAnnaThithi.Visible = false;
+                        cmbMonthyAnnaThithi.Visible = false;
+                        cmbMonthyAnnaThithi.Enabled = false;
+                        rbdEnglish.Visible = false;
+                        rbdTelugu.Visible = false;
                     }
                     else
                     {
@@ -979,6 +1030,13 @@ namespace eTemple.UI
                         lblMonthlyAnna.Visible = false;
                         cmbMonthlyAnna.Visible = false;
                         cmbMonthlyAnna.Enabled = false;
+                        lblMonthlyAnna.Visible = false;
+                        cmbMonthlyAnna.Visible = false;
+                        lblMonthyAnnaThithi.Visible = false;
+                        cmbMonthyAnnaThithi.Visible = false;
+                        cmbMonthyAnnaThithi.Enabled = false;
+                        rbdEnglish.Visible = false;
+                        rbdTelugu.Visible = false;
                     }
 
                 }
@@ -1002,6 +1060,14 @@ namespace eTemple.UI
                     lblMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Enabled = false;
+
+                    lblMonthlyAnna.Visible = false;
+                    cmbMonthlyAnna.Visible = false;
+                    lblMonthyAnnaThithi.Visible = false;
+                    cmbMonthyAnnaThithi.Visible = false;
+                    cmbMonthyAnnaThithi.Enabled = false;
+                    rbdEnglish.Visible = false;
+                    rbdTelugu.Visible = false;
                 }
                 else
                 {
@@ -1023,6 +1089,14 @@ namespace eTemple.UI
                     lblMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Enabled = false;
+
+                    lblMonthlyAnna.Visible = false;
+                    cmbMonthlyAnna.Visible = false;
+                    lblMonthyAnnaThithi.Visible = false;
+                    cmbMonthyAnnaThithi.Visible = false;
+                    cmbMonthyAnnaThithi.Enabled = false;
+                    rbdEnglish.Visible = false;
+                    rbdTelugu.Visible = false;
                 }
             }
             if (serviceType.Name == "Monthly Annadanam")
@@ -1045,20 +1119,19 @@ namespace eTemple.UI
                 cmbThithi.Enabled = false;
                 lblServiceName.Enabled = false;
                 cmbServiceName.Enabled = false;
-                cmbServiceName.Enabled = false;
+                cmbServiceName.Enabled = false;                
                 lblMonthlyAnna.Visible = true;
                 cmbMonthlyAnna.Visible = true;
                 cmbMonthlyAnna.Enabled = true;
                 #endregion
 
-                #region Bind MonthlyAnna values
-                var bindMonthlyAnna = monthlyAnnaRepo.GetAllAsQuerable();
-                cmbMonthlyAnna.DataSource = bindMonthlyAnna;
-                cmbMonthlyAnna.DisplayMember = "Day";
-                #endregion
+                rbdEnglish.Visible = true;
+                rbdTelugu.Visible = true;
+                rbdEnglish.Checked = true;
+                
             }
             //else
-            //{
+            //
             //    lblDateType.Visible = true;
             //    cmbDateType.Visible = true;
             //    lblMonthlyAnna.Visible = false;
@@ -1112,6 +1185,13 @@ namespace eTemple.UI
             cmbThithi.Visible = false;
             lblMonthlyAnna.Visible = false;
             cmbMonthlyAnna.Visible = false;
+
+            lblMonthyAnnaThithi.Visible = false;
+            cmbMonthyAnnaThithi.Visible = false;
+
+            rbdEnglish.Visible = false;
+            rbdTelugu.Visible = false;
+
         }
 
         /// <summary>
@@ -1135,6 +1215,8 @@ namespace eTemple.UI
         private void DonationInformation_Load(object sender, EventArgs e)
         {
             loadGothramAutoComplete();
+            rbdEnglish.Visible = false;
+            rbdTelugu.Visible = false;
         }
 
         private void loadGothramAutoComplete()
@@ -1216,6 +1298,36 @@ namespace eTemple.UI
             {
                 e.Handled = true;
             }
+        }
+
+        private void rbdEnglish_CheckedChanged(object sender, EventArgs e)
+        {
+            lblMonthlyAnna.Visible = true;
+            cmbMonthlyAnna.Visible = true;
+            lblMonthyAnnaThithi.Visible = false;
+            cmbMonthyAnnaThithi.Visible = false;
+            cmbMonthyAnnaThithi.Enabled = false;
+
+            #region Bind MonthlyAnna values
+            var bindMonthlyAnna = monthlyAnnaRepo.GetAllAsQuerable();
+            cmbMonthlyAnna.DataSource = bindMonthlyAnna;
+            cmbMonthlyAnna.DisplayMember = "Day";
+            #endregion
+        }
+
+        private void rbdTelugu_CheckedChanged(object sender, EventArgs e)
+        {
+            lblMonthlyAnna.Visible = false;
+            cmbMonthlyAnna.Visible = false;
+            lblMonthyAnnaThithi.Visible = true;
+            cmbMonthyAnnaThithi.Visible = true;
+            cmbMonthyAnnaThithi.Enabled = true;
+            
+            #region Thithi
+            var bindThithi = thithiRepo.GetAllAsQuerable();
+            cmbMonthyAnnaThithi.DataSource = bindThithi;
+            cmbMonthyAnnaThithi.DisplayMember = "Name";
+            #endregion
         }
     }
 }

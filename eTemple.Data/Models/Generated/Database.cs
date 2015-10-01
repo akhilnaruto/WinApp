@@ -170,6 +170,7 @@ namespace eTemple.Data.Models
 		[Column] public int? Thidhi { get; set; }
 		[Column] public int? DonorDay { get; set; }
 		[Column] public string Mobile { get; set; }
+		[Column] public int? DonorThithi { get; set; }
 	}
     
 	[TableName("donors_backup")]
@@ -227,7 +228,7 @@ namespace eTemple.Data.Models
 	}
     
 	[TableName("gothrams")]
-	[PrimaryKey("Id", autoIncrement=false)]
+	[PrimaryKey("Id")]
 	[ExplicitColumns]
     public partial class gothram : eTempleDbDB.Record<gothram>  
     {
