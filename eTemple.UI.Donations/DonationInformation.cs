@@ -945,6 +945,31 @@ namespace eTemple.UI
                 else
                     errorProvider1.Clear();
             }
+
+            if (cmbMonthlyAnna.Enabled == true)
+            {
+                if (cmbMonthlyAnna.Text == "Select" || cmbMonthlyAnna.Text == string.Empty)
+                {
+                    errorProvider1.SetError(cmbMonthlyAnna, "Need to select Thithi");
+                    needValidate = false;
+                    return needValidate;
+                }
+                else
+                    errorProvider1.Clear();
+            }
+
+            if (cmbMonthyAnnaThithi.Enabled == true)
+            {
+                if (cmbMonthyAnnaThithi.Text == "Select" || cmbMonthyAnnaThithi.Text == string.Empty)
+                {
+                    errorProvider1.SetError(cmbMonthyAnnaThithi, "Need to select Thithi");
+                    needValidate = false;
+                    return needValidate;
+                }
+                else
+                    errorProvider1.Clear();
+            }
+
             return needValidate;
         }
 
@@ -1004,6 +1029,7 @@ namespace eTemple.UI
 
                         lblMonthlyAnna.Visible = false;
                         cmbMonthlyAnna.Visible = false;
+                        cmbMonthlyAnna.Enabled = false;
                         lblMonthyAnnaThithi.Visible = false;
                         cmbMonthyAnnaThithi.Visible = false;
                         cmbMonthyAnnaThithi.Enabled = false;
@@ -1063,6 +1089,7 @@ namespace eTemple.UI
 
                     lblMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Visible = false;
+                    cmbMonthlyAnna.Enabled = false;
                     lblMonthyAnnaThithi.Visible = false;
                     cmbMonthyAnnaThithi.Visible = false;
                     cmbMonthyAnnaThithi.Enabled = false;
@@ -1086,10 +1113,10 @@ namespace eTemple.UI
                     lblThithi.Visible = false;
                     cmbThithi.Visible = false;
                     cmbThithi.Enabled = false;
+
                     lblMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Enabled = false;
-
                     lblMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Visible = false;
                     lblMonthyAnnaThithi.Visible = false;
@@ -1304,6 +1331,7 @@ namespace eTemple.UI
         {
             lblMonthlyAnna.Visible = true;
             cmbMonthlyAnna.Visible = true;
+            cmbMonthlyAnna.Enabled = true;
             lblMonthyAnnaThithi.Visible = false;
             cmbMonthyAnnaThithi.Visible = false;
             cmbMonthyAnnaThithi.Enabled = false;
@@ -1319,6 +1347,7 @@ namespace eTemple.UI
         {
             lblMonthlyAnna.Visible = false;
             cmbMonthlyAnna.Visible = false;
+            cmbMonthlyAnna.Enabled = false;
             lblMonthyAnnaThithi.Visible = true;
             cmbMonthyAnnaThithi.Visible = true;
             cmbMonthyAnnaThithi.Enabled = true;
