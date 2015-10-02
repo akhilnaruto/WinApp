@@ -93,11 +93,11 @@
             // 
             // pnlBody
             // 
-            this.pnlBody.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
+            this.pnlBody.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.MainBck;
             this.pnlBody.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlBody.Location = new System.Drawing.Point(0, 77);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(963, 642);
+            this.pnlBody.Size = new System.Drawing.Size(933, 553);
             this.pnlBody.TabIndex = 4;
             // 
             // panel1

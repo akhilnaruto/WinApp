@@ -189,6 +189,7 @@
   <ItemGroup>
     <Content Include="Resources\Body.jpg" />
     <Content Include="Resources\logo_signin.png" />
+    <Content Include="Resources\MainBck.jpg" />
     <Content Include="Resources\swamyoutline.png" />
     <Content Include="Resources\Theme1.jpg" />
     <Content Include="Resources\Theme10.jpg" />
@@ -203,6 +204,7 @@
     <Content Include="Resources\Theme9.jpg" />
     <Content Include="Resources\ToolStrip.jpg" />
     <Content Include="Resources\web.jpg" />
+    <Content Include="Resources\wood4_Border.jpg" />
     <None Include="Resources\wood4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

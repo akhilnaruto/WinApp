@@ -76,6 +76,8 @@
             this.cmbServiceType = new System.Windows.Forms.ComboBox();
             this.lblServiceType = new System.Windows.Forms.Label();
             this.grpOtherInfo = new System.Windows.Forms.GroupBox();
+            this.cmbMonthyAnnaThithi = new System.Windows.Forms.ComboBox();
+            this.lblMonthyAnnaThithi = new System.Windows.Forms.Label();
             this.rbdTelugu = new System.Windows.Forms.RadioButton();
             this.rbdEnglish = new System.Windows.Forms.RadioButton();
             this.cmbMonthlyAnna = new System.Windows.Forms.ComboBox();
@@ -96,8 +98,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnQuickDailyAnna = new System.Windows.Forms.Button();
-            this.lblMonthyAnnaThithi = new System.Windows.Forms.Label();
-            this.cmbMonthyAnnaThithi = new System.Windows.Forms.ComboBox();
             this.grpBoxGeneralInfo.SuspendLayout();
             this.grpServiceInfo.SuspendLayout();
             this.grpOtherInfo.SuspendLayout();
@@ -662,6 +662,28 @@
             this.grpOtherInfo.TabStop = false;
             this.grpOtherInfo.Text = "Other Information";
             // 
+            // cmbMonthyAnnaThithi
+            // 
+            this.cmbMonthyAnnaThithi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMonthyAnnaThithi.FormattingEnabled = true;
+            this.cmbMonthyAnnaThithi.Location = new System.Drawing.Point(408, 64);
+            this.cmbMonthyAnnaThithi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbMonthyAnnaThithi.Name = "cmbMonthyAnnaThithi";
+            this.cmbMonthyAnnaThithi.Size = new System.Drawing.Size(200, 25);
+            this.cmbMonthyAnnaThithi.TabIndex = 207;
+            // 
+            // lblMonthyAnnaThithi
+            // 
+            this.lblMonthyAnnaThithi.AutoSize = true;
+            this.lblMonthyAnnaThithi.BackColor = System.Drawing.Color.Transparent;
+            this.lblMonthyAnnaThithi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonthyAnnaThithi.Location = new System.Drawing.Point(305, 64);
+            this.lblMonthyAnnaThithi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMonthyAnnaThithi.Name = "lblMonthyAnnaThithi";
+            this.lblMonthyAnnaThithi.Size = new System.Drawing.Size(43, 17);
+            this.lblMonthyAnnaThithi.TabIndex = 206;
+            this.lblMonthyAnnaThithi.Text = "Thithi";
+            // 
             // rbdTelugu
             // 
             this.rbdTelugu.AutoSize = true;
@@ -671,6 +693,7 @@
             this.rbdTelugu.Name = "rbdTelugu";
             this.rbdTelugu.Size = new System.Drawing.Size(68, 21);
             this.rbdTelugu.TabIndex = 205;
+            this.rbdTelugu.TabStop = true;
             this.rbdTelugu.Text = "Telugu";
             this.rbdTelugu.UseVisualStyleBackColor = false;
             this.rbdTelugu.CheckedChanged += new System.EventHandler(this.rbdTelugu_CheckedChanged);
@@ -822,7 +845,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(344, 522);
+            this.btnAdd.Location = new System.Drawing.Point(344, 519);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(136, 30);
@@ -846,7 +869,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(344, 523);
+            this.btnUpdate.Location = new System.Drawing.Point(344, 519);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(136, 30);
@@ -858,7 +881,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(500, 520);
+            this.btnCancel.Location = new System.Drawing.Point(500, 519);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(136, 30);
@@ -882,28 +905,6 @@
             this.btnQuickDailyAnna.Text = "Daily Annadanam";
             this.btnQuickDailyAnna.UseVisualStyleBackColor = true;
             this.btnQuickDailyAnna.Click += new System.EventHandler(this.btnQuickDailyAnna_Click);
-            // 
-            // lblMonthyAnnaThithi
-            // 
-            this.lblMonthyAnnaThithi.AutoSize = true;
-            this.lblMonthyAnnaThithi.BackColor = System.Drawing.Color.Transparent;
-            this.lblMonthyAnnaThithi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonthyAnnaThithi.Location = new System.Drawing.Point(305, 64);
-            this.lblMonthyAnnaThithi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMonthyAnnaThithi.Name = "lblMonthyAnnaThithi";
-            this.lblMonthyAnnaThithi.Size = new System.Drawing.Size(43, 17);
-            this.lblMonthyAnnaThithi.TabIndex = 206;
-            this.lblMonthyAnnaThithi.Text = "Thithi";
-            // 
-            // cmbMonthyAnnaThithi
-            // 
-            this.cmbMonthyAnnaThithi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMonthyAnnaThithi.FormattingEnabled = true;
-            this.cmbMonthyAnnaThithi.Location = new System.Drawing.Point(408, 64);
-            this.cmbMonthyAnnaThithi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.cmbMonthyAnnaThithi.Name = "cmbMonthyAnnaThithi";
-            this.cmbMonthyAnnaThithi.Size = new System.Drawing.Size(200, 25);
-            this.cmbMonthyAnnaThithi.TabIndex = 207;
             // 
             // DonationInformation
             // 

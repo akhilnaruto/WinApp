@@ -100,8 +100,8 @@ namespace eTemple.UI
             try
             {
                 donorDate = Convert.ToDateTime(dtpDate.Text);
-                
-                if (dtpEnglishDateType.Text != null)
+
+                if (dtpEnglishDateType.Enabled == true)
                     performDate = dtpEnglishDateType.Value.ToString("dd-MM");
                 else
                     performDate = "";
@@ -375,9 +375,12 @@ namespace eTemple.UI
             if (selectedDateType.Name == "Telugu")
             {
                 lblSpecialDay.Visible = false;
+                cmbSpecialDay.Visible = false;
                 cmbSpecialDay.Enabled = false;
                 lblEnglishDatetype.Visible = false;
                 dtpEnglishDateType.Visible = false;
+                dtpEnglishDateType.Enabled = false;
+                dtpEnglishDateType.CustomFormat = "";
                 lblMonth.Visible = true;
                 cmbMonth.Enabled = true;
                 cmbMonth.Visible = true;
@@ -387,8 +390,12 @@ namespace eTemple.UI
                 lblMonthlyAnna.Visible = false;
                 cmbMonthlyAnna.Enabled = false;
                 cmbMonthlyAnna.Enabled = false;
+                cmbMonthlyAnna.Visible = false;
                 rbdEnglish.Checked = false;
                 rbdTelugu.Checked = false;
+                lblMonthyAnnaThithi.Visible = false;
+                cmbMonthyAnnaThithi.Visible = false;
+                cmbMonthyAnnaThithi.Enabled = false;
 
                 #region Bind Month values
                 var bindMonth = monthsRepo.GetAllAsQuerable();
@@ -422,6 +429,11 @@ namespace eTemple.UI
                 cmbMonthlyAnna.Enabled = false;
                 rbdEnglish.Checked = false;
                 rbdTelugu.Checked = false;
+                rbdEnglish.Checked = false;
+                rbdTelugu.Checked = false;
+                lblMonthyAnnaThithi.Visible = false;
+                cmbMonthyAnnaThithi.Visible = false;
+                cmbMonthyAnnaThithi.Enabled = false;
             }
 
             else if (selectedDateType.Name == "Special")
@@ -432,6 +444,7 @@ namespace eTemple.UI
                 lblEnglishDatetype.Visible = false;
                 dtpEnglishDateType.Visible = false;
                 dtpEnglishDateType.Enabled = false;
+                dtpEnglishDateType.CustomFormat = "";
                 lblMonth.Visible = false;
                 cmbMonth.Visible = false;
                 cmbMonth.Enabled = false;
@@ -443,6 +456,11 @@ namespace eTemple.UI
                 cmbMonthlyAnna.Enabled = false;
                 rbdEnglish.Checked = false;
                 rbdTelugu.Checked = false;
+                rbdEnglish.Checked = false;
+                rbdTelugu.Checked = false;
+                lblMonthyAnnaThithi.Visible = false;
+                cmbMonthyAnnaThithi.Visible = false;
+                cmbMonthyAnnaThithi.Enabled = false;
 
                 #region Bind SpecialDay values
                 var bindSpecialDay = specialDayRepo.GetAllAsQuerable();
@@ -458,6 +476,7 @@ namespace eTemple.UI
                 lblEnglishDatetype.Visible = false;
                 dtpEnglishDateType.Visible = false;
                 dtpEnglishDateType.Enabled = false;
+                dtpEnglishDateType.CustomFormat = "";
                 lblMonth.Visible = false;
                 cmbMonth.Visible = false;
                 cmbMonth.Enabled = false;
@@ -469,6 +488,11 @@ namespace eTemple.UI
                 cmbMonthlyAnna.Enabled = false;
                 rbdEnglish.Checked = false;
                 rbdTelugu.Checked = false;
+                rbdEnglish.Checked = false;
+                rbdTelugu.Checked = false;
+                lblMonthyAnnaThithi.Visible = false;
+                cmbMonthyAnnaThithi.Visible = false;
+                cmbMonthyAnnaThithi.Enabled = false;
             }
         }
 
@@ -505,14 +529,14 @@ namespace eTemple.UI
             btnModify.Visible = false;
 
             DateTime donorDate;
-            DateTime performDate;
+            string performDate = string.Empty;
 
-            if (dtpDate.Text != "" || dtpDate.Text != null)
-                donorDate = Convert.ToDateTime(dtpDate.Text);
+            donorDate = Convert.ToDateTime(dtpDate.Text);
+
+            if (dtpEnglishDateType.Enabled == true)
+                performDate = dtpEnglishDateType.Value.ToString("dd-MM");
             else
-                donorDate = DateTime.Today;
-
-            performDate = DateTime.Today;
+                performDate = "";
 
             int selectedServiceTypeId;
             int selectedServiceNameId;
@@ -548,7 +572,7 @@ namespace eTemple.UI
                 ServiceTypeId = selectedServiceTypeId,
                 ServiceNameId = selectedServiceNameId,
                 DateTypeId = selectedDateTypeId,
-                PerformDate = performDate.ToString("dd-MM"),
+                PerformDate = performDate,
                 EmailId = txtEmailId.Text,
                 DonorMonth = selectedMonthId,
                 Thidhi = selectedThithiId,
@@ -647,47 +671,72 @@ namespace eTemple.UI
                 string[] starTypeValue = bindServiceType.Select(p => p.Name).ToArray();
                 cmbServiceType.SelectedIndex = cmbServiceType.FindString(starTypeValue[0]);
 
+
                 //Get ServiceName
-                var bindServiceName = serviceNameRepo.GetAllAsQuerable(donor.ServiceNameId);
-                string[] serviceNameValue = bindServiceName.Select(p => p.Name).ToArray();
-                cmbServiceName.SelectedIndex = cmbServiceName.FindString(serviceNameValue[0]);
-
-                //Get DateType
-                var bindDatetype = datetypeRepo.GetAllAsQuerable(donor.DateTypeId);
-                string[] dateTypeValue = bindDatetype.Select(p => p.Name).ToArray();
-                cmbDateType.SelectedIndex = cmbDateType.FindString(dateTypeValue[0]);
-
-                //Get SpecialDay
-                var bindSpecialDay = specialDayRepo.GetAllAsQuerable(donor.SpecialDayId);
-                string[] specialDayValue = bindSpecialDay.Select(p => p.Name).ToArray();
-                cmbSpecialDay.SelectedIndex = cmbSpecialDay.FindString(specialDayValue[0]);
-
-                //Get Month
-                var bindMonth = monthsRepo.GetAllAsQuerable(donor.DonorMonth);
-                string[] monthValue = bindMonth.Select(p => p.Name).ToArray();
-                cmbMonth.SelectedIndex = cmbMonth.FindString(monthValue[0]);
-
-                //Get Thithi
-                var bindThithi = thithiRepo.GetAllAsQuerable(donor.Thidhi);
-                string[] thithiValue = bindThithi.Select(p => p.Name).ToArray();
-                cmbThithi.SelectedIndex = cmbThithi.FindString(thithiValue[0]);
-
-                //Perform Date
-                var performDate = donor.PerformDate.ToString();
-                var perforDateArr = performDate.Split('-');
-                DateTime dt1 = new DateTime();
-                int date;
-                int month;
-                int year;
-                if (perforDateArr.Length > 0)
+                if (cmbServiceName.Enabled == true)
                 {
-                    var performDateWithoutMonthAndYear = int.TryParse(perforDateArr[0], out date);
-                    var performDayWithoutYearAbdDate = int.TryParse(perforDateArr[1], out month);
-                    year = DateTime.Now.Year;
-                    dt1 = new DateTime(year, month, date);
+                    var bindServiceName = serviceNameRepo.GetAllAsQuerable(donor.ServiceNameId);
+                    string[] serviceNameValue = bindServiceName.Select(p => p.Name).ToArray();
+                    cmbServiceName.SelectedIndex = cmbServiceName.FindString(serviceNameValue[0]); 
                 }
 
-                dtpEnglishDateType.Value = dt1;
+                //Get DateType
+                if (cmbDateType.Enabled == true)
+                {
+                    var bindDatetype = datetypeRepo.GetAllAsQuerable(donor.DateTypeId);
+                    string[] dateTypeValue = bindDatetype.Select(p => p.Name).ToArray();
+                    cmbDateType.SelectedIndex = cmbDateType.FindString(dateTypeValue[0]);
+                }
+
+                //Get SpecialDay
+                if (cmbSpecialDay.Enabled == true)
+                {
+                    var bindSpecialDay = specialDayRepo.GetAllAsQuerable(donor.SpecialDayId);
+                    string[] specialDayValue = bindSpecialDay.Select(p => p.Name).ToArray();
+                    cmbSpecialDay.SelectedIndex = cmbSpecialDay.FindString(specialDayValue[0]);
+                }
+
+                //Get Month
+                if (cmbMonth.Enabled == true)
+                {
+                    var bindMonth = monthsRepo.GetAllAsQuerable(donor.DonorMonth);
+                    string[] monthValue = bindMonth.Select(p => p.Name).ToArray();
+                    cmbMonth.SelectedIndex = cmbMonth.FindString(monthValue[0]);
+                }
+
+                //Get Thithi
+                if (cmbThithi.Enabled == true)
+                {
+                    var bindThithi = thithiRepo.GetAllAsQuerable(donor.Thidhi);
+                    string[] thithiValue = bindThithi.Select(p => p.Name).ToArray();
+                    cmbThithi.SelectedIndex = cmbThithi.FindString(thithiValue[0]);
+                }
+
+                //Perform Date
+
+                if (donor.PerformDate != null)
+                {
+                    var performDate = donor.PerformDate.ToString();
+                    var perforDateArr = performDate.Split('-');
+                    DateTime dt1 = new DateTime();
+                    int date;
+                    int month;
+                    int year;
+                    if (perforDateArr.Length > 0)
+                    {
+                        var performDateWithoutMonthAndYear = int.TryParse(perforDateArr[0], out date);
+                        var performDayWithoutYearAbdDate = int.TryParse(perforDateArr[1], out month);
+                        year = DateTime.Now.Year;
+                        dt1 = new DateTime(year, month, date);
+                    }
+
+                    dtpEnglishDateType.Value = dt1;
+                }
+                else
+                {
+                    dtpEnglishDateType.Visible = false;
+                    dtpEnglishDateType.Enabled = false;
+                }
 
                 //Monthly AnnaDanam
 
@@ -1017,6 +1066,7 @@ namespace eTemple.UI
                         lblEnglishDatetype.Visible = false;
                         dtpEnglishDateType.Visible = false;
                         dtpEnglishDateType.Enabled = false;
+                        dtpEnglishDateType.CustomFormat = "";
                         lblMonth.Visible = false;
                         cmbMonth.Visible = false;
                         cmbMonth.Enabled = false;
@@ -1047,6 +1097,7 @@ namespace eTemple.UI
                         lblEnglishDatetype.Visible = false;
                         dtpEnglishDateType.Visible = false;
                         dtpEnglishDateType.Enabled = false;
+                        dtpEnglishDateType.CustomFormat = "";
                         lblMonth.Visible = false;
                         cmbMonth.Visible = false;
                         cmbMonth.Enabled = false;
@@ -1077,6 +1128,7 @@ namespace eTemple.UI
                     lblEnglishDatetype.Visible = false;
                     dtpEnglishDateType.Visible = false;
                     dtpEnglishDateType.Enabled = false;
+                    dtpEnglishDateType.CustomFormat = "";
                     lblMonth.Visible = false;
                     cmbMonth.Visible = false;
                     cmbMonth.Enabled = false;
@@ -1107,6 +1159,7 @@ namespace eTemple.UI
                     lblEnglishDatetype.Visible = false;
                     dtpEnglishDateType.Visible = false;
                     dtpEnglishDateType.Enabled = false;
+                    dtpEnglishDateType.CustomFormat = "";
                     lblMonth.Visible = false;
                     cmbMonth.Visible = false;
                     cmbMonth.Enabled = false;
@@ -1138,6 +1191,7 @@ namespace eTemple.UI
                 lblEnglishDatetype.Visible = false;
                 dtpEnglishDateType.Visible = false;
                 dtpEnglishDateType.Enabled = false;
+                dtpEnglishDateType.CustomFormat = "";
                 lblMonth.Visible = false;
                 cmbMonth.Visible = false;
                 cmbMonth.Enabled = false;
@@ -1203,7 +1257,7 @@ namespace eTemple.UI
             bindData();
             btnUpdate.Visible = false;
             btnCancel.Visible = false;
-
+            dtpEnglishDateType.CustomFormat = "";
             lblSpecialDay.Visible = false;
             cmbSpecialDay.Visible = false;
             lblMonth.Visible = false;

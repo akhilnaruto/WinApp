@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
+            this.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4_Border;
             this.ClientSize = new System.Drawing.Size(557, 422);
             this.Controls.Add(this.btnGenerateAdress);
             this.Controls.Add(this.cmbThidhi);

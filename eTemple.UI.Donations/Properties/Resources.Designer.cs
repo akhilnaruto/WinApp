@@ -63,6 +63,16 @@ namespace eTemple.UI.Donations.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MainBck {
+            get {
+                object obj = ResourceManager.GetObject("MainBck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Theme11 {
             get {
                 object obj = ResourceManager.GetObject("Theme11", resourceCulture);
@@ -96,6 +106,16 @@ namespace eTemple.UI.Donations.Properties {
         internal static System.Drawing.Bitmap wood4 {
             get {
                 object obj = ResourceManager.GetObject("wood4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wood4_Border {
+            get {
+                object obj = ResourceManager.GetObject("wood4_Border", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

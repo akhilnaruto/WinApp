@@ -40,6 +40,8 @@ namespace eTemple.UI.Donations
             txtDonorID.Visible = true;
             txtDonorName.Visible = false;
             txtMRNO.Visible = false;
+            txtDonorName.Text = "";
+            txtMRNO.Text = "";
         }
 
         private void rbdDonorName_CheckedChanged(object sender, EventArgs e)
@@ -50,6 +52,8 @@ namespace eTemple.UI.Donations
             txtDonorID.Visible = false;
             txtDonorName.Visible = true;
             txtMRNO.Visible = false;
+            txtDonorID.Text = "";
+            txtMRNO.Text = "";
         }
 
         private void rbdMRNO_CheckedChanged(object sender, EventArgs e)
@@ -60,6 +64,8 @@ namespace eTemple.UI.Donations
             txtDonorID.Visible = false;
             txtDonorName.Visible = false;
             txtMRNO.Visible = true;
+            txtDonorName.Text = "";
+            txtDonorID.Text = "";
         }
 
         /// <summary>
@@ -89,12 +95,13 @@ namespace eTemple.UI.Donations
         {
             if (txtDonorID.Text != string.Empty || txtDonorID.Text != "")
             {
-                DonationInformation parent = (DonationInformation)this.Owner;
+                //DonationInformation parent = (DonationInformation)this.Owner;
+                DonationRecording parent = (DonationRecording)this.Owner;
                 var donorId = txtDonorID.Text;
                 var donorExists = donorRepositoy.checkModifyDonorIDExists(donorId);
                 if (donorExists == null)
                 {
-                    MessageBox.Show("Entered Donor Id dosen't exist, kindly enter again to modify the record");
+                    MessageBox.Show("Entered Donor Id dosen't exist, kindly enter again to modify the record");                    
                     return;
                 }
                 //var selectedDonor = donors.Where(donor => donor.Id == donorId.Id).FirstOrDefault();
@@ -105,7 +112,8 @@ namespace eTemple.UI.Donations
 
             else if (txtDonorName.Text != string.Empty || txtDonorName.Text != "")
             {
-                DonationInformation parent = (DonationInformation)this.Owner;
+                //DonationInformation parent = (DonationInformation)this.Owner;
+                DonationRecording parent = (DonationRecording)this.Owner;
                 var donorName = txtDonorName.Text;
                 var donorExists = donorRepositoy.checkModifyDonorNameExists(donorName);
                 if (donorExists == null)
@@ -121,7 +129,8 @@ namespace eTemple.UI.Donations
 
             else if (txtMRNO.Text != string.Empty || txtMRNO.Text != "")
             {
-                DonationInformation parent = (DonationInformation)this.Owner;
+                //DonationInformation parent = (DonationInformation)this.Owner;
+                DonationRecording parent = (DonationRecording)this.Owner;
                 var donorName = txtMRNO.Text;
                 var donorExists = donorRepositoy.checkModifyMRNoExists(donorName);
                 if (donorExists == null)

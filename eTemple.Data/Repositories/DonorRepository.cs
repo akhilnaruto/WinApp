@@ -138,7 +138,7 @@ namespace eTemple.Data.Repositories
                             cmd.Parameters.AddWithValue("@ServiceTypeId", donor.ServiceTypeId);
                             cmd.Parameters.AddWithValue("@ServiceNameId", donor.ServiceNameId);
                             cmd.Parameters.AddWithValue("@DateTypeId", donor.DateTypeId);
-                            cmd.Parameters.AddWithValue("@PerformDate", donor.PerformDate);
+                            cmd.Parameters.AddWithValue("@PerformDate", donor.PerformDate.NullString());
                             cmd.Parameters.AddWithValue("@EmailId", donor.EmailId.NullString());
                             cmd.Parameters.AddWithValue("@DonorMonth", donor.DonorMonth);
                             cmd.Parameters.AddWithValue("@Thidhi", donor.Thidhi);
@@ -212,7 +212,7 @@ namespace eTemple.Data.Repositories
                             cmd.Parameters.AddWithValue("@ServiceTypeId", donor.ServiceTypeId);
                             cmd.Parameters.AddWithValue("@ServiceNameId", donor.ServiceNameId);
                             cmd.Parameters.AddWithValue("@DateTypeId", donor.DateTypeId);
-                            cmd.Parameters.AddWithValue("@PerformDate", donor.PerformDate);
+                            cmd.Parameters.AddWithValue("@PerformDate", donor.PerformDate.NullString());
                             cmd.Parameters.AddWithValue("@EmailId", donor.EmailId.NullString());
                             cmd.Parameters.AddWithValue("@DonorMonth", donor.DonorMonth);
                             cmd.Parameters.AddWithValue("@Thidhi", donor.Thidhi);
