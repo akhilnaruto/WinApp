@@ -564,6 +564,25 @@ namespace eTemple.UI
             int selectedDonorThithi;
             var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId, out selectedDonorThithi);
 
+            if (cmbServiceName.Enabled == false)
+                selectedServiceNameId = 0;
+
+            if (cmbMonth.Enabled == false)
+                selectedMonthId = 0;
+
+            if (cmbSpecialDay.Enabled == false)
+                selectedSpecialDayId = 0;
+
+            if (cmbThithi.Enabled == false)
+                selectedThithiId = 0;
+
+            if (cmbDateType.Enabled == false)
+                selectedDayId = 0;
+
+            if (cmbMonthyAnnaThithi.Enabled == false)
+                selectedDonorThithi = 0;
+
+
             Donors donorUpdateInfo = new Donors
             {
                 Id = txtDonorId.Text,
