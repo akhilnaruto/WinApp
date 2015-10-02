@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.donorIdComboBox = new System.Windows.Forms.ComboBox();
             this.donorNameComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -40,46 +38,26 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.phoneNumberComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.citiComboBox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.mrNumberComboBox = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.gpbEnquiry = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblServiceType = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gpbEnquiry.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Donor ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(258, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Name";
             // 
             // donorIdComboBox
             // 
             this.donorIdComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.donorIdComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.donorIdComboBox.FormattingEnabled = true;
-            this.donorIdComboBox.Location = new System.Drawing.Point(82, 34);
+            this.donorIdComboBox.Location = new System.Drawing.Point(88, 35);
             this.donorIdComboBox.Name = "donorIdComboBox";
-            this.donorIdComboBox.Size = new System.Drawing.Size(156, 21);
+            this.donorIdComboBox.Size = new System.Drawing.Size(156, 25);
             this.donorIdComboBox.TabIndex = 2;
             this.donorIdComboBox.SelectedIndexChanged += new System.EventHandler(this.donorIdComboBox_SelectedIndexChanged);
             // 
@@ -88,9 +66,9 @@
             this.donorNameComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.donorNameComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.donorNameComboBox.FormattingEnabled = true;
-            this.donorNameComboBox.Location = new System.Drawing.Point(315, 35);
+            this.donorNameComboBox.Location = new System.Drawing.Point(373, 35);
             this.donorNameComboBox.Name = "donorNameComboBox";
-            this.donorNameComboBox.Size = new System.Drawing.Size(187, 21);
+            this.donorNameComboBox.Size = new System.Drawing.Size(156, 21);
             this.donorNameComboBox.TabIndex = 3;
             this.donorNameComboBox.SelectedIndexChanged += new System.EventHandler(this.donorNameComboBox_SelectedIndexChanged);
             // 
@@ -110,7 +88,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(814, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(878, 150);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -144,7 +122,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(228, 300);
+            this.button1.Location = new System.Drawing.Point(291, 296);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 30);
             this.button1.TabIndex = 5;
@@ -154,7 +132,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(391, 300);
+            this.button2.Location = new System.Drawing.Point(454, 296);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 30);
             this.button2.TabIndex = 6;
@@ -165,94 +143,121 @@
             // phoneNumberComboBox
             // 
             this.phoneNumberComboBox.FormattingEnabled = true;
-            this.phoneNumberComboBox.Location = new System.Drawing.Point(631, 35);
+            this.phoneNumberComboBox.Location = new System.Drawing.Point(673, 35);
             this.phoneNumberComboBox.Name = "phoneNumberComboBox";
-            this.phoneNumberComboBox.Size = new System.Drawing.Size(184, 21);
+            this.phoneNumberComboBox.Size = new System.Drawing.Size(156, 21);
             this.phoneNumberComboBox.TabIndex = 8;
             this.phoneNumberComboBox.SelectedIndexChanged += new System.EventHandler(this.phoneNumberComboBox_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(522, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 17);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Phone Number";
             // 
             // citiComboBox
             // 
             this.citiComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.citiComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.citiComboBox.FormattingEnabled = true;
-            this.citiComboBox.Location = new System.Drawing.Point(82, 83);
+            this.citiComboBox.Location = new System.Drawing.Point(88, 85);
             this.citiComboBox.Name = "citiComboBox";
-            this.citiComboBox.Size = new System.Drawing.Size(156, 21);
+            this.citiComboBox.Size = new System.Drawing.Size(156, 25);
             this.citiComboBox.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 84);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "City";
             // 
             // mrNumberComboBox
             // 
             this.mrNumberComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.mrNumberComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.mrNumberComboBox.FormattingEnabled = true;
-            this.mrNumberComboBox.Location = new System.Drawing.Point(314, 80);
+            this.mrNumberComboBox.Location = new System.Drawing.Point(361, 85);
             this.mrNumberComboBox.Name = "mrNumberComboBox";
-            this.mrNumberComboBox.Size = new System.Drawing.Size(188, 21);
+            this.mrNumberComboBox.Size = new System.Drawing.Size(156, 25);
             this.mrNumberComboBox.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(258, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 17);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Mr_No";
             // 
             // gpbEnquiry
             // 
             this.gpbEnquiry.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
+            this.gpbEnquiry.Controls.Add(this.label4);
+            this.gpbEnquiry.Controls.Add(this.mrNumberComboBox);
+            this.gpbEnquiry.Controls.Add(this.label3);
+            this.gpbEnquiry.Controls.Add(this.label2);
+            this.gpbEnquiry.Controls.Add(this.citiComboBox);
+            this.gpbEnquiry.Controls.Add(this.label1);
+            this.gpbEnquiry.Controls.Add(this.lblServiceType);
             this.gpbEnquiry.Controls.Add(this.button2);
             this.gpbEnquiry.Controls.Add(this.button1);
+            this.gpbEnquiry.Controls.Add(this.donorIdComboBox);
             this.gpbEnquiry.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbEnquiry.Location = new System.Drawing.Point(12, -2);
+            this.gpbEnquiry.Location = new System.Drawing.Point(12, -1);
             this.gpbEnquiry.Name = "gpbEnquiry";
-            this.gpbEnquiry.Size = new System.Drawing.Size(814, 339);
+            this.gpbEnquiry.Size = new System.Drawing.Size(878, 339);
             this.gpbEnquiry.TabIndex = 13;
             this.gpbEnquiry.TabStop = false;
             this.gpbEnquiry.Text = "Enquiry";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(548, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Phone Number";
+            this.label2.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(263, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Donor Name";
+            this.label1.Visible = false;
+            // 
+            // lblServiceType
+            // 
+            this.lblServiceType.AutoSize = true;
+            this.lblServiceType.BackColor = System.Drawing.Color.Transparent;
+            this.lblServiceType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServiceType.Location = new System.Drawing.Point(3, 35);
+            this.lblServiceType.Name = "lblServiceType";
+            this.lblServiceType.Size = new System.Drawing.Size(66, 17);
+            this.lblServiceType.TabIndex = 7;
+            this.lblServiceType.Text = "Donor ID";
+            this.lblServiceType.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "City";
+            this.label3.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(263, 85);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 17);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "MR NO";
+            this.label4.Visible = false;
             // 
             // EnquiryDetailsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 340);
-            this.Controls.Add(this.mrNumberComboBox);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.citiComboBox);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(895, 340);
             this.Controls.Add(this.phoneNumberComboBox);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.donorNameComboBox);
-            this.Controls.Add(this.donorIdComboBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.gpbEnquiry);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EnquiryDetailsUI";
@@ -260,30 +265,29 @@
             this.Load += new System.EventHandler(this.EnquiryDetailsUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gpbEnquiry.ResumeLayout(false);
+            this.gpbEnquiry.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox donorIdComboBox;
         private System.Windows.Forms.ComboBox donorNameComboBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox phoneNumberComboBox;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn donorId;
         private System.Windows.Forms.DataGridViewTextBoxColumn surname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.ComboBox citiComboBox;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox mrNumberComboBox;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox gpbEnquiry;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblServiceType;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
