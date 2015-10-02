@@ -155,7 +155,7 @@ namespace eTemple.UI
                 if (cmbThithi.Enabled == false)
                     selectedThithiId = 0;
 
-                if (cmbDateType.Enabled == false)
+                if (cmbMonthlyAnna.Enabled == false)
                     selectedDayId = 0;
 
                 if (cmbMonthyAnnaThithi.Enabled == false)
@@ -207,12 +207,17 @@ namespace eTemple.UI
                 //Insert the Donor Information
                 string strInsertStatus = donorRepo.insertDonorInformation(donorInfo);
 
+                var selectedServiceType = cmbServiceType.SelectedItem as ServiceTypes;
+
+                string smsMessage = "Thanks " + donorInfo.NameOn+ " we have recieved an amount of Rs."+donorInfo.Amount+"/- towards " + selectedServiceType.Name;
+
+
                 if (strInsertStatus == "Success")
                 {
                     MessageBox.Show("Data inserted successfully.");
                     CleareAllcontrolsRecursive();
                     loadGothramAutoComplete();
-                    //sendSMS("91" + donorInfo.Mobile);
+                    //sendSMS("91" + donorInfo.Mobile, smsMessage);
                 }
                 else
                     MessageBox.Show("There was a problem inserting data, kindly try again to save the record");
@@ -230,14 +235,14 @@ namespace eTemple.UI
             return Convert.ToInt32(value);
         }
 
-        public void sendSMS(string phone)
+        public void sendSMS(string phone,string smsMessage)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(ConfigurationManager.AppSettings["SvcpvdrAPI"]);
             // Usage
             HttpResponseMessage response = client.GetAsync("?User=" + ConfigurationManager.AppSettings["User"] +
                 "&passwd=" + ConfigurationManager.AppSettings["passwd"] + "&mobilenumber=" + phone + "&message=" +
-                ConfigurationManager.AppSettings["message"] + "&sid=" + ConfigurationManager.AppSettings["sid"] +
+                smsMessage + "&sid=" + ConfigurationManager.AppSettings["sid"] +
                 "&mtype=" + ConfigurationManager.AppSettings["mtype"] + "&DR=" + ConfigurationManager.AppSettings["DR"] + "").Result;
         }
 
@@ -576,7 +581,7 @@ namespace eTemple.UI
             if (cmbThithi.Enabled == false)
                 selectedThithiId = 0;
 
-            if (cmbDateType.Enabled == false)
+            if (cmbMonthlyAnna.Enabled == false)
                 selectedDayId = 0;
 
             if (cmbMonthyAnnaThithi.Enabled == false)
