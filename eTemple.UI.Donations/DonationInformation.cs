@@ -106,17 +106,14 @@ namespace eTemple.UI
                 else
                     performDate = "";
 
-                if ((txtPin.Text == "" ) || (txtPin.Text == string.Empty))
-                            txtPin.Text = null;
+                if ((txtPin.Text == "") || (txtPin.Text == string.Empty))
+                    txtPin.Text = null;
 
                 if ((txtLandline.Text == "") || (txtLandline.Text == string.Empty))
                     txtLandline.Text = null;
 
                 if ((txtMobile.Text == "") || (txtMobile.Text == string.Empty))
                     txtMobile.Text = null;
-                            
-                
-
 
                 int selectedServiceTypeId;
                 int selectedServiceNameId;
@@ -126,7 +123,7 @@ namespace eTemple.UI
                 int selectedThithiId;
                 int selectedDayId;
                 int selectedDonorThithi;
-                var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId,out selectedDonorThithi);
+                var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId, out selectedDonorThithi);
 
                 string maxIDFormat = DateForId(donorDate);
 
@@ -145,6 +142,25 @@ namespace eTemple.UI
                 string uniqueDonorId = DateForId(donorDate) + " " + maxId;
 
                 #endregion
+
+                if (cmbServiceName.Enabled == false)
+                    selectedServiceNameId = 0;
+
+                if (cmbMonth.Enabled == false)
+                    selectedMonthId = 0;
+
+                if (cmbSpecialDay.Enabled == false)
+                    selectedSpecialDayId = 0;
+
+                if (cmbThithi.Enabled == false)
+                    selectedThithiId = 0;
+
+                if (cmbDateType.Enabled == false)
+                    selectedDayId = 0;
+
+                if (cmbMonthyAnnaThithi.Enabled == false)
+                    selectedDonorThithi = 0;
+
 
                 Donors donorInfo = new Donors
                 {
@@ -546,7 +562,7 @@ namespace eTemple.UI
             int selectedThithiId;
             int selectedDayId;
             int selectedDonorThithi;
-            var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId,out selectedDonorThithi);
+            var selectedDateTypeId = SelectedDateTypeId(out selectedServiceTypeId, out selectedServiceNameId, out selectedMonthId, out selectedStarId, out selectedSpecialDayId, out selectedThithiId, out selectedDayId, out selectedDonorThithi);
 
             Donors donorUpdateInfo = new Donors
             {
@@ -578,7 +594,7 @@ namespace eTemple.UI
                 Thidhi = selectedThithiId,
                 DonorDay = selectedDayId,
                 Mobile = txtMobile.Text,
-                DonorThithi=selectedDonorThithi
+                DonorThithi = selectedDonorThithi
             };
 
             string updateStatus = donorRepo.updateDonorInformation(donorUpdateInfo);
@@ -677,7 +693,7 @@ namespace eTemple.UI
                 {
                     var bindServiceName = serviceNameRepo.GetAllAsQuerable(donor.ServiceNameId);
                     string[] serviceNameValue = bindServiceName.Select(p => p.Name).ToArray();
-                    cmbServiceName.SelectedIndex = cmbServiceName.FindString(serviceNameValue[0]); 
+                    cmbServiceName.SelectedIndex = cmbServiceName.FindString(serviceNameValue[0]);
                 }
 
                 //Get DateType
@@ -1028,10 +1044,10 @@ namespace eTemple.UI
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void txtPin_KeyPress(object sender, KeyPressEventArgs e)
-        {            
+        {
             if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
             {
-                e.Handled = true;         
+                e.Handled = true;
             }
         }
 
@@ -1039,12 +1055,12 @@ namespace eTemple.UI
         {
             lblServiceName.Enabled = false;
             cmbServiceName.Enabled = false;
-            
+
             var serviceType = cmbServiceType.SelectedItem as ServiceTypes;
             if (serviceType != null)
             {
                 cmbServiceName.DataSource = null;
-                
+
                 var ServiceTypeData = serviceNameRepo.GetAllAsQuerable().Where(sType => sType.ServiceTypeId == serviceType.Id).ToList();
                 cmbServiceName.DataSource = ServiceTypeData;
                 cmbServiceName.DisplayMember = "Name";
@@ -1200,7 +1216,7 @@ namespace eTemple.UI
                 cmbThithi.Enabled = false;
                 lblServiceName.Enabled = false;
                 cmbServiceName.Enabled = false;
-                cmbServiceName.Enabled = false;                
+                cmbServiceName.Enabled = false;
                 lblMonthlyAnna.Visible = true;
                 cmbMonthlyAnna.Visible = true;
                 cmbMonthlyAnna.Enabled = true;
@@ -1209,7 +1225,7 @@ namespace eTemple.UI
                 rbdEnglish.Visible = true;
                 rbdTelugu.Visible = true;
                 rbdEnglish.Checked = true;
-                
+
             }
             //else
             //
@@ -1361,7 +1377,7 @@ namespace eTemple.UI
                     lblMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Visible = false;
                     cmbMonthlyAnna.Enabled = false;
-                } 
+                }
             }
         }
 
@@ -1405,7 +1421,7 @@ namespace eTemple.UI
             lblMonthyAnnaThithi.Visible = true;
             cmbMonthyAnnaThithi.Visible = true;
             cmbMonthyAnnaThithi.Enabled = true;
-            
+
             #region Thithi
             var bindThithi = thithiRepo.GetAllAsQuerable();
             cmbMonthyAnnaThithi.DataSource = bindThithi;
