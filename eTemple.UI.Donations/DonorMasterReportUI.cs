@@ -17,6 +17,7 @@ namespace eTemple.UI.Donations
     {
         public ServiceTypeRepository oServiceTypeRep = null;
         public ServiceNameRepository oServiceNameRep = null;
+        public TeluguCalendarRepository oTeluguCalendarRepository = null;
         public List<ServiceTypes> lstServiceType = null;
         public List<DateType> lstDateType = null;
         public List<SpecialDay> lstSpecialDay = null;
@@ -40,6 +41,7 @@ namespace eTemple.UI.Donations
             oSpecialDayRepository = new SpecialDayRepository();
             oMonthsRepository = new MonthsRepository();
             oThidhiRepository = new ThidhiRepository();
+            oTeluguCalendarRepository = new TeluguCalendarRepository();
             //  oPakshaRepository = new PakshaRepository();
             lstServiceType = oServiceTypeRep.GetAllAsQuerable().ToList();
             lstMonths = oMonthsRepository.GetAllAsQuerable().ToList();
@@ -60,6 +62,7 @@ namespace eTemple.UI.Donations
             cmbMonth.DisplayMember = "Name";
             cmbThidhi.DataSource = lstThidhi;
             cmbThidhi.DisplayMember = "Name";
+            rdbAlldonors.Checked = true;
             // cmbPaksha.DataSource = lstPaksha;
             //  cmbPaksha.DisplayMember = "Name";
         }
@@ -185,9 +188,9 @@ namespace eTemple.UI.Donations
             DataTable dt = new DataTable();
             var ServiceName = cmbServiceName.SelectedItem as ServiceName;
             var ServiceTypes = cmbServiceType.SelectedItem as ServiceTypes;
-            if (rdbServiceWseDonors.Checked && dtType.Id != 2 && ServiceTypes.Id == 2)
+            if (rdbServiceWseDonors.Checked && dtType.Id > 2 && ServiceTypes.Id == 2)
             {
-                MessageBox.Show("Please pick English date for Monthly Annadanam...");
+                MessageBox.Show("Kindly pick English day or Telugu thidhi for Monthly Annadanam...");
                 return;
             }
             // performDate = string.Format(performDate, "yyyy-mm-dd");
@@ -195,7 +198,7 @@ namespace eTemple.UI.Donations
             if (rdbServiceWseDonors.Checked)
                 filterstring = GetFilterstring();
             else
-                filterstring = GetFilterstring() + " OR (" + GetFilterForMonthlyAnnadanam() + ")";
+                filterstring = GetFilterstring() + "OR (" +GetFilterForMonthlyAnnadanam()+")";
             var DonorList = oDonorRepository.GetAllasDataTable().Select(filterstring);
             if (DonorList.Count() != 0)
             {
@@ -239,7 +242,7 @@ namespace eTemple.UI.Donations
 
         public string GetFilterstring()
         {
-        
+
             string FilterString = string.Empty;
             var dtType = cmbDateType.SelectedItem as DateType;
             var month = cmbMonth.SelectedItem as Months;
@@ -250,7 +253,7 @@ namespace eTemple.UI.Donations
             var serviceTypeId = cmbServiceType.SelectedItem as ServiceTypes;
             var serviceNameId = cmbServiceName.SelectedItem as ServiceName;
 
-           
+
             switch (dtType.Id)
             {
                 case 1:
@@ -284,7 +287,7 @@ namespace eTemple.UI.Donations
                 if (!cmbDateType.Visible)
                 {
                     performDate = "";
-                    FilterString =  " ServiceTypeId=" + serviceTypeId.Id;
+                    FilterString = " ServiceTypeId=" + serviceTypeId.Id;
                     if (serviceNameId != null)
                         FilterString = " ServiceNameId=" + serviceNameId.Id;
                 }
@@ -305,6 +308,15 @@ namespace eTemple.UI.Donations
         }
         private void cmbDateType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            bool isMonthly = false;
+            var serviceTypeId = cmbServiceType.SelectedItem as ServiceTypes;
+            if (rdbServiceWseDonors.Checked)
+            {
+                if (serviceTypeId.Id == 2)
+                {
+                    isMonthly = true;
+                }
+            }
             if (cmbDateType.SelectedIndex != -1)
             {
                 var dtType = cmbDateType.SelectedItem as DateType;
@@ -313,8 +325,8 @@ namespace eTemple.UI.Donations
                     case 1:
                         //  lblPaksha.Visible = true;
                         //  cmbPaksha.Visible = true;
-                        lblMonth.Visible = true;
-                        cmbMonth.Visible = true;
+                        lblMonth.Visible = !isMonthly;
+                        cmbMonth.Visible = !isMonthly;
                         lblThidhi.Visible = true;
                         cmbThidhi.Visible = true;
                         lblServicePerfmdt.Visible = false;
@@ -376,10 +388,15 @@ namespace eTemple.UI.Donations
 
         public string GetFilterForMonthlyAnnadanam()
         {
-            string selDate = dtPicker.Value.ToString("yyyy-MM-dd");
+            var dtType = cmbDateType.SelectedItem as DateType;
+            var thidhi = cmbThidhi.SelectedItem as Thidhi;
+
             int day = dtPicker.Value.Day;
-            string prvsYeardate = dtPicker.Value.AddYears(-1).ToString("yyyy-MM-dd");
-            return "DonorDay=" + day + " AND Donordate >= '#" + prvsYeardate + "#'";
+            string prvsYeardate = DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd");
+            if (dtType.Id == 2)
+                return "DonorDay=" + dtPicker.Value.Day + " AND Donordate >= '#" + prvsYeardate + "#'";
+            else
+                return "DonorThithi=" + thidhi.Id + " AND Donordate >= '#" + prvsYeardate + "#'";
         }
     }
 }
