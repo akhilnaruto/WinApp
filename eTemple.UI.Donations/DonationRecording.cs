@@ -22,6 +22,7 @@ namespace eTemple.UI.Donations
         {
             InitializeComponent();
             this.MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         }
 
         private void DonationRecording_Load(object sender, EventArgs e)
