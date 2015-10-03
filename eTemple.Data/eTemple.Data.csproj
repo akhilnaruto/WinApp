@@ -74,6 +74,7 @@
     <Compile Include="Models\MonthlyAnnaDanam.cs" />
     <Compile Include="Models\Paksha.cs" />
     <Compile Include="Models\SelectedDonorOptions.cs" />
+    <Compile Include="Models\TeluguCalendar.cs" />
     <Compile Include="Models\Thidhi.cs" />
     <Compile Include="Models\Months.cs" />
     <Compile Include="Models\PetaPoco.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Repositories\ServiceTypeRepository.cs" />
     <Compile Include="Repositories\SpecialDayRepository.cs" />
     <Compile Include="Repositories\StarsRepository.cs" />
+    <Compile Include="Repositories\TeluguCalendarRepository.cs" />
     <Compile Include="Repositories\ThidhiRepository.cs" />
     <Compile Include="Utilities\BindValues.cs" />
     <Compile Include="Utilities\CustomLINQtoDataSetMethods.cs" />

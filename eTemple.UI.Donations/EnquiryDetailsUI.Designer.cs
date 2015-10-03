@@ -41,11 +41,11 @@
             this.citiComboBox = new System.Windows.Forms.ComboBox();
             this.mrNumberComboBox = new System.Windows.Forms.ComboBox();
             this.gpbEnquiry = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblServiceType = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gpbEnquiry.SuspendLayout();
             this.SuspendLayout();
@@ -190,41 +190,16 @@
             this.gpbEnquiry.TabStop = false;
             this.gpbEnquiry.Text = "Enquiry";
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(548, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 17);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Phone Number";
-            this.label2.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(263, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 17);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Donor Name";
-            this.label1.Visible = false;
-            // 
-            // lblServiceType
-            // 
-            this.lblServiceType.AutoSize = true;
-            this.lblServiceType.BackColor = System.Drawing.Color.Transparent;
-            this.lblServiceType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServiceType.Location = new System.Drawing.Point(3, 35);
-            this.lblServiceType.Name = "lblServiceType";
-            this.lblServiceType.Size = new System.Drawing.Size(66, 17);
-            this.lblServiceType.TabIndex = 7;
-            this.lblServiceType.Text = "Donor ID";
-            this.lblServiceType.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(263, 85);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 17);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "MR NO";
             // 
             // label3
             // 
@@ -236,19 +211,39 @@
             this.label3.Size = new System.Drawing.Size(33, 17);
             this.label3.TabIndex = 16;
             this.label3.Text = "City";
-            this.label3.Visible = false;
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(263, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 17);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "MR NO";
-            this.label4.Visible = false;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(548, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Phone Number";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(263, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Donor Name";
+            // 
+            // lblServiceType
+            // 
+            this.lblServiceType.AutoSize = true;
+            this.lblServiceType.BackColor = System.Drawing.Color.Transparent;
+            this.lblServiceType.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServiceType.Location = new System.Drawing.Point(3, 35);
+            this.lblServiceType.Name = "lblServiceType";
+            this.lblServiceType.Size = new System.Drawing.Size(66, 17);
+            this.lblServiceType.TabIndex = 7;
+            this.lblServiceType.Text = "Donor ID";
             // 
             // EnquiryDetailsUI
             // 

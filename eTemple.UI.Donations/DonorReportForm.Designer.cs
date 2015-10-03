@@ -32,8 +32,8 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DonorTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.donorReportDataSet = new eTemple.UI.Donations.DonorReportDataSet();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.donorReportDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.DonorTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorReportDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorReportDataSetBindingSource)).BeginInit();
@@ -49,10 +49,16 @@
             this.donorReportDataSet.DataSetName = "DonorReportDataSet";
             this.donorReportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // donorReportDataSetBindingSource
+            // 
+            this.donorReportDataSetBindingSource.DataSource = this.donorReportDataSet;
+            this.donorReportDataSetBindingSource.Position = 0;
+            // 
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
             this.reportViewer1.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
+            this.reportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "Donors";
             reportDataSource1.Value = this.DonorTableBindingSource;
@@ -63,11 +69,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(963, 261);
             this.reportViewer1.TabIndex = 0;
             // 
-            // donorReportDataSetBindingSource
-            // 
-            this.donorReportDataSetBindingSource.DataSource = this.donorReportDataSet;
-            this.donorReportDataSetBindingSource.Position = 0;
-            // 
             // DonorReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -75,7 +76,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(963, 261);
             this.Controls.Add(this.reportViewer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "DonorReportForm";
             this.Text = "DonorReportForm";
             this.Load += new System.EventHandler(this.DonorReportForm_Load);
@@ -89,9 +90,9 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource donorReportDataSetBindingSource;
         private DonorReportDataSet donorReportDataSet;
         private System.Windows.Forms.BindingSource DonorTableBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
