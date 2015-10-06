@@ -198,7 +198,12 @@ namespace eTemple.UI.Donations
             if (rdbServiceWseDonors.Checked)
                 filterstring = GetFilterstring();
             else
-                filterstring = GetFilterstring() + "OR (" +GetFilterForMonthlyAnnadanam()+")";
+            {
+                if (dtType.Id == 3)
+                    filterstring = GetFilterstring();
+                else
+                    filterstring = GetFilterstring() + " OR (" + GetFilterForMonthlyAnnadanam() + ")";
+            }
             var DonorList = oDonorRepository.GetAllasDataTable().Select(filterstring);
             if (DonorList.Count() != 0)
             {
@@ -252,22 +257,22 @@ namespace eTemple.UI.Donations
             var specialDayId = cmbSpecialDay.SelectedItem as SpecialDay;
             var serviceTypeId = cmbServiceType.SelectedItem as ServiceTypes;
             var serviceNameId = cmbServiceName.SelectedItem as ServiceName;
-
+            string prvsYeardate = dtPicker.Value.AddYears(-1).ToString("yyyy-MM-dd");
 
             switch (dtType.Id)
             {
                 case 1:
-                    FilterString = "DateTypeId=1 and DonorMonth=" + month.Id + " AND Thidhi=" + thidhi.Id;
+                    FilterString = "DateTypeId=1 and DonorMonth=" + month.Id + " AND Thidhi=" + thidhi.Id + " AND Donordate <= '#" + prvsYeardate + "#'";
                     performDate = month.Name + "   " + thidhi.Name;
                     break;
                 case 2:
                     performDate = dtPicker.Value.ToString("dd-MM");
-                    string prvsYeardate = dtPicker.Value.AddYears(-1).ToString("yyyy-MM-dd");
+
                     FilterString = "DateTypeId=2 and PerformDate='" + performDate + "' AND Donordate <= '#" + prvsYeardate + "#'";
                     performDate = dtPicker.Value.ToString("dd-MM-yyyy");
                     break;
                 case 3:
-                    FilterString = "DateTypeId=3 and  SpecialDayId=" + specialDayId.Id;
+                    FilterString = "DateTypeId=3 and  SpecialDayId=" + specialDayId.Id + " AND Donordate <= '#" + prvsYeardate + "#'";
                     performDate = specialDayId.Name;
                     break;
             }
@@ -290,6 +295,8 @@ namespace eTemple.UI.Donations
                     FilterString = " ServiceTypeId=" + serviceTypeId.Id;
                     if (serviceNameId != null)
                         FilterString = " ServiceNameId=" + serviceNameId.Id;
+                    if(serviceNameId.Id==1)
+                        FilterString = FilterString+" AND Donordate <= '#" + prvsYeardate + "#'";
                 }
                 else
                 {
@@ -301,7 +308,7 @@ namespace eTemple.UI.Donations
             else
             {
                 if (dtType.Id == 2)
-                    FilterString = FilterString + " and DateTypeId>0 OR (ServiceNameId=1 AND ServiceTypeId=1)";
+                    FilterString = FilterString + " and DateTypeId>0 OR (ServiceNameId=1 AND ServiceTypeId=1  AND Donordate <= '#" + prvsYeardate + "#')";
             }
 
             return FilterString;
@@ -365,9 +372,13 @@ namespace eTemple.UI.Donations
 
         private void button3_Click(object sender, EventArgs e)
         {
+            var dtType = cmbDateType.SelectedItem as DateType;
+            string prvsYeardate = dtPicker.Value.AddYears(-1).ToString("yyyy-MM-dd");
             DataTable dt = new DataTable();
-            string filterString = GetFilterstring().Replace(" OR (ServiceNameId=1 AND ServiceTypeId=1)", "") + " AND Mobile is null";
-            var DonorList = oDonorRepository.GetAllasDataTable().Select(filterString + " OR (" + GetFilterForMonthlyAnnadanam() + " AND Mobile is null)");
+            string filterString = GetFilterstring().Replace(" OR (ServiceNameId=1 AND ServiceTypeId=1  AND Donordate <= '#" + prvsYeardate + "#')", "") + " AND Mobile is null";
+            if (dtType.Id != 3)
+                filterString = filterString + " OR (" + GetFilterForMonthlyAnnadanam() + " AND Mobile is null)";
+            var DonorList = oDonorRepository.GetAllasDataTable().Select(filterString);
             if (DonorList.Count() != 0)
             {
                 DataView view = new DataView(DonorList.CopyToDataTable());
@@ -390,7 +401,6 @@ namespace eTemple.UI.Donations
         {
             var dtType = cmbDateType.SelectedItem as DateType;
             var thidhi = cmbThidhi.SelectedItem as Thidhi;
-
             int day = dtPicker.Value.Day;
             string prvsYeardate = DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd");
             if (dtType.Id == 2)
