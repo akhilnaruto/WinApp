@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using eTemple.Data.Utilities;
 
 namespace eTemple.UI.Donations
 {
@@ -17,11 +18,15 @@ namespace eTemple.UI.Donations
         private DailyAnnaDanamRepository dailyAnnaRepo;
         public GothramsRepository gothramRepo;
         public List<Gothrams> lstGothrams=null;
+        public List<DailyAnnaDanamModel> lstDailyAnnadanam = null;
+        public PrintHelper oPrintHelper = null;
         public DailyAnnadanam()
         {
             this.MaximizeBox = false;
             dailyAnnaRepo = new DailyAnnaDanamRepository();
             gothramRepo = new GothramsRepository();
+            oPrintHelper = new PrintHelper();
+            lstDailyAnnadanam = new List<DailyAnnaDanamModel>();
             InitializeComponent();
         }
 
@@ -41,7 +46,7 @@ namespace eTemple.UI.Donations
                 VillageName = txtVillageName.Text,
                 DonatedDate = performDate
             };
-
+            lstDailyAnnadanam.Add(dailyAnna);
             var checkIfExists = gothramRepo.checkIfGothramExists(txtGothram.Text);
 
             //If Gothra doesn't exist and if user has entered a Gothram
@@ -55,6 +60,7 @@ namespace eTemple.UI.Donations
             if (strInsertStatus == "Success")
             {
                 MessageBox.Show("Data inserted successfully.");
+                oPrintHelper.PrintTokens(lstDailyAnnadanam, this);
                 CleareAllcontrolsRecursive();
                 loadGothramAutoComplete();
                 //this.Close();

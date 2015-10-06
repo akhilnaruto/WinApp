@@ -14,6 +14,7 @@ using eTemple.UI.Donations;
 using eTemple.Data.Models;
 using System.Net.Http;
 using System.Configuration;
+using eTemple.Data.Utilities;
 
 namespace eTemple.UI
 {
@@ -217,7 +218,9 @@ namespace eTemple.UI
                     MessageBox.Show("Data inserted successfully.");
                     CleareAllcontrolsRecursive();
                     loadGothramAutoComplete();
-                    //sendSMS("91" + donorInfo.Mobile, smsMessage);
+                    sendSMS("91" + donorInfo.Mobile, smsMessage);
+                    PrintHelper oPrintHelper = new PrintHelper();
+                   // oPrintHelper.PrintTokens()
                 }
                 else
                     MessageBox.Show("There was a problem inserting data, kindly try again to save the record");

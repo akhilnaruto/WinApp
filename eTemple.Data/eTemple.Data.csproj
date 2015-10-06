@@ -105,6 +105,7 @@
     <Compile Include="Utilities\BindValues.cs" />
     <Compile Include="Utilities\CustomLINQtoDataSetMethods.cs" />
     <Compile Include="Utilities\ObjectShredder.cs" />
+    <Compile Include="Utilities\PrintHelper.cs" />
     <Compile Include="Utilities\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
