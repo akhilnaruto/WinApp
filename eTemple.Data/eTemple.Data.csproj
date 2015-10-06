@@ -84,6 +84,7 @@
     <Compile Include="Models\ServiceTypes.cs" />
     <Compile Include="Models\SpecialDay.cs" />
     <Compile Include="Models\Stars.cs" />
+    <Compile Include="Models\TokenPrint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DailyAnnaDanamRepository.cs" />
     <Compile Include="Repositories\DateTypeRepository.cs" />

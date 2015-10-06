@@ -19,5 +19,7 @@ namespace eTemple.Data.Models
         
         public int IsDateRelated { get; set; }
 
+        public int Cost { get; set; }
+
     }
 }

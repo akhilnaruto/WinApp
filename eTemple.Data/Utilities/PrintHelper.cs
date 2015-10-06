@@ -14,11 +14,11 @@ namespace eTemple.Data.Utilities
     {
         #region Printing Related
 
-        public void PrintTokens(List<DailyAnnaDanamModel> tokens,Form parentDialog)
+        public void PrintTokens(List<TokenPrint> tokens, Form parentDialog)
         {
             _tokensToPrint = tokens;
             _pageCounter = 0;
-            bool showPrintPreview = false;
+            bool showPrintPreview = true;
             PrintDocument pd = new PrintDocument();
             PrintDocument pd1 = new PrintDocument();
 
@@ -44,7 +44,7 @@ namespace eTemple.Data.Utilities
         }
 
 
-        private string RenderToken(DailyAnnaDanamModel token)
+        private string RenderToken(TokenPrint token)
         {
             var sb = new StringBuilder();
             string line = string.Empty;
@@ -58,21 +58,23 @@ namespace eTemple.Data.Utilities
             sb.AppendLine();
             sb.AppendLine();
             sb.AppendLine();
-           // DailyNum = string.Format("{0}", token.Id).PadRight(_lineWidth / 2);
+            DailyNum = string.Format("{0}", token.Id).PadRight(_lineWidth / 2);
             CDate = string.Format("Date : {0:dd/MM/yyyy h:mm tt}  ", System.DateTime.Now).PadRight(_lineWidth / 2);
-          //  line = DailyNum;
-           // sb.AppendLine(line);
+            line = DailyNum;
+            if (token.Id != string.Empty && token.Id!="") { 
+            sb.AppendLine(line);
+            }
             line = string.Empty;
             line = CDate;
             sb.AppendLine(line);
             line = string.Empty;
 
-            purpose = string.Format("Nithya Annadanam").PadLeft(20);
+            purpose = string.Format(token.ServiceType).PadLeft(20);
 
-            PerformDate = string.Format("Perform Date : {0:dd/MM/yyyy}", token.DonatedDate).PadLeft(_lineWidth / 2);
+           // PerformDate = string.Format("Perform Date : {0:dd/MM/yyyy}", token.DonatedDate).PadLeft(_lineWidth / 2);
 
 
-            line = string.Format("{0}", token.Name).PadRight(60);
+            //line = string.Format("{0}", token.Name).PadRight(60);
             if (purpose != "")
             {
                 line = line + purpose;
@@ -107,7 +109,7 @@ namespace eTemple.Data.Utilities
         }
 
         int _pageCounter;
-        List<DailyAnnaDanamModel> _tokensToPrint;
+        List<TokenPrint> _tokensToPrint;
         private const int _lineWidth = 90;
         private string _rulerLine = string.Empty.PadLeft(_lineWidth, '-');
         PaperSize paperSize = new PaperSize("Custom Receipt", 600, 300);

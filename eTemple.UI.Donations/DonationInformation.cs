@@ -36,6 +36,7 @@ namespace eTemple.UI
         private MonthlyAnnaRepository monthlyAnnaRepo;
         public GothramsRepository gothramRepo;
         public List<Gothrams> lstGothrams = null;
+        public List<TokenPrint> lstTokenPrint = null;
         public DonationInformation()
         {
             //dtpDate.MinDate = DateTime.Now;
@@ -63,6 +64,7 @@ namespace eTemple.UI
             thithiRepo = new ThidhiRepository();
             monthlyAnnaRepo = new MonthlyAnnaRepository();
             gothramRepo = new GothramsRepository();
+            lstTokenPrint = new List<TokenPrint>();
 
             bindData();
             btnUpdate.Visible = false;
@@ -195,6 +197,18 @@ namespace eTemple.UI
                     Mobile = txtMobile.Text,
                     DonorThithi = selectedDonorThithi
                 };
+                string performDate_ForPrint = string.Empty;
+
+                var selectedServiceType = cmbServiceType.SelectedItem as ServiceTypes;
+                TokenPrint oTokenPrint = new TokenPrint
+                {
+                    Id = txtMRNo.Text,
+                    Name = txtNameOn.Text,
+                    PhoneNumber = txtMobile.Text,
+                    Gothram = txtGothram.Text,
+                    VillageName = txtCity.Text,
+                    ServiceType = selectedServiceType.Name
+                };
 
                 //check if gothra exists
                 var checkIfExists = gothramRepo.checkIfGothramExists(txtGothram.Text);
@@ -208,9 +222,9 @@ namespace eTemple.UI
                 //Insert the Donor Information
                 string strInsertStatus = donorRepo.insertDonorInformation(donorInfo);
 
-                var selectedServiceType = cmbServiceType.SelectedItem as ServiceTypes;
+                //var selectedServiceType = cmbServiceType.SelectedItem as ServiceTypes;
 
-                string smsMessage = "Thanks " + donorInfo.NameOn+ " we have recieved an amount of Rs."+donorInfo.Amount+"/- towards " + selectedServiceType.Name;
+                string smsMessage = "Thanks " + donorInfo.NameOn + " we have recieved an amount of Rs." + donorInfo.Amount + "/- towards " + selectedServiceType.Name;
 
 
                 if (strInsertStatus == "Success")
@@ -220,7 +234,8 @@ namespace eTemple.UI
                     loadGothramAutoComplete();
                     sendSMS("91" + donorInfo.Mobile, smsMessage);
                     PrintHelper oPrintHelper = new PrintHelper();
-                   // oPrintHelper.PrintTokens()
+                    lstTokenPrint.Add(oTokenPrint);
+                    oPrintHelper.PrintTokens(lstTokenPrint, this);
                 }
                 else
                     MessageBox.Show("There was a problem inserting data, kindly try again to save the record");
@@ -238,7 +253,7 @@ namespace eTemple.UI
             return Convert.ToInt32(value);
         }
 
-        public void sendSMS(string phone,string smsMessage)
+        public void sendSMS(string phone, string smsMessage)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(ConfigurationManager.AppSettings["SvcpvdrAPI"]);
@@ -819,6 +834,7 @@ namespace eTemple.UI
         public bool validation()
         {
             bool needValidate = true;
+            var servicetypeId = cmbServiceType.SelectedItem as ServiceTypes;
 
             if (dtpDate.Text == "" || dtpDate.Text == string.Empty)
             {
@@ -931,6 +947,13 @@ namespace eTemple.UI
                 needValidate = false;
                 return needValidate;
             }
+            else if ((servicetypeId.Id == 1 || servicetypeId.Id == 2)&&(Convert.ToInt32(txtAmount.Text)<1116))
+            {
+                errorProvider1.SetError(txtAmount, "Amount cannot be less than Rs.1,116 for selected service type");
+                needValidate = false;
+                return needValidate;
+            }
+
             else
                 errorProvider1.Clear();
             if (txtMRNo.Text == "" || txtMRNo.Text == string.Empty)
@@ -1086,6 +1109,10 @@ namespace eTemple.UI
             var serviceType = cmbServiceType.SelectedItem as ServiceTypes;
             if (serviceType != null)
             {
+                if (serviceType.Cost != 0)
+                {
+                    txtAmount.Text = serviceType.Cost.ToString();
+                }
                 cmbServiceName.DataSource = null;
 
                 var ServiceTypeData = serviceNameRepo.GetAllAsQuerable().Where(sType => sType.ServiceTypeId == serviceType.Id).ToList();

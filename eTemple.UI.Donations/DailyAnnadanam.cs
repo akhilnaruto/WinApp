@@ -18,7 +18,7 @@ namespace eTemple.UI.Donations
         private DailyAnnaDanamRepository dailyAnnaRepo;
         public GothramsRepository gothramRepo;
         public List<Gothrams> lstGothrams=null;
-        public List<DailyAnnaDanamModel> lstDailyAnnadanam = null;
+        public List<TokenPrint> lstTokenPrint = null;
         public PrintHelper oPrintHelper = null;
         public DailyAnnadanam()
         {
@@ -26,7 +26,7 @@ namespace eTemple.UI.Donations
             dailyAnnaRepo = new DailyAnnaDanamRepository();
             gothramRepo = new GothramsRepository();
             oPrintHelper = new PrintHelper();
-            lstDailyAnnadanam = new List<DailyAnnaDanamModel>();
+            lstTokenPrint = new List<TokenPrint>();
             InitializeComponent();
         }
 
@@ -46,7 +46,17 @@ namespace eTemple.UI.Donations
                 VillageName = txtVillageName.Text,
                 DonatedDate = performDate
             };
-            lstDailyAnnadanam.Add(dailyAnna);
+
+            TokenPrint oTokenPrint = new TokenPrint
+            {
+                Name = txtName.Text,
+                PhoneNumber = txtPhoneNumber.Text,
+                Gothram = txtGothram.Text,
+                VillageName = txtVillageName.Text,
+                DonatedDate = performDate,
+                ServiceType="Nithya Annadanam"
+            };
+            lstTokenPrint.Add(oTokenPrint);
             var checkIfExists = gothramRepo.checkIfGothramExists(txtGothram.Text);
 
             //If Gothra doesn't exist and if user has entered a Gothram
@@ -60,7 +70,7 @@ namespace eTemple.UI.Donations
             if (strInsertStatus == "Success")
             {
                 MessageBox.Show("Data inserted successfully.");
-                oPrintHelper.PrintTokens(lstDailyAnnadanam, this);
+                oPrintHelper.PrintTokens(lstTokenPrint, this);
                 CleareAllcontrolsRecursive();
                 loadGothramAutoComplete();
                 //this.Close();
