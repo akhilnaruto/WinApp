@@ -49,6 +49,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -107,6 +109,7 @@
     <Compile Include="Utilities\CustomLINQtoDataSetMethods.cs" />
     <Compile Include="Utilities\ObjectShredder.cs" />
     <Compile Include="Utilities\PrintHelper.cs" />
+    <Compile Include="Utilities\SMSHelper.cs" />
     <Compile Include="Utilities\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -20,11 +20,14 @@ namespace eTemple.UI.Donations
         public List<Gothrams> lstGothrams=null;
         public List<TokenPrint> lstTokenPrint = null;
         public PrintHelper oPrintHelper = null;
+        private ServiceTypeRepository serviceTypeRepo;
+
         public DailyAnnadanam()
         {
             this.MaximizeBox = false;
             dailyAnnaRepo = new DailyAnnaDanamRepository();
             gothramRepo = new GothramsRepository();
+            serviceTypeRepo = new ServiceTypeRepository();
             oPrintHelper = new PrintHelper();
             lstTokenPrint = new List<TokenPrint>();
             InitializeComponent();
@@ -57,6 +60,7 @@ namespace eTemple.UI.Donations
                 ServiceType="Nithya Annadanam"
             };
             lstTokenPrint.Add(oTokenPrint);
+
             var checkIfExists = gothramRepo.checkIfGothramExists(txtGothram.Text);
 
             //If Gothra doesn't exist and if user has entered a Gothram
@@ -67,12 +71,19 @@ namespace eTemple.UI.Donations
 
             string strInsertStatus = dailyAnnaRepo.insertDonorInformation(dailyAnna);
 
+            var bindServiceType = serviceTypeRepo.GetAllAsQuerable(10);
+            List<int> serviceTypeValue = bindServiceType.Select(p => p.Cost).ToList();
+
+            string smsMessage = "Thanks " + dailyAnna.Name + " we have recieved an amount of Rs." + serviceTypeValue[0] + "/- towards Daily Annadanam";
+
             if (strInsertStatus == "Success")
             {
                 MessageBox.Show("Data inserted successfully.");
                 oPrintHelper.PrintTokens(lstTokenPrint, this);
                 CleareAllcontrolsRecursive();
                 loadGothramAutoComplete();
+                SMSHelper smsHelp = new SMSHelper();
+                smsHelp.sendSMS("91" + dailyAnna.PhoneNumber, smsMessage);
                 //this.Close();
             }
         }

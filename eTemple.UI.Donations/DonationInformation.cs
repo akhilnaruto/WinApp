@@ -225,14 +225,14 @@ namespace eTemple.UI
                 //var selectedServiceType = cmbServiceType.SelectedItem as ServiceTypes;
 
                 string smsMessage = "Thanks " + donorInfo.NameOn + " we have recieved an amount of Rs." + donorInfo.Amount + "/- towards " + selectedServiceType.Name;
-
-
+                
                 if (strInsertStatus == "Success")
                 {
                     MessageBox.Show("Data inserted successfully.");
                     CleareAllcontrolsRecursive();
                     loadGothramAutoComplete();
-                    sendSMS("91" + donorInfo.Mobile, smsMessage);
+                    SMSHelper smshelper = new SMSHelper();
+                    smshelper.sendSMS("91" + donorInfo.Mobile, smsMessage);
                     PrintHelper oPrintHelper = new PrintHelper();
                     lstTokenPrint.Add(oTokenPrint);
                     oPrintHelper.PrintTokens(lstTokenPrint, this);
@@ -252,18 +252,7 @@ namespace eTemple.UI
                 return defaultValue;
             return Convert.ToInt32(value);
         }
-
-        public void sendSMS(string phone, string smsMessage)
-        {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(ConfigurationManager.AppSettings["SvcpvdrAPI"]);
-            // Usage
-            HttpResponseMessage response = client.GetAsync("?User=" + ConfigurationManager.AppSettings["User"] +
-                "&passwd=" + ConfigurationManager.AppSettings["passwd"] + "&mobilenumber=" + phone + "&message=" +
-                smsMessage + "&sid=" + ConfigurationManager.AppSettings["sid"] +
-                "&mtype=" + ConfigurationManager.AppSettings["mtype"] + "&DR=" + ConfigurationManager.AppSettings["DR"] + "").Result;
-        }
-
+        
         private int SelectedDateTypeId(out int selectedServiceTypeId, out int selectedServiceNameId,
             out int selectedMonthId, out int selectedStarId, out int selectedSpecialDayId, out int selectedThithiId,
             out int selectedDayId, out int selectedDonorThithiId)
@@ -1112,6 +1101,12 @@ namespace eTemple.UI
                 if (serviceType.Cost != 0)
                 {
                     txtAmount.Text = serviceType.Cost.ToString();
+                    txtAmount.Enabled = false;
+                }
+                else
+                {
+                    txtAmount.Text = string.Empty;
+                    txtAmount.Enabled = true;
                 }
                 cmbServiceName.DataSource = null;
 

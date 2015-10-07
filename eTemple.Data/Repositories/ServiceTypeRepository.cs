@@ -18,7 +18,7 @@ namespace eTemple.Data.Repositories
         public IEnumerable<ServiceTypes> GetAllAsQuerable()
         {
 
-            return TempleDb.Query<ServiceTypes>("Select * From ServiceTypes order by Id asc").ToList();
+            return TempleDb.Query<ServiceTypes>("Select * From ServiceTypes where Name <> 'Daily Annadanam' order by Id asc ").ToList();
 
         }
 
