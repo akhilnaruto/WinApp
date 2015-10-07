@@ -74,6 +74,7 @@
     <Compile Include="Models\MonthlyAnnaDanam.cs" />
     <Compile Include="Models\Paksha.cs" />
     <Compile Include="Models\SelectedDonorOptions.cs" />
+    <Compile Include="Models\TeluguCalendar.cs" />
     <Compile Include="Models\Thidhi.cs" />
     <Compile Include="Models\Months.cs" />
     <Compile Include="Models\PetaPoco.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Models\ServiceTypes.cs" />
     <Compile Include="Models\SpecialDay.cs" />
     <Compile Include="Models\Stars.cs" />
+    <Compile Include="Models\TokenPrint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DailyAnnaDanamRepository.cs" />
     <Compile Include="Repositories\DateTypeRepository.cs" />
@@ -99,10 +101,12 @@
     <Compile Include="Repositories\ServiceTypeRepository.cs" />
     <Compile Include="Repositories\SpecialDayRepository.cs" />
     <Compile Include="Repositories\StarsRepository.cs" />
+    <Compile Include="Repositories\TeluguCalendarRepository.cs" />
     <Compile Include="Repositories\ThidhiRepository.cs" />
     <Compile Include="Utilities\BindValues.cs" />
     <Compile Include="Utilities\CustomLINQtoDataSetMethods.cs" />
     <Compile Include="Utilities\ObjectShredder.cs" />
+    <Compile Include="Utilities\PrintHelper.cs" />
     <Compile Include="Utilities\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

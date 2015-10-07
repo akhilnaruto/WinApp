@@ -300,6 +300,7 @@ namespace eTemple.Data.Models
 		[Column] public int Id { get; set; }
 		[Column] public string Name { get; set; }
 		[Column] public int IsDateRelated { get; set; }
+        [Column] public int Cost { get; set; }
 	}
     
 	[TableName("specialday")]

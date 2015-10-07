@@ -45,11 +45,28 @@ namespace eTemple.Data.Repositories
         }
 
 
-        public DataSet getTotalAmountperSVC(string CollectionDate)
+        public DataSet getCostbyId(string serviceID)
         {
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
-                using (MySqlCommand cmd = new MySqlCommand("select st.Name as ServiceType,sum(d.amount) as Amount,count(1) as cnt from donors d  inner join servicetypes st on d.ServiceTypeId=st.id where d.DonorDate='" + CollectionDate + "' group by d.ServiceTypeId", conn))
+                using (MySqlCommand cmd = new MySqlCommand("select cost from servicetypes where id =" + serviceID, conn))
+                {
+                    using (MySqlDataAdapter da = new MySqlDataAdapter())
+                    {
+                        da.SelectCommand = cmd;
+                        dsreturnObj = new DataSet();
+                        da.Fill(dsreturnObj);
+                    }
+                }
+            }
+            return dsreturnObj;
+        }
+
+        public DataSet getTotalAmountpbySVC(string CollectionDate)
+        {
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("select st.Name as ServiceType,sum(d.amount) as Amount,count(1) as cnt,st.cost as cost from donors d  inner join servicetypes st on d.ServiceTypeId=st.id where d.DonorDate='" + CollectionDate + "' group by d.ServiceTypeId", conn))
                 {
                     using (MySqlDataAdapter da = new MySqlDataAdapter())
                     {

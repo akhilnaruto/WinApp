@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rdbAlldonors = new System.Windows.Forms.RadioButton();
             this.rdbServiceWseDonors = new System.Windows.Forms.RadioButton();
             this.lblServiceType = new System.Windows.Forms.Label();
@@ -49,6 +50,8 @@
             this.lblSpecialDay = new System.Windows.Forms.Label();
             this.btnGenerateAdress = new System.Windows.Forms.Button();
             this.gpMasterReport = new System.Windows.Forms.GroupBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // rdbAlldonors
@@ -315,6 +318,10 @@
             this.gpMasterReport.TabStop = false;
             this.gpMasterReport.Text = "Donor Master Report";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // DonorMasterReportUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -348,6 +355,7 @@
             this.Name = "DonorMasterReportUI";
             this.Text = "Donor Master Report";
             this.Load += new System.EventHandler(this.DonorMasterReportUI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,5 +384,6 @@
         private System.Windows.Forms.Label lblSpecialDay;
         private System.Windows.Forms.Button btnGenerateAdress;
         private System.Windows.Forms.GroupBox gpMasterReport;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
