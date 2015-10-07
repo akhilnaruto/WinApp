@@ -63,6 +63,7 @@ namespace eTemple.UI.Donations
             cmbThidhi.DataSource = lstThidhi;
             cmbThidhi.DisplayMember = "Name";
             rdbAlldonors.Checked = true;
+            cmbServiceType.Enabled = false;
             // cmbPaksha.DataSource = lstPaksha;
             //  cmbPaksha.DisplayMember = "Name";
         }
@@ -96,6 +97,16 @@ namespace eTemple.UI.Donations
         {
             if (!show)
             {
+                cmbDateType.Enabled = false;
+                lblMonth.Enabled = false;
+                cmbMonth.Enabled = false;
+                lblThidhi.Enabled = false;
+                cmbThidhi.Enabled = false;
+                lblSpecialDay.Enabled = false;
+                cmbSpecialDay.Enabled = false;
+                dtPicker.Enabled = false;
+                lblDateType.Enabled = false;
+
                 cmbDateType.Visible = false;
                 lblMonth.Visible = false;
                 cmbMonth.Visible = false;
@@ -108,6 +119,8 @@ namespace eTemple.UI.Donations
             }
             else
             {
+                cmbDateType.Enabled = true;
+                lblDateType.Enabled = true;
                 cmbDateType.Visible = true;
                 lblDateType.Visible = true;
                 cmbDateType.DataSource = null;
@@ -129,6 +142,8 @@ namespace eTemple.UI.Donations
             if (rdbServiceWseDonors.Checked)
             {
                 //btnGenerateAdress.Visible = false;
+                lblServiceType.Enabled = true;
+                cmbServiceType.Enabled = true;
                 lblServiceType.Visible = true;
                 cmbServiceType.Visible = true;
                 cmbServiceType.DataSource = lstServiceType;
@@ -138,6 +153,12 @@ namespace eTemple.UI.Donations
             }
             else
             {
+                lblServiceType.Enabled = false;
+                cmbServiceType.Enabled = false;
+                lblServiceName.Enabled = false;
+                cmbServiceName.Enabled = false;
+                btnGenerateAdress.Enabled = true;
+
                 lblServiceType.Visible = false;
                 cmbServiceType.Visible = false;
                 lblServiceName.Visible = false;
@@ -150,6 +171,9 @@ namespace eTemple.UI.Donations
         {
             // cmbServiceName.Items.Clear();
             cmbServiceName.DataSource = null;
+            lblServiceName.Enabled = true;
+            cmbServiceName.Enabled = true;
+
             lblServiceName.Visible = true;
             cmbServiceName.Visible = true;
             var serviceType = cmbServiceType.SelectedItem as ServiceTypes;
@@ -158,6 +182,9 @@ namespace eTemple.UI.Donations
                 cmbServiceName.DataSource = oServiceNameRep.GetAllAsQuerable().Where(sType => sType.ServiceTypeId == serviceType.Id).ToList();
                 if (cmbServiceName.Items.Count == 0)
                 {
+                    lblServiceName.Enabled = false;
+                    cmbServiceName.Enabled = false;
+
                     lblServiceName.Visible = false;
                     cmbServiceName.Visible = false;
                     if (serviceType.IsDateRelated == 0)
@@ -182,8 +209,10 @@ namespace eTemple.UI.Donations
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if (cmbServiceName.SelectedIndex >= 0)
-            //  {
+
+            bool checkvalidate = validation();
+            if (checkvalidate == false && chkNonPerformSvc.Checked == false)
+                return;
             var dtType = cmbDateType.SelectedItem as DateType;
             DataTable dt = new DataTable();
             var ServiceName = cmbServiceName.SelectedItem as ServiceName;
@@ -294,9 +323,11 @@ namespace eTemple.UI.Donations
                     performDate = "";
                     FilterString = " ServiceTypeId=" + serviceTypeId.Id;
                     if (serviceNameId != null)
+                    {
                         FilterString = " ServiceNameId=" + serviceNameId.Id;
-                    if(serviceNameId.Id==1)
-                        FilterString = FilterString+" AND Donordate <= '#" + prvsYeardate + "#'";
+                        if (serviceNameId.Id == 1)
+                            FilterString = FilterString + " AND Donordate <= '#" + prvsYeardate + "#'";
+                    }
                 }
                 else
                 {
@@ -332,6 +363,15 @@ namespace eTemple.UI.Donations
                     case 1:
                         //  lblPaksha.Visible = true;
                         //  cmbPaksha.Visible = true;
+                        lblMonth.Enabled = !isMonthly;
+                        cmbMonth.Enabled = !isMonthly;
+                        lblThidhi.Enabled = true;
+                        cmbThidhi.Enabled = true;
+                        lblServicePerfmdt.Enabled = false;
+                        dtPicker.Enabled = false;
+                        lblSpecialDay.Enabled = false;
+                        cmbSpecialDay.Enabled = false;
+
                         lblMonth.Visible = !isMonthly;
                         cmbMonth.Visible = !isMonthly;
                         lblThidhi.Visible = true;
@@ -342,6 +382,17 @@ namespace eTemple.UI.Donations
                         cmbSpecialDay.Visible = false;
                         break;
                     case 2:
+                        lblServicePerfmdt.Enabled = true;
+                        dtPicker.Enabled = true;
+                        //lblPaksha.Visible = false;
+                        // cmbPaksha.Visible = false;
+                        lblMonth.Enabled = false;
+                        cmbMonth.Enabled = false;
+                        lblThidhi.Enabled = false;
+                        cmbThidhi.Enabled = false;
+                        lblSpecialDay.Enabled = false;
+                        cmbSpecialDay.Enabled = false;
+
                         lblServicePerfmdt.Visible = true;
                         dtPicker.Visible = true;
                         //lblPaksha.Visible = false;
@@ -354,6 +405,17 @@ namespace eTemple.UI.Donations
                         cmbSpecialDay.Visible = false;
                         break;
                     case 3:
+                        lblSpecialDay.Enabled = true;
+                        cmbSpecialDay.Enabled = true;
+                        // lblPaksha.Visible = false;
+                        // cmbPaksha.Visible = false;
+                        lblMonth.Enabled = false;
+                        cmbMonth.Enabled = false;
+                        lblThidhi.Enabled = false;
+                        cmbThidhi.Enabled = false;
+                        lblServicePerfmdt.Enabled = false;
+                        dtPicker.Enabled = false;
+
                         lblSpecialDay.Visible = true;
                         cmbSpecialDay.Visible = true;
                         // lblPaksha.Visible = false;
@@ -376,7 +438,7 @@ namespace eTemple.UI.Donations
             string prvsYeardate = dtPicker.Value.AddYears(-1).ToString("yyyy-MM-dd");
             DataTable dt = new DataTable();
             string filterString = GetFilterstring().Replace(" OR (ServiceNameId=1 AND ServiceTypeId=1  AND Donordate <= '#" + prvsYeardate + "#')", "") + " AND Mobile is null";
-            if (dtType.Id != 3)
+            if (cmbDateType.Enabled==true && dtType.Id != 3)
                 filterString = filterString + " OR (" + GetFilterForMonthlyAnnadanam() + " AND Mobile is null)";
             var DonorList = oDonorRepository.GetAllasDataTable().Select(filterString);
             if (DonorList.Count() != 0)
@@ -407,6 +469,82 @@ namespace eTemple.UI.Donations
                 return "DonorDay=" + dtPicker.Value.Day + " AND Donordate >= '#" + prvsYeardate + "#'";
             else
                 return "DonorThithi=" + thidhi.Id + " AND Donordate >= '#" + prvsYeardate + "#'";
+        }
+
+        public bool validation()
+        {
+            bool needValidate = true;
+            var servicetypeId = cmbServiceType.SelectedItem as ServiceTypes;
+
+            if (cmbServiceType.Enabled == true)
+            {
+                if (cmbServiceType.Text == "Select" || cmbServiceType.Text == string.Empty)
+                {
+                    errorProvider1.SetError(cmbServiceType, "Need to select Service Type");
+                    needValidate = false;
+                    return needValidate;
+                }
+                else
+                    errorProvider1.Clear();
+            }
+            //if (cmbServiceName.Text == "" || cmbServiceName.Text == string.Empty)
+            //{
+            //    errorProvider1.SetError(cmbServiceName, "Need to select Service Name");
+            //    needValidate = false;
+            //    return needValidate;
+            //}
+            //else
+            //    errorProvider1.Clear();
+
+            if (cmbDateType.Enabled == true)
+            {
+                if (cmbDateType.Text == "Select" || cmbDateType.Text == string.Empty)
+                {
+                    errorProvider1.SetError(cmbDateType, "Need to select Date Type");
+                    needValidate = false;
+                    return needValidate;
+                }
+                else
+                    errorProvider1.Clear();
+            }
+
+            if (cmbSpecialDay.Enabled == true)
+            {
+                if (cmbSpecialDay.Text == "Select" || cmbSpecialDay.Text == string.Empty)
+                {
+                    errorProvider1.SetError(cmbSpecialDay, "Need to select Special Day");
+                    needValidate = false;
+                    return needValidate;
+                }
+                else
+                    errorProvider1.Clear();
+            }
+
+            if (cmbMonth.Enabled == true)
+            {
+                if (cmbMonth.Text == "Select" || cmbMonth.Text == string.Empty)
+                {
+                    errorProvider1.SetError(cmbMonth, "Need to select Month");
+                    needValidate = false;
+                    return needValidate;
+                }
+                else
+                    errorProvider1.Clear();
+            }
+
+            if (cmbThidhi.Enabled == true)
+            {
+                if (cmbThidhi.Text == "Select" || cmbThidhi.Text == string.Empty)
+                {
+                    errorProvider1.SetError(cmbThidhi, "Need to select Thithi");
+                    needValidate = false;
+                    return needValidate;
+                }
+                else
+                    errorProvider1.Clear();
+            }
+
+            return needValidate;
         }
     }
 }
