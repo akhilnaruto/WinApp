@@ -1,6 +1,7 @@
 ﻿using eTemple.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,27 @@ namespace eTemple.Data.Repositories
         public void Update(Employees entity)
         {
             throw new NotImplementedException();
+        }
+
+        public Employees ValidateLogin(string loginId, string password)
+        {
+            using (var db = new eTempleDbDB())
+            {
+                var emp = db.SingleOrDefault<Employees>("Select * from Employees where LoginId=@0 and Password=@1", loginId, password);
+                if (emp != null && emp.Name != null)
+                {
+                    return emp;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public DataTable getEmpData()
+        {
+            return TempleDb.ExecuteReader("Select * From employees order by Id");
         }
     }
 }
