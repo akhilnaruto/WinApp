@@ -427,6 +427,17 @@ namespace eTemple.Data.Models
         public string Name { get; set; }
     }
 
+    [TableName("state")]
+    [PrimaryKey("Id", autoIncrement = false)]
+    [ExplicitColumns]
+    public partial class state : eTempleDbDB.Record<state>
+    {
+        [Column]
+        public int Id { get; set; }
+        [Column]
+        public string Name { get; set; }
+    }
+
     [TableName("telugucalendar")]
     [PrimaryKey("EnglishDate", autoIncrement = false)]
     [ExplicitColumns]

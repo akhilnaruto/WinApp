@@ -134,7 +134,7 @@
             this.txtSurname.MaxLength = 100;
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(200, 25);
-            this.txtSurname.TabIndex = 4;
+            this.txtSurname.TabIndex = 2;
             // 
             // lblSurname
             // 
@@ -156,7 +156,7 @@
             this.txtCity.MaxLength = 100;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(200, 25);
-            this.txtCity.TabIndex = 7;
+            this.txtCity.TabIndex = 5;
             // 
             // lblCity
             // 
@@ -178,7 +178,7 @@
             this.txtMRNo.MaxLength = 20;
             this.txtMRNo.Name = "txtMRNo";
             this.txtMRNo.Size = new System.Drawing.Size(200, 25);
-            this.txtMRNo.TabIndex = 16;
+            this.txtMRNo.TabIndex = 13;
             // 
             // lblMRNo
             // 
@@ -200,7 +200,7 @@
             this.txtOccassion.MaxLength = 200;
             this.txtOccassion.Name = "txtOccassion";
             this.txtOccassion.Size = new System.Drawing.Size(200, 25);
-            this.txtOccassion.TabIndex = 13;
+            this.txtOccassion.TabIndex = 10;
             // 
             // lblOccassion
             // 
@@ -221,8 +221,9 @@
             this.txtCountry.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtCountry.MaxLength = 200;
             this.txtCountry.Name = "txtCountry";
+            this.txtCountry.ReadOnly = true;
             this.txtCountry.Size = new System.Drawing.Size(200, 25);
-            this.txtCountry.TabIndex = 10;
+            this.txtCountry.TabIndex = 400;
             // 
             // lblCountry
             // 
@@ -245,7 +246,7 @@
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(498, 27);
-            this.txtRemarks.TabIndex = 17;
+            this.txtRemarks.TabIndex = 14;
             // 
             // lblRemarks
             // 
@@ -267,7 +268,7 @@
             this.txtGothram.MaxLength = 200;
             this.txtGothram.Name = "txtGothram";
             this.txtGothram.Size = new System.Drawing.Size(200, 25);
-            this.txtGothram.TabIndex = 14;
+            this.txtGothram.TabIndex = 11;
             // 
             // lblGothram
             // 
@@ -289,7 +290,7 @@
             this.txtNameOn.MaxLength = 200;
             this.txtNameOn.Name = "txtNameOn";
             this.txtNameOn.Size = new System.Drawing.Size(200, 25);
-            this.txtNameOn.TabIndex = 11;
+            this.txtNameOn.TabIndex = 8;
             // 
             // lblNameOn
             // 
@@ -311,7 +312,7 @@
             this.txtPin.MaxLength = 10;
             this.txtPin.Name = "txtPin";
             this.txtPin.Size = new System.Drawing.Size(200, 25);
-            this.txtPin.TabIndex = 8;
+            this.txtPin.TabIndex = 6;
             this.txtPin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPin_KeyPress);
             // 
             // lblPin
@@ -334,7 +335,7 @@
             this.txtName.MaxLength = 200;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(200, 25);
-            this.txtName.TabIndex = 5;
+            this.txtName.TabIndex = 3;
             // 
             // lblName
             // 
@@ -368,7 +369,7 @@
             this.dtpDate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 25);
-            this.dtpDate.TabIndex = 1;
+            this.dtpDate.TabIndex = 300;
             // 
             // lblStar
             // 
@@ -390,7 +391,7 @@
             this.txtState.MaxLength = 200;
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(200, 25);
-            this.txtState.TabIndex = 9;
+            this.txtState.TabIndex = 7;
             // 
             // lblState
             // 
@@ -412,7 +413,7 @@
             this.txtDistrict.MaxLength = 200;
             this.txtDistrict.Name = "txtDistrict";
             this.txtDistrict.Size = new System.Drawing.Size(200, 25);
-            this.txtDistrict.TabIndex = 6;
+            this.txtDistrict.TabIndex = 4;
             // 
             // lblDistrict
             // 
@@ -435,7 +436,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(200, 36);
-            this.txtAddress.TabIndex = 3;
+            this.txtAddress.TabIndex = 1;
             // 
             // lblAddress
             // 
@@ -457,7 +458,7 @@
             this.txtAmount.MaxLength = 20;
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(200, 25);
-            this.txtAmount.TabIndex = 15;
+            this.txtAmount.TabIndex = 12;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // lblAmount
@@ -482,7 +483,7 @@
             this.cmbStar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbStar.Name = "cmbStar";
             this.cmbStar.Size = new System.Drawing.Size(200, 25);
-            this.cmbStar.TabIndex = 12;
+            this.cmbStar.TabIndex = 9;
             // 
             // grpBoxGeneralInfo
             // 
@@ -523,7 +524,7 @@
             this.txtEmailId.MaxLength = 50;
             this.txtEmailId.Name = "txtEmailId";
             this.txtEmailId.Size = new System.Drawing.Size(200, 25);
-            this.txtEmailId.TabIndex = 20;
+            this.txtEmailId.TabIndex = 17;
             // 
             // label1
             // 
@@ -545,7 +546,7 @@
             this.txtMobile.MaxLength = 10;
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(200, 25);
-            this.txtMobile.TabIndex = 19;
+            this.txtMobile.TabIndex = 16;
             this.txtMobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMobile_KeyPress);
             // 
             // label2
@@ -568,7 +569,7 @@
             this.txtLandline.MaxLength = 20;
             this.txtLandline.Name = "txtLandline";
             this.txtLandline.Size = new System.Drawing.Size(200, 25);
-            this.txtLandline.TabIndex = 18;
+            this.txtLandline.TabIndex = 15;
             // 
             // grpServiceInfo
             // 

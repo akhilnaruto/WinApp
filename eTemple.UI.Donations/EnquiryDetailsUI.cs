@@ -15,12 +15,12 @@ namespace eTemple.UI.Donations
     {
         DonorRepository donorRepositoy;
         List<Donors> donors = new List<Donors>();
-   
+
         public EnquiryDetailsUI()
         {
             InitializeComponent();
             donorRepositoy = new DonorRepository();
-            donors = donorRepositoy.GetAllAsQuerable().ToList();;
+            donors = donorRepositoy.GetAllAsQuerable().ToList();
             dataGridView1.AutoGenerateColumns = false;
 
         }
@@ -32,18 +32,18 @@ namespace eTemple.UI.Donations
 
         private void LoadDataAndRenderInUI()
         {
-         
-            var distinctDonors = donors.GroupBy(donor => donor.DonorName).ToList().Select(
+
+            var distinctDonors = donors.GroupBy(donor => donor.NameOn).ToList().Select(
                                                  x => new SelectedDonor
                                                  {
                                                      Name = x.Key,
                                                      Id = x.Select(y => y.Id).FirstOrDefault(),
-                                                     PhoneNumber = x.Select(y => y.Landline).FirstOrDefault(),
+                                                     PhoneNumber = x.Select(y => y.Mobile).FirstOrDefault(),
                                                      Mr_Number = x.Select(y => y.MR_No).FirstOrDefault().ToString(),
                                                      City = x.Select(y => y.City).FirstOrDefault(),
                                                  }).ToList();
-                         
- 
+
+
             donorIdComboBox.DataSource = distinctDonors;
             donorNameComboBox.DataSource = distinctDonors;
             phoneNumberComboBox.DataSource = distinctDonors;
@@ -61,9 +61,9 @@ namespace eTemple.UI.Donations
         private void RenderDataGrid()
         {
             var selectedDonor = donorNameComboBox.SelectedItem as SelectedDonor;
-            if(selectedDonor != null)
+            if (selectedDonor != null)
             {
-                var matchedDonors = donors.Where(donor => donor.DonorName == selectedDonor.Name);
+                var matchedDonors = donors.Where(donor => donor.NameOn == selectedDonor.Name);
                 AddMatchedDonorsToGrid(matchedDonors.ToList());
             }
 
@@ -78,7 +78,7 @@ namespace eTemple.UI.Donations
                 dataGridView1.Rows.Add(donor.Id, donor.Surname, donor.DonorName, donor.Address);
             }
         }
-     
+
 
         private void donorIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -98,10 +98,10 @@ namespace eTemple.UI.Donations
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+
         }
 
-      
+
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -114,9 +114,19 @@ namespace eTemple.UI.Donations
             this.Close();
         }
 
-       
+        private void label4_Click(object sender, EventArgs e)
+        {
 
-       
+        }
+
+        private void gpbEnquiry_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
     }
 
     internal class SelectedDonor
