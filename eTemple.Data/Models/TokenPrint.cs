@@ -15,5 +15,6 @@ namespace eTemple.Data.Models
         public string VillageName { get; set; }
         public string DonatedDate { get; set; }
         public string ServiceType { get; set; }
+        public double Cost { get; set; }
     }
 }

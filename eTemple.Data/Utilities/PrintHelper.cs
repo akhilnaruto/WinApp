@@ -14,18 +14,18 @@ namespace eTemple.Data.Utilities
     {
         #region Printing Related
 
-        public void PrintTokens(List<TokenPrint> tokens, Form parentDialog)
+        public void PrintTokens(List<TokenPrint> tokens, Form parentDialog, string PrinterName, bool showPrintPreview)
         {
             _tokensToPrint = tokens;
             _pageCounter = 0;
-            bool showPrintPreview = true;
+            //bool showPrintPreview = true;
             PrintDocument pd = new PrintDocument();
             PrintDocument pd1 = new PrintDocument();
 
 
             pd.DefaultPageSettings.PaperSize = paperSize;
             pd.PrintPage += printDoc_PrintPage;
-            pd.PrinterSettings.PrinterName = "HP Deskjet 1510 series";
+            pd.PrinterSettings.PrinterName = PrinterName;
 
             //ToDo: can remove preview in the actual production.
             if (showPrintPreview)
@@ -61,8 +61,9 @@ namespace eTemple.Data.Utilities
             DailyNum = string.Format("{0}", token.Id).PadRight(_lineWidth / 2);
             CDate = string.Format("Date : {0:dd/MM/yyyy h:mm tt}  ", System.DateTime.Now).PadRight(_lineWidth / 2);
             line = DailyNum;
-            if (token.Id != string.Empty && token.Id!="") { 
-            sb.AppendLine(line);
+            if (token.Id != string.Empty && token.Id != "")
+            {
+                sb.AppendLine(line);
             }
             line = string.Empty;
             line = CDate;
@@ -71,7 +72,7 @@ namespace eTemple.Data.Utilities
 
             purpose = string.Format(token.ServiceType).PadLeft(20);
 
-           // PerformDate = string.Format("Perform Date : {0:dd/MM/yyyy}", token.DonatedDate).PadLeft(_lineWidth / 2);
+            // PerformDate = string.Format("Perform Date : {0:dd/MM/yyyy}", token.DonatedDate).PadLeft(_lineWidth / 2);
 
 
             //line = string.Format("{0}", token.Name).PadRight(60);
@@ -98,8 +99,8 @@ namespace eTemple.Data.Utilities
             line = "";
 
 
-            int totalCost = 116;
-            line = line + string.Format("Amt : {0:F}  ", totalCost).PadLeft(_lineWidth);
+            // int totalCost = 116;
+            line = line + string.Format("Amt : {0:F}  ", token.Cost).PadLeft(_lineWidth);
 
             sb.AppendLine(line);
             sb.AppendLine();

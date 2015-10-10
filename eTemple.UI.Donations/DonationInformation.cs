@@ -207,7 +207,8 @@ namespace eTemple.UI
                     PhoneNumber = txtMobile.Text,
                     Gothram = txtGothram.Text,
                     VillageName = txtCity.Text,
-                    ServiceType = selectedServiceType.Name
+                    ServiceType = selectedServiceType.Name,
+                    Cost = Convert.ToDouble(txtAmount.Text)
                 };
 
                 //check if gothra exists
@@ -235,7 +236,7 @@ namespace eTemple.UI
                     smshelper.sendSMS("91" + donorInfo.Mobile, smsMessage);
                     PrintHelper oPrintHelper = new PrintHelper();
                     lstTokenPrint.Add(oTokenPrint);
-                    oPrintHelper.PrintTokens(lstTokenPrint, this);
+                    oPrintHelper.PrintTokens(lstTokenPrint, this, ConfigurationManager.AppSettings["PrinterName"].ToString(), Convert.ToBoolean(ConfigurationManager.AppSettings["ShowPrintPreview"]));
                 }
                 else
                     MessageBox.Show("There was a problem inserting data, kindly try again to save the record");
@@ -1347,7 +1348,7 @@ namespace eTemple.UI
         /// <param name="e"></param>
         private void btnQuickDailyAnna_Click(object sender, EventArgs e)
         {
-            using (DailyAnnadanam formOptions = new DailyAnnadanam())
+            using (DailyAnnadanam formOptions = new DailyAnnadanam(ConfigurationManager.AppSettings["PrinterName"].ToString(), Convert.ToBoolean(ConfigurationManager.AppSettings["ShowPrintPreview"])))
             {
                 // passing this in ShowDialog will set the .Owner 
                 // property of the child form

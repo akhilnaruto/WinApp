@@ -226,10 +226,10 @@
             this.cmbMonth.FormattingEnabled = true;
             this.cmbMonth.Items.AddRange(new object[] {
             "        "});
-            this.cmbMonth.Location = new System.Drawing.Point(141, 204);
+            this.cmbMonth.Location = new System.Drawing.Point(112, 207);
             this.cmbMonth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbMonth.Name = "cmbMonth";
-            this.cmbMonth.Size = new System.Drawing.Size(126, 25);
+            this.cmbMonth.Size = new System.Drawing.Size(178, 25);
             this.cmbMonth.TabIndex = 16;
             this.cmbMonth.Visible = false;
             // 
@@ -238,7 +238,7 @@
             this.lblMonth.AutoSize = true;
             this.lblMonth.BackColor = System.Drawing.Color.Transparent;
             this.lblMonth.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonth.Location = new System.Drawing.Point(78, 207);
+            this.lblMonth.Location = new System.Drawing.Point(59, 210);
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(47, 17);
             this.lblMonth.TabIndex = 15;
@@ -251,10 +251,10 @@
             this.cmbThidhi.FormattingEnabled = true;
             this.cmbThidhi.Items.AddRange(new object[] {
             "        "});
-            this.cmbThidhi.Location = new System.Drawing.Point(350, 204);
+            this.cmbThidhi.Location = new System.Drawing.Point(355, 207);
             this.cmbThidhi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbThidhi.Name = "cmbThidhi";
-            this.cmbThidhi.Size = new System.Drawing.Size(126, 25);
+            this.cmbThidhi.Size = new System.Drawing.Size(172, 25);
             this.cmbThidhi.TabIndex = 18;
             this.cmbThidhi.Visible = false;
             // 
@@ -263,7 +263,7 @@
             this.lblThidhi.AutoSize = true;
             this.lblThidhi.BackColor = System.Drawing.Color.Transparent;
             this.lblThidhi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThidhi.Location = new System.Drawing.Point(282, 207);
+            this.lblThidhi.Location = new System.Drawing.Point(299, 212);
             this.lblThidhi.Name = "lblThidhi";
             this.lblThidhi.Size = new System.Drawing.Size(47, 17);
             this.lblThidhi.TabIndex = 17;
@@ -313,10 +313,10 @@
             this.gpMasterReport.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpMasterReport.Location = new System.Drawing.Point(22, 12);
             this.gpMasterReport.Name = "gpMasterReport";
-            this.gpMasterReport.Size = new System.Drawing.Size(516, 388);
+            this.gpMasterReport.Size = new System.Drawing.Size(523, 398);
             this.gpMasterReport.TabIndex = 22;
             this.gpMasterReport.TabStop = false;
-            this.gpMasterReport.Text = "Donor Master Report";
+            this.gpMasterReport.Text = " ";
             // 
             // errorProvider1
             // 

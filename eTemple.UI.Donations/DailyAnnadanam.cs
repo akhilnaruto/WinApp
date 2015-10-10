@@ -21,8 +21,9 @@ namespace eTemple.UI.Donations
         public List<TokenPrint> lstTokenPrint = null;
         public PrintHelper oPrintHelper = null;
         private ServiceTypeRepository serviceTypeRepo;
-
-        public DailyAnnadanam()
+        public string _PrinterName = string.Empty;
+        public bool _ShowPrintPreview = false;
+        public DailyAnnadanam(string PrinterName,bool ShowPrintPreview)
         {
             this.MaximizeBox = false;
             dailyAnnaRepo = new DailyAnnaDanamRepository();
@@ -30,6 +31,8 @@ namespace eTemple.UI.Donations
             serviceTypeRepo = new ServiceTypeRepository();
             oPrintHelper = new PrintHelper();
             lstTokenPrint = new List<TokenPrint>();
+            _PrinterName = PrinterName;
+            _ShowPrintPreview = ShowPrintPreview;
             InitializeComponent();
         }
 
@@ -79,7 +82,7 @@ namespace eTemple.UI.Donations
             if (strInsertStatus == "Success")
             {
                 MessageBox.Show("Data inserted successfully.");
-                oPrintHelper.PrintTokens(lstTokenPrint, this);
+                oPrintHelper.PrintTokens(lstTokenPrint, this, _PrinterName, _ShowPrintPreview);
                 CleareAllcontrolsRecursive();
                 loadGothramAutoComplete();
                 SMSHelper smsHelp = new SMSHelper();

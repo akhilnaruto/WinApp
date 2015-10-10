@@ -16,6 +16,7 @@ namespace eTemple.Data.Models
         
         public string Name { get; set; }
 
+        public int OrderId { get; set; }
         
         public int ServiceTypeId { get; set; } 
 
