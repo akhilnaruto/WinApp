@@ -1110,7 +1110,7 @@ namespace eTemple.UI
                 }
                 else
                 {
-                    txtAmount.Text = string.Empty;
+                   // txtAmount.Text = string.Empty;
                     txtAmount.Enabled = true;
                 }
                 cmbServiceName.DataSource = null;
