@@ -44,6 +44,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackgroundImage = global::eTemple.UI.Donations.Properties.Resources.wood4;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sessionToolStripMenuItem,
             this.masterToolStripMenuItem,
