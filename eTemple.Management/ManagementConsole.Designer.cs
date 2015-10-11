@@ -85,6 +85,7 @@
             this.Controls.Add(this.picBoxAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ManagementConsole";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Management Console";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

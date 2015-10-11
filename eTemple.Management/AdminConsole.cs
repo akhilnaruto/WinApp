@@ -26,7 +26,8 @@ namespace eTemple.Management
         /// <param name="e"></param>
         private void manageEmployeesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ManageEmployeeDetails manageEmpDetails = new ManageEmployeeDetails();
+            manageEmpDetails.ShowDialog();
         }
     }
 }

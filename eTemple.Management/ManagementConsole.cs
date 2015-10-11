@@ -26,7 +26,8 @@ namespace eTemple.Management
         /// <param name="e"></param>
         private void picBoxAdmin_Click(object sender, EventArgs e)
         {
-
+            AdminConsole admConsole = new AdminConsole();
+            admConsole.ShowDialog();
         }
     }
 }
